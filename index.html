@@ -147,10 +147,11 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
  <div id="sceneWrap" class="frame"><canvas id="scene" width="480" height="270"></canvas></div>
  <div id="cards">
   <div class="mod frame"><h3>CHIEF <small>rules</small></h3><div class="body"><canvas class="icon" data-icon="chief"></canvas>
-   <div class="kv"><span>mode</span><b class="pink">READ-ONLY</b></div>
-   <div class="kv"><span>trading</span><b class="y">PAUSED</b></div>
-   <div class="kv"><span>SOL</span><b id="m-sol">&mdash;</b></div>
-   <div class="kv"><span>data</span><b class="w">research only</b></div></div></div>
+   <div class="kv"><span>mode</span><b class="g">RESEARCH MODE</b></div>
+   <div class="kv"><span>trading</span><b class="g">off &middot; by design</b></div>
+   <div class="kv"><span>scan feeds</span><b id="m-feeds">&mdash;</b></div>
+   <div class="kv"><span>screened &rarr; passed</span><b class="w" id="m-scr">&mdash;</b></div>
+   <div class="kv"><span>latest scan</span><b id="m-lscan">&mdash;</b></div></div></div>
   <div class="mod frame"><h3>SCAN <small>crawler</small></h3><div class="body"><canvas class="icon" data-icon="crawler"></canvas>
    <div class="kv"><span>coins found</span><b id="m-found">&mdash;</b></div>
    <div class="kv"><span>sources</span><b id="m-src">6</b></div>
@@ -700,6 +701,10 @@ function tickQ(){const now=Date.now();let fresh=0;LIVE.forEach(l=>{if(now-l.pxT<
 const setT=(id,v)=>{const e=$(id);if(e)e.textContent=v==null?dash:v};
 function renderCards(){
  const s=D.stats,n=ALL.length;
+ const R=(D.research&&D.research.scans)||{},rk=Object.keys(R);
+ if(rk.length){const ref=D.generated_epoch||Math.floor(Date.now()/1000);const live=rk.filter(k=>R[k].t&&ref-R[k].t<5400).length;
+  setT('m-feeds',live+' / '+rk.length+' reporting');const sc=rk.reduce((a,k)=>a+(R[k].seen||0),0),ps=rk.reduce((a,k)=>a+(R[k].passed||0),0);
+  setT('m-scr',sc+' \u2192 '+ps);const lt=Math.max.apply(null,rk.map(k=>R[k].t||0));setT('m-lscan',lt?ptTime(new Date(lt*1000)).slice(0,5)+' PT':dash)}
  setT('m-found',s.coins);setT('m-snp',s.sniper_verified);setT('m-last',(D.generated_label||'').replace(/^[A-Za-z]+ \d+ /,''));
  setT('m-high',VET.high);setT('m-med',VET.medium);
  const rated=ALL.filter(c=>VET.cas&&VET.cas[c.ca]).length;setT('m-rated',rated+' / '+n);setT('m-risky',s.risky);
