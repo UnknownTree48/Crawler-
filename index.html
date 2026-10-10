@@ -103,7 +103,7 @@ td.c-CLEAN{color:var(--green)}td.c-WATCH{color:var(--yel)}td.c-RISKY{color:var(-
 @keyframes lbp{50%{box-shadow:0 0 3px rgba(255,216,74,.3)}}
 .lbempty{color:var(--dim);font-size:12px;line-height:1.5;padding:4px 2px}
 .lbempty b{color:var(--yel)}
-#lbNote{font-size:10px;color:var(--dim);line-height:1.5;margin-top:6px}
+#lbNote,#rsNote{font-size:10px;color:var(--dim);line-height:1.5;margin-top:6px}
 @media(max-width:900px){#lbBody{grid-template-columns:1fr}.lbt{grid-template-columns:104px 1fr}}
 /* live tape + flashes */
 #tape{display:flex;align-items:center;height:32px;overflow:hidden}
@@ -159,7 +159,7 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
    <div class="kv"><span>mode</span><b class="g">RESEARCH MODE</b></div>
    <div class="kv"><span>trading</span><b class="g">OFF</b></div>
    <div class="kv"><span>scans</span><b id="m-feeds">&mdash;</b></div>
-   <div class="kv"><span>screened/passed</span><b class="w" id="m-scr">&mdash;</b></div>
+   <div class="kv"><span>passed/seen</span><b class="w" id="m-scr">&mdash;</b></div>
    <div class="kv"><span>latest</span><b id="m-lscan">&mdash;</b></div><i id="m-sol" style="display:none"></i></div></div>
   <div class="mod frame"><h3>SCAN <small>crawler</small></h3><div class="body"><canvas class="icon" data-icon="crawler"></canvas>
    <div class="kv"><span>coins found</span><b id="m-found">&mdash;</b></div>
@@ -714,7 +714,7 @@ function renderCards(){
  const R=(D.research&&D.research.scans)||{},rk=Object.keys(R);
  if(rk.length){const ref=D.generated_epoch||Math.floor(Date.now()/1000);const live=rk.filter(k=>R[k].t&&ref-R[k].t<5400).length;
   setT('m-feeds',live+'/'+rk.length+' live');const sc=rk.reduce((a,k)=>a+(R[k].seen||0),0),ps=rk.reduce((a,k)=>a+(R[k].passed||0),0);
-  setT('m-scr',sc+' / '+ps);const lt=Math.max.apply(null,rk.map(k=>R[k].t||0));setT('m-lscan',lt?ptTime(new Date(lt*1000)).slice(0,5):dash)}
+  setT('m-scr',ps+' / '+sc);const lt=Math.max.apply(null,rk.map(k=>R[k].t||0));setT('m-lscan',lt?ptTime(new Date(lt*1000)).slice(0,5):dash)}
  setT('m-found',s.coins);setT('m-snp',s.sniper_verified);setT('m-last',(D.generated_label||'').replace(/^[A-Za-z]+ \d+ /,''));
  setT('m-high',VET.high);setT('m-med',VET.medium);
  const rated=ALL.filter(c=>VET.cas&&VET.cas[c.ca]).length;setT('m-rated',rated+' / '+n);setT('m-risky',s.risky);
