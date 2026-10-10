@@ -211,7 +211,7 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
   <div id="pmGrid"><div class="pmbox"><div class="tw2"><table id="pmT"><thead><tr><th>PID</th><th>CRAWLER</th><th>S</th><th>HOST</th><th class="n">ITEMS</th><th class="n">TIME+</th><th>TASK</th></tr></thead><tbody id="pmB"></tbody></table></div>
    <div id="pmLegend">S: <b class="gr">R</b> running (ran &lt;90s ago) &middot; <b class="gy">S</b> sleeping (between runs) &middot; <b class="gz">Z</b> stale (missed 3+ runs) &middot; <b class="gt">T</b> stopped &middot; TIME+ = time since last run (h:mm:ss) &middot; ITEMS = coins/pages checked in the last run &middot; PID = row id</div></div>
    <div class="pmbox"><h4><span>COIN ACTIVITY MAP</span><small id="mapSub">coins by verdict</small></h4><canvas id="mapc"></canvas><div id="mapTip"></div></div></div></div>
- <div class="card frame" id="lbcard"><h2><span>LEADERBOARD TOP 10</span><em id="lbSub">fomo 24H + 30D top-10 buyers &middot; 3+ distinct buyers of one coin within 1h = ALERT &middot; research only</em></h2>
+ <div class="card frame" id="lbcard"><h2><span>GMGN SMART MONEY</span><em id="lbSub">coins gaining new smart-money / KOL wallets in ~1h &middot; from the GMGN scan &middot; research only</em></h2>
   <div id="lbStat"></div><div id="lbBody"></div><div id="lbNote"></div></div>
  <div class="card frame" id="rscard"><h2><span>RESEARCH SCANS</span><em id="rsSub">latest results of the scan routines &middot; research only &middot; nothing trades</em></h2><div id="rsBody"></div><div id="rsNote"></div></div>
  <div class="card frame"><h2><span>CRAWLER NETWORK</span><em id="netsub">packets = live fetches + scan events</em></h2><canvas id="netc"></canvas></div>
@@ -340,11 +340,11 @@ function drawChart(t){
  R(x+4,y+13,w-8,1,PINK,.5);
  const cur=(D&&D.research&&D.research.current)||[],now=Date.now()/1000;
  cur.slice(0,4).forEach((s,i)=>{const yy=y+17+i*13,ag=s.t?Math.floor((now-s.t)/60):null;
-  T((s.key==='launch'?'LAUNCH':s.key==='gmgn'?'GMGN':'RUNNER'),x+5,yy,PINK2,1,'l',null,50);
+  T((s.key==='gmgn'?'GMGN':'OPEN'),x+5,yy,PINK2,1,'l',null,50);
   T((s.checked==null?'-':s.checked)+' > '+s.passed,x+w-5,yy,s.passed>0?GREEN:'#b9b0dd',1,'r',null,56);
   T(ag==null?'':(ag<60?ag+'M':Math.floor(ag/60)+'H'),x+60,yy,'#b9b0dd',.8,'l',null,16)});
- const lb=D&&D.leaderboard,al=lb&&lb.n_alert!=null?lb.n_alert:0;
- T('TOP10 ALERTS '+al,x+5,y+h-9,al>0?YEL:'#b9b0dd',1,'l',null,w-10);
+ const sa=SMS(),al=sa.status==='ok'?sa.nRows:0;
+ T('SMART COINS '+(sa.status==='ok'?al:'-'),x+5,y+h-9,sa.nPass>0?YEL:'#b9b0dd',1,'l',null,w-10);
 }
 function drawHolos(t){
  const L=[[SPR.mag,GREEN],[SPR.coin,PINK2],[SPR.shield,GREEN],[SPR.bars,PINK2]];
@@ -387,26 +387,25 @@ function drawStation(s,t){
  if(s.lamp&&simT-s.lamp.t<1.1){const a=1-(simT-s.lamp.t)/1.1;R(left+w-9,y+59,5,5,s.lamp.c);R(left+w-11,y+57,9,9,s.lamp.c,.25*a)}else R(left+w-9,y+59,5,5,'#1b2040');
  for(let i=0;i<5;i++)R(left+4+i*4,y+60,2,4,'#05060f');
 }
-/* ---------- LEADERBOARD station (top-10 fomo buyers; data = routine state file via crawl.py) ---------- */
+/* ---------- GMGN SMART MONEY station (coins with new smart-money / KOL wallets; data = GMGN scan files via crawl.py) ---------- */
 const LBST={x:335,live:0,act:0};
 function drawLBStation(t){
- const s=LBST,x=s.x,y=108,w=70,h=68,left=x-35,a=LBS();
- const alert=a.nAlert>0,col=alert?YEL:GREEN,flash=alert?(.55+.45*Math.sin(t*9)):1;
+ const s=LBST,x=s.x,y=108,w=70,h=68,left=x-35,a=SMS();
+ const alert=a.nPass>0,col=alert?YEL:GREEN,flash=alert?(.55+.45*Math.sin(t*9)):1;
  R(left-1,y+h,w+2,3,'#000',.35);
  box(left,y,w,h,alert?YEL:PINK,'#0a0d2a');R(left+1,y+1,w-2,1,PINK2,.3);
  if(alert)R(left-2,y-2,w+4,h+4,YEL,.12*flash);
  R(x,y-6,1,6,PINK);R(x-1,y-8,3,3,Math.sin(t*5+x)>0?'#fff':PINK);
- R(left+2,y+2,w-4,12,'#05060f');R(left+2,y+13,w-4,1,col,.6);T('LEADERBOARD',x,y+5,col,1,'c',null,w-6);
+ R(left+2,y+2,w-4,12,'#05060f');R(left+2,y+13,w-4,1,col,.6);T('SMART MONEY',x,y+5,col,1,'c',null,w-6);
  let big,sub;
- if(a.status==='ok'){big=String(a.nMulti);sub=TKS>1.05?'2+ BUYERS':a.nTraders+'T '+a.nBuys+'B 2+ BUYERS'}
- else if(a.status==='waiting'){big='--';sub='WAITING FIRST RUN'}
- else if(a.status==='empty'){big='0';sub='NO DATA YET'}
- else if(a.status==='unreadable'){big='!';sub='FILE ERROR'}
+ if(a.status==='ok'){big=String(a.nRows);sub=TKS>1.05?'+SMART/KOL':'COINS +SMART/KOL'}
+ else if(a.status==='waiting'){big='--';sub='WAITING GMGN SCAN'}
+ else if(a.status==='blocked'){big='!';sub='GMGN BLOCKED'}
  else{big='..';sub='LOADING'}
  T(big,x,y+16,col,2,'c');R(x-tw(big,2)/2-1,y+15,tw(big,2)+2,11,col,.06+.08*(alert?flash:0));
- if(alert)T('ALERT '+a.nAlert,x,y+27,YEL,.85,'c',flash,w-6);else T(sub,x,y+27,'#b9b0dd',.85,'c',null,w-6);
- // 3-of-3 progress (best coin so far)
- for(let i=0;i<3;i++){const bx=left+5+i*21;R(bx,y+35,19,4,'#12183a');if(a.status==='ok'&&i<a.maxN)R(bx,y+35,19,4,alert?YEL:GREEN,alert?flash:.9)}
+ if(alert)T('PASS '+a.nPass,x,y+27,YEL,.85,'c',flash,w-6);else T(sub,x,y+27,'#b9b0dd',.85,'c',null,w-6);
+ // three bars = the 3 coins with the most new smart/KOL wallets (full bar = +10 wallets)
+ for(let i=0;i<3;i++){const bx=left+5+i*21,r=a.status==='ok'?a.top[i]:null;R(bx,y+35,19,4,'#12183a');if(r)R(bx,y+35,Math.max(2,Math.round(19*Math.min(1,r.new/10))),4,alert?YEL:GREEN,alert?flash:.9)}
  R(left+3,y+34,w-6,1,col,.18);
  // volume block (moved here from the old LIQUIDITY+VOLUME station): crawled-coin volume 24h / 1h with pace bars
  let v24=0,v1=0;if(typeof ALL!=='undefined')ALL.forEach(c=>{v24+=c.vol24||0;v1+=c.vol1||0});
@@ -416,11 +415,11 @@ function drawLBStation(t){
  R(left+5,y+54,bw,3,'#12183a');R(left+5,y+54,bw,3,GREEN,.28);
  R(left+5,y+58,bw,3,'#12183a');R(left+5,y+58,Math.round(bw*Math.min(1,pace/2)),3,pace>=1?YEL:GREEN,.9);R(left+5+Math.round(bw/2),y+57,1,5,'#fff',.55);
  R(left+3,y+63,w-6,1,PINK,.5);
- const lc=a.status==='ok'?(alert?YEL:GREEN):a.status==='unreadable'?RED:YEL;
+ const lc=a.status==='ok'?(alert?YEL:GREEN):a.status==='blocked'?RED:YEL;
  if(a.status==='ok'||Math.sin(t*3)>0)R(left+w-9,y+64,3,3,lc);else R(left+w-9,y+64,3,3,'#1b2040');
 }
 function drawLBStream(t){
- const a=LBS(),al=a.status==='ok'?.9:.3,rx=428,yy=100,top=108;
+ const a=SMS(),al=a.status==='ok'?.9:.3,rx=428,yy=100,top=108;
  for(let xx=rx;xx>LBST.x;xx-=3){if(((xx+Math.floor(t*30))%9)<2)R(xx,yy,2,1,PINK2,al)}
  for(let y=yy;y<top;y+=3)if(((y+Math.floor(t*30))%9)<2)R(LBST.x,y,1,2,PINK2,al);
  R(LBST.x-1,yy-1,3,3,PINK,.8);
@@ -742,64 +741,48 @@ function renderTable(){
  $('tbTitle').textContent='COIN TABLE \u00b7 '+rows.length+' coins';
 }
 $('thr').addEventListener('click',e=>{const th=e.target.closest('th');if(!th)return;const k=th.dataset.k;if(sortK===k)sortD=-sortD;else{sortK=k;sortD=(k==='name'||k==='status'||k==='rank')?1:-1}renderTable()});
-/* ---- leaderboard top 10 (read-only; routine state file -> crawl.py -> crawler_data.json "leaderboard" + crawler_leaderboard.json every 30s) ---- */
-let LB=null;
-function LBS(){
- if(!LB)return{status:'loading',nAlert:0,nMulti:0,maxN:0,nTraders:0,nBuys:0};
- const c=lbCoins();return{status:LB.status,nAlert:c.filter(x=>x.alert).length,nMulti:c.length,maxN:c.reduce((m,x)=>Math.max(m,Math.min(3,x.n)),0),nTraders:(LB.traders||[]).length,nBuys:lbBuys().length}
-}
-function lbBuys(){const now=Date.now()/1000,w=(LB&&LB.window_s)||3600;return((LB&&LB.buys)||[]).filter(b=>b.t&&now-b.t<=w&&now-b.t>-300)}
-function lbCoins(){
- const m=new Map(),al=new Set(((LB&&LB.alerted)||[]).map(a=>String(a.key).toLowerCase()));
- lbBuys().forEach(b=>{const k=String(b.mint||b.ticker||'').toLowerCase();let c=m.get(k);if(!c){c={key:k,ticker:b.ticker,mint:b.mint,handles:[],usd:0,last_t:0};m.set(k,c)}
-  if(c.handles.indexOf(b.handle)<0)c.handles.push(b.handle);c.usd+=b.usd||0;c.last_t=Math.max(c.last_t,b.t);if(!c.mint&&b.mint)c.mint=b.mint;if(!c.ticker&&b.ticker)c.ticker=b.ticker});
- const need=(LB&&LB.alert_n)||3,out=[];
- m.forEach(c=>{c.n=c.handles.length;c.alert=c.n>=need;c.sent=!!((c.mint&&al.has(c.mint.toLowerCase()))||(c.ticker&&al.has(c.ticker.toLowerCase())));if(c.n>=2)out.push(c)});
- return out.sort((a,b)=>b.n-a.n||b.last_t-a.last_t);
+/* ---- GMGN smart money panel (read-only; GMGN scan files -> crawl.py -> crawler_data.json "smart" + crawler_smart.json every 30s) ---- */
+let SM=null;
+function SMS(){
+ if(!SM)return{status:'loading',nRows:0,nPass:0,top:[]};
+ const rows=SM.rows||[];return{status:SM.status,nRows:SM.n_rows!=null?SM.n_rows:rows.length,nPass:rows.filter(r=>r.verdict==='PASS').length,top:rows.slice(0,3)}
 }
 const lbAgo=t=>{const m=Math.floor((Date.now()/1000-t)/60);return m<1?'<1m':m+'m'};
-function applyLB(lb){if(!lb||!lb.status)return;if(LB&&LB.generated_epoch>lb.generated_epoch)return;LB=lb;renderLB()}
+function applySM(sm){if(!sm||!sm.status)return;if(SM&&SM.generated_epoch>sm.generated_epoch)return;SM=sm;renderLB()}
 function renderLB(){
  const el=$('lbBody');if(!el)return;
- if(!LB){el.innerHTML='<div class="lbempty">loading leaderboard state&hellip;</div>';return}
- const now=Date.now()/1000,st=LB.status,buys=lbBuys(),coins=lbCoins(),trs=LB.traders||[];
+ if(!SM){el.innerHTML='<div class="lbempty">loading smart-money data&hellip;</div>';return}
+ const now=Date.now()/1000,st=SM.status,rows=SM.rows||[],a=SMS();
  const chip=(cls,h)=>'<span class="chip '+cls+'">'+h+'</span>';
+ const runAge=SM.run_at?Math.max(0,Math.floor((now-SM.run_at)/60)):null,nv=x=>x==null?dash:x;
  let stat='';
- const fileAge=LB.file_mtime?Math.max(0,Math.floor((now-LB.file_mtime)/60)):null,runAge=LB.last_run?Math.max(0,Math.floor((now-LB.last_run)/60)):null;
- if(st==='waiting')stat=chip('y','<b>WAITING FOR FIRST RUN</b>')+chip('','state file not written yet');
- else if(st==='unreadable')stat=chip('r','<b>STATE FILE UNREADABLE</b> ('+esc(LB.error||'')+') &middot; retrying every 30s');
- else if(st==='empty')stat=chip('y','<b>ROUTINE FILE EMPTY</b>')+chip('','no traders or buys recorded yet');
- else{stat=chip('g','<b>'+trs.length+'</b> traders tracked')+chip('','24H <b>'+trs.filter(t=>t.ranks&&t.ranks['24H']!=null).length+'</b> &middot; 30D <b>'+trs.filter(t=>t.ranks&&t.ranks['30D']!=null).length+'</b>')+
-  chip('','<b>'+buys.length+'</b> buys in last hour')+chip('','<b>'+coins.length+'</b> coins with 2+ buyers')+chip(coins.some(c=>c.alert)?'y':'','ALERTS <b>'+coins.filter(c=>c.alert).length+'</b>')+
-  chip('','file updated <b>'+(fileAge==null?dash:fileAge+'m ago')+'</b>'+(runAge!=null?' &middot; last run <b>'+runAge+'m ago</b>':''))}
- $('lbStat').innerHTML=stat;$('lbcard').classList.toggle('alert',coins.some(c=>c.alert));
- let L='',Rr='';
+ if(st==='waiting')stat=chip('y','<b>WAITING FOR GMGN SCAN</b>')+chip('','no scan result yet');
+ else if(st==='blocked')stat=chip('r','<b>GMGN SCAN BLOCKED</b>')+chip('','last run could not read GMGN');
+ else stat=chip('g','<b>'+nv(SM.trending_rows)+'</b> GMGN trending coins')+chip('','<b>'+a.nRows+'</b> with +'+(SM.min_new||3)+' new smart/KOL wallets')+chip('','<b>'+nv(SM.checked)+'</b> fully checked')+
+  chip(a.nPass?'y':'','PASS <b>'+(SM.passed==null?dash:SM.passed)+'</b>')+chip('','last GMGN scan <b>'+(runAge==null?dash:runAge+'m ago')+'</b>');
+ $('lbStat').innerHTML=stat;$('lbcard').classList.toggle('alert',a.nPass>0);
+ let L,Rr;
  if(st!=='ok'){
-  const msg={waiting:'<b>Waiting for first run.</b> The routine &ldquo;fomo top-10 leaderboard buyers alert&rdquo; has not written <code>lb_top10_seen.json</code> yet (it runs every 10 min, 8:06 AM&ndash;10:56 PM PT). No leaderboard data is shown until it does &mdash; nothing here is simulated.',
-   unreadable:'<b>State file unreadable.</b> The routine&rsquo;s file exists but could not be parsed; the panel keeps retrying.',
-   empty:'<b>Routine file is empty.</b> It exists but lists no traders or buys, so there is nothing to show.',loading:'loading&hellip;'}[st]||'no data';
-  L='<div class="lbempty">'+msg+'</div>';Rr='<div class="lbempty">coins with 2+ top-10 buyers will list here once the routine has data.</div>';
+  const msg={waiting:'<b>Waiting for the GMGN scan.</b> No GMGN result has been written yet. Nothing here is simulated.',blocked:'<b>GMGN could not be read on the last run.</b> The scan retries on its next run.',loading:'loading&hellip;'}[st]||'no data';
+  L='<div class="lbempty">'+msg+'</div>';Rr='<div class="lbempty">scan summary appears once the GMGN scan has data.</div>';
  }else{
-  const by={};buys.forEach(b=>{(by[b.handle]=by[b.handle]||[]).push(b)});
-  L=trs.length?trs.map(t=>{
-   const tags=Object.keys(t.ranks||{}).sort().map(r=>'<span class="tg '+(r==='24H'?'d':'m')+'">'+esc(r)+(t.ranks[r]!=null?' #'+t.ranks[r]:'')+'</span>').join('')||'<span class="tg d">?</span>';
-   const bs=(by[t.handle]||[]).sort((a,b)=>b.t-a.t),sh=bs.length?bs.slice(0,6).map(b=>'<span>'+esc(String(b.ticker||(b.mint||'').slice(0,5)).slice(0,10))+' '+(b.usd!=null?fm(b.usd):'$?')+' <i>'+lbAgo(b.t)+'</i></span>').join('')+(bs.length>6?'<span class="none">+'+(bs.length-6)+' more</span>':''):'<span class="none">no buys in last hour</span>';
-   return'<div class="lbt"><div class="rk">'+tags+'</div><div class="hd">'+esc(t.handle)+'<em>'+bs.length+' buy'+(bs.length===1?'':'s')+' / 1h</em></div><div class="bs">'+sh+'</div></div>'}).join(''):'<div class="lbempty">routine recorded buys but no trader list.</div>';
-  Rr=coins.length?coins.map(c=>{
-   const nm=esc(String(c.ticker||(c.mint||'').slice(0,6)).slice(0,14)),mi=c.mint?esc(c.mint.slice(0,4)+'\u2026'+c.mint.slice(-4)):'',
-    pg=[0,1,2].map(i=>'<u class="'+(i<c.n?'on':'')+'"></u>').join('')+'<s>'+Math.min(c.n,99)+'/3'+(c.n>3?' (+'+(c.n-3)+')':'')+'</s>';
-   return'<div class="lbc'+(c.alert?' alert':'')+'"><div class="l1"><b>'+(c.mint?'<a href="https://dexscreener.com/solana/'+esc(c.mint)+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">'+nm+'</a>':nm)+bm(c.mint)+'</b>'+(c.alert?'<span class="bd">ALERT</span>':'')+(c.sent?'<span class="bd sent">SENT</span>':'')+'<span class="pg">'+pg+'</span></div>'+
-    '<small>'+c.handles.map(esc).join(', ')+'</small><small>'+(mi?mi+' &middot; ':'')+fm(c.usd)+' total &middot; last buy seen '+lbAgo(c.last_t)+' ago</small></div>'}).join(''):'<div class="lbempty">no coin has 2+ top-10 buyers in the last hour.</div>';
+  L=rows.length?rows.map(r=>{
+   const vc=r.verdict==='PASS'?'g':(r.verdict==='FAIL'?'r':'y');
+   const ln='<span>mcap <b style="color:#fff">'+fm(r.mcap)+'</b></span><span>vol 1h <b style="color:#fff">'+fm(r.vol1)+'</b></span><span>smart <b style="color:#fff">'+nv(r.sm)+'</b> &middot; KOL <b style="color:#fff">'+nv(r.kol)+'</b></span><span class="'+vc+'" style="color:'+(vc==='g'?'var(--green)':vc==='r'?'var(--red)':'var(--yel)')+'">'+esc(r.verdict)+(r.note?' <i>'+esc(r.note)+'</i>':'')+'</span>';
+   return'<div class="lbt"><div class="rk"><span class="tg d">+'+r.new+' NEW</span></div><div class="hd"><a href="https://dexscreener.com/solana/'+esc(r.mint)+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">'+esc(r.ticker)+'</a>'+bm(r.mint)+'<em>in ~'+nv(r.win_min)+'m</em></div><div class="bs">'+ln+'</div></div>'}).join(''):'<div class="lbempty">no coin gained '+(SM.min_new||3)+'+ new smart-money / KOL wallets in the last hour.</div>';
+  const rw=(k,v,c)=>'<div class="rsr"><span>'+k+'</span><b class="'+(c||'')+'">'+v+'</b></div>';
+  Rr=rw('trending rows read',nv(SM.trending_rows))+rw('qualified (new smart/KOL growth)',nv(SM.qualifying))+rw('fully safety-checked',nv(SM.checked))+rw('passed / failed / unverified',nv(SM.passed)+' / '+nv(SM.failed)+' / '+nv(SM.unverified),a.nPass?'w':'')+rw('last scan',runAge==null?dash:runAge+'m ago')+
+   '<div class="lbempty" style="margin-top:6px">PASS = every hard safety check passed. A coin that was not checked is only a smart-money signal, never a pick.</div>';
  }
- el.innerHTML='<div class="lbbox"><h4><span>TRADERS ('+(st==='ok'?trs.length:0)+'/20)</span><small>rank &middot; range &middot; buys last hour</small></h4>'+L+'</div><div class="lbbox"><h4><span>COINS WITH 2+ TOP-10 BUYERS</span><small>progress = distinct buyers / 3</small></h4>'+Rr+'</div>';
- $('lbNote').innerHTML='Source: top-10 leaderboard buyer tracker (read-only; this page never trades). Trader handles are fomo&rsquo;s public leaderboard names. Buy times are when the routine <b>first saw</b> each buy (10-min polling), not the exact on-chain time. ALERT = 3 or more distinct top-10 traders (24H or 30D board) bought the same coin within 1 hour; <b>SENT</b> = the routine already messaged it. Research only &mdash; not a buy recommendation.';
+ el.innerHTML='<div class="lbbox"><h4><span>COINS WITH NEW SMART / KOL WALLETS</span><small>top '+(rows.length||0)+' &middot; ~1h window</small></h4>'+L+'</div><div class="lbbox"><h4><span>GMGN SCAN</span><small>summary</small></h4>'+Rr+'</div>';
+ $('lbNote').innerHTML='Source: the GMGN research scan (read-only; this page never trades). GMGN smart-money / KOL wallet counts are cumulative per coin, so the scan compares snapshots and only counts <b>new</b> wallets added in about the last hour. A coin is a pick only when it also passes every safety check (RugCheck, linked wallets, bundle/sniper, unique buyers). Research only &mdash; not a buy recommendation.';
 }
 function renderRS(){
  const el=$('rsBody');if(!el)return;const RS=D&&D.research;if(!RS){el.innerHTML='<div class="lbempty">waiting for scan data&hellip;</div>';return}
  const now=D.generated_epoch||Date.now()/1000,ago=t=>{if(!t)return dash;const m=Math.max(0,Math.floor((now-t)/60));return m<60?m+'m ago':Math.floor(m/60)+'h'+String(m%60).padStart(2,'0')+'m ago'};
  const row=(a,b,c)=>'<div class="rsr"><span>'+a+'</span><b class="'+(c||'')+'">'+b+'</b></div>';
  const dx=m=>'<a href="https://dexscreener.com/solana/'+esc(m)+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">';
- const G=RS.gmgn_picks||[],det=RS.detail||{},S=RS.scans||{},F=RS.fomo_list||{},J=RS.journal||{};
+ const G=RS.gmgn_picks||[],det=RS.detail||{},S=RS.scans||{},F=RS.open_list||{},J=RS.journal||{};
  let g=G.length?G.map(p=>{const mc=p.mcap_now!=null?fm(p.mcap_now)+' now':fm(p.mcap_alert)+' at alert',lq=p.liq_now!=null?fm(p.liq_now)+' now':fm(p.liq_alert)+' at alert';
   return'<div class="rsp"><div class="l1"><b>'+dx(p.mint)+esc(p.ticker||'?')+'</a>'+bm(p.mint)+'</b><span class="bd">RESEARCH ONLY</span><span style="color:var(--dim);font-size:16px">'+esc(p.name||'')+'</span></div>'+
   '<small>smart-money wallets <b style="color:#fff">'+(p.sm==null?dash:p.sm)+'</b> &middot; KOL wallets <b style="color:#fff">'+(p.kol==null?dash:p.kol)+'</b> &middot; +'+(p.new==null?'?':p.new)+' new in ~'+(p.win_min||'?')+'m &middot; alerted '+ago(p.alerted)+'</small>'+
@@ -808,18 +791,18 @@ function renderRS(){
  const gd=det.gmgn||{};
  const gb='<div class="lbbox wide"><h4><span>GMGN PICKS ('+G.length+')</span><small>smart-money / KOL growth &middot; passed all hard safety checks</small></h4>'+g+
   '<div style="margin-top:4px">'+row('last GMGN scan',ago((S.gmgn||{}).t))+row('trending rows / qualified / checked',(S.gmgn?S.gmgn.seen:dash)+' / '+(gd.qualifying==null?dash:gd.qualifying)+' / '+(gd.checked==null?dash:gd.checked))+row('passed / failed',(gd.passed==null?dash:gd.passed)+' / '+(gd.failed==null?dash:gd.failed))+'</div></div>';
- const ld=det.launch||{},rd=det.runner||{};
- const lp=(ld.picks||[]).length?(ld.picks||[]).map(p=>'<div class="rsr"><span>'+dx(p.mint)+esc(p.ticker||'?')+'</a>'+bm(p.mint)+'</span><b class="w">'+fm(p.mcap)+' &middot; liq '+fm(p.liq)+'</b></div>').join(''):'<div class="lbempty" style="padding:2px 0">no coin cleared the launch scan this run.</div>';
- const lb='<div class="lbbox"><h4><span>LAUNCH SCAN</span><small>'+ago((S.launch||{}).t)+'</small></h4>'+row('coins seen',S.launch?S.launch.seen:dash)+row('passed traction',ld.traction==null?dash:ld.traction)+row('picks sent',(ld.picks||[]).length)+row('sources ok',(ld.sources_ok==null?dash:ld.sources_ok+' / '+ld.sources))+lp+'</div>';
- const nm=(rd.near||[]).map(p=>'<div class="rsr"><span>'+dx(p.mint)+esc(p.ticker||'?')+'</a>'+bm(p.mint)+' <i style="font-style:normal;color:#968fc0">'+fm(p.mcap)+'</i></span><b class="y" title="'+esc(p.why)+'" style="overflow:hidden;text-overflow:ellipsis;max-width:55%">'+esc(p.why)+'</b></div>').join('');
- const rb='<div class="lbbox"><h4><span>FOMO RUNNER SCAN</span><small>'+ago((S.runner||{}).t)+'</small></h4>'+row('candidates',S.runner?S.runner.seen:dash)+row('with market data',rd.with_pairs==null?dash:rd.with_pairs)+row('passed market / risk',(rd.passed_market==null?dash:rd.passed_market)+' / '+(rd.passed_risk==null?dash:rd.passed_risk))+
+ const od=det.open||{};
+ const lp=(od.top||[]).length?(od.top||[]).map(p=>'<div class="rsr"><span>'+dx(p.mint)+esc(p.ticker||'?')+'</a>'+bm(p.mint)+' <i style="font-style:normal;color:#968fc0">'+fm(p.mcap)+'</i></span><b class="'+(p.verdict==='PASS'?'w':'y')+'">'+esc(p.verdict||'?')+'</b></div>').join(''):'<div class="lbempty" style="padding:2px 0">no coin passed the market filters this run.</div>';
+ const nm=(od.near||[]).map(p=>'<div class="rsr"><span>'+dx(p.mint)+esc(p.ticker||'?')+'</a>'+bm(p.mint)+' <i style="font-style:normal;color:#968fc0">'+fm(p.mcap)+'</i></span><b class="y" title="'+esc(p.why)+'" style="overflow:hidden;text-overflow:ellipsis;max-width:55%">'+esc(p.why)+'</b></div>').join('');
+ const ob='<div class="lbbox"><h4><span>OPEN SCAN</span><small>'+ago((S.open||{}).t)+'</small></h4>'+row('candidates',S.open?S.open.seen:dash)+row('with market data',od.with_pairs==null?dash:od.with_pairs)+row('passed market filters',od.passed_market==null?dash:od.passed_market)+
+  row('fully checked / passed',(od.checked==null?dash:od.checked)+' / '+(od.passed==null?dash:od.passed))+row('sources ok',(od.sources_ok==null?dash:od.sources_ok+' / '+od.sources))+lp+
   '<div style="color:var(--dim);font-size:16px;margin-top:4px;letter-spacing:1px">NEAR MISSES &middot; why they failed</div>'+(nm||'<div class="lbempty" style="padding:2px 0">none</div>')+'</div>';
  const bl=J.by_source||{},jr=Object.keys(bl).map(k=>{const b=bl[k];return row(esc(k),b.n+' picks &middot; '+b.up+' up / '+b.down+' down &middot; med '+fPct(b.median),b.median>0?'':'r')}).join('');
  const jb='<div class="lbbox"><h4><span>PICK JOURNAL</span><small>% since first seen &middot; paper</small></h4>'+(J.all?row('all picks',J.all.n+' &middot; '+J.all.up+' up / '+J.all.down+' down &middot; med '+fPct(J.all.median),'w'):'')+jr+row('last price snapshot',ago(J.last_snapshot))+'</div>';
  const fl=Object.keys(F.by_list||{}).filter(k=>k.indexOf(',')<0).map(k=>k+' '+F.by_list[k]).join(' &middot; ');
- const fb='<div class="lbbox"><h4><span>FOMO COIN LIST</span><small>'+ago(F.t)+'</small></h4>'+row('coins on list',F.n==null?dash:F.n,'w')+row('crawled this cycle',D.stats.coins)+'<div style="color:var(--dim);font-size:16px;margin-top:4px">'+fl+'</div></div>';
- el.innerHTML=gb+lb+rb+jb+fb;
- $('rsNote').innerHTML='Source: latest output of the scan routines (GMGN, launch, fomo runner, fomo list) and the pick journal &mdash; read-only. Picks are research, not recommendations; every pick still needs X-hype review and the user&rsquo;s own approval. Journal shows percent moves only.'
+ const fb='<div class="lbbox"><h4><span>OPEN COIN LIST</span><small>'+ago(F.t)+'</small></h4>'+row('coins on list',F.n==null?dash:F.n,'w')+row('crawled this cycle',D.stats.coins)+'<div style="color:var(--dim);font-size:16px;margin-top:4px">'+fl+'</div></div>';
+ el.innerHTML=gb+ob+jb+fb;
+ $('rsNote').innerHTML='Source: latest output of the scan routines (open scan, GMGN) and the pick journal &mdash; read-only. Picks are research, not recommendations; every pick still needs X-hype review and the user&rsquo;s own approval. Journal shows percent moves only.'
 }
 /* ---- process monitor + coin activity map (rows come from crawl.py "research.procs"; browser-side feeds are added from live state) ---- */
 function fmtUp(s){s=Math.max(0,Math.floor(s));const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return h+':'+String(m).padStart(2,'0')+':'+String(x).padStart(2,'0')}
@@ -867,19 +850,15 @@ function renderMap(){
 }
 (function(){const cv=document.getElementById('mapc');if(!cv)return;cv.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;let b=null,bd=1e9;MAPN.forEach(n=>{const d=Math.hypot(n.x-x,n.y-y);if(d<bd){bd=d;b=n}});
  $('mapTip').innerHTML=b&&bd<14?'<b>'+esc(b.c.ticker||b.c.name||'?')+'</b> &middot; '+b.g+' &middot; mcap '+fm(b.c.mcap)+' &middot; liq '+fm(b.c.liq):'&nbsp;'});cv.addEventListener('mouseleave',()=>{$('mapTip').innerHTML='&nbsp;'})})();
-/* ---- CURRENT SCANS panel: published scan results only (research.current + leaderboard); coin numbers come from the crawl record or the scan itself ---- */
+/* ---- CURRENT SCANS panel: published scan results only (research.current: open scan + GMGN scan); coin numbers come from the crawl record or the scan itself ---- */
 function renderCur(){
  const el=$('curBody');if(!el||!D)return;const CUR=(D.research&&D.research.current)||[],now=Date.now()/1000;
  const ago=t=>{if(!t)return dash;const m=Math.max(0,Math.floor((now-t)/60));return m<60?m+'m ago':Math.floor(m/60)+'h'+String(m%60).padStart(2,'0')+'m ago'};
- const vcls=v=>({PASS:'PASS','NEAR MISS':'NM',FAIL:'FAIL',SKIPPED:'SKIP',ALERT:'ALERT','2 BUYERS':'TWO'}[v]||'SKIP');
+ const vcls=v=>({PASS:'PASS','NEAR MISS':'NM',FAIL:'FAIL',SKIPPED:'SKIP',UNVERIFIED:'SKIP'}[v]||'SKIP');
  const mline=m=>'mcap <b>'+fm(m.mcap)+'</b> &middot; vol <b>'+fm(m.vol24)+'</b> 24h / <b>'+fm(m.vol1)+'</b> 1h &middot; snipers '+(m.sn?'<b>'+(m.sn.n==null?dash:m.sn.n)+'</b> &middot; <b>'+(m.sn.bought==null?dash:m.sn.bought.toFixed(1))+'%</b> bought / <b>'+(m.sn.hold==null?dash:m.sn.hold.toFixed(1))+'%</b> held':'<b>n/a</b>');
  const coinRow=(p,vd,note,m)=>'<div class="cc"><div class="l1"><b>'+(p.mint?'<a href="https://dexscreener.com/solana/'+esc(p.mint)+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">'+esc(String(p.ticker||'?').slice(0,14))+'</a>':esc(String(p.ticker||'?').slice(0,14)))+'</b>'+bm(p.mint)+'<span class="vd '+vcls(vd)+'">'+esc(vd)+'</span>'+(note?'<span class="nt">'+esc(note)+'</span>':'')+'</div><div class="l2">'+mline(m)+'</div></div>';
  let h=CUR.map(s=>'<div class="cs"><h4><span>'+esc(s.name)+'</span><small>'+ago(s.t)+'</small></h4><div class="sum">checked <b>'+(s.checked==null?dash:s.checked)+'</b> &middot; passed <b class="g">'+s.passed+'</b> &middot; '+esc(s.line||'')+'</div>'+
   ((s.top||[]).length?s.top.map(p=>coinRow(p,p.verdict,p.note,p)).join(''):'<div class="cc"><div class="l2">no coin to list from this run</div></div>')+'</div>').join('');
- const LBd=LB||D.leaderboard||{},lc=lbCoins().slice(0,5),byca={};ALL.forEach(c=>{byca[c.ca]=c;if(c.ticker)byca[String(c.ticker).toLowerCase()]=c});
- const mm=c=>{const x=byca[c.mint]||byca[String(c.ticker||'').toLowerCase()]||{},s=x.sniper||{};return{mcap:x.mcap,vol24:x.vol24,vol1:x.vol1,sn:(s.status==='ok'||s.status==='partial')?{n:s.n,bought:s.bought_pct,hold:s.hold_pct}:null}};
- h+='<div class="cs"><h4><span>LEADERBOARD TOP-10 ALERTS</span><small>'+ago(LBd.last_run)+'</small></h4><div class="sum">traders checked <b>'+((LBd.traders||[]).length||dash)+'</b> &middot; buys last hour <b>'+lbBuys().length+'</b> &middot; alerts (3+ buyers) <b class="g">'+lbCoins().filter(c=>c.alert).length+'</b> &middot; 2+ buyers <b>'+lbCoins().length+'</b></div>'+
-  (lc.length?lc.map(c=>coinRow({ticker:c.ticker,mint:c.mint},c.n>=3?'ALERT':'2 BUYERS',c.n+' buyers',mm(c))).join(''):'<div class="cc"><div class="l2">no coin has 2+ top-10 buyers in the last hour</div></div>')+'</div>';
  el.innerHTML=h;
 }
 async function refreshLB(){}
@@ -894,7 +873,7 @@ function apply(d,first){
  pools={W:shuffle(coins.filter(c=>c.status==='WATCH')),C:shuffle(coins.filter(c=>c.status==='CLEAN')),R:shuffle(coins.filter(c=>c.status==='RISKY'))};
  mergeLive();recalcST();
  renderCards();renderTest();renderProc();renderMap();renderCur();renderRS();renderTop10();renderTable();
- if(d.leaderboard)applyLB(d.leaderboard);
+ if(d.smart)applySM(d.smart);
  if(fresh&&!first){netBurst()}
 
  if(!S.sol&&d.sol_ohlc&&d.sol_ohlc.candles.length){S.sol=d.sol_ohlc.candles.slice(-1)[0][4];$('m-sol').textContent='$'+S.sol.toFixed(2)}
