@@ -101,6 +101,7 @@ td.c-CLEAN{color:var(--green)}td.c-WATCH{color:var(--yel)}td.c-RISKY{color:var(-
 .lbc .bd{font-size:10px;letter-spacing:2px;padding:0 5px;color:#05060f;background:var(--yel);font-weight:bold;white-space:nowrap}
 .lbc .bd.sent{background:transparent;color:var(--yel);border:1px solid var(--yel)}
 @keyframes lbp{50%{box-shadow:0 0 3px rgba(255,216,74,.3)}}
+.bm{display:inline-block;font-size:9px;letter-spacing:1px;padding:0 4px;margin-left:5px;line-height:14px;color:var(--cyan)!important;border:1px solid var(--cyan);text-decoration:none;white-space:nowrap;vertical-align:middle}.bm:hover{background:var(--cyan);color:#05060f!important}
 .lbempty{color:var(--dim);font-size:12px;line-height:1.5;padding:4px 2px}
 .lbempty b{color:var(--yel)}
 #lbNote,#rsNote{font-size:10px;color:var(--dim);line-height:1.5;margin-top:6px}
@@ -529,6 +530,7 @@ function drawScene(){
 /* =============== combined page: data, cards, network, charts, table =============== */
 const $=id=>document.getElementById(id);
 const CY='#4de3ff',DIM='#8a7fb0',FONT='"Courier New",Courier,monospace',dash='\u2014';
+const bm=m=>m?'<a class="bm" href="https://v2.bubblemaps.io/map?address='+encodeURIComponent(m)+'&chain=solana" target="_blank" rel="noopener" title="Bubblemaps holder map (opens in new tab)">BUBBLEMAP</a>':'';
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fPct=v=>v==null||!isFinite(v)?dash:(v>0?'+':'')+v.toFixed(Math.abs(v)<10?1:0)+'%';
 const ptTime=d=>d.toLocaleTimeString('en-GB',{timeZone:'America/Los_Angeles',hour12:false});
@@ -746,7 +748,7 @@ function renderTest(){
 function renderTop10(){
  const cl=ALL.filter(c=>c.status==='CLEAN').sort((a,b)=>(b.score||0)-(a.score||0)||(a.rank||0)-(b.rank||0)).slice(0,10);
  $('top10').innerHTML=cl.map((c,i)=>{const sn=c.sniper||{};const sh=(sn.status==='ok'||sn.status==='partial')?'snipers '+(sn.bought_pct||0).toFixed(1)+'% / hold '+(sn.hold_pct||0).toFixed(1)+'%':'snipers n/a';
-  return'<div class="t5"><b>#'+(i+1)+' '+esc(String(c.ticker||c.name).slice(0,11))+'</b><div class="id">'+esc((c.ca||'').slice(0,4)+'\u2026'+(c.ca||'').slice(-4))+' \u00b7 score '+(c.score!=null?Math.round(c.score):dash)+'</div><small>mcap '+fm(c.mcap)+' \u00b7 liq '+fm(c.liq)+'</small><small>'+sh+'</small></div>'}).join('')||'<div class="t5"><small>no clean coins this crawl</small></div>';
+  return'<div class="t5"><b>#'+(i+1)+' '+esc(String(c.ticker||c.name).slice(0,11))+'</b><div class="id">'+esc((c.ca||'').slice(0,4)+'\u2026'+(c.ca||'').slice(-4))+' '+bm(c.ca)+' \u00b7 score '+(c.score!=null?Math.round(c.score):dash)+'</div><small>mcap '+fm(c.mcap)+' \u00b7 liq '+fm(c.liq)+'</small><small>'+sh+'</small></div>'}).join('')||'<div class="t5"><small>no clean coins this crawl</small></div>';
 }
 const COLS=[['#','rank','n'],['COIN','name','s'],['STATUS','status','s'],['PRICE $','px','n'],['LIVE \u0394','pxD','n'],['1H','chg1','n','hm'],['MCAP','mcap','n'],['LIQ','liq','n','hm'],['VOL 24H','vol24','n','hm'],['SNIPERS BOUGHT/HOLD','snip','n'],['SCORE','score','n'],['SIM BUY','tbought','s'],['SIM P&L $','tpnl','n']];
 let sortK='score',sortD=-1;
@@ -755,7 +757,7 @@ function renderTable(){
  $('thr').innerHTML=COLS.map(c=>'<th data-k="'+c[1]+'" class="'+(c[3]||'')+(sortK===c[1]?' on':'')+'">'+c[0]+(sortK===c[1]?(sortD<0?' \u25bc':' \u25b2'):'')+'</th>').join('');
  const rows=ALL.slice().sort((a,b)=>{const x=sv(a,sortK),y=sv(b,sortK);if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;return(x<y?-1:x>y?1:0)*sortD||((a.rank||0)-(b.rank||0))});
  $('tb').innerHTML=rows.map(c=>{const s=c.sniper||{},ok=s.status==='ok'||s.status==='partial';
-  return'<tr><td class="dim">'+(c.rank||'')+'</td><td><a href="'+esc(c.url||'#')+'" target="_blank" rel="noopener">'+esc(String(c.ticker||c.name||'?').slice(0,16))+'</a></td><td class="c-'+c.status+'">'+c.status+'</td>'+(function(){const fl=(c.pxT&&Date.now()-c.pxT<1800)?(c.pxDir>0?' fu':c.pxDir<0?' fd':''):'';return'<td class="'+fl+'">'+(c.px!=null?fPx(c.px):'<span class="dim">'+dash+'</span>')+'</td><td class="'+(c.pxD==null||c.pxDir===0?'dim':c.pxD>0?'pos':'neg')+fl+'">'+(c.pxD==null?dash:(c.pxD>0?'\u25b2':c.pxD<0?'\u25bc':'')+fP2(c.pxD))+'</td><td class="hm '+(c.chg1==null?'dim':c.chg1>=0?'pos':'neg')+'">'+(c.chg1==null?dash:fP2(c.chg1))+'</td>'})()+'<td>'+fm(c.mcap)+'</td><td class="hm">'+fm(c.liq)+'</td><td class="hm">'+fm(c.vol24)+'</td><td>'+(ok?(s.bought_pct||0).toFixed(1)+'% / '+(s.hold_pct||0).toFixed(1)+'%':'<span class="dim">n/a</span>')+'</td><td>'+(c.score!=null?Math.round(c.score):dash)+'</td>'+(function(){const t=c.test;if(!t)return'<td class="dim">n/a</td><td class="dim">n/a</td>';if(!t.bought)return'<td class="dim">no</td><td class="dim">&mdash;</td>';return'<td>YES x'+t.trades+'</td><td class="'+(t.pnl_usd>=0?'pos':'neg')+'">'+(t.pnl_usd>=0?'+':'')+t.pnl_usd.toFixed(2)+'</td>'})()+'</tr>'}).join('');
+  return'<tr><td class="dim">'+(c.rank||'')+'</td><td><a href="'+esc(c.url||'#')+'" target="_blank" rel="noopener">'+esc(String(c.ticker||c.name||'?').slice(0,16))+'</a>'+bm(c.ca)+'</td><td class="c-'+c.status+'">'+c.status+'</td>'+(function(){const fl=(c.pxT&&Date.now()-c.pxT<1800)?(c.pxDir>0?' fu':c.pxDir<0?' fd':''):'';return'<td class="'+fl+'">'+(c.px!=null?fPx(c.px):'<span class="dim">'+dash+'</span>')+'</td><td class="'+(c.pxD==null||c.pxDir===0?'dim':c.pxD>0?'pos':'neg')+fl+'">'+(c.pxD==null?dash:(c.pxD>0?'\u25b2':c.pxD<0?'\u25bc':'')+fP2(c.pxD))+'</td><td class="hm '+(c.chg1==null?'dim':c.chg1>=0?'pos':'neg')+'">'+(c.chg1==null?dash:fP2(c.chg1))+'</td>'})()+'<td>'+fm(c.mcap)+'</td><td class="hm">'+fm(c.liq)+'</td><td class="hm">'+fm(c.vol24)+'</td><td>'+(ok?(s.bought_pct||0).toFixed(1)+'% / '+(s.hold_pct||0).toFixed(1)+'%':'<span class="dim">n/a</span>')+'</td><td>'+(c.score!=null?Math.round(c.score):dash)+'</td>'+(function(){const t=c.test;if(!t)return'<td class="dim">n/a</td><td class="dim">n/a</td>';if(!t.bought)return'<td class="dim">no</td><td class="dim">&mdash;</td>';return'<td>YES x'+t.trades+'</td><td class="'+(t.pnl_usd>=0?'pos':'neg')+'">'+(t.pnl_usd>=0?'+':'')+t.pnl_usd.toFixed(2)+'</td>'})()+'</tr>'}).join('');
  $('tbTitle').textContent='COIN TABLE \u00b7 '+rows.length+' coins';
 }
 $('thr').addEventListener('click',e=>{const th=e.target.closest('th');if(!th)return;const k=th.dataset.k;if(sortK===k)sortD=-sortD;else{sortK=k;sortD=(k==='name'||k==='status'||k==='rank')?1:-1}renderTable()});
@@ -805,7 +807,7 @@ function renderLB(){
   Rr=coins.length?coins.map(c=>{
    const nm=esc(String(c.ticker||(c.mint||'').slice(0,6)).slice(0,14)),mi=c.mint?esc(c.mint.slice(0,4)+'\u2026'+c.mint.slice(-4)):'',
     pg=[0,1,2].map(i=>'<u class="'+(i<c.n?'on':'')+'"></u>').join('')+'<s>'+Math.min(c.n,99)+'/3'+(c.n>3?' (+'+(c.n-3)+')':'')+'</s>';
-   return'<div class="lbc'+(c.alert?' alert':'')+'"><div class="l1"><b>'+(c.mint?'<a href="https://dexscreener.com/solana/'+esc(c.mint)+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">'+nm+'</a>':nm)+'</b>'+(c.alert?'<span class="bd">ALERT</span>':'')+(c.sent?'<span class="bd sent">SENT</span>':'')+'<span class="pg">'+pg+'</span></div>'+
+   return'<div class="lbc'+(c.alert?' alert':'')+'"><div class="l1"><b>'+(c.mint?'<a href="https://dexscreener.com/solana/'+esc(c.mint)+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">'+nm+'</a>':nm)+bm(c.mint)+'</b>'+(c.alert?'<span class="bd">ALERT</span>':'')+(c.sent?'<span class="bd sent">SENT</span>':'')+'<span class="pg">'+pg+'</span></div>'+
     '<small>'+c.handles.map(esc).join(', ')+'</small><small>'+(mi?mi+' &middot; ':'')+fm(c.usd)+' total &middot; last buy seen '+lbAgo(c.last_t)+' ago</small></div>'}).join(''):'<div class="lbempty">no coin has 2+ top-10 buyers in the last hour.</div>';
  }
  el.innerHTML='<div class="lbbox"><h4><span>TRADERS ('+(st==='ok'?trs.length:0)+'/20)</span><small>rank &middot; range &middot; buys last hour</small></h4>'+L+'</div><div class="lbbox"><h4><span>COINS WITH 2+ TOP-10 BUYERS</span><small>progress = distinct buyers / 3</small></h4>'+Rr+'</div>';
@@ -818,7 +820,7 @@ function renderRS(){
  const dx=m=>'<a href="https://dexscreener.com/solana/'+esc(m)+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">';
  const G=RS.gmgn_picks||[],det=RS.detail||{},S=RS.scans||{},F=RS.fomo_list||{},J=RS.journal||{};
  let g=G.length?G.map(p=>{const mc=p.mcap_now!=null?fm(p.mcap_now)+' now':fm(p.mcap_alert)+' at alert',lq=p.liq_now!=null?fm(p.liq_now)+' now':fm(p.liq_alert)+' at alert';
-  return'<div class="rsp"><div class="l1"><b>'+dx(p.mint)+esc(p.ticker||'?')+'</a></b><span class="bd">RESEARCH ONLY</span><span style="color:var(--dim);font-size:11px">'+esc(p.name||'')+'</span></div>'+
+  return'<div class="rsp"><div class="l1"><b>'+dx(p.mint)+esc(p.ticker||'?')+'</a>'+bm(p.mint)+'</b><span class="bd">RESEARCH ONLY</span><span style="color:var(--dim);font-size:11px">'+esc(p.name||'')+'</span></div>'+
   '<small>smart-money wallets <b style="color:#fff">'+(p.sm==null?dash:p.sm)+'</b> &middot; KOL wallets <b style="color:#fff">'+(p.kol==null?dash:p.kol)+'</b> &middot; +'+(p.new==null?'?':p.new)+' new in ~'+(p.win_min||'?')+'m &middot; alerted '+ago(p.alerted)+'</small>'+
   '<small>mcap '+mc+' &middot; liq '+lq+(p.chg1!=null?' &middot; 1h '+fPct(p.chg1):'')+'</small>'+
   '<small>'+esc(p.checks||'')+' &middot; X hype: '+esc(p.hype||'pending')+'</small>'+(p.warns&&p.warns.length?'<small class="w">caution: '+p.warns.map(esc).join(' &middot; ')+'</small>':'')+'</div>'}).join(''):'<div class="lbempty">no GMGN coin has passed every safety check in the last 72h.</div>';
@@ -826,9 +828,9 @@ function renderRS(){
  const gb='<div class="lbbox wide"><h4><span>GMGN PICKS ('+G.length+')</span><small>smart-money / KOL growth &middot; passed all hard safety checks</small></h4>'+g+
   '<div style="margin-top:4px">'+row('last GMGN scan',ago((S.gmgn||{}).t))+row('trending rows / qualified / checked',(S.gmgn?S.gmgn.seen:dash)+' / '+(gd.qualifying==null?dash:gd.qualifying)+' / '+(gd.checked==null?dash:gd.checked))+row('passed / failed',(gd.passed==null?dash:gd.passed)+' / '+(gd.failed==null?dash:gd.failed))+'</div></div>';
  const ld=det.launch||{},rd=det.runner||{};
- const lp=(ld.picks||[]).length?(ld.picks||[]).map(p=>'<div class="rsr"><span>'+dx(p.mint)+esc(p.ticker||'?')+'</a></span><b class="w">'+fm(p.mcap)+' &middot; liq '+fm(p.liq)+'</b></div>').join(''):'<div class="lbempty" style="padding:2px 0">no coin cleared the launch scan this run.</div>';
+ const lp=(ld.picks||[]).length?(ld.picks||[]).map(p=>'<div class="rsr"><span>'+dx(p.mint)+esc(p.ticker||'?')+'</a>'+bm(p.mint)+'</span><b class="w">'+fm(p.mcap)+' &middot; liq '+fm(p.liq)+'</b></div>').join(''):'<div class="lbempty" style="padding:2px 0">no coin cleared the launch scan this run.</div>';
  const lb='<div class="lbbox"><h4><span>LAUNCH SCAN</span><small>'+ago((S.launch||{}).t)+'</small></h4>'+row('coins seen',S.launch?S.launch.seen:dash)+row('passed traction',ld.traction==null?dash:ld.traction)+row('picks sent',(ld.picks||[]).length)+row('sources ok',(ld.sources_ok==null?dash:ld.sources_ok+' / '+ld.sources))+lp+'</div>';
- const nm=(rd.near||[]).map(p=>'<div class="rsr"><span>'+dx(p.mint)+esc(p.ticker||'?')+'</a> <i style="font-style:normal;color:#5a5486">'+fm(p.mcap)+'</i></span><b class="y" title="'+esc(p.why)+'" style="overflow:hidden;text-overflow:ellipsis;max-width:55%">'+esc(p.why)+'</b></div>').join('');
+ const nm=(rd.near||[]).map(p=>'<div class="rsr"><span>'+dx(p.mint)+esc(p.ticker||'?')+'</a>'+bm(p.mint)+' <i style="font-style:normal;color:#5a5486">'+fm(p.mcap)+'</i></span><b class="y" title="'+esc(p.why)+'" style="overflow:hidden;text-overflow:ellipsis;max-width:55%">'+esc(p.why)+'</b></div>').join('');
  const rb='<div class="lbbox"><h4><span>FOMO RUNNER SCAN</span><small>'+ago((S.runner||{}).t)+'</small></h4>'+row('candidates',S.runner?S.runner.seen:dash)+row('with market data',rd.with_pairs==null?dash:rd.with_pairs)+row('passed market / risk',(rd.passed_market==null?dash:rd.passed_market)+' / '+(rd.passed_risk==null?dash:rd.passed_risk))+
   '<div style="color:var(--dim);font-size:10.5px;margin-top:4px;letter-spacing:1px">NEAR MISSES &middot; why they failed</div>'+(nm||'<div class="lbempty" style="padding:2px 0">none</div>')+'</div>';
  const bl=J.by_source||{},jr=Object.keys(bl).map(k=>{const b=bl[k];return row(esc(k),b.n+' picks &middot; '+b.up+' up / '+b.down+' down &middot; med '+fPct(b.median),b.median>0?'':'r')}).join('');
