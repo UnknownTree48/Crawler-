@@ -76,7 +76,7 @@ td.c-CLEAN{color:var(--green)}td.c-WATCH{color:var(--yel)}td.c-RISKY{color:var(-
 /* process monitor (htop style) */
 #pmHead{font-size:17px;line-height:1.5;background:#030806;border:1px solid var(--edge);padding:6px 10px;margin-bottom:8px;white-space:pre-wrap}
 #pmHead .l{display:block}#pmHead b{color:#fff}#pmHead .g{color:var(--green)}#pmHead .y{color:var(--yel)}#pmHead .r{color:var(--red)}#pmHead .k{color:var(--cyan)}#pmHead .d{color:var(--dim)}
-#pmGrid{display:grid;grid-template-columns:1.7fr 1fr;gap:8px}
+#pmGrid{display:grid;grid-template-columns:2fr 1fr;gap:8px}
 .pmbox{border:1px dashed #2a3380;padding:6px 8px;min-width:0}
 .pmbox h4{margin:0 0 5px;font-size:16px;letter-spacing:2px;color:var(--pink);display:flex;justify-content:space-between;gap:6px;white-space:nowrap}.pmbox h4 small{color:var(--dim);letter-spacing:1px}
 .tw2{overflow-x:auto;background:#030806;border:1px solid var(--edge)}
@@ -865,8 +865,8 @@ function procRows(){
   out.push({pid:p.pid,name:p.name,st,host:p.host,items:p.items,age,task:p.task})});
  const live=(t,cad)=>t?(now-t/1000<12?'R':(now-t/1000<=3*cad?'S':'Z')):'Z';
  const nid=out.reduce((m,r)=>Math.max(m,r.pid),100);
- out.push({pid:nid+1,name:'kraken-feed',st:live(S.lastSol&&+S.lastSol,6),host:'kraken',items:S.lastSol?3:null,age:S.lastSol?now-S.lastSol/1000:null,task:'SOL/BTC/ETH ticker (browser)'});
- out.push({pid:nid+2,name:'dex-quotes',st:live(Q.last,30),host:'dexscreener',items:Q.n?Math.min(30,ALL.filter(c=>c.pair).length):null,age:Q.last?now-Q.last/1000:null,task:'live DEX quotes (browser)'});
+ out.push({pid:nid+1,name:'kraken-feed',st:live(S.lastSol&&+S.lastSol,6),host:'kraken',items:S.lastSol?3:null,age:S.lastSol?now-S.lastSol/1000:null,task:'SOL ticker (browser)'});
+ out.push({pid:nid+2,name:'dex-quotes',st:live(Q.last,30),host:'dexscreener',items:Q.n?Math.min(30,ALL.filter(c=>c.pair).length):null,age:Q.last?now-Q.last/1000:null,task:'DEX quotes (browser)'});
  return out;
 }
 function renderProc(){
@@ -884,7 +884,7 @@ function layoutMap(w,h){
  ALL.forEach(c=>{if(by[c.status])by[c.status].push(c)});
  const cw=w/3,N=[];
  groups.forEach((g,gi)=>{const a=by[g].sort((x,y)=>(y.vol24||0)-(x.vol24||0)),cxm=cw*gi+cw/2,cym=h/2+8,R0=Math.min(cw/2-8,h/2-26);
-  a.forEach((c,i)=>{const r=R0*Math.sqrt((i+.5)/Math.max(a.length,1)),an=i*2.39996,rad=Math.max(2,Math.min(7,1.5+Math.log10(Math.max(c.liq||1,10))*.9));
+  a.forEach((c,i)=>{const r=R0*Math.sqrt((i+.5)/Math.max(a.length,1)),an=i*2.39996,rad=Math.max(2,Math.min(4.5,1+Math.log10(Math.max(c.liq||1,10))*.5));
    N.push({c,g,x:cxm+Math.cos(an)*r,y:cym+Math.sin(an)*r,rad,col:cols[g],top:i<4})})});
  MAPN=N;return{by,cols,cw}
 }
@@ -897,8 +897,8 @@ function renderMap(){
  MAPN.forEach((n,i)=>{const lv=LIVE.get(n.c.ca),hot=lv&&lv.pxT&&Date.now()-lv.pxT<4000;ctx.globalAlpha=hot?1:.78;ctx.fillStyle=n.col;
   ctx.beginPath();ctx.arc(n.x,n.y,n.rad+(hot?1.5*Math.sin(tt+i):0),0,7);ctx.fill();ctx.globalAlpha=1});
  ctx.font='15px '+FONT;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillStyle='#e9e4ff';
- MAPN.filter(n=>n.top).forEach(n=>ctx.fillText(sym(n.c).slice(0,6),n.x+n.rad+3,n.y));
- $('mapSub').textContent=ALL.length+' coins \u00b7 dot size = liquidity \u00b7 pulse = live quote';
+ MAPN.filter(n=>n.top&&n.g==='CLEAN').forEach(n=>ctx.fillText(sym(n.c).slice(0,6),n.x+n.rad+3,n.y));
+ $('mapSub').textContent=ALL.length+' coins \u00b7 size = liquidity \u00b7 pulse = live';
 }
 (function(){const cv=document.getElementById('mapc');if(!cv)return;cv.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;let b=null,bd=1e9;MAPN.forEach(n=>{const d=Math.hypot(n.x-x,n.y-y);if(d<bd){bd=d;b=n}});
  $('mapTip').innerHTML=b&&bd<14?'<b>'+esc(b.c.ticker||b.c.name||'?')+'</b> &middot; '+b.g+' &middot; mcap '+fm(b.c.mcap)+' &middot; liq '+fm(b.c.liq):'&nbsp;'});cv.addEventListener('mouseleave',()=>{$('mapTip').innerHTML='&nbsp;'})})();
