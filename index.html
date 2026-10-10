@@ -64,6 +64,15 @@ td a{color:#fff;text-decoration:none;font-weight:bold}
 td.c-CLEAN{color:var(--green)}td.c-WATCH{color:var(--yel)}td.c-RISKY{color:var(--red)}
 .dim{color:var(--dim)}
 #tcBody{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:6px 8px 4px;font-size:12px}#tcBody .tb{border:1px dashed #2a3380;padding:6px 8px;min-width:0}#tcBody .tb h4{margin:0 0 4px;font-size:11px;letter-spacing:2px;color:var(--pink)}#tcBody .tn{grid-column:1/-1;color:var(--dim);font-size:10.5px;line-height:1.5}td.pos{color:var(--green)}td.neg{color:var(--red)}@media(max-width:900px){#tcBody{grid-template-columns:repeat(2,1fr)}}
+/* research scans panel */
+#rsBody{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#rsBody .lbbox.wide{grid-column:span 2}
+.rsr{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:2px 0;border-bottom:1px dashed #1a2050}.rsr:last-child{border-bottom:0}
+.rsr span:first-child{color:var(--dim)}.rsr b{color:var(--green);white-space:nowrap}.rsr b.y{color:var(--yel)}.rsr b.r{color:var(--red)}.rsr b.w{color:#fff}
+.rsp{border:1px solid var(--edge);padding:5px 8px;margin-bottom:6px;background:#060818;min-width:0}
+.rsp .l1{display:flex;align-items:center;gap:8px;font-size:13px;flex-wrap:wrap}.rsp .l1 b{color:#fff}.rsp .l1 .bd{font-size:10px;letter-spacing:2px;padding:0 5px;color:var(--cyan);border:1px solid var(--cyan)}
+.rsp small{display:block;font-size:10.5px;color:var(--dim);margin-top:2px;line-height:1.4}.rsp small.w{color:var(--yel)}
+@media(max-width:900px){#rsBody{grid-template-columns:1fr}#rsBody .lbbox.wide{grid-column:auto}}
 /* leaderboard top 10 panel */
 #lbcard.alert{border-color:var(--yel);box-shadow:0 0 16px rgba(255,216,74,.55),inset 0 0 18px rgba(255,216,74,.12)}
 #lbStat{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11px;color:var(--dim);margin:0 0 6px}
@@ -148,7 +157,7 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
  <div id="cards">
   <div class="mod frame"><h3>CHIEF <small>rules</small></h3><div class="body"><canvas class="icon" data-icon="chief"></canvas>
    <div class="kv"><span>mode</span><b class="g">RESEARCH MODE</b></div>
-   <div class="kv"><span>trading</span><b class="g">off &middot; by design</b></div>
+   <div class="kv"><span>trading</span><b class="g">off &middot; on purpose</b></div>
    <div class="kv"><span>scan feeds</span><b id="m-feeds">&mdash;</b></div>
    <div class="kv"><span>screened &rarr; passed</span><b class="w" id="m-scr">&mdash;</b></div>
    <div class="kv"><span>latest scan</span><b id="m-lscan">&mdash;</b></div></div></div>
@@ -170,6 +179,7 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
  </div>
  <div class="card frame" id="lbcard"><h2><span>LEADERBOARD TOP 10</span><em id="lbSub">fomo 24H + 30D top-10 buyers &middot; 3+ distinct buyers of one coin within 1h = ALERT &middot; research only</em></h2>
   <div id="lbStat"></div><div id="lbBody"></div><div id="lbNote"></div></div>
+ <div class="card frame" id="rscard"><h2><span>RESEARCH SCANS</span><em id="rsSub">latest results of the scan routines &middot; research only &middot; nothing trades</em></h2><div id="rsBody"></div><div id="rsNote"></div></div>
  <div class="card frame"><h2><span>CRAWLER NETWORK</span><em id="netsub">packets = live fetches + scan events</em></h2><canvas id="netc"></canvas></div>
  <div id="charts">
   <div class="card frame"><h2><span>SOL 5M CANDLES</span><em id="solsub">Kraken &middot; live</em></h2><canvas class="chartc" id="linec"></canvas></div>
@@ -801,6 +811,33 @@ function renderLB(){
  el.innerHTML='<div class="lbbox"><h4><span>TRADERS ('+(st==='ok'?trs.length:0)+'/20)</span><small>rank &middot; range &middot; buys last hour</small></h4>'+L+'</div><div class="lbbox"><h4><span>COINS WITH 2+ TOP-10 BUYERS</span><small>progress = distinct buyers / 3</small></h4>'+Rr+'</div>';
  $('lbNote').innerHTML='Source: top-10 leaderboard buyer tracker (read-only; this page never trades). Trader names are hidden. Buy times are when the routine <b>first saw</b> each buy (10-min polling), not the exact on-chain time. ALERT = 3 or more distinct top-10 traders (24H or 30D board) bought the same coin within 1 hour; <b>SENT</b> = the routine already messaged it. Research only &mdash; not a buy recommendation.';
 }
+function renderRS(){
+ const el=$('rsBody');if(!el)return;const RS=D&&D.research;if(!RS){el.innerHTML='<div class="lbempty">waiting for scan data&hellip;</div>';return}
+ const now=D.generated_epoch||Date.now()/1000,ago=t=>{if(!t)return dash;const m=Math.max(0,Math.floor((now-t)/60));return m<60?m+'m ago':Math.floor(m/60)+'h'+String(m%60).padStart(2,'0')+'m ago'};
+ const row=(a,b,c)=>'<div class="rsr"><span>'+a+'</span><b class="'+(c||'')+'">'+b+'</b></div>';
+ const dx=m=>'<a href="https://dexscreener.com/solana/'+esc(m)+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">';
+ const G=RS.gmgn_picks||[],det=RS.detail||{},S=RS.scans||{},F=RS.fomo_list||{},J=RS.journal||{};
+ let g=G.length?G.map(p=>{const mc=p.mcap_now!=null?fm(p.mcap_now)+' now':fm(p.mcap_alert)+' at alert',lq=p.liq_now!=null?fm(p.liq_now)+' now':fm(p.liq_alert)+' at alert';
+  return'<div class="rsp"><div class="l1"><b>'+dx(p.mint)+esc(p.ticker||'?')+'</a></b><span class="bd">RESEARCH ONLY</span><span style="color:var(--dim);font-size:11px">'+esc(p.name||'')+'</span></div>'+
+  '<small>smart-money wallets <b style="color:#fff">'+(p.sm==null?dash:p.sm)+'</b> &middot; KOL wallets <b style="color:#fff">'+(p.kol==null?dash:p.kol)+'</b> &middot; +'+(p.new==null?'?':p.new)+' new in ~'+(p.win_min||'?')+'m &middot; alerted '+ago(p.alerted)+'</small>'+
+  '<small>mcap '+mc+' &middot; liq '+lq+(p.chg1!=null?' &middot; 1h '+fPct(p.chg1):'')+'</small>'+
+  '<small>'+esc(p.checks||'')+' &middot; X hype: '+esc(p.hype||'pending')+'</small>'+(p.warns&&p.warns.length?'<small class="w">caution: '+p.warns.map(esc).join(' &middot; ')+'</small>':'')+'</div>'}).join(''):'<div class="lbempty">no GMGN coin has passed every safety check in the last 72h.</div>';
+ const gd=det.gmgn||{};
+ const gb='<div class="lbbox wide"><h4><span>GMGN PICKS ('+G.length+')</span><small>smart-money / KOL growth &middot; passed all hard safety checks</small></h4>'+g+
+  '<div style="margin-top:4px">'+row('last GMGN scan',ago((S.gmgn||{}).t))+row('trending rows / qualified / checked',(S.gmgn?S.gmgn.seen:dash)+' / '+(gd.qualifying==null?dash:gd.qualifying)+' / '+(gd.checked==null?dash:gd.checked))+row('passed / failed',(gd.passed==null?dash:gd.passed)+' / '+(gd.failed==null?dash:gd.failed))+'</div></div>';
+ const ld=det.launch||{},rd=det.runner||{};
+ const lp=(ld.picks||[]).length?(ld.picks||[]).map(p=>'<div class="rsr"><span>'+dx(p.mint)+esc(p.ticker||'?')+'</a></span><b class="w">'+fm(p.mcap)+' &middot; liq '+fm(p.liq)+'</b></div>').join(''):'<div class="lbempty" style="padding:2px 0">no coin cleared the launch scan this run.</div>';
+ const lb='<div class="lbbox"><h4><span>LAUNCH SCAN</span><small>'+ago((S.launch||{}).t)+'</small></h4>'+row('coins seen',S.launch?S.launch.seen:dash)+row('passed traction',ld.traction==null?dash:ld.traction)+row('picks sent',(ld.picks||[]).length)+row('sources ok',(ld.sources_ok==null?dash:ld.sources_ok+' / '+ld.sources))+lp+'</div>';
+ const nm=(rd.near||[]).map(p=>'<div class="rsr"><span>'+dx(p.mint)+esc(p.ticker||'?')+'</a> <i style="font-style:normal;color:#5a5486">'+fm(p.mcap)+'</i></span><b class="y" title="'+esc(p.why)+'" style="overflow:hidden;text-overflow:ellipsis;max-width:55%">'+esc(p.why)+'</b></div>').join('');
+ const rb='<div class="lbbox"><h4><span>FOMO RUNNER SCAN</span><small>'+ago((S.runner||{}).t)+'</small></h4>'+row('candidates',S.runner?S.runner.seen:dash)+row('with market data',rd.with_pairs==null?dash:rd.with_pairs)+row('passed market / risk',(rd.passed_market==null?dash:rd.passed_market)+' / '+(rd.passed_risk==null?dash:rd.passed_risk))+
+  '<div style="color:var(--dim);font-size:10.5px;margin-top:4px;letter-spacing:1px">NEAR MISSES &middot; why they failed</div>'+(nm||'<div class="lbempty" style="padding:2px 0">none</div>')+'</div>';
+ const bl=J.by_source||{},jr=Object.keys(bl).map(k=>{const b=bl[k];return row(esc(k),b.n+' picks &middot; '+b.up+' up / '+b.down+' down &middot; med '+fPct(b.median),b.median>0?'':'r')}).join('');
+ const jb='<div class="lbbox"><h4><span>PICK JOURNAL</span><small>% since first seen &middot; paper</small></h4>'+(J.all?row('all picks',J.all.n+' &middot; '+J.all.up+' up / '+J.all.down+' down &middot; med '+fPct(J.all.median),'w'):'')+jr+row('last price snapshot',ago(J.last_snapshot))+'</div>';
+ const fl=Object.keys(F.by_list||{}).filter(k=>k.indexOf(',')<0).map(k=>k+' '+F.by_list[k]).join(' &middot; ');
+ const fb='<div class="lbbox"><h4><span>FOMO COIN LIST</span><small>'+ago(F.t)+'</small></h4>'+row('coins on list',F.n==null?dash:F.n,'w')+row('crawled this cycle',D.stats.coins)+'<div style="color:var(--dim);font-size:10.5px;margin-top:4px">'+fl+'</div></div>';
+ el.innerHTML=gb+lb+rb+jb+fb;
+ $('rsNote').innerHTML='Source: latest output of the scan routines (GMGN, launch, fomo runner, fomo list) and the pick journal &mdash; read-only. Picks are research, not recommendations; every pick still needs X-hype review and the user&rsquo;s own approval. Journal shows percent moves only.'
+}
 async function refreshLB(){}
 /* ---- data apply ---- */
 function apply(d,first){
@@ -812,7 +849,7 @@ function apply(d,first){
  const wp=coins.filter(c=>c.pair);top30=wp.slice().sort((a,b)=>(b.vol24||0)-(a.vol24||0)).slice(0,30);
  pools={W:shuffle(coins.filter(c=>c.status==='WATCH')),C:shuffle(coins.filter(c=>c.status==='CLEAN')),R:shuffle(coins.filter(c=>c.status==='RISKY'))};
  mergeLive();recalcST();
- renderCards();renderTest();renderTop10();renderTable();
+ renderCards();renderTest();renderRS();renderTop10();renderTable();
  if(d.leaderboard)applyLB(d.leaderboard);
  if(fresh&&!first){addLog('sys','<span class="t">'+logTime()+'</span> [CRAWL] '+d.stats.coins+' coins re-scanned in '+d.duration_s+'s -&gt; '+d.stats.clean+' CLEAN / '+d.stats.watch+' WATCH / '+d.stats.risky+' RISKY');netBurst()}
  syncSol();
