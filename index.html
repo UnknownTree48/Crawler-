@@ -422,7 +422,7 @@ function drawPkg(p){
  const c=VC[p.c.status]||'#b9b0dd',x=Math.round(p.cx-7),y=Math.round(p.y);
  R(x-1,y-1,16,11,c,.18);
  R(x,y,14,9,DARK);R(x+1,y+1,12,7,mix(c,'#000000',.55));R(x+1,y+1,12,2,c);R(x+6,y+1,2,7,mix(c,'#ffffff',.5));R(x+1,y+7,12,1,mix(c,'#000000',.8));
- const s=String(p.sym).slice(0,5),w=tw(s,.85);R(x+7-w/2-1,y-8,w+2,7,DARK,.8);T(s,x+7-w/2,y-7,c,.85);
+ const nr=TKS>1.05,ps=nr?.62:.85,s=String(p.sym).slice(0,nr?4:5),w=tw(s,ps);R(x+7-w/2-1,y-8,w+2,7,DARK,.8);T(s,x+7-w/2,y-7,c,ps);
  if(p.dir){const ax=Math.round(x+7+w/2+3),ay=y-7,ac=p.dir>0?GREEN:RED;if(p.dir>0){R(ax+1,ay,1,1,ac);R(ax,ay+1,3,1,ac);R(ax-1,ay+2,5,1,ac)}else{R(ax-1,ay,5,1,ac);R(ax,ay+1,3,1,ac);R(ax+1,ay+2,1,1,ac)}}
 }
 function drawLasers(t){
