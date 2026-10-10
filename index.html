@@ -253,7 +253,7 @@ function fm(v){if(v==null||isNaN(v))return'n/a';if(v>=1e9)return'$'+(v/1e9).toFi
 function fmP(v){return v>=100?v.toFixed(2):v>=1?v.toFixed(3):v.toFixed(4)}
 /* ---------- layout constants ---------- */
 const BELT_Y=180,BELT_H=13;
-const ST=[{x:100,label:'MARKET CAP',key:'cap'},{x:175,label:'LIQUIDITY+VOLUME',key:'lv'},{x:250,label:'SNIPERS',key:'snp'}];
+const ST=[{x:88,label:'MARKET CAP',key:'cap'},{x:170,label:'LIQUIDITY',key:'lv'},{x:252,label:'SNIPERS',key:'snp'}];
 const BIN={CLEAN:330,WATCH:390,RISKY:450};
 const GATE_X=34;
 ST.forEach(s=>{s.share=0;s.n=0;s.N=0;s.lamp=null;s.act=0});
@@ -388,7 +388,7 @@ function drawStation(s,t){
  for(let i=0;i<5;i++)R(left+4+i*4,y+60,2,4,'#05060f');
 }
 /* ---------- LEADERBOARD station (top-10 fomo buyers; data = routine state file via crawl.py) ---------- */
-const LBST={x:328,live:0,act:0};
+const LBST={x:335,live:0,act:0};
 function drawLBStation(t){
  const s=LBST,x=s.x,y=108,w=70,h=68,left=x-35,a=LBS();
  const alert=a.nAlert>0,col=alert?YEL:GREEN,flash=alert?(.55+.45*Math.sin(t*9)):1;
@@ -397,22 +397,27 @@ function drawLBStation(t){
  if(alert)R(left-2,y-2,w+4,h+4,YEL,.12*flash);
  R(x,y-6,1,6,PINK);R(x-1,y-8,3,3,Math.sin(t*5+x)>0?'#fff':PINK);
  R(left+2,y+2,w-4,12,'#05060f');R(left+2,y+13,w-4,1,col,.6);T('LEADERBOARD',x,y+5,col,1,'c',null,w-6);
- let big,sub,sub2;
- if(a.status==='ok'){big=String(a.nMulti);sub='2+ BUYERS';sub2=a.nTraders+' TRDR '+a.nBuys+' BUY'}
- else if(a.status==='waiting'){big='--';sub='WAITING';sub2='FIRST RUN'}
- else if(a.status==='empty'){big='0';sub='NO DATA YET';sub2='FILE EMPTY'}
- else if(a.status==='unreadable'){big='!';sub='FILE ERROR';sub2='RETRYING'}
- else{big='..';sub='LOADING';sub2=''}
- T(big,x,y+17,col,2,'c');R(x-tw(big,2)/2-1,y+16,tw(big,2)+2,11,col,.06+.08*(alert?flash:0));
- T(sub,x,y+29,'#b9b0dd',1,'c',null,w-6);T(sub2,x,y+36,'#b9b0dd',1,'c',null,w-6);
+ let big,sub;
+ if(a.status==='ok'){big=String(a.nMulti);sub=TKS>1.05?'2+ BUYERS':a.nTraders+'T '+a.nBuys+'B 2+ BUYERS'}
+ else if(a.status==='waiting'){big='--';sub='WAITING FIRST RUN'}
+ else if(a.status==='empty'){big='0';sub='NO DATA YET'}
+ else if(a.status==='unreadable'){big='!';sub='FILE ERROR'}
+ else{big='..';sub='LOADING'}
+ T(big,x,y+16,col,2,'c');R(x-tw(big,2)/2-1,y+15,tw(big,2)+2,11,col,.06+.08*(alert?flash:0));
+ if(alert)T('ALERT '+a.nAlert,x,y+27,YEL,.85,'c',flash,w-6);else T(sub,x,y+27,'#b9b0dd',.85,'c',null,w-6);
  // 3-of-3 progress (best coin so far)
- for(let i=0;i<3;i++){const bx=left+5+i*21;R(bx,y+44,19,5,'#12183a');if(a.status==='ok'&&i<a.maxN)R(bx,y+44,19,5,alert?YEL:GREEN,alert?flash:.9)}
- R(left+3,y+43,w-6,1,col,.18);
- if(alert)T('ALERT '+a.nAlert,x,y+53,YEL,1,'c',flash);else T(a.status==='ok'?('BEST '+a.maxN+'/3'):'',x,y+53,'#b9b0dd',1,'c');
- R(left+3,y+60,w-6,1,PINK,.5);
+ for(let i=0;i<3;i++){const bx=left+5+i*21;R(bx,y+35,19,4,'#12183a');if(a.status==='ok'&&i<a.maxN)R(bx,y+35,19,4,alert?YEL:GREEN,alert?flash:.9)}
+ R(left+3,y+34,w-6,1,col,.18);
+ // volume block (moved here from the old LIQUIDITY+VOLUME station): crawled-coin volume 24h / 1h with pace bars
+ let v24=0,v1=0;if(typeof ALL!=='undefined')ALL.forEach(c=>{v24+=c.vol24||0;v1+=c.vol1||0});
+ T('VOL 24H/1H',x,y+41,'#b9b0dd',.85,'c',null,w-6);
+ T(v24?(fm(v24)+'/'+fm(v1)):'N/A',x,y+47,GREEN,TKS>1.05?.8:.95,'c',null,w-6);
+ const bw=w-16,pace=v24?Math.min(2,(v1*24)/v24):0;
+ R(left+5,y+54,bw,3,'#12183a');R(left+5,y+54,bw,3,GREEN,.28);
+ R(left+5,y+58,bw,3,'#12183a');R(left+5,y+58,Math.round(bw*Math.min(1,pace/2)),3,pace>=1?YEL:GREEN,.9);R(left+5+Math.round(bw/2),y+57,1,5,'#fff',.55);
+ R(left+3,y+63,w-6,1,PINK,.5);
  const lc=a.status==='ok'?(alert?YEL:GREEN):a.status==='unreadable'?RED:YEL;
- if(a.status==='ok'||Math.sin(t*3)>0)R(left+w-9,y+61,5,5,lc);else R(left+w-9,y+61,5,5,'#1b2040');
- for(let i=0;i<5;i++)R(left+4+i*4,y+62,2,4,'#05060f');
+ if(a.status==='ok'||Math.sin(t*3)>0)R(left+w-9,y+64,3,3,lc);else R(left+w-9,y+64,3,3,'#1b2040');
 }
 function drawLBStream(t){
  const a=LBS(),al=a.status==='ok'?.9:.3,rx=428,yy=100,top=108;
@@ -493,7 +498,7 @@ function drawBeams(t){
 }
 /* ---------- sim ---------- */
 function ckCap(c){return c.pair?((c.mcap||0)>=50000):null}
-function ckLV(c){return c.pair?((c.liq||0)>=20000&&((c.vol24||0)/Math.max(c.liq||1,1))<=50):null}
+function ckLV(c){return c.pair?((c.liq||0)>=20000):null}
 function ckSn(c){const s=c.sniper||{};return(s.status==='ok'||s.status==='partial')?((s.hold_pct||0)<=10):null}
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function nextCoin(){
