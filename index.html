@@ -72,24 +72,6 @@ td.c-CLEAN{color:var(--green)}td.c-WATCH{color:var(--yel)}td.c-RISKY{color:var(-
 .rsp .l1{display:flex;align-items:center;gap:8px;font-size:18px;flex-wrap:wrap}.rsp .l1 b{color:#fff}.rsp .l1 .bd{font-size:16px;letter-spacing:2px;padding:0 5px;color:var(--cyan);border:1px solid var(--cyan)}
 .rsp small{display:block;font-size:16px;color:var(--dim);margin-top:2px;line-height:1.4}.rsp small.w{color:var(--yel)}
 @media(max-width:900px){#rsBody{grid-template-columns:1fr}#rsBody .lbbox.wide{grid-column:auto}}
-/* process monitor (htop style) */
-#pmHead{font-size:17px;line-height:1.5;background:#030806;border:1px solid var(--edge);padding:6px 10px;margin-bottom:8px;white-space:pre-wrap}
-#pmHead .l{display:block}#pmHead b{color:#fff}#pmHead .g{color:var(--green)}#pmHead .y{color:var(--yel)}#pmHead .r{color:var(--red)}#pmHead .k{color:var(--cyan)}#pmHead .d{color:var(--dim)}
-#pmGrid{display:grid;grid-template-columns:2fr 1fr;gap:8px}
-.pmbox{border:1px dashed #2a3380;padding:6px 8px;min-width:0}
-.pmbox h4{margin:0 0 5px;font-size:16px;letter-spacing:2px;color:var(--pink);display:flex;justify-content:space-between;gap:6px;white-space:nowrap}.pmbox h4 small{color:var(--dim);letter-spacing:1px}
-.tw2{overflow-x:auto;background:#030806;border:1px solid var(--edge)}
-#pmT{width:100%;border-collapse:collapse;font-size:17px}
-#pmT th{position:static;background:#0d7a3c;color:#031a0c;text-align:left;padding:2px 8px;cursor:default}
-#pmT td{text-align:left;padding:2px 8px;border-bottom:0;color:#d8ffe8}
-#pmT td.n,#pmT th.n{text-align:right}
-#pmT tr:nth-child(even) td{background:#05100a}
-#pmT .sR{color:#031a0c;background:var(--green)}#pmT .sS{color:var(--cyan)}#pmT .sZ{color:#05060f;background:var(--yel)}#pmT .sT{color:#fff;background:var(--red)}
-#pmT td.st{text-align:center}#pmT td.host{color:var(--cyan)}#pmT td.pid{color:var(--yel)}#pmT tr.stopped td{color:#ff9aa8}
-#pmLegend{font-size:15px;color:var(--dim);line-height:1.4;margin-top:6px}#pmLegend b.gr{color:var(--green)}#pmLegend b.gy{color:var(--cyan)}#pmLegend b.gz{color:var(--yel)}#pmLegend b.gt{color:var(--red)}
-#mapc{display:block;width:100%;height:300px;background:#05071a;border:1px solid var(--edge)}
-#mapTip{font-size:16px;color:#fff;min-height:22px;margin-top:4px}
-@media(max-width:900px){#pmGrid{grid-template-columns:1fr}#pmT{font-size:16px}}
 /* current scans panel */
 #curBody{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .cs{border:1px dashed #2a3380;padding:6px 8px;min-width:0}
@@ -135,7 +117,7 @@ td.c-CLEAN{color:var(--green)}td.c-WATCH{color:var(--yel)}td.c-RISKY{color:var(-
 .lbempty b{color:var(--yel)}
 #lbNote,#rsNote{font-size:16px;color:var(--dim);line-height:1.5;margin-top:6px}
 @media(max-width:900px){#lbBody{grid-template-columns:1fr}.lbt{grid-template-columns:max-content 1fr}}
-@media(max-width:600px){.pmbox h4,.cs h4,.lbbox h4,.card h2{flex-wrap:wrap;white-space:normal}.card h2 em,.lbbox h4 small,.pmbox h4 small,.cs h4 small{white-space:normal}.lbt{grid-template-columns:1fr;gap:4px 0}.lbt .rk{display:flex;flex-wrap:wrap;gap:4px 0}.lbt .hd{white-space:normal;overflow-wrap:anywhere;font-size:23px}}
+@media(max-width:600px){.cs h4,.lbbox h4,.card h2{flex-wrap:wrap;white-space:normal}.card h2 em,.lbbox h4 small,.cs h4 small{white-space:normal}.lbt{grid-template-columns:1fr;gap:4px 0}.lbt .rk{display:flex;flex-wrap:wrap;gap:4px 0}.lbt .hd{white-space:normal;overflow-wrap:anywhere;font-size:23px}}
 /* live tape + flashes */
 #tape{display:flex;align-items:center;height:42px;overflow:hidden}
 #tfix{display:flex;gap:16px;padding:0 12px;border-right:1px solid var(--edge);height:100%;align-items:center;flex:none;font-size:18px;background:#0a0d26;z-index:2;white-space:nowrap}
@@ -206,11 +188,6 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
    <div class="kv"><span>top mover</span><b class="y" id="m-top">&mdash;</b></div>
    <div class="kv"><span>CLEAN / WATCH</span><b id="m-cw">&mdash;</b></div></div></div>
  </div>
- <div class="card frame" id="pmcard"><h2><span>PROCESS MONITOR</span><em>htop-style &middot; state of the crawlers and scan routines &middot; read-only</em></h2>
-  <div id="pmHead"></div>
-  <div id="pmGrid"><div class="pmbox"><div class="tw2"><table id="pmT"><thead><tr><th>PID</th><th>CRAWLER</th><th>S</th><th>HOST</th><th class="n">ITEMS</th><th class="n">TIME+</th><th>TASK</th></tr></thead><tbody id="pmB"></tbody></table></div>
-   <div id="pmLegend">S: <b class="gr">R</b> running (ran &lt;90s ago) &middot; <b class="gy">S</b> sleeping (between runs) &middot; <b class="gz">Z</b> stale (missed 3+ runs) &middot; <b class="gt">T</b> stopped &middot; TIME+ = time since last run (h:mm:ss) &middot; ITEMS = coins/pages checked in the last run &middot; PID = row id</div></div>
-   <div class="pmbox"><h4><span>COIN ACTIVITY MAP</span><small id="mapSub">coins by verdict</small></h4><canvas id="mapc"></canvas><div id="mapTip"></div></div></div></div>
  <div class="card frame" id="lbcard"><h2><span>GMGN SMART MONEY</span><em id="lbSub">coins gaining new smart-money / KOL wallets in ~1h &middot; from the GMGN scan &middot; research only</em></h2>
   <div id="lbStat"></div><div id="lbBody"></div><div id="lbNote"></div></div>
  <div class="card frame" id="rscard"><h2><span>RESEARCH SCANS</span><em id="rsSub">latest results of the scan routines &middot; research only &middot; nothing trades</em></h2><div id="rsBody"></div><div id="rsNote"></div></div>
@@ -804,52 +781,6 @@ function renderRS(){
  el.innerHTML=gb+ob+jb+fb;
  $('rsNote').innerHTML='Source: latest output of the scan routines (open scan, GMGN) and the pick journal &mdash; read-only. Picks are research, not recommendations; every pick still needs X-hype review and the user&rsquo;s own approval. Journal shows percent moves only.'
 }
-/* ---- process monitor + coin activity map (rows come from crawl.py "research.procs"; browser-side feeds are added from live state) ---- */
-function fmtUp(s){s=Math.max(0,Math.floor(s));const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return h+':'+String(m).padStart(2,'0')+':'+String(x).padStart(2,'0')}
-function procRows(){
- const RS=D&&D.research,out=[];if(!RS||!RS.procs)return out;const now=Date.now()/1000;
- RS.procs.forEach(p=>{const age=p.t?now-p.t:null;let st=p.state;
-  if(!st){if(age==null)st='Z';else if(age<90)st='R';else if(age<=3*p.cad)st='S';else st='Z'}
-  out.push({pid:p.pid,name:p.name,st,host:p.host,items:p.items,age,task:p.task})});
- const live=(t,cad)=>t?(now-t/1000<12?'R':(now-t/1000<=3*cad?'S':'Z')):'Z';
- const nid=out.reduce((m,r)=>Math.max(m,r.pid),100);
- out.push({pid:nid+1,name:'kraken-feed',st:live(S.lastSol&&+S.lastSol,6),host:'kraken',items:S.lastSol?3:null,age:S.lastSol?now-S.lastSol/1000:null,task:'SOL ticker (browser)'});
- out.push({pid:nid+2,name:'dex-quotes',st:live(Q.last,30),host:'dexscreener',items:Q.n?Math.min(30,ALL.filter(c=>c.pair).length):null,age:Q.last?now-Q.last/1000:null,task:'DEX quotes (browser)'});
- return out;
-}
-function renderProc(){
- const hd=$('pmHead');if(!hd||!D)return;const rows=procRows();if(!rows.length){hd.textContent='waiting for scan data\u2026';return}
- const n=k=>rows.filter(r=>r.st===k).length,ds=(D.research&&D.research.dataset)||{},st=D.stats||{};
- const live=n('R')+n('S');
- hd.innerHTML='<span class="l"><b>Tasks:</b> <b>'+rows.length+'</b> total, <span class="g"><b>'+n('R')+'</b> running</span>, <span class="k"><b>'+n('S')+'</b> sleeping</span>, <span class="y"><b>'+n('Z')+'</b> stale</span>, <span class="r"><b>'+n('T')+'</b> stopped</span> &nbsp;|&nbsp; live crawlers <b>'+live+'</b></span>'+
-  '<span class="l"><b>Dataset:</b> coins scanned <b>'+(ds.coins_scanned==null?dash:ds.coins_scanned)+'</b> &middot; safety checks run <b>'+(ds.checks_run==null?dash:ds.checks_run)+'</b> &middot; <span class="g">passed <b>'+(ds.clean==null?dash:ds.clean)+'</b></span> / <span class="y">watch <b>'+(ds.watch==null?dash:ds.watch)+'</b></span> / <span class="r">rejected <b>'+(ds.risky==null?dash:ds.risky)+'</b></span></span>'+
-  '<span class="l"><b>Market:</b> SOL <b>'+(S.sol?'$'+S.sol.toFixed(2):dash)+'</b> &middot; last crawl <b>'+esc((D.generated_label||dash).replace(/^[A-Za-z]+ \d+ /,''))+'</b> &middot; mode <span class="g"><b>RESEARCH</b></span> &middot; trading <b class="r">OFF</b></span>';
- $('pmB').innerHTML=rows.map(r=>'<tr class="'+(r.st==='T'?'stopped':'')+'"><td class="pid">'+r.pid+'</td><td>'+esc(r.name)+'</td><td class="st"><span class="s'+r.st+'">&nbsp;'+r.st+'&nbsp;</span></td><td class="host">'+esc(r.host).replace(/,/g,' ')+'</td><td class="n">'+(r.items==null?dash:r.items)+'</td><td class="n">'+(r.age==null?dash:fmtUp(r.age))+'</td><td>'+esc(r.task)+'</td></tr>').join('');
-}
-let MAPN=[];
-function layoutMap(w,h){
- const groups=['CLEAN','WATCH','RISKY'],cols={CLEAN:GREEN,WATCH:YEL,RISKY:RED};const by={};groups.forEach(g=>by[g]=[]);
- ALL.forEach(c=>{if(by[c.status])by[c.status].push(c)});
- const cw=w/3,N=[];
- groups.forEach((g,gi)=>{const a=by[g].sort((x,y)=>(y.vol24||0)-(x.vol24||0)),cxm=cw*gi+cw/2,cym=h/2+8,R0=Math.min(cw/2-8,h/2-26);
-  a.forEach((c,i)=>{const r=R0*Math.sqrt((i+.5)/Math.max(a.length,1)),an=i*2.39996,rad=Math.max(2,Math.min(4.5,1+Math.log10(Math.max(c.liq||1,10))*.5));
-   N.push({c,g,x:cxm+Math.cos(an)*r,y:cym+Math.sin(an)*r,rad,col:cols[g],top:i<4})})});
- MAPN=N;return{by,cols,cw}
-}
-function renderMap(){
- const cv=$('mapc');if(!cv||!D)return;const{ctx,w,h}=fitC(cv);ctx.clearRect(0,0,w,h);
- const L=layoutMap(w,h),now=Date.now()/1000;
- ['CLEAN','WATCH','RISKY'].forEach((g,gi)=>{const x=L.cw*gi+L.cw/2;ctx.font='17px '+FONT;ctx.textAlign='center';ctx.textBaseline='top';ctx.fillStyle=L.cols[g];ctx.fillText(g+' '+L.by[g].length,x,4);
-  if(gi){ctx.fillStyle='rgba(42,51,128,.8)';ctx.fillRect(Math.round(L.cw*gi),4,1,h-8)}});
- const tt=Date.now()/400;
- MAPN.forEach((n,i)=>{const lv=LIVE.get(n.c.ca),hot=lv&&lv.pxT&&Date.now()-lv.pxT<4000;ctx.globalAlpha=hot?1:.78;ctx.fillStyle=n.col;
-  ctx.beginPath();ctx.arc(n.x,n.y,n.rad+(hot?1.5*Math.sin(tt+i):0),0,7);ctx.fill();ctx.globalAlpha=1});
- ctx.font='15px '+FONT;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillStyle='#e9e4ff';
- MAPN.filter(n=>n.top&&n.g==='CLEAN').forEach(n=>ctx.fillText(sym(n.c).slice(0,6),n.x+n.rad+3,n.y));
- $('mapSub').textContent=ALL.length+' coins \u00b7 size = liquidity \u00b7 pulse = live';
-}
-(function(){const cv=document.getElementById('mapc');if(!cv)return;cv.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;let b=null,bd=1e9;MAPN.forEach(n=>{const d=Math.hypot(n.x-x,n.y-y);if(d<bd){bd=d;b=n}});
- $('mapTip').innerHTML=b&&bd<14?'<b>'+esc(b.c.ticker||b.c.name||'?')+'</b> &middot; '+b.g+' &middot; mcap '+fm(b.c.mcap)+' &middot; liq '+fm(b.c.liq):'&nbsp;'});cv.addEventListener('mouseleave',()=>{$('mapTip').innerHTML='&nbsp;'})})();
 /* ---- CURRENT SCANS panel: published scan results only (research.current: open scan + GMGN scan); coin numbers come from the crawl record or the scan itself ---- */
 function renderCur(){
  const el=$('curBody');if(!el||!D)return;const CUR=(D.research&&D.research.current)||[],now=Date.now()/1000;
@@ -872,7 +803,7 @@ function apply(d,first){
  const wp=coins.filter(c=>c.pair);top30=wp.slice().sort((a,b)=>(b.vol24||0)-(a.vol24||0)).slice(0,30);
  pools={W:shuffle(coins.filter(c=>c.status==='WATCH')),C:shuffle(coins.filter(c=>c.status==='CLEAN')),R:shuffle(coins.filter(c=>c.status==='RISKY'))};
  mergeLive();recalcST();
- renderCards();renderTest();renderProc();renderMap();renderCur();renderRS();renderTop10();renderTable();
+ renderCards();renderTest();renderCur();renderRS();renderTop10();renderTable();
  if(d.smart)applySM(d.smart);
  if(fresh&&!first){netBurst()}
 
@@ -899,7 +830,7 @@ function frame(now){acc+=Math.min(.1,(now-last)/1000);last=now;while(acc>=1/30){
 requestAnimationFrame(frame);requestAnimationFrame(drawNet);drawScene();
 setInterval(()=>{$('clock').firstChild.nodeValue=ptTime(new Date())},1000);$('clock').firstChild.nodeValue=ptTime(new Date());
 setInterval(refresh,30000);setInterval(refreshLB,15000);setInterval(renderLB,5000);setInterval(tickAge,1000);tickAge();
-setInterval(renderProc,1000);setInterval(renderCur,15000);setInterval(renderMap,1000);window.addEventListener('resize',renderMap);setInterval(solTicker,6000);setInterval(dexQuotes,5000);
+setInterval(renderCur,15000);setInterval(solTicker,6000);setInterval(dexQuotes,5000);
 requestAnimationFrame(tapeStep);
 solTicker();setTimeout(refresh,1500);setTimeout(refreshLB,1200);setTimeout(dexQuotes,900);
 </script></body></html>
