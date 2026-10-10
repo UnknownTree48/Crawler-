@@ -101,6 +101,7 @@ td.c-CLEAN{color:var(--green)}td.c-WATCH{color:var(--yel)}td.c-RISKY{color:var(-
 .lbt .hd em{font-style:normal;color:#cfc8ee;margin-left:10px;font-size:17px;letter-spacing:.4px}
 .lbt .bs{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:3px 12px;font-size:18px;padding-left:2px}
 .lbt .bs span{color:var(--green);white-space:nowrap}.lbt .bs span i{font-style:normal;color:var(--dim)}.lbt .bs .none{color:#b0a9d6}
+.lbt .nms{grid-column:1/-1;font-size:19px;line-height:1.25;color:#ffc2f4;padding:1px 2px 0;overflow-wrap:anywhere}.lbt .nms i{font-style:normal;color:var(--dim);margin-right:6px}.lbt .nms em{font-style:normal;color:#b0a9d6;margin-left:6px}
 .lbc{border:1px solid var(--edge);padding:5px 8px;margin-bottom:6px;background:#060818;min-width:0}
 .lbc .l1{display:flex;align-items:center;gap:8px;font-size:18px}
 .lbc .l1 b{color:#fff;white-space:nowrap}.lbc .l1 .pg{margin-left:auto;display:flex;gap:3px;align-items:center;white-space:nowrap}
@@ -380,7 +381,10 @@ function drawLBStation(t){
  else if(a.status==='blocked'){big='!';sub='GMGN BLOCKED'}
  else{big='..';sub='LOADING'}
  T(big,x,y+16,col,2,'c');R(x-tw(big,2)/2-1,y+15,tw(big,2)+2,11,col,.06+.08*(alert?flash:0));
- if(alert)T('PASS '+a.nPass,x,y+27,YEL,.85,'c',flash,w-6);else T(sub,x,y+27,'#b9b0dd',.85,'c',null,w-6);
+ const nr=a.status==='ok'?a.named:[];
+ if(alert)T('PASS '+a.nPass,x,y+27,YEL,.85,'c',flash,w-6);
+ else if(nr.length&&Math.floor(t/3)%2===1){const r=nr[Math.floor(t/6)%nr.length];T(String(r.ticker).slice(0,6)+' '+r.names[Math.floor(t/3)%r.names.length],x,y+27,'#ffc2f4',.85,'c',null,w-6)}
+ else T(sub,x,y+27,'#b9b0dd',.85,'c',null,w-6);
  // three bars = the 3 coins with the most new smart/KOL wallets (full bar = +10 wallets)
  for(let i=0;i<3;i++){const bx=left+5+i*21,r=a.status==='ok'?a.top[i]:null;R(bx,y+35,19,4,'#12183a');if(r)R(bx,y+35,Math.max(2,Math.round(19*Math.min(1,r.new/10))),4,alert?YEL:GREEN,alert?flash:.9)}
  R(left+3,y+34,w-6,1,col,.18);
@@ -721,8 +725,8 @@ $('thr').addEventListener('click',e=>{const th=e.target.closest('th');if(!th)ret
 /* ---- GMGN smart money panel (read-only; GMGN scan files -> crawl.py -> crawler_data.json "smart" + crawler_smart.json every 30s) ---- */
 let SM=null;
 function SMS(){
- if(!SM)return{status:'loading',nRows:0,nPass:0,top:[]};
- const rows=SM.rows||[];return{status:SM.status,nRows:SM.n_rows!=null?SM.n_rows:rows.length,nPass:rows.filter(r=>r.verdict==='PASS').length,top:rows.slice(0,3)}
+ if(!SM)return{status:'loading',nRows:0,nPass:0,top:[],named:[]};
+ const rows=SM.rows||[];return{status:SM.status,nRows:SM.n_rows!=null?SM.n_rows:rows.length,nPass:rows.filter(r=>r.verdict==='PASS').length,top:rows.slice(0,3),named:rows.filter(r=>(r.names||[]).length).slice(0,4)}
 }
 const lbAgo=t=>{const m=Math.floor((Date.now()/1000-t)/60);return m<1?'<1m':m+'m'};
 function applySM(sm){if(!sm||!sm.status)return;if(SM&&SM.generated_epoch>sm.generated_epoch)return;SM=sm;renderLB()}
@@ -746,13 +750,13 @@ function renderLB(){
   L=rows.length?rows.map(r=>{
    const vc=r.verdict==='PASS'?'g':(r.verdict==='FAIL'?'r':'y');
    const ln='<span>mcap <b style="color:#fff">'+fm(r.mcap)+'</b></span><span>vol 1h <b style="color:#fff">'+fm(r.vol1)+'</b></span><span>smart <b style="color:#fff">'+nv(r.sm)+'</b> &middot; KOL <b style="color:#fff">'+nv(r.kol)+'</b></span><span class="'+vc+'" style="color:'+(vc==='g'?'var(--green)':vc==='r'?'var(--red)':'var(--yel)')+'">'+esc(r.verdict)+(r.note?' <i>'+esc(r.note)+'</i>':'')+'</span>';
-   return'<div class="lbt"><div class="rk"><span class="tg d">+'+r.new+' NEW</span></div><div class="hd"><a href="https://dexscreener.com/solana/'+esc(r.mint)+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">'+esc(r.ticker)+'</a>'+bm(r.mint)+'<em>in ~'+nv(r.win_min)+'m</em></div><div class="bs">'+ln+'</div></div>'}).join(''):'<div class="lbempty">no coin gained '+(SM.min_new||3)+'+ new smart-money / KOL wallets in the last hour.</div>';
+   return'<div class="lbt"><div class="rk"><span class="tg d">+'+r.new+' NEW</span></div><div class="hd"><a href="https://dexscreener.com/solana/'+esc(r.mint)+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">'+esc(r.ticker)+'</a>'+bm(r.mint)+'<em>in ~'+nv(r.win_min)+'m</em></div><div class="bs">'+ln+'</div>'+((r.names||[]).length?'<div class="nms"><i>traders:</i>'+r.names.slice(0,5).map(esc).join(', ')+((r.n_named||0)>5?'<em>+'+(r.n_named-5)+' more</em>':'')+'</div>':'')+'</div>'}).join(''):'<div class="lbempty">no coin gained '+(SM.min_new||3)+'+ new smart-money / KOL wallets in the last hour.</div>';
   const rw=(k,v,c)=>'<div class="rsr"><span>'+k+'</span><b class="'+(c||'')+'">'+v+'</b></div>';
   Rr=rw('trending rows read',nv(SM.trending_rows))+rw('qualified (new smart/KOL growth)',nv(SM.qualifying))+rw('fully safety-checked',nv(SM.checked))+rw('passed / failed / unverified',nv(SM.passed)+' / '+nv(SM.failed)+' / '+nv(SM.unverified),a.nPass?'w':'')+rw('last scan',runAge==null?dash:runAge+'m ago')+
    '<div class="lbempty" style="margin-top:6px">PASS = every hard safety check passed. A coin that was not checked is only a smart-money signal, never a pick.</div>';
  }
  el.innerHTML='<div class="lbbox"><h4><span>COINS WITH NEW SMART / KOL WALLETS</span><small>top '+(rows.length||0)+' &middot; ~1h window</small></h4>'+L+'</div><div class="lbbox"><h4><span>GMGN SCAN</span><small>summary</small></h4>'+Rr+'</div>';
- $('lbNote').innerHTML='Source: the GMGN research scan (read-only; this page never trades). GMGN smart-money / KOL wallet counts are cumulative per coin, so the scan compares snapshots and only counts <b>new</b> wallets added in about the last hour. A coin is a pick only when it also passes every safety check (RugCheck, linked wallets, bundle/sniper, unique buyers). Research only &mdash; not a buy recommendation.';
+ $('lbNote').innerHTML='Source: the GMGN research scan (read-only; this page never trades). GMGN smart-money / KOL wallet counts are cumulative per coin, so the scan compares snapshots and only counts <b>new</b> wallets added in about the last hour. A coin is a pick only when it also passes every safety check (RugCheck, linked wallets, bundle/sniper, unique buyers). Trader names are only labels GMGN itself lists publicly (X handle or display name); coins GMGN lists no names for show none. Research only &mdash; not a buy recommendation.';
 }
 function renderRS(){
  const el=$('rsBody');if(!el)return;const RS=D&&D.research;if(!RS){el.innerHTML='<div class="lbempty">waiting for scan data&hellip;</div>';return}
