@@ -43,8 +43,6 @@ body{padding:10px;display:flex;justify-content:center;background-image:linear-gr
 .card{padding:8px 10px}
 .card h2{margin-bottom:6px}
 #netc{display:block;width:100%;height:420px;background:#05071a;border:1px solid var(--edge)}
-#charts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.chartc{display:block;width:100%;height:190px;background:#05071a;border:1px solid var(--edge)}
 /* terminal */
 @keyframes in{from{opacity:0;transform:translateY(6px)}}
 /* top10 */
@@ -91,6 +89,18 @@ td.c-CLEAN{color:var(--green)}td.c-WATCH{color:var(--yel)}td.c-RISKY{color:var(-
 #mapc{display:block;width:100%;height:300px;background:#05071a;border:1px solid var(--edge)}
 #mapTip{font-size:16px;color:#fff;min-height:22px;margin-top:4px}
 @media(max-width:900px){#pmGrid{grid-template-columns:1fr}#pmT{font-size:16px}}
+/* current scans panel */
+#curBody{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cs{border:1px dashed #2a3380;padding:6px 8px;min-width:0}
+.cs h4{margin:0 0 3px;font-size:17px;letter-spacing:2px;color:var(--pink);display:flex;justify-content:space-between;gap:6px;white-space:nowrap}.cs h4 small{color:var(--dim);letter-spacing:1px}
+.cs .sum{font-size:16px;color:var(--dim);line-height:1.4;margin-bottom:5px}.cs .sum b{color:#fff}.cs .sum b.g{color:var(--green)}
+.cc{border-top:1px dashed #1a2050;padding:3px 0}
+.cc .l1{display:flex;align-items:center;gap:8px;font-size:17px;flex-wrap:wrap}.cc .l1 b{color:#fff}
+.vd{font-size:14px;letter-spacing:1px;padding:0 5px;border:1px solid;line-height:16px}
+.vd.PASS{color:var(--green);border-color:var(--green)}.vd.NM,.vd.ALERT,.vd.TWO{color:var(--yel);border-color:var(--yel)}.vd.FAIL{color:var(--red);border-color:var(--red)}.vd.SKIP{color:var(--dim);border-color:var(--dim)}
+.cc .nt{font-size:15px;color:var(--yel)}
+.cc .l2{font-size:15px;color:var(--dim);line-height:1.35}.cc .l2 b{color:#e9e4ff}
+@media(max-width:900px){#curBody{grid-template-columns:1fr}}
 /* leaderboard top 10 panel */
 #lbcard.alert{border-color:var(--yel);box-shadow:0 0 16px rgba(255,216,74,.55),inset 0 0 18px rgba(255,216,74,.12)}
 #lbStat{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:16px;color:var(--dim);margin:0 0 6px}
@@ -140,11 +150,9 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
 #foot{font-size:16px;color:var(--dim);text-align:center;padding:2px 4px 10px;letter-spacing:1px;line-height:1.5}
 @media(max-width:900px){
  #cards{grid-template-columns:repeat(2,1fr)}
- #charts{grid-template-columns:1fr}
- #top10{grid-template-columns:repeat(2,1fr)}
+  #top10{grid-template-columns:repeat(2,1fr)}
  #hdr h1{font-size:26px;letter-spacing:3px}#clock{font-size:24px}
- #netc{height:340px}.chartc{height:170px}
- body{padding:6px}
+ #netc{height:340px} body{padding:6px}
  .chip{white-space:normal}
  .tk{font-size:17px}#tfix{gap:9px;padding:0 7px}
  .hm{display:none}
@@ -205,10 +213,7 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
   <div id="lbStat"></div><div id="lbBody"></div><div id="lbNote"></div></div>
  <div class="card frame" id="rscard"><h2><span>RESEARCH SCANS</span><em id="rsSub">latest results of the scan routines &middot; research only &middot; nothing trades</em></h2><div id="rsBody"></div><div id="rsNote"></div></div>
  <div class="card frame"><h2><span>CRAWLER NETWORK</span><em id="netsub">packets = live fetches + scan events</em></h2><canvas id="netc"></canvas></div>
- <div id="charts">
-  <div class="card frame"><h2><span>SOL 5M CANDLES</span><em id="solsub">Kraken &middot; live</em></h2><canvas class="chartc" id="linec"></canvas></div>
-  <div class="card frame"><h2><span>SOL 1H CANDLES</span><em id="candsub">Kraken</em></h2><canvas class="chartc" id="candc"></canvas></div>
- </div>
+ <div class="card frame" id="curcard"><h2><span>CURRENT SCANS</span><em id="curSub">latest result of each scan &middot; market cap &middot; volume 24h/1h &middot; snipers &middot; research only</em></h2><div id="curBody"></div></div>
  <div class="card frame" id="testcard" style="display:none"><h2><span id="tcTitle">TEST RUN</span><em id="tcSub">paper / simulation only &middot; no real trades</em></h2><div id="tcBody"></div></div>
  <div class="card frame"><h2><span>TOP 10 CLEANEST</span><em>clean = early-wallet behavior + RugCheck ok &middot; not a safety guarantee</em></h2><div id="top10"></div></div>
  <div class="card frame"><h2><span id="tbTitle">COIN TABLE</span><em>click a column to sort &middot; sniper = % bought in launch window / % held now</em></h2>
@@ -329,23 +334,15 @@ function drawChart(t){
  const bob=Math.sin(t*1.2)*1.5,x=150,y=Math.round(10+bob),w=150,h=72;
  R(x-1,y-1,w+2,h+2,PINK,.12);
  box(x,y,w,h,PINK,'#070a24',.88);
- T('SOL/USD 5M '+(S.c5.length?'LIVE':''),x+4,y+4,PINK2,1);
- const c=sol.candles.slice(-34);
- if(c.length<2){T('NO PRICE DATA',x+w/2,y+36,PINK2,1,'c');return}
- const last=c[c.length-1][4],first=c[0][1],chg=(last/first-1)*100;
- const up=chg>=0;
- T('$'+fmP(last),x+w-4,y+4,up?GREEN:PINK2,1,'r');
- T((up?'+':'')+chg.toFixed(2)+'%',x+w-4,y+11,up?GREEN:PINK2,1,'r');
- let lo=1e18,hi=-1e18;c.forEach(k=>{lo=Math.min(lo,k[3]);hi=Math.max(hi,k[2])});
- const top=y+20,bot=y+h-9,sc=(bot-top)/(hi-lo||1);
- for(let g=0;g<4;g++)R(x+4,top+g*((bot-top)/3),w-8,1,PINK,.12);
- c.forEach((k,i)=>{const cxp=x+8+i*4,col=k[4]>=k[1]?GREEN:PINK2;
-  const yh=top+(hi-k[2])*sc,yl=top+(hi-k[3])*sc,yo=top+(hi-k[1])*sc,yc=top+(hi-k[4])*sc;
-  R(cxp+1,yh,1,Math.max(1,yl-yh),col,.9);R(cxp,Math.min(yo,yc),3,Math.max(1,Math.abs(yc-yo)),col);
-  if(i===c.length-1&&Math.sin(t*6)>0)R(cxp-1,Math.min(yo,yc)-1,5,Math.max(1,Math.abs(yc-yo))+2,'#fff',.35)});
- const ly=top+(hi-last)*sc;for(let xx=x+4;xx<x+w-4;xx+=4)R(xx,ly,2,1,up?GREEN:PINK2,.5);
- R(x+4+((t*22)%(w-8)),top,1,bot-top,'#fff',.12);
- T(String(sol.source||'').toUpperCase().slice(0,22),x+4,y+h-7,'#b9b0dd',1);
+ T('CURRENT SCANS',x+w/2,y+4,PINK2,1,'c',null,w-8);
+ R(x+4,y+13,w-8,1,PINK,.5);
+ const cur=(D&&D.research&&D.research.current)||[],now=Date.now()/1000;
+ cur.slice(0,4).forEach((s,i)=>{const yy=y+17+i*13,ag=s.t?Math.floor((now-s.t)/60):null;
+  T((s.key==='launch'?'LAUNCH':s.key==='gmgn'?'GMGN':'RUNNER'),x+5,yy,PINK2,1,'l',null,50);
+  T((s.checked==null?'-':s.checked)+' > '+s.passed,x+w-5,yy,s.passed>0?GREEN:'#b9b0dd',1,'r',null,56);
+  T(ag==null?'':(ag<60?ag+'M':Math.floor(ag/60)+'H'),x+60,yy,'#b9b0dd',.8,'l',null,16)});
+ const lb=D&&D.leaderboard,al=lb&&lb.n_alert!=null?lb.n_alert:0;
+ T('TOP10 ALERTS '+al,x+5,y+h-9,al>0?YEL:'#b9b0dd',1,'l',null,w-10);
 }
 function drawHolos(t){
  const L=[[SPR.mag,GREEN],[SPR.coin,PINK2],[SPR.shield,GREEN],[SPR.bars,PINK2]];
@@ -552,7 +549,7 @@ const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;',
 const fPct=v=>v==null||!isFinite(v)?dash:(v>0?'+':'')+v.toFixed(Math.abs(v)<10?1:0)+'%';
 const ptTime=d=>d.toLocaleTimeString('en-GB',{timeZone:'America/Los_Angeles',hour12:false});
 let ALL=[],VET={high:null,medium:null,cas:{}},warm=true;
-const S={sol:null,solChg:null,c5:[],c60:[],solOk:null,lastSol:null,solFlash:null,tk:{}};
+const S={sol:null,solChg:null,solOk:null,lastSol:null,solFlash:null,tk:{}};
 const LIVE=new Map(),Q={i:0,ok:null,n:0,last:0,queue:[],sp:new Map()};
 const fnum=x=>{const v=parseFloat(x);return isFinite(v)?v:null};
 function fPx(v){if(v==null)return dash;if(v>=100)return v.toFixed(2);if(v>=1)return v.toFixed(3);if(v>=0.01)return v.toFixed(4);return v.toFixed(Math.min(12,2-Math.floor(Math.log10(v))))}
@@ -639,9 +636,6 @@ function drawNet(){
 /* ---- SOL charts (Kraken public, CoinGecko fallback; crawl copy if offline) ---- */
 async function getJSON(url,ms){ms=ms||12000;const ac=new AbortController(),t=setTimeout(()=>ac.abort(),ms);try{const r=await fetch(url,{signal:ac.signal,cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);return await r.json()}finally{clearTimeout(t)}}
 function setDot(id,ok){const d=$(id);d.className='dot '+(ok===null?'wait':ok?'ok':'bad')}
-function chg24(){const c=S.c60.length>=25?S.c60:(D&&D.sol_ohlc60&&D.sol_ohlc60.candles)||[];if(c.length>=25){const p=S.sol!=null?S.sol:c[c.length-1][4];return(p/c[c.length-25][4]-1)*100}return S.solChg}
-function syncSol(){const c=S.c5.length>=6?S.c5:(D&&D.sol_ohlc5&&D.sol_ohlc5.candles)||[];sol={candles:c,source:S.c5.length>=6?'KRAKEN SOLUSD 5M LIVE':'KRAKEN SOLUSD 5M (CRAWL COPY)'}}
-function bump(cs,p,step){if(!cs.length)return;const now=Date.now()/1000,l=cs[cs.length-1];if(now<l[0]+step){l[2]=Math.max(l[2],p);l[3]=Math.min(l[3],p);l[4]=p}else{cs.push([Math.floor(now/step)*step,l[4],Math.max(l[4],p),Math.min(l[4],p),p]);while(cs.length>150)cs.shift()}}
 function flashEl(id,d){const e=$(id);if(!e)return;e.classList.remove('fu','fd','up','dn');void e.offsetWidth;e.classList.add(d>0?'fu':'fd',d>0?'up':'dn');const a=$(id.replace('tk-','ta-'));if(a)a.textContent=d>0?'\u25b2':'\u25bc'}
 function tkSet(k,p,dec){const prev=S.tk[k];S.tk[k]=p;$('tv-'+k).textContent='$'+p.toFixed(dec);if(prev!=null&&p!==prev){flashEl('tk-'+k,p>prev?1:-1);return p>prev?1:-1}return 0}
 async function solTicker(){
@@ -651,47 +645,11 @@ async function solTicker(){
   const prev=S.sol;S.sol=ps;S.solOk=true;S.lastSol=new Date();
   const d=tkSet('sol',ps,2);if(isFinite(pb)&&pb>0)tkSet('btc',pb,0);if(isFinite(pe)&&pe>0)tkSet('eth',pe,2);
   if(d){S.solFlash={t:performance.now(),d};}
-  bump(S.c5,ps,300);bump(S.c60,ps,3600);syncSol();spawnP('solfeed','crawler',YEL,.012);fetchN++;
+  spawnP('solfeed','crawler',YEL,.012);fetchN++;
  }catch(e){try{const j=await getJSON('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd&include_24hr_change=true');S.sol=j.solana.usd;S.solChg=j.solana.usd_24h_change;S.solOk=true;S.lastSol=new Date();spawnP('solfeed','crawler',YEL,.012)}catch(e2){S.solOk=(S.sol!=null)?S.solOk:false}}
  if(S.sol==null&&D&&D.sol_ohlc&&D.sol_ohlc.candles.length){S.sol=D.sol_ohlc.candles.slice(-1)[0][4];S.solOk=S.solOk===false?null:S.solOk}
  setDot('d-sol',S.solOk);$('m-sol').textContent=S.sol?'$'+S.sol.toFixed(2):dash;NODES.solfeed.sub=S.sol?'$'+S.sol.toFixed(2):'';
 }
-async function solCandles(){
- try{const[a,b]=await Promise.all([getJSON('https://api.kraken.com/0/public/OHLC?pair=SOLUSD&interval=5'),getJSON('https://api.kraken.com/0/public/OHLC?pair=SOLUSD&interval=60')]);
-  const m=r=>[+r[0],+r[1],+r[2],+r[3],+r[4]];
-  S.c5=a.result.SOLUSD.slice(-72).map(m);S.c60=b.result.SOLUSD.slice(-36).map(m);syncSol();
-  const l=S.c5[S.c5.length-1];
-  spawnP('solfeed','crawler',YEL,.012);fetchN++;
- }catch(e){}
-}
-function axisText(ctx,t,x,y,al){ctx.font='15px '+FONT;ctx.fillStyle=DIM;ctx.textAlign=al||'left';ctx.textBaseline='middle';ctx.fillText(t,x,y)}
-function noData(ctx,w,h,m){ctx.font='17px '+FONT;ctx.fillStyle=DIM;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(m,w/2,h/2)}
-function flashCol(){const f=S.solFlash;return f&&performance.now()-f.t<1400?(f.d>0?GREEN:RED):YEL}
-function drawCand(id,cs,tf,big){
- const{ctx,w,h}=fitC($(id));ctx.clearRect(0,0,w,h);
- if(cs.length<2){noData(ctx,w,h,S.solOk===false?'SOL feed unavailable':'loading SOL\u2026');return}
- const L=8,R2=58,T2=30,B2=16;let lo=Math.min(...cs.map(c=>c[3])),hi=Math.max(...cs.map(c=>c[2]));const pv=(hi-lo)*.08||1;lo-=pv;hi+=pv;
- const Y=v=>T2+(hi-v)/(hi-lo)*(h-T2-B2),cw=(w-L-R2)/cs.length;
- ctx.fillStyle='rgba(255,43,214,.1)';for(let g=0;g<4;g++){const y=Math.round(T2+g*(h-T2-B2)/3);ctx.fillRect(L,y,w-L-R2,1);axisText(ctx,(hi-(hi-lo)*g/3).toFixed(2),w-R2+4,y)}
- cs.forEach((c,i)=>{const[t,o,hh,l,cl]=c,up=cl>=o,x=L+i*cw,mid=Math.round(x+cw/2);ctx.fillStyle=up?GREEN:PINK;ctx.fillRect(mid-1,Math.round(Y(hh)),2,Math.max(1,Math.round(Y(l)-Y(hh))));
-  const bw=Math.max(2,Math.floor(cw*.62)),y0=Math.round(Y(Math.max(o,cl))),bh=Math.max(2,Math.round(Math.abs(Y(o)-Y(cl))));ctx.fillRect(mid-(bw>>1),y0,bw,bh)});
- /* the forming candle: pulsing outline + live price line + flashing price tag */
- const n=cs.length-1,lc=cs[n],lx=L+n*cw+cw/2,bw2=Math.max(2,Math.floor(cw*.62)),pulse=.45+.45*Math.sin(performance.now()/260);
- ctx.strokeStyle='#fff';ctx.globalAlpha=pulse;ctx.lineWidth=1;ctx.strokeRect(Math.round(lx-(bw2>>1))-2.5,Math.round(Y(lc[2]))-2.5,bw2+4,Math.round(Y(lc[3])-Y(lc[2]))+5);ctx.globalAlpha=1;
- const py=Math.round(Y(lc[4])),fc=flashCol();ctx.fillStyle=fc;ctx.globalAlpha=.55;for(let x=L;x<w-R2;x+=6)ctx.fillRect(x,py,3,1);ctx.globalAlpha=1;
- ctx.fillRect(w-R2+1,py-7,R2-3,14);ctx.font='16px '+FONT;ctx.fillStyle='#04050d';ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText(lc[4].toFixed(2),w-R2+5,py);
- const pr=S.sol!=null?S.sol:lc[4];ctx.font='22px '+FONT;ctx.textBaseline='top';ctx.fillStyle=fc===YEL?GREEN:fc;const bt=big?'$'+pr.toFixed(2):'';if(big)ctx.fillText(bt,L+2,4);
- const bwid=big?ctx.measureText(bt).width+10:0;ctx.font='16px '+FONT;
- if(big){const cg=chg24();ctx.fillStyle=cg==null?DIM:cg>=0?GREEN:RED;ctx.fillText((cg==null?dash:fPct(cg))+' 24h',L+bwid,8)}
- else{ctx.fillStyle=DIM;ctx.fillText('live 1h candle  O '+lc[1].toFixed(2)+'  H '+lc[2].toFixed(2)+'  L '+lc[3].toFixed(2),L+2,8)}
- axisText(ctx,tf(new Date(cs[0][0]*1000)),L,h-7);axisText(ctx,tf(new Date(lc[0]*1000))+' (now)',w-R2,h-7,'right');
-}
-const tf5=d=>d.toLocaleTimeString('en-GB',{timeZone:'America/Los_Angeles',hour:'2-digit',minute:'2-digit'});
-const tf60=d=>d.toLocaleTimeString('en-US',{timeZone:'America/Los_Angeles',hour:'numeric'});
-function drawLine(){const cs=S.c5.length>=6?S.c5:(D&&D.sol_ohlc5&&D.sol_ohlc5.candles)||[];drawCand('linec',cs,tf5,true);
- $('solsub').textContent=(S.c5.length>=6&&S.lastSol?'Kraken 5m \u00b7 live '+ptTime(S.lastSol)+' PT':'crawl copy')}
-function drawCandles(){const cs=S.c60.length>=6?S.c60:(D&&D.sol_ohlc60&&D.sol_ohlc60.candles)||[];drawCand('candc',cs,tf60,false);
- $('candsub').textContent=(S.c60.length>=6?'Kraken 1h \u00b7 live':'crawl copy')+' \u00b7 last '+cs.length+'h (PT)'}
 /* ---- live coin quotes: DEX Screener polled from the browser, 30 coins per request, rotating ---- */
 function mergeLive(){const ge=(D.generated_epoch||0)*1000;ALL.forEach(c=>{if(c.price!=null)c.px=c.price;const l=LIVE.get(c.ca);if(l&&l.pxT>ge)Object.assign(c,l)})}
 function recalcST(){const wp=ALL.filter(c=>c.pair&&c.status!=='NODATA');const f=fn=>{let n=0,N=0;wp.forEach(c=>{const v=fn(c);if(v===null)return;N++;if(v)n++});return{n,N,share:N?n/N:0}};[f(ckCap),f(ckLV),f(ckSn)].forEach((r,i)=>Object.assign(ST[i],r))}
@@ -766,14 +724,14 @@ function renderTop10(){
  $('top10').innerHTML=cl.map((c,i)=>{const sn=c.sniper||{};const sh=(sn.status==='ok'||sn.status==='partial')?'snipers '+(sn.bought_pct||0).toFixed(1)+'% / hold '+(sn.hold_pct||0).toFixed(1)+'%':'snipers n/a';
   return'<div class="t5"><b>#'+(i+1)+' '+esc(String(c.ticker||c.name).slice(0,11))+'</b><div class="id">'+esc((c.ca||'').slice(0,4)+'\u2026'+(c.ca||'').slice(-4))+' '+bm(c.ca)+' \u00b7 score '+(c.score!=null?Math.round(c.score):dash)+'</div><small>mcap '+fm(c.mcap)+' \u00b7 liq '+fm(c.liq)+'</small><small>'+sh+'</small></div>'}).join('')||'<div class="t5"><small>no clean coins this crawl</small></div>';
 }
-const COLS=[['#','rank','n'],['COIN','name','s'],['STATUS','status','s'],['PRICE $','px','n'],['LIVE \u0394','pxD','n'],['1H','chg1','n','hm'],['MCAP','mcap','n'],['LIQ','liq','n','hm'],['VOL 24H','vol24','n','hm'],['SNIPERS BOUGHT/HOLD','snip','n'],['SCORE','score','n'],['SIM BUY','tbought','s'],['SIM P&L $','tpnl','n']];
+const COLS=[['#','rank','n'],['COIN','name','s'],['STATUS','status','s'],['PRICE $','px','n'],['LIVE \u0394','pxD','n'],['1H','chg1','n','hm'],['MCAP','mcap','n'],['LIQ','liq','n','hm'],['VOL 24H','vol24','n','hm'],['VOL 1H','vol1','n','hm'],['SNIPERS # \u00b7 BOUGHT/HOLD','snip','n'],['SCORE','score','n'],['SIM BUY','tbought','s'],['SIM P&L $','tpnl','n']];
 let sortK='score',sortD=-1;
 function sv(c,k){if(k==='name')return String(c.ticker||c.name||'').toLowerCase();if(k==='snip'){const s=c.sniper||{};return(s.status==='ok'||s.status==='partial')?(s.hold_pct||0):null}if(k==='status')return{CLEAN:0,WATCH:1,RISKY:2,NODATA:3}[c.status];if(k==='tbought')return c.test?(c.test.bought?1:0):null;if(k==='tpnl')return c.test&&c.test.bought?c.test.pnl_usd:null;return c[k]}
 function renderTable(){
  $('thr').innerHTML=COLS.map(c=>'<th data-k="'+c[1]+'" class="'+(c[3]||'')+(sortK===c[1]?' on':'')+'">'+c[0]+(sortK===c[1]?(sortD<0?' \u25bc':' \u25b2'):'')+'</th>').join('');
  const rows=ALL.slice().sort((a,b)=>{const x=sv(a,sortK),y=sv(b,sortK);if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;return(x<y?-1:x>y?1:0)*sortD||((a.rank||0)-(b.rank||0))});
  $('tb').innerHTML=rows.map(c=>{const s=c.sniper||{},ok=s.status==='ok'||s.status==='partial';
-  return'<tr><td class="dim">'+(c.rank||'')+'</td><td><a href="'+esc(c.url||'#')+'" target="_blank" rel="noopener">'+esc(String(c.ticker||c.name||'?').slice(0,16))+'</a>'+bm(c.ca)+'</td><td class="c-'+c.status+'">'+c.status+'</td>'+(function(){const fl=(c.pxT&&Date.now()-c.pxT<1800)?(c.pxDir>0?' fu':c.pxDir<0?' fd':''):'';return'<td class="'+fl+'">'+(c.px!=null?fPx(c.px):'<span class="dim">'+dash+'</span>')+'</td><td class="'+(c.pxD==null||c.pxDir===0?'dim':c.pxD>0?'pos':'neg')+fl+'">'+(c.pxD==null?dash:(c.pxD>0?'\u25b2':c.pxD<0?'\u25bc':'')+fP2(c.pxD))+'</td><td class="hm '+(c.chg1==null?'dim':c.chg1>=0?'pos':'neg')+'">'+(c.chg1==null?dash:fP2(c.chg1))+'</td>'})()+'<td>'+fm(c.mcap)+'</td><td class="hm">'+fm(c.liq)+'</td><td class="hm">'+fm(c.vol24)+'</td><td>'+(ok?(s.bought_pct||0).toFixed(1)+'% / '+(s.hold_pct||0).toFixed(1)+'%':'<span class="dim">n/a</span>')+'</td><td>'+(c.score!=null?Math.round(c.score):dash)+'</td>'+(function(){const t=c.test;if(!t)return'<td class="dim">n/a</td><td class="dim">n/a</td>';if(!t.bought)return'<td class="dim">no</td><td class="dim">&mdash;</td>';return'<td>YES x'+t.trades+'</td><td class="'+(t.pnl_usd>=0?'pos':'neg')+'">'+(t.pnl_usd>=0?'+':'')+t.pnl_usd.toFixed(2)+'</td>'})()+'</tr>'}).join('');
+  return'<tr><td class="dim">'+(c.rank||'')+'</td><td><a href="'+esc(c.url||'#')+'" target="_blank" rel="noopener">'+esc(String(c.ticker||c.name||'?').slice(0,16))+'</a>'+bm(c.ca)+'</td><td class="c-'+c.status+'">'+c.status+'</td>'+(function(){const fl=(c.pxT&&Date.now()-c.pxT<1800)?(c.pxDir>0?' fu':c.pxDir<0?' fd':''):'';return'<td class="'+fl+'">'+(c.px!=null?fPx(c.px):'<span class="dim">'+dash+'</span>')+'</td><td class="'+(c.pxD==null||c.pxDir===0?'dim':c.pxD>0?'pos':'neg')+fl+'">'+(c.pxD==null?dash:(c.pxD>0?'\u25b2':c.pxD<0?'\u25bc':'')+fP2(c.pxD))+'</td><td class="hm '+(c.chg1==null?'dim':c.chg1>=0?'pos':'neg')+'">'+(c.chg1==null?dash:fP2(c.chg1))+'</td>'})()+'<td>'+fm(c.mcap)+'</td><td class="hm">'+fm(c.liq)+'</td><td class="hm">'+fm(c.vol24)+'</td><td class="hm">'+fm(c.vol1)+'</td><td>'+(ok?(s.n!=null?s.n+' \u00b7 ':'')+(s.bought_pct||0).toFixed(1)+'% / '+(s.hold_pct||0).toFixed(1)+'%':'<span class="dim">n/a</span>')+'</td><td>'+(c.score!=null?Math.round(c.score):dash)+'</td>'+(function(){const t=c.test;if(!t)return'<td class="dim">n/a</td><td class="dim">n/a</td>';if(!t.bought)return'<td class="dim">no</td><td class="dim">&mdash;</td>';return'<td>YES x'+t.trades+'</td><td class="'+(t.pnl_usd>=0?'pos':'neg')+'">'+(t.pnl_usd>=0?'+':'')+t.pnl_usd.toFixed(2)+'</td>'})()+'</tr>'}).join('');
  $('tbTitle').textContent='COIN TABLE \u00b7 '+rows.length+' coins';
 }
 $('thr').addEventListener('click',e=>{const th=e.target.closest('th');if(!th)return;const k=th.dataset.k;if(sortK===k)sortD=-sortD;else{sortK=k;sortD=(k==='name'||k==='status'||k==='rank')?1:-1}renderTable()});
@@ -902,6 +860,21 @@ function renderMap(){
 }
 (function(){const cv=document.getElementById('mapc');if(!cv)return;cv.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;let b=null,bd=1e9;MAPN.forEach(n=>{const d=Math.hypot(n.x-x,n.y-y);if(d<bd){bd=d;b=n}});
  $('mapTip').innerHTML=b&&bd<14?'<b>'+esc(b.c.ticker||b.c.name||'?')+'</b> &middot; '+b.g+' &middot; mcap '+fm(b.c.mcap)+' &middot; liq '+fm(b.c.liq):'&nbsp;'});cv.addEventListener('mouseleave',()=>{$('mapTip').innerHTML='&nbsp;'})})();
+/* ---- CURRENT SCANS panel: published scan results only (research.current + leaderboard); coin numbers come from the crawl record or the scan itself ---- */
+function renderCur(){
+ const el=$('curBody');if(!el||!D)return;const CUR=(D.research&&D.research.current)||[],now=Date.now()/1000;
+ const ago=t=>{if(!t)return dash;const m=Math.max(0,Math.floor((now-t)/60));return m<60?m+'m ago':Math.floor(m/60)+'h'+String(m%60).padStart(2,'0')+'m ago'};
+ const vcls=v=>({PASS:'PASS','NEAR MISS':'NM',FAIL:'FAIL',SKIPPED:'SKIP',ALERT:'ALERT','2 BUYERS':'TWO'}[v]||'SKIP');
+ const mline=m=>'mcap <b>'+fm(m.mcap)+'</b> &middot; vol <b>'+fm(m.vol24)+'</b> 24h / <b>'+fm(m.vol1)+'</b> 1h &middot; snipers '+(m.sn?'<b>'+(m.sn.n==null?dash:m.sn.n)+'</b> &middot; <b>'+(m.sn.bought==null?dash:m.sn.bought.toFixed(1))+'%</b> bought / <b>'+(m.sn.hold==null?dash:m.sn.hold.toFixed(1))+'%</b> held':'<b>n/a</b>');
+ const coinRow=(p,vd,note,m)=>'<div class="cc"><div class="l1"><b>'+(p.mint?'<a href="https://dexscreener.com/solana/'+esc(p.mint)+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">'+esc(String(p.ticker||'?').slice(0,14))+'</a>':esc(String(p.ticker||'?').slice(0,14)))+'</b>'+bm(p.mint)+'<span class="vd '+vcls(vd)+'">'+esc(vd)+'</span>'+(note?'<span class="nt">'+esc(note)+'</span>':'')+'</div><div class="l2">'+mline(m)+'</div></div>';
+ let h=CUR.map(s=>'<div class="cs"><h4><span>'+esc(s.name)+'</span><small>'+ago(s.t)+'</small></h4><div class="sum">checked <b>'+(s.checked==null?dash:s.checked)+'</b> &middot; passed <b class="g">'+s.passed+'</b> &middot; '+esc(s.line||'')+'</div>'+
+  ((s.top||[]).length?s.top.map(p=>coinRow(p,p.verdict,p.note,p)).join(''):'<div class="cc"><div class="l2">no coin to list from this run</div></div>')+'</div>').join('');
+ const LBd=LB||D.leaderboard||{},lc=lbCoins().slice(0,5),byca={};ALL.forEach(c=>{byca[c.ca]=c;if(c.ticker)byca[String(c.ticker).toLowerCase()]=c});
+ const mm=c=>{const x=byca[c.mint]||byca[String(c.ticker||'').toLowerCase()]||{},s=x.sniper||{};return{mcap:x.mcap,vol24:x.vol24,vol1:x.vol1,sn:(s.status==='ok'||s.status==='partial')?{n:s.n,bought:s.bought_pct,hold:s.hold_pct}:null}};
+ h+='<div class="cs"><h4><span>LEADERBOARD TOP-10 ALERTS</span><small>'+ago(LBd.last_run)+'</small></h4><div class="sum">traders checked <b>'+((LBd.traders||[]).length||dash)+'</b> &middot; buys last hour <b>'+lbBuys().length+'</b> &middot; alerts (3+ buyers) <b class="g">'+lbCoins().filter(c=>c.alert).length+'</b> &middot; 2+ buyers <b>'+lbCoins().length+'</b></div>'+
+  (lc.length?lc.map(c=>coinRow({ticker:c.ticker,mint:c.mint},c.n>=3?'ALERT':'2 BUYERS',c.n+' buyers',mm(c))).join(''):'<div class="cc"><div class="l2">no coin has 2+ top-10 buyers in the last hour</div></div>')+'</div>';
+ el.innerHTML=h;
+}
 async function refreshLB(){}
 /* ---- data apply ---- */
 function apply(d,first){
@@ -913,10 +886,10 @@ function apply(d,first){
  const wp=coins.filter(c=>c.pair);top30=wp.slice().sort((a,b)=>(b.vol24||0)-(a.vol24||0)).slice(0,30);
  pools={W:shuffle(coins.filter(c=>c.status==='WATCH')),C:shuffle(coins.filter(c=>c.status==='CLEAN')),R:shuffle(coins.filter(c=>c.status==='RISKY'))};
  mergeLive();recalcST();
- renderCards();renderTest();renderProc();renderMap();renderRS();renderTop10();renderTable();
+ renderCards();renderTest();renderProc();renderMap();renderCur();renderRS();renderTop10();renderTable();
  if(d.leaderboard)applyLB(d.leaderboard);
  if(fresh&&!first){netBurst()}
- syncSol();
+
  if(!S.sol&&d.sol_ohlc&&d.sol_ohlc.candles.length){S.sol=d.sol_ohlc.candles.slice(-1)[0][4];$('m-sol').textContent='$'+S.sol.toFixed(2)}
 }
 let fails=0;
@@ -938,10 +911,9 @@ warm=false;fit();
 let last=performance.now(),acc=0;
 function frame(now){acc+=Math.min(.1,(now-last)/1000);last=now;while(acc>=1/30){update(1/30);acc-=1/30}drawScene();requestAnimationFrame(frame)}
 requestAnimationFrame(frame);requestAnimationFrame(drawNet);drawScene();
-setInterval(()=>{drawLine();drawCandles()},250);
 setInterval(()=>{$('clock').firstChild.nodeValue=ptTime(new Date())},1000);$('clock').firstChild.nodeValue=ptTime(new Date());
 setInterval(refresh,30000);setInterval(refreshLB,15000);setInterval(renderLB,5000);setInterval(tickAge,1000);tickAge();
-setInterval(renderProc,1000);setInterval(renderMap,1000);window.addEventListener('resize',renderMap);setInterval(solTicker,6000);setInterval(solCandles,30000);setInterval(dexQuotes,5000);
+setInterval(renderProc,1000);setInterval(renderCur,15000);setInterval(renderMap,1000);window.addEventListener('resize',renderMap);setInterval(solTicker,6000);setInterval(dexQuotes,5000);
 requestAnimationFrame(tapeStep);
-solTicker();solCandles();setTimeout(refresh,1500);setTimeout(refreshLB,1200);setTimeout(dexQuotes,900);
+solTicker();setTimeout(refresh,1500);setTimeout(refreshLB,1200);setTimeout(dexQuotes,900);
 </script></body></html>
