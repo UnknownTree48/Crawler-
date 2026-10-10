@@ -811,7 +811,7 @@ function renderLB(){
     '<small>'+c.handles.map(esc).join(', ')+'</small><small>'+(mi?mi+' &middot; ':'')+fm(c.usd)+' total &middot; last buy seen '+lbAgo(c.last_t)+' ago</small></div>'}).join(''):'<div class="lbempty">no coin has 2+ top-10 buyers in the last hour.</div>';
  }
  el.innerHTML='<div class="lbbox"><h4><span>TRADERS ('+(st==='ok'?trs.length:0)+'/20)</span><small>rank &middot; range &middot; buys last hour</small></h4>'+L+'</div><div class="lbbox"><h4><span>COINS WITH 2+ TOP-10 BUYERS</span><small>progress = distinct buyers / 3</small></h4>'+Rr+'</div>';
- $('lbNote').innerHTML='Source: top-10 leaderboard buyer tracker (read-only; this page never trades). Trader names are hidden. Buy times are when the routine <b>first saw</b> each buy (10-min polling), not the exact on-chain time. ALERT = 3 or more distinct top-10 traders (24H or 30D board) bought the same coin within 1 hour; <b>SENT</b> = the routine already messaged it. Research only &mdash; not a buy recommendation.';
+ $('lbNote').innerHTML='Source: top-10 leaderboard buyer tracker (read-only; this page never trades). Trader handles are fomo&rsquo;s public leaderboard names. Buy times are when the routine <b>first saw</b> each buy (10-min polling), not the exact on-chain time. ALERT = 3 or more distinct top-10 traders (24H or 30D board) bought the same coin within 1 hour; <b>SENT</b> = the routine already messaged it. Research only &mdash; not a buy recommendation.';
 }
 function renderRS(){
  const el=$('rsBody');if(!el)return;const RS=D&&D.research;if(!RS){el.innerHTML='<div class="lbempty">waiting for scan data&hellip;</div>';return}
