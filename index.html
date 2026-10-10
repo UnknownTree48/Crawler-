@@ -46,10 +46,7 @@ body{padding:10px;display:flex;justify-content:center;background-image:linear-gr
 #charts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .chartc{display:block;width:100%;height:190px;background:#05071a;border:1px solid var(--edge)}
 /* terminal */
-#log{height:300px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;font-size:17px;line-height:1.45;background:#030806;border:1px solid var(--edge);padding:6px 8px}
-#log div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:in .35s ease-out}
 @keyframes in{from{opacity:0;transform:translateY(6px)}}
-#log .t{color:#74c79b}#log .CLEAN{color:var(--green);}#log .WATCH{color:var(--yel)}#log .RISKY{color:var(--red);}#log .sys{color:var(--pink2)}#log .net{color:var(--cyan)}
 /* top10 */
 #top10{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .t5{border:1px solid var(--green);padding:6px 8px;background:rgba(57,255,136,.05);box-shadow:0 0 8px rgba(57,255,136,.25);min-width:0}
@@ -129,7 +126,6 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
  #top10{grid-template-columns:repeat(2,1fr)}
  #hdr h1{font-size:26px;letter-spacing:3px}#clock{font-size:24px}
  #netc{height:340px}.chartc{height:170px}
- #log{font-size:16px;height:340px}#log div{white-space:normal;overflow:visible;line-height:1.3;margin-top:3px}
  body{padding:6px}
  .chip{white-space:normal}
  .tk{font-size:17px}#tfix{gap:9px;padding:0 7px}
@@ -190,7 +186,6 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
   <div class="card frame"><h2><span>SOL 5M CANDLES</span><em id="solsub">Kraken &middot; live</em></h2><canvas class="chartc" id="linec"></canvas></div>
   <div class="card frame"><h2><span>SOL 1H CANDLES</span><em id="candsub">Kraken</em></h2><canvas class="chartc" id="candc"></canvas></div>
  </div>
- <div class="card frame"><h2><span>&gt;_ TERMINAL LOG</span><em>live DEX quotes + Kraken fetches + crawl values &middot; newest at bottom</em></h2><div id="log"></div></div>
  <div class="card frame" id="testcard" style="display:none"><h2><span id="tcTitle">TEST RUN</span><em id="tcSub">paper / simulation only &middot; no real trades</em></h2><div id="tcBody"></div></div>
  <div class="card frame"><h2><span>TOP 10 CLEANEST</span><em>clean = early-wallet behavior + RugCheck ok &middot; not a safety guarantee</em></h2><div id="top10"></div></div>
  <div class="card frame"><h2><span id="tbTitle">COIN TABLE</span><em>click a column to sort &middot; sniper = % bought in launch window / % held now</em></h2>
@@ -492,21 +487,10 @@ function spawn(){
  if(!c)return;
  netSpawn(c);pkgs.push({c,live,dir:live?(c.pxDir||0):0,sym:sym(c),cx:GATE_X,y:BELT_Y-6,st:'belt',cls:false,seen:[false,false,false],ck:[ckCap(c),ckLV(c),ckSn(c)]});
 }
-function logTime(){return new Date(wall0+simT*1000).toLocaleTimeString('en-GB',{timeZone:'America/Los_Angeles',hour12:false})}
-function addLog(cls,html){const L=document.getElementById('log');const d=document.createElement('div');d.className=cls||'';d.innerHTML=html;L.appendChild(d);while(L.children.length>40)L.removeChild(L.firstChild)}
-function logCoin(p){
- const c=p.c;if(warm)return;
- const s=c.sniper||{};const sn=(s.status==='ok'||s.status==='partial')?('hold '+(s.hold_pct||0).toFixed(1)+'%'):'n/a';
- let why='';const rs=(c.reasons||[]).filter(r=>!/n\/a$/.test(r));if(c.status!=='CLEAN'&&rs.length)why=' ['+rs[0].slice(0,34)+']';
- const pre='<span class="t">'+ptTime(new Date())+'</span> ';
- if(p.live&&c.px!=null){const dl=c.pxD==null?'':(c.pxDir>0?' <span style="color:#39ff88">&#9650;'+c.pxD.toFixed(2)+'%</span>':c.pxDir<0?' <span style="color:#ff3b55">&#9660;'+c.pxD.toFixed(2)+'%</span>':' =');
-  addLog(c.status,pre+'[QUOTE] '+esc(c.ticker||c.name)+' $'+fPx(c.px)+dl+' &middot; 1h '+fPct(c.chg1)+' mcap '+fm(c.mcap)+' liq '+fm(c.liq)+' snipers '+sn+' -&gt; <b>'+c.status+'</b>'+esc(why))}
- else addLog(c.status,pre+'[crawl copy] '+esc(c.ticker||c.name)+' mcap '+fm(c.mcap)+' liq '+fm(c.liq)+' vol '+fm(c.vol24)+' snipers '+sn+' -&gt; <b>'+c.status+'</b>'+esc(why));
-}
 function classify(p){
  p.cls=true;const k=p.c.status;if(!BIN[k])return;
  lasers.push({x1:ST[2].x+36,y1:130,x2:BIN[k],y2:224,t0:simT,life:.55});
- binFlash[k]=simT;logCoin(p);netClassify(p.c);
+ binFlash[k]=simT;netClassify(p.c);
  if(lasers.length>12)lasers.shift();
 }
 function update(dt){
@@ -643,7 +627,7 @@ async function solTicker(){
   const pb=parseFloat((g('XXBTZUSD','XBTUSD')||{c:[0]}).c[0]),pe=parseFloat((g('XETHZUSD','ETHUSD')||{c:[0]}).c[0]);
   const prev=S.sol;S.sol=ps;S.solOk=true;S.lastSol=new Date();
   const d=tkSet('sol',ps,2);if(isFinite(pb)&&pb>0)tkSet('btc',pb,0);if(isFinite(pe)&&pe>0)tkSet('eth',pe,2);
-  if(d){S.solFlash={t:performance.now(),d};addLog(d>0?'CLEAN':'RISKY','<span class="t">'+ptTime(new Date())+'</span> [KRAKEN] SOL $'+ps.toFixed(2)+' '+(d>0?'&#9650; +':'&#9660; ')+(ps-prev).toFixed(2)+' &middot; BTC $'+(pb||0).toFixed(0)+' ETH $'+(pe||0).toFixed(2))}
+  if(d){S.solFlash={t:performance.now(),d};}
   bump(S.c5,ps,300);bump(S.c60,ps,3600);syncSol();spawnP('solfeed','crawler',YEL,.012);fetchN++;
  }catch(e){try{const j=await getJSON('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd&include_24hr_change=true');S.sol=j.solana.usd;S.solChg=j.solana.usd_24h_change;S.solOk=true;S.lastSol=new Date();spawnP('solfeed','crawler',YEL,.012)}catch(e2){S.solOk=(S.sol!=null)?S.solOk:false}}
  if(S.sol==null&&D&&D.sol_ohlc&&D.sol_ohlc.candles.length){S.sol=D.sol_ohlc.candles.slice(-1)[0][4];S.solOk=S.solOk===false?null:S.solOk}
@@ -654,8 +638,8 @@ async function solCandles(){
   const m=r=>[+r[0],+r[1],+r[2],+r[3],+r[4]];
   S.c5=a.result.SOLUSD.slice(-72).map(m);S.c60=b.result.SOLUSD.slice(-36).map(m);syncSol();
   const l=S.c5[S.c5.length-1];
-  addLog('net','<span class="t">'+ptTime(new Date())+'</span> [FETCH] Kraken SOLUSD OHLC 5m x'+S.c5.length+' + 1h x'+S.c60.length+' &middot; live 5m candle O '+l[1].toFixed(2)+' H '+l[2].toFixed(2)+' L '+l[3].toFixed(2)+' C '+l[4].toFixed(2));spawnP('solfeed','crawler',YEL,.012);fetchN++;
- }catch(e){addLog('RISKY','<span class="t">'+ptTime(new Date())+'</span> [FETCH] Kraken OHLC unavailable ('+esc(e.message||e)+') &mdash; showing crawl copy')}
+  spawnP('solfeed','crawler',YEL,.012);fetchN++;
+ }catch(e){}
 }
 function axisText(ctx,t,x,y,al){ctx.font='15px '+FONT;ctx.fillStyle=DIM;ctx.textAlign=al||'left';ctx.textBaseline='middle';ctx.fillText(t,x,y)}
 function noData(ctx,w,h,m){ctx.font='17px '+FONT;ctx.fillStyle=DIM;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(m,w/2,h/2)}
@@ -705,10 +689,9 @@ async function dexQuotes(){
   Q.ok=n>0;Q.n+=n;Q.last=now;
   (mv.length?mv:batch.filter(c=>c.pxT===now)).forEach(c=>{if(!Q.queue.includes(c.ca)&&now-(Q.sp.get(c.ca)||0)>120000)Q.queue.push(c.ca)});while(Q.queue.length>40)Q.queue.shift();
   mv.sort((x,y)=>Math.abs(y.pxD)-Math.abs(x.pxD)).slice(0,6).forEach(c=>tapeAdd('<span class="qi '+(c.pxDir>0?'up':'dn')+'"><b>'+esc(String(c.ticker||c.name).slice(0,10))+'</b> $'+fPx(c.px)+' '+(c.pxDir>0?'\u25b2':'\u25bc')+fP2(c.pxD)+'</span>'));
-  addLog('net','<span class="t">'+ptTime(new Date())+'</span> [DEX] batch '+(b+1)+'/'+nb+' &middot; '+n+' quotes &middot; '+up+' up / '+dn+' down / '+fl+' flat'+(big?' &middot; biggest '+esc(String(big.ticker||big.name).slice(0,10))+' '+fP2(big.pxD):''));
   for(let k=0;k<3;k++)setTimeout(()=>spawnP('dex','crawler',CY,.014),k*160);fetchN++;
   recalcST();renderCards();renderTable();
- }catch(e){Q.ok=false;addLog('RISKY','<span class="t">'+ptTime(new Date())+'</span> [DEX] quote batch failed ('+esc(e.message||e)+') &mdash; showing last values')}
+ }catch(e){Q.ok=false}
  setDot('d-dex',Q.ok);
 }
 function tapeAdd(h){const t=$('tqt');if(!t.firstElementChild){const sp=document.createElement('span');sp.id='tsp';sp.style.cssText='display:inline-block;width:'+$('tmq').clientWidth+'px';t.appendChild(sp);tapeX=0}
@@ -863,7 +846,7 @@ function apply(d,first){
  mergeLive();recalcST();
  renderCards();renderTest();renderRS();renderTop10();renderTable();
  if(d.leaderboard)applyLB(d.leaderboard);
- if(fresh&&!first){addLog('sys','<span class="t">'+logTime()+'</span> [CRAWL] '+d.stats.coins+' coins re-scanned in '+d.duration_s+'s -&gt; '+d.stats.clean+' CLEAN / '+d.stats.watch+' WATCH / '+d.stats.risky+' RISKY');netBurst()}
+ if(fresh&&!first){netBurst()}
  syncSol();
  if(!S.sol&&d.sol_ohlc&&d.sol_ohlc.candles.length){S.sol=d.sol_ohlc.candles.slice(-1)[0][4];$('m-sol').textContent='$'+S.sol.toFixed(2)}
 }
@@ -892,5 +875,4 @@ setInterval(refresh,30000);setInterval(refreshLB,15000);setInterval(renderLB,500
 setInterval(solTicker,6000);setInterval(solCandles,30000);setInterval(dexQuotes,5000);
 requestAnimationFrame(tapeStep);
 solTicker();solCandles();setTimeout(refresh,1500);setTimeout(refreshLB,1200);setTimeout(dexQuotes,900);
-addLog('sys','<span class="t">'+ptTime(new Date())+'</span> [START] full-crawl snapshot loaded ('+(D?D.stats.coins:0)+' coins, '+(D?D.generated_label:dash)+'); live feeds starting: Kraken SOL/BTC/ETH ticker 6s, SOL 5m+1h candles 30s, DEX Screener quotes 30 coins/5s');
 </script></body></html>
