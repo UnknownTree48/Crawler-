@@ -31,7 +31,7 @@ body{padding:10px;display:flex;justify-content:center;background-image:linear-gr
 #sceneWrap:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);mix-blend-mode:multiply;opacity:.35}
 #sceneT{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
 /* cards */
-#cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+#cards{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}@media(max-width:1100px){#cards{grid-template-columns:repeat(3,1fr)}}
 .mod h3,.card h2{font-size:17px;letter-spacing:3px;color:var(--pink2);display:flex;justify-content:space-between;gap:8px;white-space:nowrap;overflow:hidden}
 .mod h3{padding:6px 10px;background:#0d1030;border-bottom:2px solid var(--pink)}
 .mod h3 small,.card h2 em{color:var(--dim);letter-spacing:1px;font-weight:normal;font-style:normal;overflow:hidden;text-overflow:ellipsis}
@@ -188,6 +188,12 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
    <div class="kv"><span>movers 1h (&plusmn;20%)</span><b id="m-mov">&mdash;</b></div>
    <div class="kv"><span>top mover</span><b class="y" id="m-top">&mdash;</b></div>
    <div class="kv"><span>CLEAN / WATCH</span><b id="m-cw">&mdash;</b></div></div></div>
+  <div class="mod frame"><h3>FOMO AUTO <small>swing trader</small></h3><div class="body"><canvas class="icon" data-icon="chief"></canvas>
+   <div class="kv"><span>mode</span><b class="y" id="fa-mode">&mdash;</b></div>
+   <div class="kv"><span>position</span><b id="fa-pos">&mdash;</b></div>
+   <div class="kv"><span>trades</span><b class="w" id="fa-n">&mdash;</b></div>
+   <div class="kv"><span>last run</span><b id="fa-last">&mdash;</b></div>
+   <div class="kv" style="grid-column:1/-1"><span>last action</span><b id="fa-act" title="">&mdash;</b></div></div></div>
  </div>
  <div class="card frame" id="lbcard"><h2><span>GMGN SMART MONEY</span><em id="lbSub">coins gaining new smart-money / KOL wallets in ~1h &middot; from the GMGN scan &middot; research only</em></h2>
   <div id="lbStat"></div><div id="lbBody"></div><div id="lbNote"></div></div>
@@ -804,6 +810,7 @@ function apply(d,first){
  D=d;VET=d.vet||{high:null,medium:null,cas:{}};ALL=d.coins.filter(c=>!c.held);
  coins=ALL.filter(c=>c.status!=='NODATA'&&BIN[c.status]);
  stats={clean:d.stats.clean,watch:d.stats.watch,risky:d.stats.risky};
+ try{const fa=d.fomo_auto||{},q=(i,v)=>{const e=document.getElementById(i);if(e){e.textContent=(v===null||v===undefined||v==='')?'\u2014':v;e.title=e.textContent}};q('fa-mode',fa.mode);q('fa-pos',fa.position);q('fa-n',fa.trades);q('fa-last',fa.last_run);q('fa-act',fa.last_action)}catch(e){}
  const wp=coins.filter(c=>c.pair);top30=wp.slice().sort((a,b)=>(b.vol24||0)-(a.vol24||0)).slice(0,30);
  pools={W:shuffle(coins.filter(c=>c.status==='WATCH')),C:shuffle(coins.filter(c=>c.status==='CLEAN')),R:shuffle(coins.filter(c=>c.status==='RISKY'))};
  mergeLive();recalcST();
