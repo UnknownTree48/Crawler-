@@ -1,75 +1,60 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T12:57:03-07:00",
+ "last_scan_time": "2026-10-13T13:05:24-07:00",
  "coins_seen": 143,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T12:57:03-07:00",
-  "reason": "12:47p paper watch: no entry. WangChai $18.4M 24pct off, -2.2pct EMA20, bs 0.92, sellers + no trigger. HOOKR 0.2pct off +14.5pct EMA20 extended. PONS/TORCH/PRIORS/VRAX TA HTTPError or vol fail; USELESS vol fail. Graduated: \u54a9\u90fd\u6709 1h vol fail/-13pct EMA20; \ud30c\uba58\uc774 satellite liq ok but 79pct off breakdown; ETCHY/JZ/SpaceXSI liq below $30K; SEALS PUMP + 0 qualified copy; ABYSS 2 buyers unqualified. Bonding 36 at 70pct+, 0 non-PUMP 300+ holders (SHIFT 220). Equity 87.94, 0 positions."
+  "time": "2026-10-13T13:05:24-07:00",
+  "reason": "12:57p fomo scan: no paper entry. Graduated top coins mostly PUMP or concentrated (LOAD/XPL top10 65-70pct). WangChai/HOOKR/VRAX on wait levels. Equity 87.94, 0 positions."
  },
- "updated": "2026-10-13T12:57:03-07:00",
+ "updated": "2026-10-13T13:05:24-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "$18.4M, 24pct off, -2.2pct EMA20, bs 0.92; skip: trend, sellers, no 5m trigger",
+   "condition": "$0.01812 ($18.1M), 25.6pct off, -4.1pct EMA20, bs 0.51; wait $0.0189 EMA20 reclaim + 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "$27M-ish, 0.2pct off, +14.5pct EMA20; skip: extended/trend/trigger",
+   "condition": "$0.02869, 2.6pct off, +14.4pct EMA20; wait $0.0251-0.0259",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "VRAX",
+   "condition": "$0.00415, 25pct off, +34.5pct EMA20; wait ~$0.0031",
    "trigger": "pullback"
   },
   {
    "coin": "\u54a9\u90fd\u6709",
-   "condition": "BSC graduated non-PUMP 2K holders top10 5.76pct; 1h vol fail, -13pct EMA20",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "\ud30c\uba58\uc774",
-   "condition": "BSC satellite 2K holders top10 18.96pct liq~$39K; 79pct off breakdown, sellers",
+   "condition": "BSC non-PUMP 2K holders; 1h vol fail",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "TA HTTPError this run",
+   "condition": "vol fail, 4.6pct off",
    "trigger": "pullback"
-  },
-  {
-   "coin": "USELESS",
-   "condition": "vol/trend fail",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "SEALS",
-   "condition": "PUMP CA + 2 feed buyers; 0 qualified copy traders",
-   "trigger": "copy"
-  },
-  {
-   "coin": "ABYSS",
-   "condition": "2 unqualified feed buyers; 0 qualified copy",
-   "trigger": "copy"
   },
   {
    "coin": "bonding",
-   "condition": "36 coins 70pct+; 0 non-PUMP 300+ holders (SHIFT 220 closest)",
+   "condition": "not re-read 12:57; 0 non-PUMP 300+ holders at 12:47",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
   "Fomo Auto trade watch": "2026-10-13T12:57:03-07:00",
   "fomo scan": {
-   "last_run": "2026-10-13T09:26:00-07:00",
+   "last_run": "2026-10-13T13:05:24-07:00",
    "status": "ok"
   }
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 262,
+ "signals_logged": 301,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 22
+  "Fomo Auto": 23
  }
 }
