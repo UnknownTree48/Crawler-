@@ -1,35 +1,45 @@
 {
  "status": "on",
- "last_scan_time": "2026-10-12T20:38:17-07:00",
- "coins_seen": 75,
+ "last_scan_time": "2026-10-12T21:00:00-07:00",
+ "coins_seen": 82,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-12T20:38:17-07:00",
-  "reason": "scan reviewed 75 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-12T21:00:00-07:00",
+  "reason": "scan reviewed 82 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-12T20:38:17-07:00",
+ "updated": "2026-10-12T21:00:00-07:00",
  "open_positions": [],
  "watchlist": [
   {
-   "coin": "WangChai",
-   "condition": "hold ~$16.2-16.5M MC with green 5m + buys>sells",
-   "trigger": "pullback"
-  },
-  {
    "coin": "HOOKR",
-   "condition": "pullback to ~$21.5-22.5M holding + green 5m (do not chase local high)",
+   "condition": "pullback to ~$23.5-25M holding + green 5m (do not chase new high)",
    "trigger": "pullback"
   },
   {
    "coin": "TORCH",
    "condition": "pullback to ~$2.9-3.3M MC + green 5m",
    "trigger": "pullback"
+  },
+  {
+   "coin": "WangChai",
+   "condition": "HL hold ~$16.2-16.5M + green 5m + reclaim ~$17.4M (needs HH/HL)",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "GROKBOT",
+   "condition": "first pullback 15-35% off high holding a level + green 5m (early)",
+   "trigger": "early"
+  },
+  {
+   "coin": "Apple",
+   "condition": "first pullback 15-35% off high holding a level + green 5m (early)",
+   "trigger": "early"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-12T20:38:17-07:00",
+  "Fomo Auto trade watch": "2026-10-12T21:00:00-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
