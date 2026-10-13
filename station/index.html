@@ -209,7 +209,7 @@ function guy(p){const X=p.x|0,Y=p.y|0,a=p.a,walk=p.path.length>0,f=walk?((T/110)
  F(a.col,X-3,Y+1+b,7,7);F('rgba(255,255,255,.22)',X-3,Y+1+b,1,7);F('rgba(0,0,0,.3)',X+3,Y+1+b,1,7);
  const hb=idle?-1:0;F('#f1c27d',X-2,Y-4+b+hb,5,5);if(!p.work)F('#000',X+(p.dx<0?-1:1),Y-2+b+hb,1,1);F(a.hat,X-3,Y-5+b+hb,7,2);
  if(p.work){F('#f1c27d',X-4,Y+2+((T/60|0)%2),1,2);F('#f1c27d',X+4,Y+2+((T/70|0)%2),1,2)}
- x.font='5.6px monospace';const tw=p.tag.length*3.36+3;F('rgba(0,0,0,.65)',X-tw/2,Y-14,tw,7);x.fillStyle=a===AG[0]?'#FFD700':'#ddd';x.fillText(p.tag,X-tw/2+1.4,Y-8.6)}
+ {x.font='bold 4px monospace';x.textBaseline='alphabetic';const tw=Math.round(x.measureText(p.tag).width)+3,tx=Math.round(X-tw/2),ty=Math.round(Y)-12-(Math.round(X/7)%2)*2;F('#2a2a33',tx-1,ty-1,tw+2,7);F('#050307',tx,ty,tw,5);x.fillStyle=a===AG[0]?'#FFE14D':'#FFFFFF';x.fillText(p.tag,tx+1.5|0,ty+4)}}
 function step(p){if(p.path.length){const t=p.path[0],dx=t[0]-p.x,dy=t[1]-p.y,d=Math.hypot(dx,dy);p.work=0;if(d<.6){p.x=t[0];p.y=t[1];p.path.shift();if(!p.path.length){p.work=t[2];p.w=150+R()*300;if(R()<.3&&pops.length<7){const e=EV();pops.push({x:p.x,y:p.y-14,s:e[(R()*e.length)|0],a:1})}}}else{p.x+=dx/d*.45;p.y+=dy/d*.45;if(Math.abs(dx)>.1)p.dx=dx}}
  else if(--p.w<0){const g=p.r.G[(R()*p.r.G.length)|0];const aisle=p.r.y+p.r.h-12;p.path=[[p.x,aisle],[g[0],aisle],[g[0],g[1],g[2]]]}}
 function bg(){const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#07040f');g.addColorStop(1,'#0d0418');x.fillStyle=g;x.fillRect(0,0,W,H);
@@ -228,7 +228,7 @@ function draw(t){T=t;glows.length=0;bg();
  ROOMS.forEach(r=>{wall(r);floor(r)});
  BELTS.forEach(belt);
  ROOMS.forEach(r=>{r.F.slice().sort((a,b)=>(a.k=='cable'?-1:0)-(b.k=='cable'?-1:0)).forEach(f=>({cable,con:console_,rack,desk,plant,crate,locker,vent,pipe})[f.k](f));
-  const lab=r.ag?r.ag.n:r.n;x.font='bold 8.4px monospace';const lw=x.measureText(lab).width+6;F('rgba(10,4,4,.85)',r.x-3,r.y-24,lw,11);F(r.a==0?'#FFD700':'#FF3333',r.x-3,r.y-13,lw,1);x.fillStyle=r.a==0?'#FFD700':'#FF5555';x.fillText(lab,r.x,r.y-15.5)});
+  const lab=r.ag?r.ag.n:r.n;x.font='bold 6px monospace';const lw=Math.round(x.measureText(lab).width)+4,lx=Math.round(r.x),ly=Math.round(r.y);F('#3a1010',lx-3,ly-20,lw+2,10);F('#0a0404',lx-2,ly-19,lw,8);F(r.a==0?'#FFD700':'#FF3333',lx-2,ly-12,lw,1);x.fillStyle=r.a==0?'#FFE14D':'#FF7070';x.fillText(lab,lx,ly-13)});
  MACH.forEach(machine);BELTS.forEach(items);
  PPL.forEach(step);[...PPL].sort((a,b)=>a.y-b.y).forEach(guy);
  x.globalCompositeOperation='lighter';glows.forEach(([gx,gy,r,col])=>{const q=x.createRadialGradient(gx,gy,0,gx,gy,r);q.addColorStop(0,col+'48');q.addColorStop(1,col+'00');x.fillStyle=q;x.fillRect(gx-r,gy-r,r*2,r*2)});
