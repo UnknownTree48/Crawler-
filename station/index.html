@@ -40,7 +40,7 @@ body{background:#0C0A0A;color:#FF3333;font-family:"Courier New",Consolas,monospa
 #right .t{flex:1;border:1px solid #FF3333;background:#1a0606;box-shadow:0 0 8px #E6202088;writing-mode:vertical-rl;font-size:10px;text-align:center;letter-spacing:3px;padding:4px}
 #right .t.on{background:#FF3333;color:#0C0A0A}
 #scan{pointer-events:none;position:fixed;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px);box-shadow:inset 0 0 140px rgba(230,32,32,.22)}
-#prog,#watch,#hb{font-size:10.5px;line-height:15px;padding-bottom:5px;flex-shrink:0}#prog .row,#watch .row,#hb .row{padding:0 8px}
+#prog,#watch,#hb{font-size:10.5px;line-height:14px;padding-bottom:5px;flex-shrink:0}#prog .row,#watch .row,#hb .row{padding:0 8px}
 .bar{margin:3px 8px;height:10px;border:1px solid #FF3333;background:#1a0606;position:relative}.bar i{display:block;height:100%;background:linear-gradient(90deg,#E62020,#FFD700);box-shadow:0 0 8px #FF3333}.bar b{position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:#fff8}
 .hd{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px}#upd{color:#39FF14}
 #side{overflow:auto}
@@ -53,7 +53,6 @@ body{background:#0C0A0A;color:#FF3333;font-family:"Courier New",Consolas,monospa
  <div class="box" id="prog"><div class="hdr">&gt; CHALLENGE.PROGRESS<span>GOAL 200%</span></div><div id="pg" class="glow"></div></div>
  <div class="box" id="watch"><div class="hdr">&gt; WATCHLIST</div><div id="wl" class="glow"></div></div>
  <div class="box" id="hb"><div class="hdr">&gt; AGENT.HEARTBEAT</div><div id="hbl" class="glow"></div></div>
- <div class="box" id="log"><div class="hdr">&gt; TERMINAL.LOG<span>STATE.JSON</span></div><div id="logb" class="glow"></div></div>
 </div>
 <div id="main" class="box"><div class="hdr">&gt; STATION VIEW // SECTOR 7</div><div id="view"><canvas id="c"></canvas></div><div id="tick" class="glow"><span id="tk"></span></div></div>
 <div id="right"><div class="t on">STATION</div><div class="t">AGENTS</div><div class="t">SCANS</div><div class="t">LOGS</div></div>
@@ -78,7 +77,7 @@ function buildLog(){const la=S.last_action||{};const L=[];
  L.push([fmt(la.time),'LAST ACTION // <span class="k">'+(la.type||'-').toUpperCase()+'</span>']);
  (la.reason||'').split(/;\s*/).forEach(r=>r&&L.push([fmt(la.time),'&gt; '+r]));
  return L}
-let li=0;const lb=document.getElementById('logb');
+let li=0;const lb=document.getElementById('logb')||document.createElement('div');
 function pushLog(){if(!LOG.length)return;const e=LOG[li++%LOG.length];const d=document.createElement('div');d.innerHTML='<span class="t">['+e[0]+']</span> '+e[1];
  lb.querySelectorAll('.cur').forEach(c=>c.remove());lb.appendChild(d);const c=document.createElement('span');c.className='cur';lb.appendChild(c);
  while(lb.scrollHeight>lb.clientHeight&&lb.children.length>2)lb.removeChild(lb.firstChild)}
