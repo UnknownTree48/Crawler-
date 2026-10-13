@@ -1,55 +1,55 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T13:26:04-07:00",
- "coins_seen": 12,
+ "last_scan_time": "2026-10-13T13:42:55-07:00",
+ "coins_seen": 55,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T13:26:04-07:00",
-  "reason": "1:15p paper watch: no entry. WangChai $18.7M 23.8pct off, -1.58pct EMA20, bs 0.86, sellvol 0.58; skip swing lows + sellers + no 5m trigger. HOOKR extended 4.1pct off +11.3pct EMA20. TORCH trigger but vol/trend fail. VRAX/\u54a9\u90fd\u6709 TA HTTPError. \ud30c\uba58\uc774 84pct off breakdown. Bonding not fully re-listed; 0 qualified copy. Equity 87.94, 0 positions."
+  "time": "2026-10-13T13:42:55-07:00",
+  "reason": "1:29p paper watch: no entry. WangChai $18.1M 23.7pct off, -1.5pct EMA20, bs 1.44, sellvol 0.51; skip swing lows + no 5m trigger. HOOKR extended 3.1pct off +12.36pct EMA20. TORCH 19.5pct off but vol/trend fail. VRAX 19.3pct off but +39.19pct EMA20. \ud30c\uba58\uc774/\u5c0f\u738b\u5b50 TA HTTPError. Bonding 35 at 70%+, 0 non-PUMP 300+ holders. Feed SHROOM/BUN 2-buyer clusters but 0 qualified copy. Equity 87.94, 0 positions."
  },
- "updated": "2026-10-13T13:26:34-07:00",
+ "updated": "2026-10-13T13:42:55-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "$18.7M, 23.8pct off, -1.58pct EMA20, bs 0.86; skip: swing lows + sellers + no trigger",
+   "condition": "$18.1M, 23.7pct off, -1.5pct EMA20, bs 1.44; skip: swing lows + no trigger",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "4.1pct off, +11.3pct EMA20; skip: extended/trend",
+   "condition": "3.1pct off, +12.36pct EMA20; skip: extended/trend",
    "trigger": "pullback"
   },
   {
    "coin": "TORCH",
-   "condition": "18.3pct off, trigger true; skip: 24h/1h vol + trend",
+   "condition": "19.5pct off, 1.08pct EMA20; skip: 24h/1h vol + trend",
    "trigger": "pullback"
   },
   {
    "coin": "VRAX",
-   "condition": "TA HTTPError; prior wait ~$0.0031",
+   "condition": "19.3pct off, +39.19pct EMA20; skip: extended",
    "trigger": "pullback"
   },
   {
    "coin": "\u54a9\u90fd\u6709",
-   "condition": "1h vol fail + TA HTTPError",
+   "condition": "1h vol fail + breakdown vs EMA",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "vol fail, 3.4pct off",
+   "condition": "24h+1h vol fail",
    "trigger": "pullback"
   },
   {
    "coin": "bonding",
-   "condition": "1:15p UI: ~35 at 70%+, 0 non-PUMP 300+ holders (sampled RAT/TAKU/BOTCHED PUMP)",
+   "condition": "1:29p UI: 35 at 70%+, 0 non-PUMP 300+ holders (UPKID 70, INTERN 68; Goated 270 PUMP)",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T13:26:04-07:00",
+  "Fomo Auto trade watch": "2026-10-13T13:42:55-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T13:05:24-07:00",
    "status": "ok"
@@ -57,9 +57,9 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 301,
+ "signals_logged": 321,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 25
+  "Fomo Auto": 26
  }
 }
