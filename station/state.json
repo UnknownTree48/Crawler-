@@ -1,40 +1,35 @@
 {
  "status": "on",
- "last_scan_time": "2026-10-12T20:16:19-07:00",
- "coins_seen": 63,
+ "last_scan_time": "2026-10-12T20:38:17-07:00",
+ "coins_seen": 75,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-12T20:16:19-07:00",
-  "reason": "scan reviewed 63 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-12T20:38:17-07:00",
+  "reason": "scan reviewed 75 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-12T20:16:47-07:00",
+ "updated": "2026-10-12T20:38:17-07:00",
  "open_positions": [],
  "watchlist": [
   {
+   "coin": "WangChai",
+   "condition": "hold ~$16.2-16.5M MC with green 5m + buys>sells",
+   "trigger": "pullback"
+  },
+  {
    "coin": "HOOKR",
-   "condition": "pullback to ~$20-21M MC holding higher low + green 5m, or break/hold above ~$24.5M",
+   "condition": "pullback to ~$21.5-22.5M holding + green 5m (do not chase local high)",
    "trigger": "pullback"
   },
   {
    "coin": "TORCH",
-   "condition": "pullback to ~$2.9-3.2M MC + green 5m",
+   "condition": "pullback to ~$2.9-3.3M MC + green 5m",
    "trigger": "pullback"
-  },
-  {
-   "coin": "WangChai",
-   "condition": "green 5m at ~$15.5-16.5M with buys>sells and clearer HH+HL",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "Bull",
-   "condition": "bonding: age >=30m (now 13m), then buys>sells + pullback; holders 515 top10 22.5% already ok",
-   "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-12T20:16:47-07:00",
+  "Fomo Auto trade watch": "2026-10-12T20:38:17-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
