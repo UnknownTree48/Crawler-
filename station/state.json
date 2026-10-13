@@ -1,49 +1,44 @@
 {
  "status": "on",
- "last_scan_time": "2026-10-12T18:49:21-07:00",
- "coins_seen": 50,
+ "last_scan_time": "2026-10-12T18:58:25-07:00",
+ "coins_seen": 60,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-12T18:49:21-07:00",
-  "reason": "scan reviewed 50 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-12T18:58:25-07:00",
+  "reason": "scan reviewed 60 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-12T18:49:21-07:00",
+ "updated": "2026-10-12T18:58:25-07:00",
  "open_positions": [],
  "progress_pct": 87.9,
  "watchlist": [
   {
    "coin": "HOOKR",
-   "condition": "HH above ~$23.5M or HL hold $20-21M + green 5m",
-   "trigger": "structure"
-  },
-  {
-   "coin": "TORCH",
-   "condition": "pullback to $2.9M-3.4M MC holding support + green 5m",
+   "condition": "pullback to ~$19.3-20.0M MC + green 5m, or HH above ~$23.5M",
    "trigger": "pullback"
   },
   {
-   "coin": "WangChai",
-   "condition": "pullback to $12.6M-15M MC holding support + green 5m",
+   "coin": "TORCH",
+   "condition": "pullback to ~$2.9-3.4M MC + green 5m with higher lows holding",
    "trigger": "pullback"
   },
   {
    "coin": "CATE",
-   "condition": "recheck 1H structure for higher low",
+   "condition": "higher low then reclaim ~$52-54M",
    "trigger": "structure"
   },
   {
-   "coin": "MOBY",
-   "condition": "1H chart check after spike cools",
-   "trigger": "structure"
+   "coin": "WangChai",
+   "condition": "second top-10 buyer within the hour; then check liq/TA",
+   "trigger": "leaderboard"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-12T18:49:21-07:00",
+  "Fomo Auto trade watch": "2026-10-12T18:58:25-07:00",
   "fomo scan": {
-   "last_run": "2026-10-12T13:10:00-07:00",
-   "status": "stale"
+   "last_run": "2026-10-12T18:29:58-07:00",
+   "status": "ok"
   }
  }
 }
