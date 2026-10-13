@@ -1,25 +1,25 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T13:05:24-07:00",
- "coins_seen": 143,
+ "last_scan_time": "2026-10-13T13:05:56-07:00",
+ "coins_seen": 4,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T13:05:24-07:00",
-  "reason": "12:57p fomo scan: no paper entry. Graduated top coins mostly PUMP or concentrated (LOAD/XPL top10 65-70pct). WangChai/HOOKR/VRAX on wait levels. Equity 87.94, 0 positions."
+  "time": "2026-10-13T13:05:56-07:00",
+  "reason": "1:02p paper watch (API-only, full fomo scan running concurrently): no entry. WangChai $18.7M 23pct off, -0.6pct EMA20, bs 1.1, sellvol 0.51, 5m trigger fired but swing lows not rising (only fail). HOOKR 2.7pct off +12.7pct EMA20 extended. \u54a9\u90fd\u6709 1h vol fail + TA HTTPError. \ud30c\uba58\uc774 78pct off breakdown. Equity 87.94, 0 positions."
  },
- "updated": "2026-10-13T13:05:24-07:00",
+ "updated": "2026-10-13T13:05:56-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "$0.01812 ($18.1M), 25.6pct off, -4.1pct EMA20, bs 0.51; wait $0.0189 EMA20 reclaim + 5m trigger",
+   "condition": "$18.7M, 23pct off, -0.6pct EMA20, bs 1.1, trigger fired; skip: swing lows not rising (only fail)",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "$0.02869, 2.6pct off, +14.4pct EMA20; wait $0.0251-0.0259",
+   "condition": "$28.5M, 2.7pct off, +12.7pct EMA20; skip: extended/trend",
    "trigger": "pullback"
   },
   {
@@ -44,7 +44,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T12:57:03-07:00",
+  "Fomo Auto trade watch": "2026-10-13T13:05:56-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T13:05:24-07:00",
    "status": "ok"
@@ -52,9 +52,9 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 301,
+ "signals_logged": 287,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 23
+  "Fomo Auto": 24
  }
 }
