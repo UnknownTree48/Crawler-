@@ -1,55 +1,65 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T11:03:19-07:00",
- "coins_seen": 23,
+ "last_scan_time": "2026-10-13T11:37:24-07:00",
+ "coins_seen": 96,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T11:03:19-07:00",
-  "reason": "10:57a paper watch: no entry. WangChai closest (only no 5m trigger). HOOKR 10.4pct off + trend/vol fail; PONS extended; USELESS/TORCH/PRIORS vol fail. Graduated tab empty. Bonding 15 checked, 0 non-PUMP with 300+ holders (PULLIT 161/CHARITABLE 113/BUSTED 64). Feed BREW 2 buyers but 0 qualified copy. Equity 87.94, 0 positions."
+  "time": "2026-10-13T11:37:24-07:00",
+  "reason": "11:28a paper watch: no entry. WangChai $18.2M 24.8pct off but trend/EMA/sellers fail + no 5m trigger. HOOKR 9.1pct off (need 12+) + vol/trend fail; PONS extended; USELESS/TORCH/PRIORS vol/TA fail. Graduated populated (64). Bonding: only \u8774\u8776\u82b1\u5457 passes 300+ non-PUMP but liq $27K<$30K. Feed 0 copy clusters. Equity 87.94, 0 positions."
  },
- "updated": "2026-10-13T11:03:19-07:00",
+ "updated": "2026-10-13T11:37:24-07:00",
  "open_positions": [],
  "watchlist": [
   {
-   "coin": "WangChai",
-   "condition": "~$19.0M, 22.1pct off, +0.31pct EMA20, bs 2.71, sellvol 0.11, swing lows rising \u2014 wait green 5m trigger",
+   "coin": "HOOKR",
+   "condition": "$25.3M, 9.1pct off, +3.11pct EMA20, bs 3.47, sellvol 0.12, skip: 1h vol $42,525 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 9.1% outside 12-30",
    "trigger": "pullback"
   },
   {
-   "coin": "HOOKR",
-   "condition": "~$24.7M, 10.4pct off (need 12+), swing lows not rising, 1h vol <5pct liq",
+   "coin": "WangChai",
+   "condition": "$18.2M, 24.8pct off, -2.91pct EMA20, bs 0.59, sellvol 0.52, skip: trend fail (EMA20/50 or swing lows); not at EMA20 (-2.91%); sellers>=buyers 15m",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "TORCH",
+   "condition": "$2.9M, skip: 24h vol $621,572 < 1x liq; 1h vol $16,360 < 5% liq; ta error HTTPError",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "PRIORS",
+   "condition": "$7.6M, skip: 24h vol $81,299 < 1x liq; 1h vol $1,869 < 5% liq; ta error HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "~$204M, only 3.3pct pullback; wait deeper + green 5m",
+   "condition": "$204.3M, 3.1pct off, +1.78pct EMA20, bs 1.03, sellvol 0.34, swing lows rising, skip: trend fail (EMA20/50 or swing lows); pullback 3.1% outside 12-30; no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "USELESS",
-   "condition": "~$170M, vol24 0.25x liq; wait volume",
+   "condition": "$170.8M, skip: 24h vol $1,072,743 < 1x liq; 1h vol $23,743 < 5% liq; ta error HTTPError",
    "trigger": "pullback"
   },
   {
-   "coin": "copy",
-   "condition": "BREW 2 buyers ~$6.7M but 0 qualified traders; SOL excluded",
-   "trigger": "copy"
-  },
-  {
    "coin": "bonding",
-   "condition": "Graduated empty; bonding PULLIT/CHARITABLE/BUSTED all <300 holders; rest PUMP-suffix",
+   "condition": "\u8774\u8776\u82b1\u5457 76pct/1K holders/top10 15.96pct but liq $27K < $30K satellite min (TA HTTPError); other non-PUMP PULLIT 160/BUSTED 65/CORE 44/ZOOAGENCY 82",
    "trigger": "bonding"
   },
   {
+   "coin": "copy",
+   "condition": "0 clusters; feed KACY/WPRL single buyers only (~5-10m coverage)",
+   "trigger": "copy"
+  },
+  {
    "coin": "graduated",
-   "condition": "Graduated tab empty at 11:01 AM PT (checked twice)",
+   "condition": "64 listed (~100 visible after reload); holders/CA mostly unread \u2014 no paper_engine pairs this run",
    "trigger": "scan"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T11:03:19-07:00",
+  "Fomo Auto trade watch": "2026-10-13T11:37:24-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T09:26:00-07:00",
    "status": "ok"
@@ -57,9 +67,9 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 207,
+ "signals_logged": 242,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 18
+  "Fomo Auto": 19
  }
 }
