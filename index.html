@@ -189,11 +189,12 @@ td.fu{animation:fu 1.8s ease-out}td.fd{animation:fd 1.8s ease-out}
    <div class="kv"><span>top mover</span><b class="y" id="m-top">&mdash;</b></div>
    <div class="kv"><span>CLEAN / WATCH</span><b id="m-cw">&mdash;</b></div></div></div>
   <div class="mod frame"><h3>FOMO AUTO <small>swing trader</small></h3><div class="body"><canvas class="icon" data-icon="chief"></canvas>
-   <div class="kv"><span>mode</span><b class="y" id="fa-mode">&mdash;</b></div>
+   <div class="kv"><span>status</span><b class="y" id="fa-st">&mdash;</b></div>
+   <div class="kv"><span>last scan</span><b id="fa-last">&mdash;</b></div>
+   <div class="kv"><span>seen / passed</span><b class="w" id="fa-sp">&mdash;</b></div>
+   <div class="kv"><span>passed</span><b id="fa-pl">&mdash;</b></div>
    <div class="kv"><span>position</span><b id="fa-pos">&mdash;</b></div>
-   <div class="kv"><span>trades</span><b class="w" id="fa-n">&mdash;</b></div>
-   <div class="kv"><span>last run</span><b id="fa-last">&mdash;</b></div>
-   <div class="kv" style="grid-column:1/-1"><span>last action</span><b id="fa-act" title="">&mdash;</b></div></div></div>
+   <div class="kv" style="grid-column:1/-1"><span>last action</span><b id="fa-act">&mdash;</b></div></div></div>
  </div>
  <div class="card frame" id="lbcard"><h2><span>GMGN SMART MONEY</span><em id="lbSub">coins gaining new smart-money / KOL wallets in ~1h &middot; from the GMGN scan &middot; research only</em></h2>
   <div id="lbStat"></div><div id="lbBody"></div><div id="lbNote"></div></div>
@@ -810,7 +811,7 @@ function apply(d,first){
  D=d;VET=d.vet||{high:null,medium:null,cas:{}};ALL=d.coins.filter(c=>!c.held);
  coins=ALL.filter(c=>c.status!=='NODATA'&&BIN[c.status]);
  stats={clean:d.stats.clean,watch:d.stats.watch,risky:d.stats.risky};
- try{const fa=d.fomo_auto||{},q=(i,v)=>{const e=document.getElementById(i);if(e){e.textContent=(v===null||v===undefined||v==='')?'\u2014':v;e.title=e.textContent}};q('fa-mode',fa.mode);q('fa-pos',fa.position);q('fa-n',fa.trades);q('fa-last',fa.last_run);q('fa-act',fa.last_action)}catch(e){}
+ try{const fa=d.fomo_auto||{},q=(i,v)=>{const e=document.getElementById(i);if(e){e.textContent=(v===null||v===undefined||v==='')?'\u2014':v;e.title=e.textContent}};const n=v=>(v===null||v===undefined)?'\u2014':v;q('fa-st',fa.status);q('fa-last',fa.last_scan);q('fa-sp',(fa.seen==null&&fa.passed_n==null)?null:n(fa.seen)+' / '+n(fa.passed_n));q('fa-pl',Array.isArray(fa.passed)?(fa.passed.length?fa.passed.join(' '):'none'):null);q('fa-pos',fa.position);q('fa-act',fa.last_action)}catch(e){}
  const wp=coins.filter(c=>c.pair);top30=wp.slice().sort((a,b)=>(b.vol24||0)-(a.vol24||0)).slice(0,30);
  pools={W:shuffle(coins.filter(c=>c.status==='WATCH')),C:shuffle(coins.filter(c=>c.status==='CLEAN')),R:shuffle(coins.filter(c=>c.status==='RISKY'))};
  mergeLive();recalcST();
