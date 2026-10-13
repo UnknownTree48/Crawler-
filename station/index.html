@@ -62,12 +62,12 @@ body{background:#0C0A0A;color:#FF3333;font-family:"Courier New",Consolas,monospa
 let S={"status": "on", "last_scan_time": "2026-10-12T17:09:00-07:00", "coins_seen": 28, "coins_passed": 0, "passed": [], "last_action": {"type": "none", "time": "2026-10-12T17:09:00-07:00", "reason": "scan reviewed 28 coins; 0 passed filters; no qualifying copy-trade or pullback entry"}, "updated": "2026-10-12T17:20:00-07:00", "open_positions": [], "progress_pct": 87.9, "watchlist": [{"coin": "AI", "condition": "breaks above ~$100M MC", "trigger": "breakout"}, {"coin": "TORCH", "condition": "pullback to $2.6M\u20133.1M MC + green 5m", "trigger": "pullback"}, {"coin": "CATE", "condition": "wait for higher low", "trigger": "structure"}, {"coin": "HOOKR", "condition": "needs higher high on 1H", "trigger": "structure"}], "heartbeat": {"Fomo Auto trade watch": {"last_run": "2026-10-12T17:20:00-07:00", "status": "ok"}, "fomo scan": {"last_run": "2026-10-12T13:10:00-07:00", "status": "stale"}}};
 const fmt=t=>{try{return new Date(t).toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'America/Los_Angeles'})}catch(e){return '--'}};
 const AG=[
- {n:'FOMO AUTO',lv:7,col:'#E62020',hat:'#FFD700'},
- {n:'MARKET SCANNER',lv:5,col:'#2979FF',hat:'#FFD700',st:'SCANNING CHARTS'},
- {n:'CEO',lv:9,col:'#555',hat:'#9C27B0',st:'REVIEWING DASHBOARD'},
- {n:'RISK AGENT',lv:4,col:'#FF6D00',hat:'#FFEB3B',st:'MONITORING EXPOSURE'},
- {n:'RESEARCH AGENT',lv:3,col:'#00C853',hat:'#fff',st:'IDLE - AWAITING ORDERS'},
- {n:'VETTING AGENT',lv:3,col:'#1565C0',hat:'#FF3333',st:'CHECKING CONTRACTS'}];
+ {n:'FOMO AUTO',col:'#E62020',hat:'#FFD700'},
+ {n:'MARKET SCANNER',col:'#2979FF',hat:'#FFD700',st:'SCANNING CHARTS'},
+ {n:'CEO',col:'#555',hat:'#9C27B0',st:'REVIEWING DASHBOARD'},
+ {n:'RISK AGENT',col:'#FF6D00',hat:'#FFEB3B',st:'MONITORING EXPOSURE'},
+ {n:'RESEARCH AGENT',col:'#00C853',hat:'#fff',st:'IDLE - AWAITING ORDERS'},
+ {n:'VETTING AGENT',col:'#1565C0',hat:'#FF3333',st:'CHECKING CONTRACTS'}];
 AG.forEach(a=>{a.sp=[];for(let i=0;i<30;i++)a.sp.push(.3+Math.random()*.4)});
 let LOG=[];
 function buildLog(){const la=S.last_action||{};const L=[];
@@ -84,7 +84,7 @@ function pushLog(){if(!LOG.length)return;const e=LOG[li++%LOG.length];const d=do
  while(lb.scrollHeight>lb.clientHeight&&lb.children.length>2)lb.removeChild(lb.firstChild)}
 function ui(){
  AG[0].st=S.status==='on'?((S.open_positions||[]).length?'HOLDING '+S.open_positions.length+' POSITION(S)':'WATCHING // '+(S.coins_passed||0)+' PASSED'):'OFFLINE';
- document.getElementById('alist').innerHTML=AG.map((a,i)=>`<div class="ag ${i==0?'act':''} glow"><b>${a.n}</b><span class="lv">LV ${a.lv}</span><div class="st">${a.st}</div><canvas id="sp${i}" width="62" height="14"></canvas></div>`).join('');
+ document.getElementById('alist').innerHTML=AG.map((a,i)=>`<div class="ag ${i==0?'act':''} glow"><b>${a.n}</b><span class="lv" id="lv${i}">LV –</span><div class="st">${a.st}</div><canvas id="sp${i}" width="62" height="14"></canvas></div>`).join('');
  const op=(S.open_positions||[]).map(p=>p.symbol||p).join(', ')||'NONE';const la=S.last_action||{};
  document.getElementById('sp').innerHTML=`<div class="row">STATUS ....... <span class="ok">${(S.status||'?').toUpperCase()}</span></div><div class="row">LAST SCAN .... ${fmt(S.last_scan_time)} PT</div><div class="row">SEEN/PASSED .. <span class="gd">${S.coins_seen??'-'}</span> / <span class="ok">${S.coins_passed??0} ${(S.passed||[]).join(' ')}</span></div><div class="row">OPEN POS ..... ${op}</div><div class="row">LAST ACTION .. ${(la.type||'-').toUpperCase()} @ ${fmt(la.time)} PT</div>`;
  document.getElementById('tk').textContent='>> '+(la.reason||'')+'  //  UPDATED '+fmt(S.updated)+' PT';
@@ -103,7 +103,8 @@ function panels(){const p=+S.progress_pct;const has=isFinite(p)&&S.progress_pct!
   return `<div class="row"><i class="hd" style="background:${col};box-shadow:0 0 5px ${col}"></i>${esc(n).toUpperCase().padEnd(22,'.').replace(/ /g,'&nbsp;')} ${lab}</div>`}).join('');
  const u=S.updated?Math.max(0,Math.round((Date.now()-new Date(S.updated))/6e4)):null;document.getElementById('upd').textContent=u==null?'UPDATED --':'UPDATED '+u+'M AGO'}
 setInterval(panels,1000);
-function refresh(){fetch('state.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(j=>{S=j;ui();panels()}).catch(()=>{})}
+function lvls(){const R=(S&&S.runs)||{};const K={};for(const k in R)K[k.toUpperCase()]=R[k];AG.forEach((a,i)=>{const e=document.getElementById('lv'+i);if(!e)return;const r=K[a.n];if(typeof r==='number'){const L=Math.min(99,Math.floor(Math.sqrt(r/2))+1);e.innerHTML='LV '+L+' <small style="opacity:.7">('+r+')</small>';e.title=r+' scan runs'}else{e.textContent='LV –';e.title='no run data'}})}
+function refresh(){fetch('state.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(j=>{S=j;ui();panels();lvls()}).catch(()=>{})}
 setInterval(refresh,60000);
 ui();panels();refresh();
 setInterval(pushLog,2500);
