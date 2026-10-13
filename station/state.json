@@ -1,49 +1,49 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-12T23:45:55-07:00",
- "coins_seen": 16,
+ "last_scan_time": "2026-10-13T00:10:37-07:00",
+ "coins_seen": 33,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-12T23:45:55-07:00",
-  "reason": "scan reviewed 16 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-13T00:10:37-07:00",
+  "reason": "scan reviewed 33 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-12T23:45:55-07:00",
+ "updated": "2026-10-13T00:10:37-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "HOOKR",
-   "condition": "wait pullback 12-30% off ~$28M high toward 1H EMA20 + green 5m; currently ~7% off and extended",
+   "condition": "wait 12-30% pullback off ~$28M toward 1H EMA20 + green 5m; currently ~4.5% off and ~15% above EMA20",
    "trigger": "pullback"
   },
   {
    "coin": "TORCH",
-   "condition": "tag 1H EMA20 (within 2%) with buyers>sellers + green 5m trigger; still sell-heavy",
+   "condition": "in 12-30% zone near EMA20 \u2014 need buyers>sellers 15m + green 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "WangChai",
-   "condition": "wait ~12-30% off ~$20M+ high into EMA20 zone + green 5m; no 60m copy",
+   "condition": "wait ~12-30% off ~$20M into EMA20 + green 5m; no qualified copy",
    "trigger": "pullback"
   },
   {
-   "coin": "Chonkie",
-   "condition": "bonding 98%, 419 holders, top10 13.4%: wait non-vertical pullback + liq>$30K",
+   "coin": "RAIN",
+   "condition": "bonding 96% MC~$38K: need 300+ holders, top10<30%, liq>$30K, non-vertical pullback",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-12T23:45:55-07:00",
+  "Fomo Auto trade watch": "2026-10-13T00:10:37-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
   }
  },
  "progress_pct": 87.9,
- "runs": {
-  "Fomo Auto": 8
- },
  "paper_trades": 0,
- "signals_logged": 60
+ "signals_logged": 98,
+ "runs": {
+  "Fomo Auto": 9
+ }
 }
