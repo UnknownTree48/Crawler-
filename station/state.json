@@ -1,35 +1,40 @@
 {
  "status": "on",
- "last_scan_time": "2026-10-12T22:02:54-07:00",
+ "last_scan_time": "2026-10-12T22:23:27-07:00",
  "coins_seen": 80,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-12T22:02:54-07:00",
+  "time": "2026-10-12T22:23:27-07:00",
   "reason": "scan reviewed 80 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-12T22:02:54-07:00",
+ "updated": "2026-10-12T22:23:27-07:00",
  "open_positions": [],
  "watchlist": [
   {
-   "coin": "TORCH",
-   "condition": "hold ~$2.9-3.3M with higher low, fading sells + green 5m",
+   "coin": "HOOKR",
+   "condition": "hold \u2265~$23.5M + green 5m after vertical pullback",
    "trigger": "pullback"
   },
   {
-   "coin": "HOOKR",
-   "condition": "pullback to ~$23.5-25M holding + green 5m",
+   "coin": "TORCH",
+   "condition": "hold ~$2.9-3.3M higher low, fading sells + green 5m",
    "trigger": "pullback"
   },
   {
    "coin": "WangChai",
    "condition": "pullback to ~$16.2-16.5M holding + green 5m",
    "trigger": "pullback"
+  },
+  {
+   "coin": "PRIORS",
+   "condition": "pullback to ~$5.9-6.1M + green 5m (HH/HL intact)",
+   "trigger": "pullback"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-12T22:02:54-07:00",
+  "Fomo Auto trade watch": "2026-10-12T22:23:27-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
@@ -37,6 +42,6 @@
  },
  "progress_pct": 87.9,
  "runs": {
-  "Fomo Auto": 1
+  "Fomo Auto": 2
  }
 }
