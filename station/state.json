@@ -1,60 +1,65 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T12:34:43-07:00",
- "coins_seen": 120,
+ "last_scan_time": "2026-10-13T12:57:03-07:00",
+ "coins_seen": 143,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T12:34:43-07:00",
-  "reason": "scan reviewed 120 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-13T12:57:03-07:00",
+  "reason": "12:47p paper watch: no entry. WangChai $18.4M 24pct off, -2.2pct EMA20, bs 0.92, sellers + no trigger. HOOKR 0.2pct off +14.5pct EMA20 extended. PONS/TORCH/PRIORS/VRAX TA HTTPError or vol fail; USELESS vol fail. Graduated: \u54a9\u90fd\u6709 1h vol fail/-13pct EMA20; \ud30c\uba58\uc774 satellite liq ok but 79pct off breakdown; ETCHY/JZ/SpaceXSI liq below $30K; SEALS PUMP + 0 qualified copy; ABYSS 2 buyers unqualified. Bonding 36 at 70pct+, 0 non-PUMP 300+ holders (SHIFT 220). Equity 87.94, 0 positions."
  },
- "updated": "2026-10-13T12:34:43-07:00",
+ "updated": "2026-10-13T12:57:03-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "$18.3M, 24.3pct off, -2.5pct EMA20, bs 0.85; skip: trend, sellvol, sellers, no 5m trigger",
+   "condition": "$18.4M, 24pct off, -2.2pct EMA20, bs 0.92; skip: trend, sellers, no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "$27.2M, 1.3pct off, +10.5pct EMA20; skip: pullback/trend/trigger",
+   "condition": "$27M-ish, 0.2pct off, +14.5pct EMA20; skip: extended/trend/trigger",
    "trigger": "pullback"
   },
   {
    "coin": "\u54a9\u90fd\u6709",
-   "condition": "BSC graduated non-PUMP 2K holders top10 5.76pct; 1h vol fail, -11.9pct EMA20",
+   "condition": "BSC graduated non-PUMP 2K holders top10 5.76pct; 1h vol fail, -13pct EMA20",
    "trigger": "pullback"
   },
   {
-   "coin": "\u5e01\u5b89\u7406\u8bba",
-   "condition": "BSC non-PUMP 817 holders; 53pct off, extended above EMA20",
+   "coin": "\ud30c\uba58\uc774",
+   "condition": "BSC satellite 2K holders top10 18.96pct liq~$39K; 79pct off breakdown, sellers",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "$302M; TA HTTPError this run",
+   "condition": "TA HTTPError this run",
    "trigger": "pullback"
   },
   {
    "coin": "USELESS",
-   "condition": "$171M; vol/trend fail",
+   "condition": "vol/trend fail",
    "trigger": "pullback"
   },
   {
+   "coin": "SEALS",
+   "condition": "PUMP CA + 2 feed buyers; 0 qualified copy traders",
+   "trigger": "copy"
+  },
+  {
    "coin": "ABYSS",
-   "condition": "3 unqualified feed buyers $1.75-2.4M; 0 qualified copy traders",
+   "condition": "2 unqualified feed buyers; 0 qualified copy",
    "trigger": "copy"
   },
   {
    "coin": "bonding",
-   "condition": "33 coins 70pct+; 0 non-PUMP 300+ holders (hovered BUSTED/CORE/ZOOAGENCY/INTERN all <300)",
+   "condition": "36 coins 70pct+; 0 non-PUMP 300+ holders (SHIFT 220 closest)",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T12:34:43-07:00",
+  "Fomo Auto trade watch": "2026-10-13T12:57:03-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T09:26:00-07:00",
    "status": "ok"
@@ -65,6 +70,6 @@
  "signals_logged": 262,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 21
+  "Fomo Auto": 22
  }
 }
