@@ -1,14 +1,47 @@
 {
-  "status": "on",
-  "last_scan_time": "2026-10-12T17:09:00-07:00",
-  "coins_seen": 28,
-  "coins_passed": 0,
-  "passed": [],
-  "last_action": {
-    "type": "none",
-    "time": "2026-10-12T17:09:00-07:00",
-    "reason": "no 2-trader top-10 leaderboard signal (only single-trader buys seen); CATE wait higher low; RHEA/SI/MONITOR/PRIORS avoid downtrend; PONKE dead vol; HIRE spike; bonding EDP445 top10>30% wait pullback, others fail holders/top10/spike"
+ "status": "on",
+ "last_scan_time": "2026-10-12T17:09:00-07:00",
+ "coins_seen": 28,
+ "coins_passed": 0,
+ "passed": [],
+ "last_action": {
+  "type": "none",
+  "time": "2026-10-12T17:09:00-07:00",
+  "reason": "scan reviewed 28 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+ },
+ "updated": "2026-10-12T17:20:00-07:00",
+ "open_positions": [],
+ "progress_pct": 87.9,
+ "watchlist": [
+  {
+   "coin": "AI",
+   "condition": "breaks above ~$100M MC",
+   "trigger": "breakout"
   },
-  "updated": "2026-10-12T17:09:00-07:00",
-  "open_positions": []
+  {
+   "coin": "TORCH",
+   "condition": "pullback to $2.6M\u20133.1M MC + green 5m",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "CATE",
+   "condition": "wait for higher low",
+   "trigger": "structure"
+  },
+  {
+   "coin": "HOOKR",
+   "condition": "needs higher high on 1H",
+   "trigger": "structure"
+  }
+ ],
+ "heartbeat": {
+  "Fomo Auto trade watch": {
+   "last_run": "2026-10-12T17:20:00-07:00",
+   "status": "ok"
+  },
+  "fomo scan": {
+   "last_run": "2026-10-12T13:10:00-07:00",
+   "status": "stale"
+  }
+ }
 }
