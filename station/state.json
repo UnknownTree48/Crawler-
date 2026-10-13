@@ -1,65 +1,55 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T11:37:24-07:00",
- "coins_seen": 96,
+ "last_scan_time": "2026-10-13T11:56:52-07:00",
+ "coins_seen": 82,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T11:37:24-07:00",
-  "reason": "11:28a paper watch: no entry. WangChai $18.2M 24.8pct off but trend/EMA/sellers fail + no 5m trigger. HOOKR 9.1pct off (need 12+) + vol/trend fail; PONS extended; USELESS/TORCH/PRIORS vol/TA fail. Graduated populated (64). Bonding: only \u8774\u8776\u82b1\u5457 passes 300+ non-PUMP but liq $27K<$30K. Feed 0 copy clusters. Equity 87.94, 0 positions."
+  "time": "2026-10-13T11:56:52-07:00",
+  "reason": "11:51a paper watch: no entry. WangChai $19.1M 21.6pct off, +0.84pct EMA20, bs 3.21, sellvol 0.28 but trend fail (swing lows) + no 5m trigger. HOOKR 6.9pct off/vol/trend fail; PONS TA HTTPError; USELESS vol/trend fail; TORCH/PRIORS vol fail. Graduated: \u54a9\u90fd\u6709 (non-PUMP, 2K holders, top10 5.76pct) 26pct off but -9.5pct below EMA20, 1h vol fail; TOWER top10 39pct + PUMP. VRAX 2 feed buyers (unqualified) but 37pct above EMA20 + 5m spike. Bonding: no non-PUMP 300+ holders; \u8774\u8776\u82b1\u5457 liq $25.6K<$30K. Equity 87.94, 0 positions."
  },
- "updated": "2026-10-13T11:37:24-07:00",
+ "updated": "2026-10-13T11:56:52-07:00",
  "open_positions": [],
  "watchlist": [
   {
-   "coin": "HOOKR",
-   "condition": "$25.3M, 9.1pct off, +3.11pct EMA20, bs 3.47, sellvol 0.12, skip: 1h vol $42,525 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 9.1% outside 12-30",
-   "trigger": "pullback"
-  },
-  {
    "coin": "WangChai",
-   "condition": "$18.2M, 24.8pct off, -2.91pct EMA20, bs 0.59, sellvol 0.52, skip: trend fail (EMA20/50 or swing lows); not at EMA20 (-2.91%); sellers>=buyers 15m",
+   "condition": "$19.1M, 21.6pct off, +0.84pct EMA20, bs 3.21, sellvol 0.28; skip: trend fail (swing lows) + no 5m trigger",
    "trigger": "pullback"
   },
   {
-   "coin": "TORCH",
-   "condition": "$2.9M, skip: 24h vol $621,572 < 1x liq; 1h vol $16,360 < 5% liq; ta error HTTPError",
+   "coin": "HOOKR",
+   "condition": "$25.7M, 6.9pct off, +5.3pct EMA20; skip: 1h vol, trend, pullback",
    "trigger": "pullback"
   },
   {
-   "coin": "PRIORS",
-   "condition": "$7.6M, skip: 24h vol $81,299 < 1x liq; 1h vol $1,869 < 5% liq; ta error HTTPError",
+   "coin": "\u54a9\u90fd\u6709",
+   "condition": "$785K (Dex) BSC graduated non-PUMP, 26pct off, -9.5pct EMA20; skip: 1h vol $1.2K, trend fail",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "$204.3M, 3.1pct off, +1.78pct EMA20, bs 1.03, sellvol 0.34, swing lows rising, skip: trend fail (EMA20/50 or swing lows); pullback 3.1% outside 12-30; no 5m trigger",
+   "condition": "$301M; TA HTTPError this run",
    "trigger": "pullback"
   },
   {
    "coin": "USELESS",
-   "condition": "$170.8M, skip: 24h vol $1,072,743 < 1x liq; 1h vol $23,743 < 5% liq; ta error HTTPError",
+   "condition": "$171M, 6.3pct off; vol/trend fail",
    "trigger": "pullback"
   },
   {
-   "coin": "bonding",
-   "condition": "\u8774\u8776\u82b1\u5457 76pct/1K holders/top10 15.96pct but liq $27K < $30K satellite min (TA HTTPError); other non-PUMP PULLIT 160/BUSTED 65/CORE 44/ZOOAGENCY 82",
-   "trigger": "bonding"
-  },
-  {
-   "coin": "copy",
-   "condition": "0 clusters; feed KACY/WPRL single buyers only (~5-10m coverage)",
+   "coin": "VRAX",
+   "condition": "$4.0M, 2 unqualified feed buyers; 37pct above EMA20, 5m spike \u2014 wait for pullback",
    "trigger": "copy"
   },
   {
-   "coin": "graduated",
-   "condition": "64 listed (~100 visible after reload); holders/CA mostly unread \u2014 no paper_engine pairs this run",
-   "trigger": "scan"
+   "coin": "bonding",
+   "condition": "33 coins 70pct+; no non-PUMP 300+ holders confirmed; \u8774\u8776\u82b1\u5457 liq $25.6K<$30K",
+   "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T11:37:24-07:00",
+  "Fomo Auto trade watch": "2026-10-13T11:56:52-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T09:26:00-07:00",
    "status": "ok"
@@ -67,9 +57,9 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 242,
+ "signals_logged": 246,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 19
+  "Fomo Auto": 20
  }
 }
