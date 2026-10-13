@@ -1,15 +1,15 @@
 {
  "status": "paper",
  "last_scan_time": "2026-10-13T14:06:26-07:00",
- "coins_seen": 12,
+ "coins_seen": 49,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
   "time": "2026-10-13T14:06:26-07:00",
-  "reason": "1:57p paper watch: no entry. WangChai bounced to ~$20.3M, 16.3pct off but +6.36pct EMA20, swing lows not rising, sellvol 1.42 not faded, no 5m trigger. HOOKR 5.9pct off +8.47pct EMA20, sellers>=buyers. PRIORS +26pct EMA20. VRAX/TORCH/PONS/\u54a9\u90fd\u6709/\u5c0f\u738b\u5b50 TA HTTPError. USELESS/SpaceXSI vol fail; \ud30c\uba58\uc774 breakdown. 90 outcomes backfilled. Equity 87.94, 0 positions."
+  "reason": "1:57p paper watch: no entry. WangChai bounced to ~$20.3M, 16.3pct off but +6.36pct EMA20, swing lows not rising, sellvol 1.42 not faded, no 5m trigger. HOOKR 5.9pct off +8.47pct EMA20, sellers>=buyers. PRIORS +26pct EMA20. VRAX/TORCH/PONS/\u54a9\u90fd\u6709/\u5c0f\u738b\u5b50 TA HTTPError. USELESS/SpaceXSI vol fail; \ud30c\uba58\uc774 breakdown. 90 outcomes backfilled. Equity 87.94, 0 positions. Graduated ~37 read: all hovered >$500K are PUMP (TESLA SI, Haaland, KACY, TOWER); no non-PUMP >$500K. Feed Temo 2-handle cluster, 0 qualified copy. UI cash $87.94, no positions."
  },
- "updated": "2026-10-13T14:06:26-07:00",
+ "updated": "2026-10-13T14:06:48-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -39,12 +39,12 @@
   },
   {
    "coin": "bonding",
-   "condition": "1:57p UI read pending",
+   "condition": "1:57p UI: ~15 at 75-92pct; hovered MOODENG 113/Whores 100 holders (PUMP); rest unverified; 0 non-PUMP 300+ confirmed",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T14:06:26-07:00",
+  "Fomo Auto trade watch": "2026-10-13T14:06:48-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T13:05:24-07:00",
    "status": "ok"
@@ -52,7 +52,7 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 333,
+ "signals_logged": 334,
  "ui_open_positions": 0,
  "runs": {
   "Fomo Auto": 27
