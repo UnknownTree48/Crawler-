@@ -1,44 +1,39 @@
 {
  "status": "on",
- "last_scan_time": "2026-10-12T18:19:52-07:00",
- "coins_seen": 37,
+ "last_scan_time": "2026-10-12T18:29:58-07:00",
+ "coins_seen": 28,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-12T18:19:52-07:00",
-  "reason": "no 2-wallet top-10 copy signal (Nihao already exited; NINJACAT/IQ/PEZ/hi single-wallet only); HOOKR lower high vs Oct peaks, wait close above $23.5M or green 5m at $20-21M; TORCH ~5% off $3.8M spike, wait $2.9-3.4M; CATE/AI lower highs; bonding GDN/bye/Manya fail holders/top10/spike/liq"
+  "time": "2026-10-12T18:29:58-07:00",
+  "reason": "scan reviewed 28 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-12T18:19:52-07:00",
+ "updated": "2026-10-12T18:29:58-07:00",
  "open_positions": [],
  "progress_pct": 87.9,
  "watchlist": [
   {
-   "coin": "HOOKR",
-   "condition": "1H close above ~$23.5M holding, or green 5m at $20-21M with fading sells",
+   "coin": "TORCH",
+   "condition": "pullback to ~$3.25-3.4M MC + green 5m bounce; invalid below ~$3.1M",
    "trigger": "pullback"
   },
   {
-   "coin": "TORCH",
-   "condition": "pullback to $2.9M-3.4M MC + green 5m",
+   "coin": "HOOKR",
+   "condition": "pullback to ~$19.3-20.0M MC + green 5m on fading sells",
    "trigger": "pullback"
   },
   {
    "coin": "CATE",
-   "condition": "higher low above ~$48M then reclaim $52-55M",
+   "condition": "hold above ~$48M then reclaim ~$52M for higher low",
    "trigger": "structure"
-  },
-  {
-   "coin": "AI",
-   "condition": "reclaim above ~$100M with HH+HL",
-   "trigger": "breakout"
   }
  ],
  "heartbeat": {
   "Fomo Auto trade watch": "2026-10-12T18:19:52-07:00",
   "fomo scan": {
-   "last_run": "2026-10-12T13:10:00-07:00",
-   "status": "stale"
+   "last_run": "2026-10-12T18:29:58-07:00",
+   "status": "ok"
   }
  }
 }
