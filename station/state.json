@@ -1,55 +1,55 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T14:34:25-07:00",
- "coins_seen": 49,
+ "last_scan_time": "2026-10-13T15:00:09-07:00",
+ "coins_seen": 71,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T14:34:25-07:00",
-  "reason": "2:26p paper watch: no entry. WangChai ~$0.01965 18.8pct off +3.58pct EMA20; skip swing lows, sellvol 0.83, sellers>buyers 15m, no 5m trigger. HOOKR 6.6pct off +7.78pct EMA20 + 1h vol fail. PRIORS 13.4pct off but +27pct EMA20. PONS at EMA20 but 4.9pct off + trend fail. TORCH/VRAX/USELESS/\u54a9\u90fd\u6709 TA HTTPError or vol fail. 110 outcomes backfilled. Graduated 26: non-PUMP CALL liq $20K/top10 36%/vertical; NAUTO liq $19K, dumped $282K->$108K; BUSTED top10 41%; Kirk launchpad unverified. Bonding 15 at 70%+, holders not read. Feed VEIL(PUMP) 3 / CASHCAT, Temo, FLOYD 2-buy clusters; 0 qualified copy. UI cash $87.94, 0 positions."
+  "time": "2026-10-13T15:00:09-07:00",
+  "reason": "2:47p paper watch: no entry. WangChai $0.0194 19.8pct off +2.35pct EMA20; skip swing lows, sellvol 0.64, sellers 15m, no 5m trigger. HOOKR 7.0pct off +7.4pct EMA20 + 1h vol fail. PRIORS/PONS/TORCH TA HTTPError or vol. VRAX 27.1pct off but +18.6pct EMA20. Graduated 71: \u53d1\u8d22\u732b non-PUMP BNB liq~$202K top10 2.5% but 40.8pct off + 1h vol fail; \u54a9\u90fd\u6709 33.9pct off 1h vol; \u5e01\u5b89\u7406\u8bba breakdown; CALL top10 36%/spike; NAUTO liq ~$5K dumped; BUSTED top10 41%/spike; IGNITION/ETHINU/LouLou TA HTTPError. Bonding 39 at 70%+: PONZI 102 holders (only non-PUMP checked); 0 with 300+ holders confirmed. Feed ~10m: bomber33 ZC / blastoisecrayon CARDS singles; 0 qualified copy. UI cash $87.94, 0 positions."
  },
- "updated": "2026-10-13T14:34:25-07:00",
+ "updated": "2026-10-13T15:00:09-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "$0.01965, 18.8pct off, +3.58pct EMA20; skip: swing lows, sellvol 0.83, sellers 15m, no trigger; wait EMA20 retest ~$0.0189",
+   "condition": "$0.0194, 19.8pct off, +2.35pct EMA20; skip: swing lows, sellvol 0.64, sellers 15m, no trigger; wait EMA20 retest ~$0.0189",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "6.6pct off, +7.78pct EMA20; extended/1h vol",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "PRIORS",
-   "condition": "13.4pct off but +27pct EMA20; wait EMA20 retest",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "PONS",
-   "condition": "at EMA20 (-0.04%) but 4.9pct off, trend fail",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "TORCH",
-   "condition": "24h/1h vol fail; TA HTTPError",
+   "condition": "7.0pct off, +7.4pct EMA20; extended/1h vol",
    "trigger": "pullback"
   },
   {
    "coin": "VRAX",
+   "condition": "27.1pct off but +18.6pct EMA20; wait pullback to EMA20",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "\u53d1\u8d22\u732b",
+   "condition": "non-PUMP BNB, liq~$202K, top10 2.5%, 40.8pct off, 1h vol fail; watch for EMA20 reclaim",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "PRIORS",
+   "condition": "TA HTTPError",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "PONS",
    "condition": "TA HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "bonding",
-   "condition": "2:26p UI: 15 at >=70% (MONEY 95, PALS 94); holders not read",
+   "condition": "2:47p UI: 39 at >=70% (MONEY/PALS 94); PONZI 102 holders; 0 non-PUMP 300+ confirmed",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T14:34:25-07:00",
+  "Fomo Auto trade watch": "2026-10-13T15:00:09-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T13:05:24-07:00",
    "status": "ok"
@@ -57,9 +57,9 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 378,
+ "signals_logged": 393,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 29
+  "Fomo Auto": 30
  }
 }
