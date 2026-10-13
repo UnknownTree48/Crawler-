@@ -1,50 +1,54 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T09:20:30-07:00",
- "coins_seen": 17,
+ "last_scan_time": "2026-10-13T09:26:00-07:00",
+ "coins_seen": 26,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T09:20:30-07:00",
-  "reason": "9:13a paper watch: 0 entries. HOOKR ~$24.8M 10.4% off, 2.3% above EMA20, sellers>buyers, 1h vol <5% liq, no 5m trigger. WangChai ~$18.5M 20.6% off, 2.0% above EMA20 (just outside 2%), bs 1.59, sellvol faded, no 5m trigger. TORCH vol24 0.76x liq + TA HTTPError. PRIORS TA HTTPError / at highs (UI). Feed VEIL 3 buyers but parabolic skip; no qualified copy. Bonding S402 290h closest, all <300 holders."
+  "time": "2026-10-13T09:26:00-07:00",
+  "reason": "scan reviewed 26 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T09:20:30-07:00",
+ "updated": "2026-10-13T09:26:00-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "~$18.5M, 20.6% off, 2.0% above EMA20 - need EMA20 touch (<=2%) + green 5m trigger",
+   "condition": "~$18.2M, ~24% off $24 high, sell vol not faded; wait hold $17.5-18.0 + green 5m + buys>sells",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "PONS",
+   "condition": "~$308M after bounce from $280; extended (~1% pullback); wait $300-303 + green 5m",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "USELESS",
+   "condition": "~$171M, HL ~$164; wait pullback $165-167 + green 5m or close above $176",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "~$24.8M, 10.4% off, 2.3% above EMA20 - need 12%+ off, buyers>sellers, 1h vol >=5% liq, green 5m",
+   "condition": "~$24.7M, 10.9% off, sellers>=buyers, 1h vol <5% liq, no 5m trigger",
    "trigger": "pullback"
-  },
-  {
-   "coin": "TORCH",
-   "condition": "~$2.89M, ~10% off UI / vol24 fail API; unverified 2d old",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "VEIL",
-   "condition": "3 feed buyers ~$6M but parabolic - avoid; copy scorecard still empty",
-   "trigger": "copy"
   },
   {
    "coin": "bonding",
-   "condition": "S402 94%/290h closest; FLYWHEEL/SUPAH/etc all <300 holders, tiny MC",
+   "condition": "none pass 300+ holders (RSI 119, BUSTED 62; rest unopened; pump-flagged skipped)",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T09:20:30-07:00"
+  "Fomo Auto trade watch": "2026-10-13T09:20:30-07:00",
+  "fomo scan": {
+   "last_run": "2026-10-13T09:26:00-07:00",
+   "status": "ok"
+  }
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 157,
+ "signals_logged": 160,
  "runs": {
-  "Fomo Auto": 14
+  "Fomo Auto": 15
  }
 }
