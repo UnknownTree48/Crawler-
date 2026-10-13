@@ -1,36 +1,36 @@
 {
  "status": "on",
  "last_scan_time": "2026-10-12T19:47:36-07:00",
- "coins_seen": 10,
+ "coins_seen": 25,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
   "time": "2026-10-12T19:47:36-07:00",
-  "reason": "scan reviewed 10 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "reason": "scan reviewed 25 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
  "updated": "2026-10-12T19:47:36-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "HOOKR",
-   "condition": "pullback to ~$19.3-20.5M MC + green 5m with fades sells, or clean HH above ~$27M",
+   "condition": "pullback to ~$19.5-20.5M MC + green 5m, or clean break above ~$24M",
    "trigger": "pullback"
   },
   {
    "coin": "TORCH",
-   "condition": "pullback to ~$2.9-3.4M MC + green 5m with higher lows holding",
+   "condition": "pullback to ~$2.9-3.2M MC + green 5m with higher lows",
    "trigger": "pullback"
   },
   {
    "coin": "WangChai",
-   "condition": "pullback to ~$12.6-15M MC + green 5m (1H HH/HL)",
+   "condition": "green 5m at ~$15.5-16.5M with buys>sells",
    "trigger": "pullback"
   },
   {
-   "coin": "CATE",
-   "condition": "higher low then reclaim ~$55-60M with buys>sells",
-   "trigger": "structure"
+   "coin": "WYD",
+   "condition": "bonding: holders >=300 (now 210), buys>sells, pullback",
+   "trigger": "bonding"
   }
  ],
  "heartbeat": {
