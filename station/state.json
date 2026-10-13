@@ -1,35 +1,40 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-12T23:37:30-07:00",
- "coins_seen": 13,
+ "last_scan_time": "2026-10-12T23:45:55-07:00",
+ "coins_seen": 16,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-12T23:37:30-07:00",
-  "reason": "scan reviewed 13 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-12T23:45:55-07:00",
+  "reason": "scan reviewed 16 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-12T23:37:30-07:00",
+ "updated": "2026-10-12T23:45:55-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "HOOKR",
-   "condition": "extended after bounce; wait for pullback 12-30% off ~$27.5M high to 1H EMA20 + green 5m trigger",
+   "condition": "wait pullback 12-30% off ~$28M high toward 1H EMA20 + green 5m; currently ~7% off and extended",
    "trigger": "pullback"
   },
   {
    "coin": "TORCH",
-   "condition": "tag 1H EMA20 (within 2%) with fading sells + green 5m trigger",
+   "condition": "tag 1H EMA20 (within 2%) with buyers>sellers + green 5m trigger; still sell-heavy",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "WangChai",
+   "condition": "wait ~12-30% off ~$20M+ high into EMA20 zone + green 5m; no 60m copy",
    "trigger": "pullback"
   },
   {
    "coin": "Chonkie",
-   "condition": "bonding 95%, 371 holders, top10 13%: wait for a pullback after vertical run + green 5m, liquidity >$30K",
+   "condition": "bonding 98%, 419 holders, top10 13.4%: wait non-vertical pullback + liq>$30K",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-12T23:37:30-07:00",
+  "Fomo Auto trade watch": "2026-10-12T23:45:55-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
@@ -37,8 +42,8 @@
  },
  "progress_pct": 87.9,
  "runs": {
-  "Fomo Auto": 7
+  "Fomo Auto": 8
  },
  "paper_trades": 0,
- "signals_logged": 44
+ "signals_logged": 60
 }
