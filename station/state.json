@@ -35,5 +35,8 @@
    "status": "ok"
   }
  },
- "progress_pct": 87.9
+ "progress_pct": 87.9,
+ "runs": {
+  "Fomo Auto": 47
+ }
 }
