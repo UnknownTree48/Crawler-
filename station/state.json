@@ -6,35 +6,40 @@
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T08:07:13-07:00",
+  "time": "2026-10-13T08:08:33-07:00",
   "reason": "scan reviewed 9 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T08:07:13-07:00",
+ "updated": "2026-10-13T08:08:33-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "HOOKR",
-   "condition": "~$24.3M 12.0% off, at EMA20 (0.84%), buyers strong \u2014 wait green 5m trigger close above prior high",
+   "condition": "~$24.4M 12% pullback zone near EMA20, buyers strong \u2014 wait green 5m trigger; top10 15.5% OK",
    "trigger": "pullback"
   },
   {
    "coin": "WangChai",
-   "condition": "~$19.6M; TA flaky on Gecko; wait clean pullback 12-30% to EMA20 + green 5m",
+   "condition": "~$19.3\u201319.5M; top10 17.9% OK; wait clean 12-30% to EMA20 + green 5m",
    "trigger": "pullback"
   },
   {
    "coin": "PRIORS",
-   "condition": "~$6.30M; need vol24\u2265liq and pullback setup",
+   "condition": "~$7.1M; need vol24\u2265liq and pullback setup",
    "trigger": "pullback"
   },
   {
-   "coin": "MASK/bonding",
-   "condition": "MASK 89% vertical+low liq skip; need 300+ holders, liq>$30K, non-vertical pullback \u226570% bonded",
+   "coin": "STONK",
+   "condition": "2 feed buyers but traders not qualified for copy; ignore until scorecard ready",
+   "trigger": "copy"
+  },
+  {
+   "coin": "bonding",
+   "condition": "OSPREY/Koinu/blocus ~94\u201396% but holders\u226a300 and liq~$10K \u2014 all fail satellite quality",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T08:07:13-07:00",
+  "Fomo Auto trade watch": "2026-10-13T08:08:33-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
@@ -42,7 +47,7 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 107,
+ "signals_logged": 114,
  "runs": {
   "Fomo Auto": 11
  }
