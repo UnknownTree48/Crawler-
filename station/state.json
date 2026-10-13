@@ -1,43 +1,32 @@
 {
  "status": "on",
- "last_scan_time": "2026-10-12T18:58:25-07:00",
- "coins_seen": 60,
+ "last_scan_time": "2026-10-12T19:05:57-07:00",
+ "coins_seen": 28,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-12T18:58:25-07:00",
-  "reason": "scan reviewed 60 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-12T19:05:57-07:00",
+  "reason": "scan reviewed 28 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-12T18:58:25-07:00",
+ "updated": "2026-10-12T19:05:57-07:00",
  "open_positions": [],
- "progress_pct": 87.9,
  "watchlist": [
   {
-   "coin": "HOOKR",
-   "condition": "pullback to ~$19.3-20.0M MC + green 5m, or HH above ~$23.5M",
-   "trigger": "pullback"
-  },
-  {
    "coin": "TORCH",
-   "condition": "pullback to ~$2.9-3.4M MC + green 5m with higher lows holding",
+   "condition": "pullback to $3.0-3.35M MC + green 5m",
    "trigger": "pullback"
   },
   {
-   "coin": "CATE",
-   "condition": "higher low then reclaim ~$52-54M",
-   "trigger": "structure"
-  },
-  {
-   "coin": "WangChai",
-   "condition": "second top-10 buyer within the hour; then check liq/TA",
-   "trigger": "leaderboard"
+   "coin": "HOOKR",
+   "condition": "pullback to $19.5-20.3M MC + green 5m, or break above $23.5M HH",
+   "trigger": "pullback"
   }
  ],
  "heartbeat": {
   "Fomo Auto trade watch": "2026-10-12T18:58:25-07:00",
   "fomo scan": {
-   "last_run": "2026-10-12T18:29:58-07:00",
+   "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
   }
  }
