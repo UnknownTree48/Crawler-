@@ -1,40 +1,40 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T07:38:38-07:00",
- "coins_seen": 17,
+ "last_scan_time": "2026-10-13T08:07:13-07:00",
+ "coins_seen": 9,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T07:38:38-07:00",
-  "reason": "scan reviewed 17 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-13T08:07:13-07:00",
+  "reason": "scan reviewed 9 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T07:38:38-07:00",
+ "updated": "2026-10-13T08:07:13-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "HOOKR",
-   "condition": "in 12-30% zone near EMA20 (~$23.8M, 14% off ~$28M) \u2014 need buyers>sellers 15m, fading sell vol + green 5m trigger",
+   "condition": "~$24.3M 12.0% off, at EMA20 (0.84%), buyers strong \u2014 wait green 5m trigger close above prior high",
    "trigger": "pullback"
   },
   {
    "coin": "WangChai",
-   "condition": "~$19M; wait 12-30% off ~$20M into EMA20 + green 5m",
+   "condition": "~$19.6M; TA flaky on Gecko; wait clean pullback 12-30% to EMA20 + green 5m",
    "trigger": "pullback"
   },
   {
    "coin": "PRIORS",
-   "condition": "~$6.8M uptrending again; wait for 12-30% pullback to EMA20",
+   "condition": "~$6.30M; need vol24\u2265liq and pullback setup",
    "trigger": "pullback"
   },
   {
-   "coin": "Engineers/CODEPAD",
-   "condition": "bonding 95% ~$35K MC: need 300+ holders, top10<30%, liq>$30K, non-vertical pullback",
+   "coin": "MASK/bonding",
+   "condition": "MASK 89% vertical+low liq skip; need 300+ holders, liq>$30K, non-vertical pullback \u226570% bonded",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T07:38:38-07:00",
+  "Fomo Auto trade watch": "2026-10-13T08:07:13-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
@@ -42,8 +42,8 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 112,
+ "signals_logged": 107,
  "runs": {
-  "Fomo Auto": 10
+  "Fomo Auto": 11
  }
 }
