@@ -1,22 +1,22 @@
 {
  "status": "on",
- "last_scan_time": "2026-10-12T17:35:07-07:00",
- "coins_seen": 14,
+ "last_scan_time": "2026-10-12T17:50:53-07:00",
+ "coins_seen": 15,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-12T17:35:07-07:00",
-  "reason": "scan reviewed 14 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-12T17:50:53-07:00",
+  "reason": "scan reviewed 15 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-12T17:35:07-07:00",
+ "updated": "2026-10-12T17:50:53-07:00",
  "open_positions": [],
  "progress_pct": 87.9,
  "watchlist": [
   {
    "coin": "HOOKR",
-   "condition": "1H higher high above ~$23.5M then pullback ~$20-21M + green 5m",
-   "trigger": "structure"
+   "condition": "pullback to ~$20-21M MC holding higher low + green 5m",
+   "trigger": "pullback"
   },
   {
    "coin": "TORCH",
@@ -35,10 +35,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": {
-   "last_run": "2026-10-12T17:35:07-07:00",
-   "status": "ok"
-  },
+  "Fomo Auto trade watch": "2026-10-12T17:50:53-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T13:10:00-07:00",
    "status": "stale"
