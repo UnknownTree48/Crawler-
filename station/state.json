@@ -9,7 +9,7 @@
   "time": "2026-10-13T13:26:04-07:00",
   "reason": "1:15p paper watch: no entry. WangChai $18.7M 23.8pct off, -1.58pct EMA20, bs 0.86, sellvol 0.58; skip swing lows + sellers + no 5m trigger. HOOKR extended 4.1pct off +11.3pct EMA20. TORCH trigger but vol/trend fail. VRAX/\u54a9\u90fd\u6709 TA HTTPError. \ud30c\uba58\uc774 84pct off breakdown. Bonding not fully re-listed; 0 qualified copy. Equity 87.94, 0 positions."
  },
- "updated": "2026-10-13T13:26:04-07:00",
+ "updated": "2026-10-13T13:26:34-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -44,7 +44,7 @@
   },
   {
    "coin": "bonding",
-   "condition": "UI open but bonding list not fully captured this run; prior 0 non-PUMP 300+ holders",
+   "condition": "1:15p UI: ~35 at 70%+, 0 non-PUMP 300+ holders (sampled RAT/TAKU/BOTCHED PUMP)",
    "trigger": "bonding"
   }
  ],
