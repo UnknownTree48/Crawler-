@@ -9,7 +9,7 @@
   "time": "2026-10-13T16:56:25-07:00",
   "reason": "scan reviewed 10 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T16:56:25-07:00",
+ "updated": "2026-10-13T16:56:46-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -54,7 +54,7 @@
   },
   {
    "coin": "bonding",
-   "condition": "4:23p UI: \u226570% bonded checked \u2014 NEXA 257, RAIN 168, RSI 148, trueq 135, dweeble 137, UPKID/AUNTCAT 97, +++++ 43; none 300+ (TACTICS etc unchecked)",
+   "condition": "4:48p UI: FWOYD 203, PALS 194, KINETIC 164, HoodWF 106, UPKID 97 holders (all Pump.fun); none 300+",
    "trigger": "bonding"
   },
   {
@@ -69,7 +69,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T16:56:25-07:00",
+  "Fomo Auto trade watch": "2026-10-13T16:56:46-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T13:05:24-07:00",
    "status": "ok"
