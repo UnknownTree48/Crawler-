@@ -1,20 +1,20 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T08:07:13-07:00",
- "coins_seen": 9,
+ "last_scan_time": "2026-10-13T08:21:29-07:00",
+ "coins_seen": 4,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T08:08:33-07:00",
-  "reason": "scan reviewed 9 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-13T08:21:29-07:00",
+  "reason": "8:18a paper watch: 0 entries. HOOKR ~$24.8M only 10.2% off high, 2.7% above EMA20, no 5m trigger (bs 5.3, sell vol faded). TORCH ~$2.75M 26% off but 4% below EMA20, vol fails. PRIORS vol fail. WangChai ~$19.2M TA data error. signals=118"
  },
- "updated": "2026-10-13T08:08:33-07:00",
+ "updated": "2026-10-13T08:21:29-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "HOOKR",
-   "condition": "~$24.4M 12% pullback zone near EMA20, buyers strong \u2014 wait green 5m trigger; top10 15.5% OK",
+   "condition": "~$24.8M, 10% off high, 2.7% above EMA20 - wait dip to ~$24.1M (12%+ off) near EMA20 + green 5m",
    "trigger": "pullback"
   },
   {
@@ -39,7 +39,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T08:08:33-07:00",
+  "Fomo Auto trade watch": "2026-10-13T08:21:29-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
@@ -47,7 +47,7 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 114,
+ "signals_logged": 118,
  "runs": {
   "Fomo Auto": 12
  }
