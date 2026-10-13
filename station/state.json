@@ -1,45 +1,45 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T08:21:29-07:00",
- "coins_seen": 13,
+ "last_scan_time": "2026-10-13T08:49:00-07:00",
+ "coins_seen": 12,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T08:21:29-07:00",
-  "reason": "8:18a paper watch: 0 entries. HOOKR ~$24.8M only 10.2% off high, 2.7% above EMA20, no 5m trigger (bs 5.3, sell vol faded). TORCH ~$2.75M 26% off but 4% below EMA20, vol fails. PRIORS vol fail. WangChai ~$19.2M TA data error. signals=118 UI: cash $87.94, 0 positions; feed STONK/VRAX 3 buyers, HOOKR/CARDS 2, none qualified copy; bonding Koinu/PENGUINS/blocus/EVYN/SUPAH all <300 holders. signals=127"
+  "time": "2026-10-13T08:49:00-07:00",
+  "reason": "scan reviewed 12 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T08:26:31-07:00",
+ "updated": "2026-10-13T08:49:00-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "HOOKR",
-   "condition": "~$24.8M, 10% off high, 2.7% above EMA20 - wait dip to ~$24.1M (12%+ off) near EMA20 + green 5m",
+   "condition": "~$24.4M, 11.6% off high, 1.3% above EMA20 - need 12%+ off, buyers>sellers, 1h vol >=5% liq, green 5m",
    "trigger": "pullback"
   },
   {
    "coin": "WangChai",
-   "condition": "~$19.3\u201319.5M; top10 17.9% OK; wait clean 12-30% to EMA20 + green 5m",
+   "condition": "~$18.4M, 24% off, 2.2% below EMA20 - need reclaim EMA20, sell vol fade, buyers>sellers",
    "trigger": "pullback"
   },
   {
-   "coin": "PRIORS",
-   "condition": "~$7.1M; need vol24\u2265liq and pullback setup",
+   "coin": "TORCH",
+   "condition": "~$2.98M, 20% off, 3% above EMA20 - needs vol24>=liq and EMA20 touch",
    "trigger": "pullback"
   },
   {
-   "coin": "STONK",
-   "condition": "3 feed buyers (~$95M), VRAX 3, CARDS 2 - traders unqualified until scorecard ready",
+   "coin": "BORDR",
+   "condition": "4 feed buyers ~$3.7-5.2M MC; traders unqualified until scorecard ready",
    "trigger": "copy"
   },
   {
    "coin": "bonding",
-   "condition": "Koinu 96%/128h, PENGUINS ~94%/296h (closest), blocus/EVYN/SUPAH <160 holders - all fail 300+ and liq",
+   "condition": "BackrTrade 97%/870h/top10 14% and BOB 96%/300h pass holders but liq tiny; S402 289h, WORM 288h close",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T08:26:31-07:00",
+  "Fomo Auto trade watch": "2026-10-13T08:49:00-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
@@ -47,8 +47,8 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 127,
+ "signals_logged": 139,
  "runs": {
-  "Fomo Auto": 12
+  "Fomo Auto": 13
  }
 }
