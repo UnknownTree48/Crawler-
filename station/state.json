@@ -1,50 +1,55 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T10:27:34-07:00",
- "coins_seen": 20,
+ "last_scan_time": "2026-10-13T11:03:19-07:00",
+ "coins_seen": 23,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T10:27:34-07:00",
-  "reason": "10:17a paper watch: no entry. WangChai 24.5pct off but -2.5pct below EMA20, sellers>=buyers; HOOKR 9.6pct off (need 12+), trend fail; PONS extended; USELESS/TORCH/PRIORS vol fail. Feed AI 4 / SI 3 / VEIL 3 / CLAUDIA 2 / BORDR 2 buyers but 0 qualified copy. Bonding top 9 all <300 holders. Equity 87.94, 0 positions."
+  "time": "2026-10-13T11:03:19-07:00",
+  "reason": "10:57a paper watch: no entry. WangChai closest (only no 5m trigger). HOOKR 10.4pct off + trend/vol fail; PONS extended; USELESS/TORCH/PRIORS vol fail. Graduated tab empty. Bonding 15 checked, 0 non-PUMP with 300+ holders (PULLIT 161/CHARITABLE 113/BUSTED 64). Feed BREW 2 buyers but 0 qualified copy. Equity 87.94, 0 positions."
  },
- "updated": "2026-10-13T10:27:34-07:00",
+ "updated": "2026-10-13T11:03:19-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "~$18.3M, 24.5pct off, -2.5pct EMA20, sellvol faded 0.43 but sellers>=buyers, no 5m trigger",
+   "condition": "~$19.0M, 22.1pct off, +0.31pct EMA20, bs 2.71, sellvol 0.11, swing lows rising \u2014 wait green 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "~$25.1M, 9.6pct off (need 12+), swing lows not rising, 1h vol <5pct liq",
+   "condition": "~$24.7M, 10.4pct off (need 12+), swing lows not rising, 1h vol <5pct liq",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "~$208-308M, extended 1.7pct pullback; wait deeper pullback + green 5m",
+   "condition": "~$204M, only 3.3pct pullback; wait deeper + green 5m",
    "trigger": "pullback"
   },
   {
    "coin": "USELESS",
-   "condition": "~$172M, vol24 0.25x liq; wait volume",
+   "condition": "~$170M, vol24 0.25x liq; wait volume",
    "trigger": "pullback"
   },
   {
    "coin": "copy",
-   "condition": "AI/SI/VEIL/CLAUDIA/BORDR multi-buyer but no qualified traders yet",
+   "condition": "BREW 2 buyers ~$6.7M but 0 qualified traders; SOL excluded",
    "trigger": "copy"
   },
   {
    "coin": "bonding",
-   "condition": "EMO/HomeView/TACTICS/REPAD/S402 etc all <300 holders",
+   "condition": "Graduated empty; bonding PULLIT/CHARITABLE/BUSTED all <300 holders; rest PUMP-suffix",
    "trigger": "bonding"
+  },
+  {
+   "coin": "graduated",
+   "condition": "Graduated tab empty at 11:01 AM PT (checked twice)",
+   "trigger": "scan"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T10:27:34-07:00",
+  "Fomo Auto trade watch": "2026-10-13T11:03:19-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T09:26:00-07:00",
    "status": "ok"
@@ -52,8 +57,9 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 183,
+ "signals_logged": 207,
+ "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 17
+  "Fomo Auto": 18
  }
 }
