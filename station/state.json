@@ -1,15 +1,15 @@
 {
  "status": "paper",
  "last_scan_time": "2026-10-13T08:21:29-07:00",
- "coins_seen": 4,
+ "coins_seen": 13,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
   "time": "2026-10-13T08:21:29-07:00",
-  "reason": "8:18a paper watch: 0 entries. HOOKR ~$24.8M only 10.2% off high, 2.7% above EMA20, no 5m trigger (bs 5.3, sell vol faded). TORCH ~$2.75M 26% off but 4% below EMA20, vol fails. PRIORS vol fail. WangChai ~$19.2M TA data error. signals=118"
+  "reason": "8:18a paper watch: 0 entries. HOOKR ~$24.8M only 10.2% off high, 2.7% above EMA20, no 5m trigger (bs 5.3, sell vol faded). TORCH ~$2.75M 26% off but 4% below EMA20, vol fails. PRIORS vol fail. WangChai ~$19.2M TA data error. signals=118 UI: cash $87.94, 0 positions; feed STONK/VRAX 3 buyers, HOOKR/CARDS 2, none qualified copy; bonding Koinu/PENGUINS/blocus/EVYN/SUPAH all <300 holders. signals=127"
  },
- "updated": "2026-10-13T08:21:29-07:00",
+ "updated": "2026-10-13T08:26:31-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -29,17 +29,17 @@
   },
   {
    "coin": "STONK",
-   "condition": "2 feed buyers but traders not qualified for copy; ignore until scorecard ready",
+   "condition": "3 feed buyers (~$95M), VRAX 3, CARDS 2 - traders unqualified until scorecard ready",
    "trigger": "copy"
   },
   {
    "coin": "bonding",
-   "condition": "OSPREY/Koinu/blocus ~94\u201396% but holders\u226a300 and liq~$10K \u2014 all fail satellite quality",
+   "condition": "Koinu 96%/128h, PENGUINS ~94%/296h (closest), blocus/EVYN/SUPAH <160 holders - all fail 300+ and liq",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T08:21:29-07:00",
+  "Fomo Auto trade watch": "2026-10-13T08:26:31-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
@@ -47,7 +47,7 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 118,
+ "signals_logged": 127,
  "runs": {
   "Fomo Auto": 12
  }
