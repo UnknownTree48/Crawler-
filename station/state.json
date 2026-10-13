@@ -1,55 +1,55 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T15:16:17-07:00",
- "coins_seen": 15,
+ "last_scan_time": "2026-10-13T15:40:27-07:00",
+ "coins_seen": 6,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T15:16:17-07:00",
-  "reason": "3:10p paper watch: no entry. WangChai $0.0185 23.9pct off -2.44pct EMA20; trend/swing lows fail, sellvol 1.25, sellers 15m (bs 0.61), no 5m trigger. HOOKR 0.8pct off +13pct EMA20 extended. PONS at EMA20 (+0.54) but 4.2pct off, swing lows not rising. TORCH 21pct off near EMA20 but vol fail + trend. VRAX/PRIORS/ETHINU/\u53d1\u8d22\u732b TA HTTPError; \u54a9\u90fd\u6709 34pct off breakdown; IGNITION +127pct EMA20. Graduated (UI, partial): KAIxSPEED/TESLA SI/bmw/FLOYD all PUMP; Anthropic liq $20.8K. Bonding view not found this run; feed clusters not read; 0 qualified copy. UI cash $87.94, 0 positions."
+  "time": "2026-10-13T15:40:27-07:00",
+  "reason": "3:32p paper watch: no entry. WangChai $0.0187 22.7pct off -1.07pct EMA20; trend/swing lows fail, sellers 15m (bs 0.36), no 5m trigger. PONS $0.302 only 3.2pct off, trend fail. HOOKR/TORCH TA HTTPError (TORCH vol fail). VRAX +31.7pct EMA20 extended. \u53d1\u8d22\u732b 40.6pct off breakdown, 1h vol fail. Graduated/Bonding UI read pending."
  },
- "updated": "2026-10-13T15:16:17-07:00",
+ "updated": "2026-10-13T15:40:27-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "$0.0185, 23.9pct off, -2.44pct EMA20; trend/swing lows fail, sellers 15m; wait EMA20 reclaim ~$0.0190 + 5m trigger",
+   "condition": "$0.0187, 22.7pct off, -1.07pct EMA20; trend fail, sellers 15m; wait EMA20 reclaim + 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "$0.2975 at EMA20 but only 4.2pct off; wait 12pct+ pullback with rising swing lows",
+   "condition": "$0.302 only 3.2pct off; wait 12pct+ pullback with rising swing lows",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "0.8pct off, +13pct EMA20; extended",
+   "condition": "TA HTTPError; last extended +13pct EMA20",
    "trigger": "pullback"
   },
   {
    "coin": "TORCH",
-   "condition": "21pct off near EMA20 but 24h/1h vol + trend fail",
+   "condition": "24h/1h vol fail",
    "trigger": "pullback"
   },
   {
    "coin": "VRAX",
-   "condition": "TA HTTPError; last 27pct off +18.6pct EMA20",
+   "condition": "17pct off but +31.7pct EMA20; extended",
    "trigger": "pullback"
   },
   {
    "coin": "\u53d1\u8d22\u732b",
-   "condition": "non-PUMP BNB liq~$201K top10 2.5%; 1h vol fail, downtrend",
+   "condition": "40.6pct off, -10.9pct EMA20 breakdown, 1h vol fail",
    "trigger": "pullback"
   },
   {
    "coin": "bonding",
-   "condition": "3:10p UI: Bonding view not located; last known 0 non-PUMP 300+ holders at 70%+",
+   "condition": "last known 0 non-PUMP 300+ holders at 70%+",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T15:16:17-07:00",
+  "Fomo Auto trade watch": "2026-10-13T15:40:27-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T13:05:24-07:00",
    "status": "ok"
@@ -57,9 +57,9 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 408,
+ "signals_logged": 414,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 31
+  "Fomo Auto": 32
  }
 }
