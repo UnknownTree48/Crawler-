@@ -1,55 +1,65 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T15:40:27-07:00",
- "coins_seen": 11,
+ "last_scan_time": "2026-10-13T15:57:45-07:00",
+ "coins_seen": 20,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T15:40:27-07:00",
-  "reason": "scan reviewed 11 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-13T15:57:45-07:00",
+  "reason": "scan reviewed 20 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T15:40:58-07:00",
+ "updated": "2026-10-13T15:57:45-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "$0.0187, 22.7pct off, -1.07pct EMA20; trend fail, sellers 15m; wait EMA20 reclaim + 5m trigger",
+   "condition": "23.2pct off, -1.66pct EMA20; trend/swing lows fail, sellers 15m; wait EMA20 reclaim + rising lows + 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "$0.302 only 3.2pct off; wait 12pct+ pullback with rising swing lows",
+   "condition": "only 2.6pct off, EMA20<50; wait 12pct+ pullback with rising swing lows",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "TA HTTPError; last extended +13pct EMA20",
+   "condition": "2.0pct off +12.6pct EMA20 extended",
    "trigger": "pullback"
   },
   {
    "coin": "TORCH",
-   "condition": "24h/1h vol fail",
+   "condition": "24h vol <1x liq and 1h vol fail",
    "trigger": "pullback"
   },
   {
    "coin": "VRAX",
-   "condition": "17pct off but +31.7pct EMA20; extended",
+   "condition": "TA HTTPError this run",
    "trigger": "pullback"
   },
   {
    "coin": "\u53d1\u8d22\u732b",
-   "condition": "40.6pct off, -10.9pct EMA20 breakdown, 1h vol fail",
+   "condition": "40.4pct off -10.6pct EMA20 breakdown, 1h vol fail",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "BIBI",
+   "condition": "satellite liq ok but +135pct EMA20 / 5m spike; wait calm pullback",
+   "trigger": "pullback"
+  },
+  {
+   "coin": "IGNITION",
+   "condition": "satellite extended +153pct EMA20; wait pullback to EMA20",
    "trigger": "pullback"
   },
   {
    "coin": "bonding",
-   "condition": "3:33p UI: Bonding tab found but list empty",
+   "condition": "3:45p UI: Bonding tab empty",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T15:40:58-07:00",
+  "Fomo Auto trade watch": "2026-10-13T15:57:45-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T13:05:24-07:00",
    "status": "ok"
@@ -57,9 +67,9 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 419,
+ "signals_logged": 439,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 32
+  "Fomo Auto": 33
  }
 }
