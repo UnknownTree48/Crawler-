@@ -1,33 +1,44 @@
 {
  "status": "on",
- "last_scan_time": "2026-10-12T19:05:57-07:00",
- "coins_seen": 28,
+ "last_scan_time": "2026-10-12T19:15:08-07:00",
+ "coins_seen": 8,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-12T19:05:57-07:00",
-  "reason": "scan reviewed 28 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-12T19:15:08-07:00",
+  "reason": "scan reviewed 8 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-12T19:05:57-07:00",
+ "updated": "2026-10-12T19:15:08-07:00",
  "open_positions": [],
  "watchlist": [
   {
-   "coin": "TORCH",
-   "condition": "pullback to $3.0-3.35M MC + green 5m",
+   "coin": "HOOKR",
+   "condition": "pullback to ~$19.3-20.0M MC + green 5m, or HH above ~$23.5M",
    "trigger": "pullback"
   },
   {
-   "coin": "HOOKR",
-   "condition": "pullback to $19.5-20.3M MC + green 5m, or break above $23.5M HH",
+   "coin": "TORCH",
+   "condition": "pullback to ~$2.9-3.4M MC + green 5m with higher lows holding",
    "trigger": "pullback"
+  },
+  {
+   "coin": "CATE",
+   "condition": "higher low then reclaim ~$52-54M",
+   "trigger": "structure"
+  },
+  {
+   "coin": "MINER",
+   "condition": "bonding: age >=30m, pullback after spike, buys>sells 5m",
+   "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-12T18:58:25-07:00",
+  "Fomo Auto trade watch": "2026-10-12T19:15:08-07:00",
   "fomo scan": {
    "last_run": "2026-10-12T19:05:57-07:00",
    "status": "ok"
   }
- }
+ },
+ "progress_pct": 87.9
 }
