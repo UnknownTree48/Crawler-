@@ -1,85 +1,55 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T17:54:42-07:00",
- "coins_seen": 10,
+ "last_scan_time": "2026-10-13T18:04:49-07:00",
+ "coins_seen": 11,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T17:54:42-07:00",
-  "reason": "scan reviewed 10 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-13T18:04:49-07:00",
+  "reason": "scan reviewed 11 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T17:54:42-07:00",
+ "updated": "2026-10-13T18:04:49-07:00",
  "open_positions": [],
  "watchlist": [
   {
-   "coin": "WangChai",
-   "condition": "8.75pct above EMA20, trend fail, sellers 15m; wait EMA20 + rising swing low + 5m trigger",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "PONS",
-   "condition": "0.8pct off +3.4pct EMA20, trend fail",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "HOOKR",
-   "condition": "TA HTTPError",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "TORCH",
-   "condition": "24h/1h vol fail, -9.9pct EMA20",
-   "trigger": "pullback"
-  },
-  {
    "coin": "VRAX",
-   "condition": "+8.7pct EMA20, no 5m trigger",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "\u53d1\u8d22\u732b",
-   "condition": "51.5pct off -24.3pct EMA20 breakdown",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "BIBI",
-   "condition": "36.9pct off but +72pct EMA20 spike",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "IGNITION",
-   "condition": "TA HTTPError",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "bonding",
-   "condition": "5:40p UI: SISTER 94% 160 holders, KINETIC 91% 185, RSI 88% 155 (Pump.fun); none 300+",
-   "trigger": "bonding"
+   "trigger": "pullback",
+   "condition": "wait EMA20 ~$0.00338 (now $0.003708, +9.8pct); clean uptrend, need green 5m"
   },
   {
    "coin": "PRIORS",
    "trigger": "pullback",
-   "condition": "+20pct EMA20 extended"
+   "condition": "wait EMA20 ~$0.00819 (now $0.009354, +14.2pct); sells not faded"
   },
   {
-   "coin": "\u54a9\u90fd\u6709",
+   "coin": "WangChai",
    "trigger": "pullback",
-   "condition": "34.3pct off -12.1pct EMA20 breakdown"
+   "condition": "wait EMA20 ~$0.0195 (now $0.02097, +7.5pct); needs rising swing lows + buyers 15m"
+  },
+  {
+   "coin": "bonding",
+   "trigger": "bonding",
+   "condition": "5:55p UI: bae 93%, coolcat 90%, RSI 87% (155 holders); none 300+"
+  },
+  {
+   "coin": "avoid",
+   "trigger": "none",
+   "condition": "PONS trend fail; HOOKR/IGNITION TA err; TORCH vol fail; \u53d1\u8d22\u732b/\u54a9\u90fd\u6709 breakdown; BIBI spike; TXGYM 0.8h MeteoraDBC spike"
   }
  ],
  "heartbeat": {
   "Fomo Auto trade watch": "2026-10-13T17:54:42-07:00",
   "fomo scan": {
-   "last_run": "2026-10-13T13:05:24-07:00",
+   "last_run": "2026-10-13T18:04:49-07:00",
    "status": "ok"
   }
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 484,
+ "signals_logged": 515,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 39
+  "Fomo Auto": 40
  }
 }
