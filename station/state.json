@@ -1,25 +1,25 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T18:43:57-07:00",
+ "last_scan_time": "2026-10-13T18:57:49-07:00",
  "coins_seen": 10,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T18:43:57-07:00",
+  "time": "2026-10-13T18:57:49-07:00",
   "reason": "scan reviewed 10 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T18:43:57-07:00",
+ "updated": "2026-10-13T18:57:49-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "15.4pct off +5.10pct EMA20; trend fail (EMA20/50 or swing lows), not at EMA20 (5.1%), sellers>=buyers 15m",
+   "condition": "12.7pct off +8.14pct EMA20; trend fail (EMA20/50 or swing lows); not at EMA20 (8.14%)",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "2.6pct off +4.72pct EMA20; trend fail (EMA20/50 or swing lows), pullback 2.6% outside 12-30, not at EMA20 (4.72%)",
+   "condition": "2.2pct off +5.12pct EMA20; trend fail (EMA20/50 or swing lows); pullback 2.2% outside 12-30; not at EMA20 (5.12%); sell vol not faded",
    "trigger": "pullback"
   },
   {
@@ -29,17 +29,17 @@
   },
   {
    "coin": "TORCH",
-   "condition": "24h vol $371,761 < 1x liq, 1h vol $3,214 < 5% liq, ta error HTTPError",
+   "condition": "24h vol $371,439 < 1x liq; 1h vol $2,689 < 5% liq; ta error HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "VRAX",
-   "condition": "ta error HTTPError",
+   "condition": "29.3pct off +7.56pct EMA20; not at EMA20 (7.56%); no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "\u53d1\u8d22\u732b",
-   "condition": "45.5pct off -14.40pct EMA20; trend fail (EMA20/50 or swing lows), pullback 45.5% outside 12-30, not at EMA20 (-14.4%)",
+   "condition": "45.8pct off -14.90pct EMA20; 1h vol $8,799 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 45.8% outside 12-30; not at EMA20 (-14.9%)",
    "trigger": "pullback"
   },
   {
@@ -49,27 +49,27 @@
   },
   {
    "coin": "IGNITION",
-   "condition": "57.8pct off +30.74pct EMA20; trend fail (EMA20/50 or swing lows), pullback 57.8% outside 12-30, not at EMA20 (30.74%)",
+   "condition": "31.4pct off +97.01pct EMA20; trend fail (EMA20/50 or swing lows); pullback 31.4% outside 12-30; not at EMA20 (97.01%); 5m spike >25%",
    "trigger": "pullback"
   },
   {
    "coin": "PRIORS",
-   "condition": "24.0pct off +5.16pct EMA20; not at EMA20 (5.16%), no 5m trigger",
+   "condition": "22.7pct off +6.80pct EMA20; not at EMA20 (6.8%); no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "\u54a9\u90fd\u6709",
-   "condition": "1h vol $5,178 < 5% liq, ta error HTTPError",
+   "condition": "39.9pct off -18.11pct EMA20; 1h vol $5,388 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 39.9% outside 12-30; not at EMA20 (-18.11%)",
    "trigger": "pullback"
   },
   {
    "coin": "bonding",
-   "condition": "6:33p UI: NEVERDOOM/RSI/UPKID/PALS/trueq/NEXA/LEVEE/S402 Pump-or-low holders; PUMPE 73pct 7/328 total unverified; none confirmed 300+ holders",
+   "condition": "6:45p UI: NEXA/UPKID/ENTANGLE/PALS/PUMPE/Takashi/LEVEE; PUMPE 73pct 9/336 total unverified; none confirmed non-Pump 300+ holders",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T18:43:57-07:00",
+  "Fomo Auto trade watch": "2026-10-13T18:57:49-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T18:04:49-07:00",
    "status": "ok"
@@ -77,9 +77,9 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 524,
+ "signals_logged": 534,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 43
+  "Fomo Auto": 44
  }
 }
