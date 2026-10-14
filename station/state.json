@@ -1,25 +1,25 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T17:27:28-07:00",
+ "last_scan_time": "2026-10-13T17:42:21-07:00",
  "coins_seen": 10,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T17:27:28-07:00",
+  "time": "2026-10-13T17:42:21-07:00",
   "reason": "scan reviewed 10 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T17:27:28-07:00",
+ "updated": "2026-10-13T17:42:21-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "10.1pct off +11.7pct EMA20, trend fail; wait pullback to EMA20 + rising swing low + 5m trigger",
+   "condition": "12.4pct off +9.1pct EMA20, trend fail, sellers 15m; wait EMA20 + rising swing low + 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "1.8pct off +2.6pct EMA20, trend fail",
+   "condition": "1.6pct off +2.8pct EMA20, trend fail",
    "trigger": "pullback"
   },
   {
@@ -39,17 +39,17 @@
   },
   {
    "coin": "\u53d1\u8d22\u732b",
-   "condition": "46.5pct off -17.2pct EMA20 breakdown",
+   "condition": "48.7pct off -20.3pct EMA20 breakdown",
    "trigger": "pullback"
   },
   {
    "coin": "BIBI",
-   "condition": "36.8pct off but +72pct EMA20 extended",
+   "condition": "TA HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "IGNITION",
-   "condition": "+112pct EMA20, trend fail",
+   "condition": "+78pct EMA20, trend fail",
    "trigger": "pullback"
   },
   {
@@ -60,16 +60,16 @@
   {
    "coin": "PRIORS",
    "trigger": "pullback",
-   "condition": "TA HTTPError"
+   "condition": "14.3pct off but +18.7pct EMA20 extended"
   },
   {
    "coin": "\u54a9\u90fd\u6709",
    "trigger": "pullback",
-   "condition": "32.3pct off -9.7pct EMA20 breakdown"
+   "condition": "TA HTTPError"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T17:27:28-07:00",
+  "Fomo Auto trade watch": "2026-10-13T17:42:21-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T13:05:24-07:00",
    "status": "ok"
@@ -80,6 +80,6 @@
  "signals_logged": 484,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 37
+  "Fomo Auto": 38
  }
 }
