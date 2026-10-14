@@ -1,75 +1,75 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T18:57:49-07:00",
+ "last_scan_time": "2026-10-13T19:30:44-07:00",
  "coins_seen": 10,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T18:57:49-07:00",
-  "reason": "scan reviewed 10 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-13T19:30:44-07:00",
+  "reason": "7:14p paper watch: no entry. WangChai: trend fail (EMA20/50 or swing lows), PONS: trend fail (EMA20/50 or swing lows), HOOKR: ta error HTTPError, TORCH: 24h vol $366,803 < 1x liq, VRAX: ta error HTTPError, \u53d1\u8d22\u732b: 1h vol $2,577 < 5% liq, BIBI: ta error HTTPError, IGNITION: trend fail (EMA20/50 or swing lows), PRIORS: not at EMA20 (9.3%), \u54a9\u90fd\u6709: trend fail (EMA20/50 or swing lows). Backfill 219 rows (fixed crash on rows missing price)."
  },
- "updated": "2026-10-13T18:59:39-07:00",
+ "updated": "2026-10-13T19:30:44-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "12.7pct off +8.14pct EMA20; trend fail (EMA20/50 or swing lows); not at EMA20 (8.14%)",
+   "condition": "$0.02075; trend fail (EMA20/50 or swing lows); not at EMA20 (5.38%); no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "2.2pct off +5.12pct EMA20; trend fail (EMA20/50 or swing lows); pullback 2.2% outside 12-30; not at EMA20 (5.12%); sell vol not faded",
+   "condition": "$0.3179; trend fail (EMA20/50 or swing lows); pullback 1.8% outside 12-30; not at EMA20 (4.99%); sellers>=buyers 15m; no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "ta error HTTPError",
+   "condition": "$0.02764; ta error HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "TORCH",
-   "condition": "24h vol $371,439 < 1x liq; 1h vol $2,689 < 5% liq; ta error HTTPError",
+   "condition": "$0.002651; 24h vol $366,803 < 1x liq; 1h vol $4,648 < 5% liq; ta error HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "VRAX",
-   "condition": "29.3pct off +7.56pct EMA20; not at EMA20 (7.56%); no 5m trigger",
+   "condition": "$0.003617; ta error HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "\u53d1\u8d22\u732b",
-   "condition": "45.8pct off -14.90pct EMA20; 1h vol $8,799 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 45.8% outside 12-30; not at EMA20 (-14.9%)",
+   "condition": "$0.003978; 1h vol $2,577 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 44.4% outside 12-30; not at EMA20 (-11.66%); no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "BIBI",
-   "condition": "ta error HTTPError",
+   "condition": "$0.0003423; ta error HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "IGNITION",
-   "condition": "31.4pct off +97.01pct EMA20; trend fail (EMA20/50 or swing lows); pullback 31.4% outside 12-30; not at EMA20 (97.01%); 5m spike >25%",
+   "condition": "$0.0005059; trend fail (EMA20/50 or swing lows); not at EMA20 (105.94%); sell vol not faded; 5m spike >25%; >15% above EMA20; no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "PRIORS",
-   "condition": "22.7pct off +6.80pct EMA20; not at EMA20 (6.8%); no 5m trigger",
+   "condition": "$0.009127; not at EMA20 (9.3%); no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "\u54a9\u90fd\u6709",
-   "condition": "39.9pct off -18.11pct EMA20; 1h vol $5,388 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 39.9% outside 12-30; not at EMA20 (-18.11%)",
+   "condition": "$0.00225; trend fail (EMA20/50 or swing lows); pullback 37.0% outside 12-30; not at EMA20 (-12.61%); sell vol not faded; no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "bonding",
-   "condition": "6:45\u20136:59p UI attach_blocked: NEXA/UPKID/ENTANGLE/PALS/PUMPE/LEVEE; none 300+ first holders; PUMPE 9/336 total unverified; 0 qualified copy",
+   "condition": "7:14p reused 6:45p UI read: no bonding coin 300+ non-Pump; 0 qualified copy traders",
    "trigger": "bonding"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T18:57:49-07:00",
+  "Fomo Auto trade watch": "2026-10-13T19:30:44-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T18:04:49-07:00",
    "status": "ok"
@@ -80,6 +80,6 @@
  "signals_logged": 534,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 44
+  "Fomo Auto": 45
  }
 }
