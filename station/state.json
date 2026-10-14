@@ -1,30 +1,30 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T16:56:25-07:00",
+ "last_scan_time": "2026-10-13T17:27:28-07:00",
  "coins_seen": 10,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T16:56:25-07:00",
+  "time": "2026-10-13T17:27:28-07:00",
   "reason": "scan reviewed 10 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T16:56:46-07:00",
+ "updated": "2026-10-13T17:27:28-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "12.3pct off +11.3pct EMA20 (bounced); trend/swing lows fail; bs 2.55; wait pullback to EMA20 + rising swing low + 5m trigger",
+   "condition": "10.1pct off +11.7pct EMA20, trend fail; wait pullback to EMA20 + rising swing low + 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "3.2pct off +1.3pct EMA20, trend fail",
+   "condition": "1.8pct off +2.6pct EMA20, trend fail",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "1h vol fail + TA HTTPError",
+   "condition": "TA HTTPError",
    "trigger": "pullback"
   },
   {
@@ -34,22 +34,22 @@
   },
   {
    "coin": "VRAX",
-   "condition": "TA HTTPError this run",
+   "condition": "TA HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "\u53d1\u8d22\u732b",
-   "condition": "41.8pct off -11.6pct EMA20 breakdown, 1h vol fail",
+   "condition": "46.5pct off -17.2pct EMA20 breakdown",
    "trigger": "pullback"
   },
   {
    "coin": "BIBI",
-   "condition": "TA HTTPError; prior spike",
+   "condition": "36.8pct off but +72pct EMA20 extended",
    "trigger": "pullback"
   },
   {
    "coin": "IGNITION",
-   "condition": "+112pct EMA20, 5m spike, trend fail",
+   "condition": "+112pct EMA20, trend fail",
    "trigger": "pullback"
   },
   {
@@ -60,16 +60,16 @@
   {
    "coin": "PRIORS",
    "trigger": "pullback",
-   "condition": "13.4pct off but +22.7pct EMA20 extended"
+   "condition": "TA HTTPError"
   },
   {
    "coin": "\u54a9\u90fd\u6709",
    "trigger": "pullback",
-   "condition": "36.2pct off -15.9pct EMA20 breakdown, sellers, 1h vol fail"
+   "condition": "32.3pct off -9.7pct EMA20 breakdown"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T16:56:46-07:00",
+  "Fomo Auto trade watch": "2026-10-13T17:27:28-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T13:05:24-07:00",
    "status": "ok"
@@ -77,9 +77,9 @@
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 474,
+ "signals_logged": 484,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 36
+  "Fomo Auto": 37
  }
 }
