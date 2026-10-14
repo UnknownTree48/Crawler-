@@ -9,7 +9,7 @@
   "time": "2026-10-13T18:57:49-07:00",
   "reason": "scan reviewed 10 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T18:57:49-07:00",
+ "updated": "2026-10-13T18:59:39-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -64,7 +64,7 @@
   },
   {
    "coin": "bonding",
-   "condition": "6:45p UI: NEXA/UPKID/ENTANGLE/PALS/PUMPE/Takashi/LEVEE; PUMPE 73pct 9/336 total unverified; none confirmed non-Pump 300+ holders",
+   "condition": "6:45\u20136:59p UI attach_blocked: NEXA/UPKID/ENTANGLE/PALS/PUMPE/LEVEE; none 300+ first holders; PUMPE 9/336 total unverified; 0 qualified copy",
    "trigger": "bonding"
   }
  ],
