@@ -10,7 +10,17 @@
   "reason": "scan reviewed 29 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
  "updated": "2026-10-14T12:42:07-07:00",
- "open_positions": [],
+ "open_positions": [
+  {
+   "coin": "CONDOM",
+   "chain": "solana",
+   "address": "Bs5oWCyQBMTszdEYenKApgEwHDzx9EHinTTADZConDom",
+   "entry": 0.0001747,
+   "opened": "2026-10-14T12:20:54-07:00",
+   "rules": "early_runner_v1",
+   "paper": true
+  }
+ ],
  "watchlist": [
   {
    "coin": "WangChai",
