@@ -9,87 +9,97 @@
   "time": "2026-10-14T08:44:51-07:00",
   "reason": "scan reviewed 28 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-14T08:44:51-07:00",
+ "updated": "2026-10-14T09:16:06-07:00",
  "open_positions": [],
  "watchlist": [
   {
-   "coin": "WangChai",
-   "condition": "$0.01589; trend fail (EMA20/50 or swing lows); pullback 32.4% outside 12-30; not at EMA20 (-11.19%); sell vol not faded; no 5m trigger",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "PONS",
-   "condition": "$0.3469; trend fail (EMA20/50 or swing lows); pullback 2.2% outside 12-30; not at EMA20 (4.81%); no 5m trigger",
-   "trigger": "pullback"
-  },
-  {
    "coin": "HOOKR",
-   "condition": "$0.02565; 1h vol $47,238 < 5% liq; ta error HTTPError",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "TORCH",
-   "condition": "$0.002643; 24h vol $383,584 < 1x liq; 1h vol $15,001 < 5% liq; trend fail (EMA20/50 or swing lows); not at EMA20 (3.99%); no 5m trigger",
-   "trigger": "pullback"
+   "condition": "$0.0245; wait for 0.02585752; EMA20>50, 19.3% off high, sells faded (0.45), buyers 1.19x, but 5.3% under EMA20 and lows not rising; wait for EMA20 reclaim + green 5m",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/robinhood/0x18E674231A58c239Dc7DaeDcffE15Ec3A24cff5c"
   },
   {
    "coin": "VRAX",
-   "condition": "$0.006856; pullback 11.0% outside 12-30; not at EMA20 (45.82%); sellers>=buyers 15m; >15% above EMA20; no 5m trigger",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "\u53d1\u8d22\u732b",
-   "condition": "$0.00262; 24h vol $113,584 < 1x liq; trend fail (EMA20/50 or swing lows); pullback 45.2% outside 12-30; not at EMA20 (-23.2%); sell vol not faded; no 5m trigger",
-   "trigger": "pullback"
-  },
-  {
-   "coin": "BIBI",
-   "condition": "$0.001246; pullback 41.1% outside 12-30; not at EMA20 (29.64%); >15% above EMA20; no 5m trigger",
-   "trigger": "pullback"
+   "condition": "$0.007443; wait for 0.00492718; cleanest uptrend (EMA20>50, rising lows) but +51% above EMA20 with only 8% pullback; wait for an EMA20 retest",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/robinhood/0x94641b97010608C3827fB058074889f19868FF33"
   },
   {
    "coin": "IGNITION",
-   "condition": "$0.0007447; ta error HTTPError",
-   "trigger": "pullback"
+   "condition": "$0.0008301; wait for 0.00062036; uptrend with rising lows and 19% off high, but +33.8% above EMA20 and sellers lead 15m; satellite liq $83K",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/robinhood/0x01E6301bc1118be90Cc6Bc2d1B5C0c44Bb883111"
+  },
+  {
+   "coin": "WangChai",
+   "condition": "$0.0161; avoid; trend fail, 31.5% off high, -9.5% under EMA20, sellers lead",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/bnb/0x14F6A94909C407854390Aa2d2462a3095D317777"
+  },
+  {
+   "coin": "PONS",
+   "condition": "$0.3432; avoid; only 2.1% pullback, lows not rising, sellers lead 15m",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/robinhood/0x39dBED3a2bd333467115dE45665cC57F813C4571"
+  },
+  {
+   "coin": "TORCH",
+   "condition": "$0.002574; avoid; volume fail (24h 0.4x liq) and no chart data",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/robinhood/0x000050E18ffa3F8F7aD170Eb9CeF160eb3Ed1111"
+  },
+  {
+   "coin": "\u53d1\u8d22\u732b",
+   "condition": "$0.002383; avoid; breakdown: 49.5% off, -27% under EMA20, vol fail",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/bnb/0x64225cA744ab7245Dd3d309981F3D7262d277777"
+  },
+  {
+   "coin": "BIBI",
+   "condition": "$0.001118; avoid; rising lows but 48% off high (too deep) and +14.5% above EMA20",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/bnb/0x409f0Bcdc9A70565a71AF56Cb50b2a6688cB7777"
   },
   {
    "coin": "PRIORS",
-   "condition": "$0.007289; trend fail (EMA20/50 or swing lows); pullback 36.1% outside 12-30; not at EMA20 (-14.47%); no 5m trigger",
-   "trigger": "pullback"
+   "condition": "$0.007364; avoid; breakdown: 35.5% off high, -12.5% under EMA20, lows not rising (buyers 6x is the only plus)",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/robinhood/0xeDBf91223639800BCd5756815CAf908Df3b890bE"
   },
   {
    "coin": "\u54a9\u90fd\u6709",
-   "condition": "$0.002445; 24h vol $124,666 < 1x liq; 1h vol $4,962 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 8.6% outside 12-30; no 5m trigger",
-   "trigger": "pullback"
+   "condition": "$0.002602; avoid; trend fail, vol fail (0.81x liq), 2% pullback",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/bnb/0x21CF16B1349038C2103A90d012403865C2667777"
   },
   {
    "coin": "LOAD",
-   "condition": "data error 'NoneType' object is not subscriptable",
-   "trigger": "pullback"
+   "condition": "$None; avoid; no pair data from DexScreener",
+   "trigger": "pullback",
+   "link": null
   },
   {
    "coin": "VSWAP",
-   "condition": "$0.0001751; liq $35,571 below min; trend fail (EMA20/50 or swing lows); pullback 59.2% outside 12-30; not at EMA20 (-7.42%); no 5m trigger",
-   "trigger": "pullback"
+   "condition": "$0.0001877; avoid; Pump.fun token (PUMP rule), liq $37K below min, 57% off high",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/solana/4VScHuqZ13uma3S34iNkiSAQvZDEeGebjbM5bPcapump"
   },
   {
    "coin": "LEVEE",
-   "condition": "$0.0001134; trend fail (EMA20/50 or swing lows); pullback 37.7% outside 12-30; not at EMA20 (39.89%); >15% above EMA20; no 5m trigger",
-   "trigger": "pullback"
+   "condition": "$0.0001012; avoid; liq $29K below min, no chart data",
+   "trigger": "pullback",
+   "link": "https://fomo.family/tokens/robinhood/0x4f8eB44Cd1A5290D12d5729bC53f3f2BCee78684"
   }
  ],
  "heartbeat": {
   "Fomo Auto trade watch": "2026-10-14T08:44:51-07:00",
-  "fomo scan": {
-   "last_run": "2026-10-13T18:04:49-07:00",
-   "status": "ok"
-  }
+  "fomo scan": "2026-10-14T09:16:06-07:00"
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
  "signals_logged": 802,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 64
+  "Fomo Auto": 65
  }
 }
