@@ -85,7 +85,7 @@
  "progress_pct": 87.9,
  "paper_trades": 0,
  "signals_logged": 972,
- "ui_open_positions": [],
+ "ui_open_positions": 0,
  "runs": {
   "Fomo Auto": 71
  },
