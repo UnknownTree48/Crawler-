@@ -5,9 +5,9 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "type": "paper_exit_logged",
-  "time": "2026-10-14T13:07:33-07:00",
-  "reason": "scan reviewed 38 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "type": "none",
+  "time": "2026-10-14T13:08:31-07:00",
+  "reason": "1:04p fomo scan (12:55 slot): 36 coins (29 graduated/watchlist reused from 12:57 trade watch + 7 big-buy feed coins), 0 passed, no paper entry. Top waits: CASHCAT ~$0.1154, VRAX ~$0.00575, SAPLING reclaim ~$0.0025. CONDOM early_runner paper test stopped at -25% at 12:42p (-$3.51); paper equity $84.43; cooldown until 1:43p. Real cash $87.94 untouched."
  },
  "updated": "2026-10-14T13:07:33-07:00",
  "open_positions": [],
@@ -34,8 +34,9 @@
   },
   {
    "coin": "VRAX",
-   "condition": "$0.007596; not at EMA20 (32.11%); >15% above EMA20; no 5m trigger",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "condition": "$0.007596; uptrend intact, 24.8% off the high, but still 32% above EMA20; wait for a pullback to EMA20 near $0.00575",
+   "trigger": "wait for 0.00575",
+   "link": "https://fomo.family/tokens/robinhood/0x94641b97010608C3827fB058074889f19868FF33"
   },
   {
    "coin": "\u53d1\u8d22\u732b",
@@ -76,18 +77,30 @@
    "coin": "LEVEE",
    "condition": "$7.678e-05; liq $25,283 below min; trend fail (EMA20/50 or swing lows); pullback 60.9% outside 8-35; not at EMA20 (-10.64%); sellers>=buyers 15m",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+  },
+  {
+   "coin": "CASHCAT",
+   "condition": "$0.1236; heaviest buy flow on the feed (hungryghost ~$300K, m0f0 ~$30K), $3M liq, but only 0.9% off the high and 7% above EMA20 with trend check failing; wait for an EMA20 retest near $0.115 plus a green 5m",
+   "trigger": "wait for 0.1154",
+   "link": "https://fomo.family/tokens/robinhood/0x020bfc650a365f8bb26819deaabf3e21291018b4"
+  },
+  {
+   "coin": "SAPLING",
+   "condition": "$0.002386; 24% pullback sitting on EMA20 (-1.4%) with $10K GoldCap buy, but trend check fails, sells not fading and 24h vol < liq; wait for a green 5m reclaim above ~$0.0025",
+   "trigger": "wait for 0.0025 reclaim",
+   "link": "https://fomo.family/tokens/solana/BZFYNPeQAEW3HWQ4DNsTVahC1n4ZjTgn6jB2nnBbB96W"
   }
  ],
  "heartbeat": {
   "Fomo Auto trade watch": "2026-10-14T13:07:33-07:00",
-  "fomo scan": "2026-10-14T09:16:06-07:00"
+  "fomo scan": "2026-10-14T13:08:31-07:00"
  },
  "progress_pct": 84.4,
  "paper_trades": 2,
  "signals_logged": 1138,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 74
+  "Fomo Auto": 75
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 1,
