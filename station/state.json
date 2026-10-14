@@ -1,25 +1,25 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-13T17:42:21-07:00",
+ "last_scan_time": "2026-10-13T17:54:42-07:00",
  "coins_seen": 10,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-13T17:42:21-07:00",
+  "time": "2026-10-13T17:54:42-07:00",
   "reason": "scan reviewed 10 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-13T17:42:40-07:00",
+ "updated": "2026-10-13T17:54:42-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "12.4pct off +9.1pct EMA20, trend fail, sellers 15m; wait EMA20 + rising swing low + 5m trigger",
+   "condition": "8.75pct above EMA20, trend fail, sellers 15m; wait EMA20 + rising swing low + 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "1.6pct off +2.8pct EMA20, trend fail",
+   "condition": "0.8pct off +3.4pct EMA20, trend fail",
    "trigger": "pullback"
   },
   {
@@ -29,47 +29,47 @@
   },
   {
    "coin": "TORCH",
-   "condition": "24h/1h vol fail + TA HTTPError",
+   "condition": "24h/1h vol fail, -9.9pct EMA20",
    "trigger": "pullback"
   },
   {
    "coin": "VRAX",
-   "condition": "TA HTTPError",
+   "condition": "+8.7pct EMA20, no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "\u53d1\u8d22\u732b",
-   "condition": "48.7pct off -20.3pct EMA20 breakdown",
+   "condition": "51.5pct off -24.3pct EMA20 breakdown",
    "trigger": "pullback"
   },
   {
    "coin": "BIBI",
-   "condition": "TA HTTPError",
+   "condition": "36.9pct off but +72pct EMA20 spike",
    "trigger": "pullback"
   },
   {
    "coin": "IGNITION",
-   "condition": "+78pct EMA20, trend fail",
+   "condition": "TA HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "bonding",
-   "condition": "5:20p UI: dweeble 90% 78 holders, KINETIC 87% 48, UPKID 85% 5, EDGAR 85% 13, PALS 83% 57; none 300+",
+   "condition": "5:40p UI: SISTER 94% 160 holders, KINETIC 91% 185, RSI 88% 155 (Pump.fun); none 300+",
    "trigger": "bonding"
   },
   {
    "coin": "PRIORS",
    "trigger": "pullback",
-   "condition": "14.3pct off but +18.7pct EMA20 extended"
+   "condition": "+20pct EMA20 extended"
   },
   {
    "coin": "\u54a9\u90fd\u6709",
    "trigger": "pullback",
-   "condition": "TA HTTPError"
+   "condition": "34.3pct off -12.1pct EMA20 breakdown"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-13T17:42:21-07:00",
+  "Fomo Auto trade watch": "2026-10-13T17:54:42-07:00",
   "fomo scan": {
    "last_run": "2026-10-13T13:05:24-07:00",
    "status": "ok"
@@ -80,6 +80,6 @@
  "signals_logged": 484,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 38
+  "Fomo Auto": 39
  }
 }
