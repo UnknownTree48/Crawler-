@@ -9,7 +9,7 @@
   "time": "2026-10-13T19:30:44-07:00",
   "reason": "7:14p paper watch: no entry. WangChai: trend fail (EMA20/50 or swing lows), PONS: trend fail (EMA20/50 or swing lows), HOOKR: ta error HTTPError, TORCH: 24h vol $366,803 < 1x liq, VRAX: ta error HTTPError, \u53d1\u8d22\u732b: 1h vol $2,577 < 5% liq, BIBI: ta error HTTPError, IGNITION: trend fail (EMA20/50 or swing lows), PRIORS: not at EMA20 (9.3%), \u54a9\u90fd\u6709: trend fail (EMA20/50 or swing lows). Backfill 219 rows (fixed crash on rows missing price)."
  },
- "updated": "2026-10-13T19:30:44-07:00",
+ "updated": "2026-10-13T19:31:04-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -64,7 +64,7 @@
   },
   {
    "coin": "bonding",
-   "condition": "7:14p reused 6:45p UI read: no bonding coin 300+ non-Pump; 0 qualified copy traders",
+   "condition": "7:15-7:30p UI: cash $87.94, 0 positions; bonding top UPKID/LOIS/Whores/Onion/Rectangle/trueq all <300 holders; only PUMPE 349 (Pump-style, skipped); Graduated spikes Rockstar/FPAD/TXGYM/ARCADES skipped; 0 qualified copy",
    "trigger": "bonding"
   }
  ],
