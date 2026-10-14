@@ -1,65 +1,65 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-14T09:16:52-07:00",
- "coins_seen": 29,
+ "last_scan_time": "2026-10-14T09:42:32-07:00",
+ "coins_seen": 27,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-14T09:16:52-07:00",
-  "reason": "scan reviewed 29 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
+  "time": "2026-10-14T09:42:32-07:00",
+  "reason": "scan reviewed 27 coins; 0 passed filters; no qualifying copy-trade or pullback entry"
  },
- "updated": "2026-10-14T09:16:52-07:00",
+ "updated": "2026-10-14T09:42:32-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "WangChai",
-   "condition": "$0.0161; trend fail (EMA20/50 or swing lows); pullback 31.5% outside 12-30; not at EMA20 (-9.48%); sell vol not faded; sellers>=buyers 15m; no 5m trigger",
+   "condition": "$0.01526; trend fail (EMA20/50 or swing lows); pullback 35.0% outside 12-30; not at EMA20 (-13.67%); sell vol not faded; sellers>=buyers 15m; no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "PONS",
-   "condition": "$0.3432; trend fail (EMA20/50 or swing lows); pullback 2.1% outside 12-30; not at EMA20 (4.44%); sell vol not faded; sellers>=buyers 15m; no 5m trigger",
+   "condition": "$0.337; trend fail (EMA20/50 or swing lows); pullback 3.9% outside 12-30; not at EMA20 (2.73%); sell vol not faded; sellers>=buyers 15m; no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "HOOKR",
-   "condition": "$0.02438; ta error HTTPError",
+   "condition": "$0.02445; ta error HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "TORCH",
-   "condition": "$0.002574; 24h vol $346,873 < 1x liq; 1h vol $11,796 < 5% liq; ta error HTTPError",
+   "condition": "$0.002553; 24h vol $340,861 < 1x liq; 1h vol $7,681 < 5% liq; ta error HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "VRAX",
-   "condition": "$0.007443; pullback 8.0% outside 12-30; not at EMA20 (51.06%); >15% above EMA20; no 5m trigger",
+   "condition": "$0.007216; not at EMA20 (44.52%); sell vol not faded; >15% above EMA20; no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "\u53d1\u8d22\u732b",
-   "condition": "$0.002383; 24h vol $114,010 < 1x liq; trend fail (EMA20/50 or swing lows); pullback 49.5% outside 12-30; not at EMA20 (-27.33%); sell vol not faded; no 5m trigger",
+   "condition": "$0.002265; 24h vol $111,529 < 1x liq; trend fail (EMA20/50 or swing lows); pullback 52.0% outside 12-30; not at EMA20 (-30.74%); sell vol not faded; no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "BIBI",
-   "condition": "$0.001118; pullback 48.0% outside 12-30; not at EMA20 (14.48%); no 5m trigger",
+   "condition": "$0.001173; pullback 43.7% outside 12-30; not at EMA20 (22.78%); >15% above EMA20; no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "IGNITION",
-   "condition": "$0.0008301; not at EMA20 (33.81%); sellers>=buyers 15m; >15% above EMA20; no 5m trigger",
+   "condition": "$0.0008071; ta error HTTPError",
    "trigger": "pullback"
   },
   {
    "coin": "PRIORS",
-   "condition": "$0.007342; ta error HTTPError",
+   "condition": "$0.007459; trend fail (EMA20/50 or swing lows); pullback 33.3% outside 12-30; not at EMA20 (-9.77%); no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "\u54a9\u90fd\u6709",
-   "condition": "$0.002602; 24h vol $127,059 < 1x liq; trend fail (EMA20/50 or swing lows); pullback 2.2% outside 12-30; not at EMA20 (4.31%); sell vol not faded; no 5m trigger",
+   "condition": "$0.00268; 24h vol $126,763 < 1x liq; trend fail (EMA20/50 or swing lows); pullback 0.0% outside 12-30; not at EMA20 (7.12%); no 5m trigger",
    "trigger": "pullback"
   },
   {
@@ -69,24 +69,24 @@
   },
   {
    "coin": "VSWAP",
-   "condition": "$0.0001877; liq $36,771 below min; trend fail (EMA20/50 or swing lows); pullback 56.6% outside 12-30; no 5m trigger",
+   "condition": "$0.0001918; liq $37,230 below min; trend fail (EMA20/50 or swing lows); pullback 55.5% outside 12-30; no 5m trigger",
    "trigger": "pullback"
   },
   {
    "coin": "LEVEE",
-   "condition": "$0.0001012; liq $29,049 below min; ta error HTTPError",
+   "condition": "$0.0001082; trend fail (EMA20/50 or swing lows); pullback 46.0% outside 12-30; not at EMA20 (21.7%); sell vol not faded; 5m spike >25%; >15% above EMA20",
    "trigger": "pullback"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-14T09:16:52-07:00",
+  "Fomo Auto trade watch": "2026-10-14T09:42:32-07:00",
   "fomo scan": "2026-10-14T09:16:06-07:00"
  },
  "progress_pct": 87.9,
  "paper_trades": 0,
- "signals_logged": 831,
+ "signals_logged": 858,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 66
+  "Fomo Auto": 67
  }
 }
