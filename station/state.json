@@ -1,86 +1,86 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-14T16:52:37-07:00",
+ "last_scan_time": "2026-10-14T17:16:36-07:00",
  "coins_seen": 55,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-14T16:52:37-07:00",
-  "reason": "4:23p paper watch: 55 coins (50 watchlist + 5 new graduated from fomo API: FOMO, QAI, Samsung, Rockstar, VEILPONS), 0 passed, no paper entry. During run early_runner Trompy hit -25% stop at 4:43p ($0.60 out, -$11.90) \u2192 equity $67.5; cooldown until 5:43p. UI graduated skim: BORED, CROWNCOON, TRUMP, MrBeast, Coca Cola, TikTok US, BBX, BOOT\u2026; bonding: ABOTS, WAIT, Trenchlab, PUMPE, Nakula, BOKE, PENGTARDIO, GALAXY. Waits: PRIORS $0.008367 pb 18.5% EMA20 +3.1% (trend fail only); PONS $0.3328 at EMA20 pb 5.8%; VRAX chart HTTP error. Avoids: SpaceX, BOOT, \u30cf\u30c3\u30c1\u30e3\u30f3, CFLARE, Rockstar. UI: cash $87.94, 0 positions. Paper equity $67.5; real cash $87.94 untouched. signals 1570."
+  "time": "2026-10-14T17:16:36-07:00",
+  "reason": "4:54p paper watch: 55 coins (watchlist + graduated via fomo API; no new graduated), 0 passed, no paper entry (cooldown until 5:43p after Trompy stop anyway). Closest: PRIORS $0.008417 pb 16.4% EMA20 +5.9% (trend fail, no trigger). Top skips: trend fail 35, not at EMA20 27, 1h vol 19, 5m spike 18, chart HTTP errors 14. Paper equity $67.5 (-23.2% from start, size halved per -15% rule); real cash $87.94 untouched. signals 1625."
  },
- "updated": "2026-10-14T16:52:37-07:00",
+ "updated": "2026-10-14T17:16:36-07:00",
  "open_positions": [],
  "watchlist": [
   {
    "coin": "PRIORS",
-   "condition": "$0.008367; pb 18.5%; EMA20 +3.10%; trend fail (EMA20/50 or swing lows)",
+   "condition": "$0.008417; pb 16.4%; EMA20 +5.86%; trend fail (EMA20/50 or swing lows); not at EMA20 (5.86%); no 5m trigger",
    "trigger": "swing lows turn up + green 5m near EMA20"
   },
   {
    "coin": "PONS",
-   "condition": "$0.3328; pb 5.8%; EMA20 -0.48%; pullback 5.8% outside 8-35; sellers>=buyers 15m",
+   "condition": "$0.3278; pb 7.0%; EMA20 -1.59%; pullback 7.0% outside 8-35; sell vol not faded; sellers>=buyers 15m",
    "trigger": "dip to 8%+ pullback near EMA20 with buyers back"
   },
   {
    "coin": "VRAX",
-   "condition": "$0.006233; ta error HTTPError",
+   "condition": "$0.006586; ta error HTTPError",
    "trigger": "pullback inside 35% within 5% of EMA20 + green 5m",
    "link": "https://fomo.family/tokens/robinhood/0x94641b97010608C3827fB058074889f19868FF33"
   },
   {
    "coin": "SI",
-   "condition": "$0.0001085; pb 62.0%; EMA20 +2.34%; liq $29,507 below min; trend fail (EMA20/50 or swing lows); pullback 62.0% outside 8-35",
+   "condition": "$9.79e-05; pb 64.2%; EMA20 -4.70%; liq $27,995 below min; trend fail (EMA20/50 or swing lows); pullback 64.2% outside 8-35",
    "trigger": "1h vol + trend repair at EMA20"
   },
   {
    "coin": "TORCH",
-   "condition": "$0.002292; 24h vol $345,541 < 1x liq; 1h vol $1,902 < 5% liq; ta error HTTPError",
+   "condition": "$0.00229; 24h vol $341,210 < 1x liq; 1h vol $1,689 < 5% liq; ta error HTTPError",
    "trigger": "chart recover + pullback toward EMA20"
   },
   {
    "coin": "BIBI",
-   "condition": "$0.001554; ta error HTTPError",
+   "condition": "$0.00156; pb 36.2%; EMA20 +17.35%; pullback 36.2% outside 8-35; not at EMA20 (17.35%); >15% above EMA20",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
    "coin": "CFLARE",
-   "condition": "$5.02e-06; pb 99.6%; EMA20 -98.82%; liq $7,243 below min; trend fail (EMA20/50 or swing lows); pullback 99.6% outside 8-35",
+   "condition": "$5.137e-06; pb 99.6%; EMA20 -98.71%; liq $7,334 below min; trend fail (EMA20/50 or swing lows); pullback 99.6% outside 8-35",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
    "coin": "HOOKR",
-   "condition": "$0.0249; 1h vol $40,262 < 5% liq; ta error HTTPError",
+   "condition": "$0.02473; 1h vol $39,746 < 5% liq; ta error HTTPError",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
    "coin": "IGNITION",
-   "condition": "$0.001092; pb 39.7%; EMA20 +51.37%; trend fail (EMA20/50 or swing lows); pullback 39.7% outside 8-35; not at EMA20 (51.37%)",
+   "condition": "$0.001138; pb 35.8%; EMA20 +59.51%; trend fail (EMA20/50 or swing lows); pullback 35.8% outside 8-35; not at EMA20 (59.51%)",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
    "coin": "WangChai",
-   "condition": "$0.01264; pb 46.0%; EMA20 -17.11%; trend fail (EMA20/50 or swing lows); pullback 46.0% outside 8-35; not at EMA20 (-17.11%)",
+   "condition": "$0.01144; pb 51.1%; EMA20 -24.46%; trend fail (EMA20/50 or swing lows); pullback 51.1% outside 8-35; not at EMA20 (-24.46%)",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
    "coin": "\u53d1\u8d22\u732b",
-   "condition": "$0.002257; pb 46.1%; EMA20 -17.93%; 24h vol $104,249 < 1x liq; 1h vol $99 < 5% liq; trend fail (EMA20/50 or swing lows)",
+   "condition": "$0.002248; pb 46.5%; EMA20 -18.54%; 24h vol $101,560 < 1x liq; 1h vol $143 < 5% liq; trend fail (EMA20/50 or swing lows)",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
    "coin": "\u54a9\u90fd\u6709",
-   "condition": "$0.002886; pb 4.5%; EMA20 +8.71%; 24h vol $151,926 < 1x liq; 1h vol $1,130 < 5% liq; trend fail (EMA20/50 or swing lows)",
+   "condition": "$0.002751; 24h vol $147,551 < 1x liq; 1h vol $5,324 < 5% liq; ta error HTTPError",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
    "coin": "APU",
-   "condition": "$3.723e-06; pb 99.2%; EMA20 -98.86%; liq $3,702 below min; 1h vol $143 < 5% liq; trend fail (EMA20/50 or swing lows)",
+   "condition": "$3.662e-06; liq $3,653 below min; 1h vol $3 < 5% liq; ta error HTTPError",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
    "coin": "smol",
-   "condition": "$3.659e-06; pb 99.4%; EMA20 -97.22%; liq $4,466 below min; trend fail (EMA20/50 or swing lows); pullback 99.4% outside 8-35",
+   "condition": "$3.762e-06; pb 99.4%; EMA20 -96.85%; liq $4,551 below min; trend fail (EMA20/50 or swing lows); pullback 99.4% outside 8-35",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
@@ -90,7 +90,7 @@
   },
   {
    "coin": "AVGO",
-   "condition": "$344.99; ta error HTTPError",
+   "condition": "$344.7; pb 4.3%; EMA20 -1.21%; trend fail (EMA20/50 or swing lows); pullback 4.3% outside 8-35; sellers>=buyers 15m",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
@@ -100,30 +100,30 @@
   },
   {
    "coin": "CLAIM",
-   "condition": "$0.0001709; pb 66.1%; EMA20 +1.35%; trend fail (EMA20/50 or swing lows); pullback 66.1% outside 8-35; 5m spike >25%",
+   "condition": "$0.0001601; ta error HTTPError",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
    "coin": "BOOT",
-   "condition": "$8.995e-05; pb 61.5%; EMA20 +45.74%; liq $25,416 below min; trend fail (EMA20/50 or swing lows); pullback 61.5% outside 8-35",
+   "condition": "$9.987e-05; pb 56.2%; EMA20 +55.22%; liq $27,058 below min; trend fail (EMA20/50 or swing lows); pullback 56.2% outside 8-35",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
   },
   {
    "coin": "BPROOF",
-   "condition": "$5.993e-05; liq $19,553 below min; ta error HTTPError",
+   "condition": "$4.721e-05; pb 60.9%; EMA20 -32.37%; liq $17,181 below min; trend fail (EMA20/50 or swing lows); pullback 60.9% outside 8-35",
    "trigger": "wait pullback toward EMA20 (now +27.2%) + green 5m"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-14T16:52:37-07:00",
+  "Fomo Auto trade watch": "2026-10-14T17:16:36-07:00",
   "fomo scan": "2026-10-14T13:08:31-07:00"
  },
  "progress_pct": 67.5,
  "paper_trades": 6,
- "signals_logged": 1570,
+ "signals_logged": 1625,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 82
+  "Fomo Auto": 83
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 3,
@@ -144,5 +144,6 @@
   "symbol": "Trompy",
   "ts": "2026-10-14T16:43:51-07:00",
   "reason": "-25% full stop"
- }
+ },
+ "size_multiplier": 0.5
 }
