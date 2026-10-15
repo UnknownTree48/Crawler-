@@ -7,7 +7,7 @@
  "last_action": {
   "type": "none",
   "time": "2026-10-14T17:16:36-07:00",
-  "reason": "4:54p paper watch: 55 coins (watchlist + graduated via fomo API; no new graduated), 0 passed, no paper entry (cooldown until 5:43p after Trompy stop anyway). Closest: PRIORS $0.008417 pb 16.4% EMA20 +5.9% (trend fail, no trigger). Top skips: trend fail 35, not at EMA20 27, 1h vol 19, 5m spike 18, chart HTTP errors 14. Paper equity $67.5 (-23.2% from start, size halved per -15% rule); real cash $87.94 untouched. signals 1625."
+  "reason": "4:54p paper watch: 55 coins (watchlist + graduated via fomo API; no new graduated), 0 passed, no paper entry (cooldown until 5:43p after Trompy stop anyway). Closest: PRIORS $0.008417 pb 16.4% EMA20 +5.9% (trend fail, no trigger). Top skips: trend fail 35, not at EMA20 27, 1h vol 19, 5m spike 18, chart HTTP errors 14. Paper equity $67.5 (-23.2% from start, size halved per -15% rule); real cash $87.94 untouched. signals 1625. UI 5:16p: cash $87.94, 0 positions; graduated skim: Apple, Bernard, CAPE, GTA 6, QAI, Samsung, VEILPONS, CyberAxe, Coca Cola, BBX; bonding: MUSECRAFT, BABYDOPE, Trenchlab, PUMPE, BOKE, GALAXY, PENGTARDIO, REPLY."
  },
  "updated": "2026-10-14T17:16:36-07:00",
  "open_positions": [],
