@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "risk_pause_hold",
-  "time": "2026-10-14T22:23:39-07:00",
-  "reason": "10:23p trade watch: core entries held under the -25% stop-and-review / 3-loss 24h pause (tripped 6:38p, review pending with ; ~20.3h left). No scan, no paper entry, 0 open positions. Early-runner watcher still running for practice."
+  "time": "2026-10-14T22:45:49-07:00",
+  "reason": "10:45p trade watch: core entries held under the -25% stop-and-review / 3-loss 24h pause (tripped 6:38p, review pending with ; ~19.9h left). No scan, no paper entry, 0 open positions. Early-runner watcher still running for practice."
  },
- "updated": "2026-10-14T22:23:39-07:00",
+ "updated": "2026-10-14T22:45:49-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -118,7 +118,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-14T22:23:39-07:00",
+  "Fomo Auto trade watch": "2026-10-14T22:45:49-07:00",
   "fomo scan": "2026-10-14T18:17:36-07:00"
  },
  "progress_pct": 56.0,
@@ -126,7 +126,7 @@
  "signals_logged": 1745,
  "ui_open_positions": 0,
  "runs": {
-  "Fomo Auto": 103
+  "Fomo Auto": 104
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 4,
