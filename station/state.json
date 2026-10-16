@@ -1,103 +1,103 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-15T20:21:26-07:00",
+ "last_scan_time": "2026-10-15T20:37:54-07:00",
  "coins_seen": 35,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-15T20:21:26-07:00",
-  "reason": "8:10pm trade watch (finished ~8:21pm): core resumed under v4; scanned 35 Solana coins via GMGN trending/trenches + DexScreener boosts (discovered 163, eval_in 60, time budget stopped at 35), 0 passed, no paper entry. Halt/pause: cleared (losses today=0, 24h=0); core_entries resumed_under_v4 since 18:00; risk_flag historical only. Waits: baton $0.01047 pb 21.8% EMA20 +3.0%; ALLINU $0.006619 pb 21.7% EMA20 +2.6%; SI $0.0006696 pb 17.1% EMA20 -2.8%; SI276 $0.001107 pb 21.7% EMA20 -1.9%. Avoids: 1 (Birdeye market data unavailable (fail closed)); fone (Birdeye market data unavailable (fail closed)); STONK (Birdeye market data unavailable (fail closed)). Early-runner v4_gmgn alive (open: FILLED $0.62 opened 2026-10-15T18:06:41-07:00). Paper equity $56.0; real cash $87.94 untouched; size_multiplier 0.5."
+  "time": "2026-10-15T20:37:54-07:00",
+  "reason": "8:27pm trade watch (finished ~8:37pm): core resumed under v4; scanned 35 Solana coins via GMGN trending/trenches + DexScreener boosts (discovered 162, eval_in 60, time budget stopped at 35), 0 passed, no paper entry. Halt/pause: cleared (losses today=0, 24h=0); core_entries resumed_under_v4 since 18:00; risk_flag historical only. Waits: SWOLF $0.0008064 pb 15.0% EMA20 -0.2%; SI $0.0006934 pb 13.4% EMA20 +1.1%; DOPE $0.004968 pb 30.7% EMA20 -0.9%; CRAWL $0.001913 pb 33.5% EMA20 +0.5%. Avoids: KnightDog (Birdeye market data unavailable (fail closed)); FTR (Birdeye market data unavailable (fail closed)); 1 (Birdeye market data unavailable (fail closed)). Early-runner v4_gmgn alive (open: FILLED $0.62 opened 2026-10-15T18:06:41-07:00). Paper equity $56.0; real cash $87.94 untouched; size_multiplier 0.5."
  },
- "updated": "2026-10-15T20:21:26-07:00",
+ "updated": "2026-10-15T20:37:54-07:00",
  "open_positions": [],
  "watchlist": [
   {
-   "coin": "baton",
-   "condition": "$0.01047; Birdeye market data unavailable (fail closed); 1h vol $8,166 < 5% liq; trend fail (EMA20/50 or swing lows); liq/mc 0.06 < 0.25",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
-  },
-  {
-   "coin": "ALLINU",
-   "condition": "$0.006619; Birdeye market data unavailable (fail closed); 1h vol $1,760 < 5% liq; no 5m trigger; liq/mc 0.02 < 0.25",
+   "coin": "SWOLF",
+   "condition": "$0.0008064; Birdeye market data unavailable (fail closed); liq/mc 0.12 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
    "coin": "SI",
-   "condition": "$0.0006696; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); no 5m trigger; liq/mc 0.17 < 0.25",
+   "condition": "$0.0006934; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); liq/mc 0.17 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "SI276",
-   "condition": "$0.001107; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); sell vol not faded; liq/mc 0.10 < 0.25",
+   "coin": "DOPE",
+   "condition": "$0.004968; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); sellers>=buyers 15m; liq/mc 0.10 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "BORDR",
-   "condition": "$0.006245; Birdeye market data unavailable (fail closed); 1h vol $30,836 < 5% liq; trend fail (EMA20/50 or swing lows); no 5m trigger; liq/mc 0.10 < 0.25",
+   "coin": "CRAWL",
+   "condition": "$0.001913; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); no 5m trigger; liq/mc 0.10 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "JEANPHIL",
-   "condition": "$0.007232; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); sellers>=buyers 15m; no 5m trigger; liq/mc 0.06 < 0.25",
+   "coin": "ALLINU",
+   "condition": "$0.006813; Birdeye market data unavailable (fail closed); 1h vol $1,772 < 5% liq; not at EMA20 (5.1%); liq/mc 0.02 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now +5.1%) + green 5m"
+  },
+  {
+   "coin": "Agency",
+   "condition": "$0.001431; Birdeye market data unavailable (fail closed); 1h vol $5,681 < 5% liq; trend fail (EMA20/50 or swing lows); not at EMA20 (-9.8%); liq/mc 0.13 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now -9.8%) + green 5m"
+  },
+  {
+   "coin": "CATE",
+   "condition": "$0.06049; Birdeye market data unavailable (fail closed); 24h vol $1,173,910 < 1x liq; 1h vol $38,709 < 5% liq; trend fail (EMA20/50 or swing lows); sell vol not faded; liq/mc 0.05 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
+  },
+  {
+   "coin": "baton",
+   "condition": "$0.01029; Birdeye market data unavailable (fail closed); 1h vol $6,814 < 5% liq; trend fail (EMA20/50 or swing lows); sellers>=buyers 15m; no 5m trigger; liq/mc 0.06 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
    "coin": "CLAUDIA",
-   "condition": "$0.004855; Birdeye market data unavailable (fail closed); 1h vol $14,234 < 5% liq; trend fail (EMA20/50 or swing lows); not at EMA20 (5.94%); liq/mc 0.07 < 0.25",
-   "trigger": "wait pullback toward EMA20 (now +5.9%) + green 5m"
+   "condition": "$0.005102; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); not at EMA20 (10.99%); liq/mc 0.07 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now +11.0%) + green 5m"
   },
   {
    "coin": "VEIL",
-   "condition": "$0.005115; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); not at EMA20 (8.53%); no 5m trigger; liq/mc 0.04 < 0.25",
-   "trigger": "wait pullback toward EMA20 (now +8.5%) + green 5m"
+   "condition": "$0.004828; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); sell vol not faded; sellers>=buyers 15m; no 5m trigger; liq/mc 0.05 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
    "coin": "COCKROACH",
-   "condition": "$0.0006307; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); not at EMA20 (-5.39%); no 5m trigger; liq/mc 0.16 < 0.25",
-   "trigger": "wait pullback toward EMA20 (now -5.4%) + green 5m"
+   "condition": "$0.0006019; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); not at EMA20 (-7.49%); sellers>=buyers 15m; no 5m trigger; liq/mc 0.16 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now -7.5%) + green 5m"
   },
   {
-   "coin": "biketyson",
-   "condition": "$0.000702; Birdeye market data unavailable (fail closed); 24h vol $73,462 < 1x liq; 1h vol $2,443 < 5% liq; trend fail (EMA20/50 or swing lows); no 5m trigger; liq/mc 0.18 < 0.25",
+   "coin": "KnightDog",
+   "condition": "$0.0008927; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); pullback 55.3% outside 8-35; liq/mc 0.10 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "1",
-   "condition": "$0.001094; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); pullback 71.3% outside 8-35; sellers>=buyers 15m; liq/mc 0.10 < 0.25",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
+   "coin": "swordcat",
+   "condition": "$0.002354; Birdeye market data unavailable (fail closed); 24h vol $229,432 < 1x liq; 1h vol $8,553 < 5% liq; trend fail (EMA20/50 or swing lows); not at EMA20 (-9.65%); no 5m trigger",
+   "trigger": "wait pullback toward EMA20 (now -9.7%) + green 5m"
   },
   {
-   "coin": "fone",
-   "condition": "$0.003994; Birdeye market data unavailable (fail closed); 24h vol $406,193 < 1x liq; 1h vol $8,703 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 6.8% outside 8-35; liq/mc 0.12 < 0.25",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
+   "coin": "Altai",
+   "condition": "$0.0004037; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); not at EMA20 (-10.51%); sellers>=buyers 15m; liq/mc 0.23 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now -10.5%) + green 5m"
   },
   {
-   "coin": "STONK",
-   "condition": "$0.1187; Birdeye market data unavailable (fail closed); 24h vol $1,683,833 < 1x liq; 1h vol $27,912 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 5.9% outside 8-35; sell vol not faded",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
-  },
-  {
-   "coin": "ZCAT",
-   "condition": "$0.05799; Birdeye market data unavailable (fail closed); 24h vol $876,103 < 1x liq; 1h vol $23,948 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 3.1% outside 8-35; no 5m trigger",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
-  },
-  {
-   "coin": "OTC",
-   "condition": "$0.009888; Birdeye market data unavailable (fail closed); pullback 6.6% outside 8-35; not at EMA20 (18.59%); >15% above EMA20; liq/mc 0.09 < 0.25",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
+   "coin": "FTR",
+   "condition": "$0.004785; Birdeye market data unavailable (fail closed); trend fail (EMA20/50 or swing lows); not at EMA20 (108.04%); sellers>=buyers 15m; >15% above EMA20; liq/mc 0.07 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now +108.0%) + green 5m"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-15T20:21:26-07:00",
+  "Fomo Auto trade watch": "2026-10-15T20:37:54-07:00",
   "fomo scan": "2026-10-14T18:17:36-07:00"
  },
  "progress_pct": 56.0,
  "paper_trades": 9,
- "signals_logged": 2529,
+ "signals_logged": 2564,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 126
+  "Fomo Auto": 127
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 4,
