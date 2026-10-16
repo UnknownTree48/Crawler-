@@ -1,103 +1,104 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-16T00:06:43-07:00",
- "coins_seen": 35,
+ "last_scan_time": "2026-10-16T09:05:10-07:00",
+ "coins_seen": 60,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "none",
-  "time": "2026-10-16T00:06:43-07:00",
-  "reason": "~11:56pm trade watch (finished ~12:06am): core resumed under v4; scanned 35 Solana via GMGN+DexScreener (discovered 164, eval_in 60, time budget stopped at 35), 0 passed, no paper entry. Halt/pause: cleared (losses today=0, 24h=0); core_entries resumed_under_v4 since 18:00; risk_flag historical only. Waits: CRAWL $0.0019422718520530897 pb 31.2% EMA20 +2.8%; QI $0.0006362316449278399 pb 23.6% EMA20 +3.4%; BORDR $0.006249 pb 29.9% EMA20 -3.5%; SWOLF $0.0006927172237320717 pb 16.9% EMA20 -2.1%. Avoids: MISTAKE (pullback 4.2% outside 8-35); Normie (pullback 45.8% outside 8-35); OWL (1h vol $2,073 < 5% liq). Early-runner v4_gmgn alive (open: FILLED $0.62 opened 2026-10-15T18:06:41-07:00). Paper equity $56.0; real cash $87.94 untouched; size_multiplier 0.5."
+  "time": "2026-10-16T09:05:10-07:00",
+  "reason": "~8:55am paper scan 3x daily (finished ~9:05am): core resumed under v4; scanned 60 Solana via GMGN+DexScreener (discovered 160, eval_in 60), 0 passed, no paper entry. Halt/pause: cleared (losses today=0, 24h=0); core_entries resumed_under_v4 since 18:00; risk_flag historical only. Waits: ALLINU $0.006256859925140328 pb 27.6% EMA20 -4.9%; SWOLF $0.07398231024791299 pb 24.7% EMA20 -7.7%; FTR $0.0049735334659990705 pb 32.0% EMA20 -8.4%; CLAUDIA $0.004915549963136589 pb 26.9% EMA20 -6.5%. Early-runner v4_gmgn alive (open: FILLED $0.62 opened 2026-10-15T18:06:41-07:00). Paper equity $56.0; real cash $87.94 untouched; size_multiplier 0.5."
  },
- "updated": "2026-10-16T00:06:43-07:00",
+ "updated": "2026-10-16T09:05:10-07:00",
  "open_positions": [],
  "watchlist": [
   {
-   "coin": "CRAWL",
-   "condition": "$0.0019422718520530897; liq/mc 0.19 < 0.25",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
-  },
-  {
-   "coin": "QI",
-   "condition": "$0.0006362316449278399; trend fail (EMA20/50 or swing lows); liq/mc 0.22 < 0.25",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
-  },
-  {
-   "coin": "BORDR",
-   "condition": "$0.006249; 1h vol $8,724 < 5% liq; trend fail (EMA20/50 or swing lows); liq/mc 0.10 < 0.25",
+   "coin": "ALLINU",
+   "condition": "$0.006256859925140328; 1h vol $3,368 < 5% liq; trend fail (EMA20/50 or swing lows); liq/mc 0.02 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
    "coin": "SWOLF",
-   "condition": "$0.0006927172237320717; 1h vol $4,773 < 5% liq; trend fail (EMA20/50 or swing lows); liq/mc 0.17 < 0.25",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
+   "condition": "$0.07398231024791299; trend fail (EMA20/50 or swing lows); not at EMA20 (-7.7%); liq/mc 0.12 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now -7.7%) + green 5m"
   },
   {
-   "coin": "pill",
-   "condition": "$0.001365; 24h vol $116,283 < 1x liq; 1h vol $2,240 < 5% liq; trend fail (EMA20/50 or swing lows); liq/mc 0.12 < 0.25",
+   "coin": "FTR",
+   "condition": "$0.0049735334659990705; trend fail (EMA20/50 or swing lows); not at EMA20 (-8.36%); sell vol not faded; liq/mc 0.08 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now -8.4%) + green 5m"
+  },
+  {
+   "coin": "CLAUDIA",
+   "condition": "$0.004915549963136589; trend fail (EMA20/50 or swing lows); not at EMA20 (-6.52%); sell vol not faded; liq/mc 0.07 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now -6.5%) + green 5m"
+  },
+  {
+   "coin": "HOTBOT",
+   "condition": "$0.005573369321608266; 24h vol $101,956 < 1x liq; 1h vol $2,287 < 5% liq; not at EMA20 (6.38%); liq/mc 0.05 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now +6.4%) + green 5m"
+  },
+  {
+   "coin": "Agency",
+   "condition": "$0.0014833065521491961; 24h vol $124,457 < 1x liq; trend fail (EMA20/50 or swing lows); sellers>=buyers 15m; liq/mc 0.13 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
    "coin": "SI",
-   "condition": "$0.000614221728576112; 1h vol $6,222 < 5% liq; trend fail (EMA20/50 or swing lows); not at EMA20 (-7.59%); liq/mc 0.22 < 0.25",
-   "trigger": "wait pullback toward EMA20 (now -7.6%) + green 5m"
-  },
-  {
-   "coin": "MISTAKE",
-   "condition": "$0.0031477958474158824; pullback 4.2% outside 8-35; no 5m trigger; liq/mc 0.07 < 0.25",
+   "condition": "$0.019351996391349834; 24h vol $658,520 < 1x liq; 1h vol $34,164 < 5% liq; sell vol not faded; sellers>=buyers 15m; liq/mc 0.04 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "SI276",
-   "condition": "$0.0013403809209274976; trend fail (EMA20/50 or swing lows); not at EMA20 (7.35%); sellers>=buyers 15m; no 5m trigger; liq/mc 0.09 < 0.25",
-   "trigger": "wait pullback toward EMA20 (now +7.3%) + green 5m"
-  },
-  {
-   "coin": "DRMR",
-   "condition": "$0.0007341958984412965; 1h vol $3,165 < 5% liq; trend fail (EMA20/50 or swing lows); not at EMA20 (5.19%); sellers>=buyers 15m; liq/mc 0.15 < 0.25",
-   "trigger": "wait pullback toward EMA20 (now +5.2%) + green 5m"
-  },
-  {
-   "coin": "VEIL",
-   "condition": "$0.004379593599200598; 1h vol $19,764 < 5% liq; trend fail (EMA20/50 or swing lows); not at EMA20 (-5.05%); sellers>=buyers 15m; no 5m trigger; liq/mc 0.09 < 0.25",
-   "trigger": "wait pullback toward EMA20 (now -5.0%) + green 5m"
-  },
-  {
-   "coin": "Agency",
-   "condition": "$0.0014273557928429598; trend fail (EMA20/50 or swing lows); pullback 36.1% outside 8-35; not at EMA20 (-9.59%); sellers>=buyers 15m",
+   "coin": "fone",
+   "condition": "$0.004182958784381753; 24h vol $80,594 < 1x liq; 1h vol $2,297 < 5% liq; trend fail (EMA20/50 or swing lows); no 5m trigger; liq/mc 0.12 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "CLAUDIA",
-   "condition": "$0.005721; 1h vol $15,320 < 5% liq; not at EMA20 (16.7%); >15% above EMA20; no 5m trigger; liq/mc 0.07 < 0.25",
-   "trigger": "wait pullback toward EMA20 (now +16.7%) + green 5m"
+   "coin": "JEANPHIL",
+   "condition": "$0.007962442724887674; 24h vol $220,140 < 1x liq; 1h vol $3,177 < 5% liq; not at EMA20 (5.74%); no 5m trigger; liq/mc 0.06 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now +5.7%) + green 5m"
   },
   {
-   "coin": "Normie",
-   "condition": "$0.0009091588280012858; pullback 45.8% outside 8-35; not at EMA20 (13.28%); liq/mc 0.19 < 0.25",
+   "coin": "NEARKAT",
+   "condition": "$5.057567185043841; 24h vol $134,035 < 1x liq; 1h vol $3,301 < 5% liq; trend fail (EMA20/50 or swing lows); sellers>=buyers 15m; liq/mc 0.08 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "OWL",
-   "condition": "$0.0005640144074771236; 1h vol $2,073 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 1.8% outside 8-35; no 5m trigger; liq/mc 0.20 < 0.25",
+   "coin": "SAPLING",
+   "condition": "$0.0020513909166025228; 24h vol $8,569 < 1x liq; 1h vol $297 < 5% liq; trend fail (EMA20/50 or swing lows); no 5m trigger; liq/mc 0.14 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "OTC",
-   "condition": "$0.009863; pullback 6.9% outside 8-35; not at EMA20 (12.98%); sellers>=buyers 15m; liq/mc 0.09 < 0.25",
+   "coin": "CRAWL",
+   "condition": "$0.002049636740042821; 24h vol $129,096 < 1x liq; 1h vol $755 < 5% liq; sellers>=buyers 15m; no 5m trigger; liq/mc 0.09 < 0.25",
    "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
+  },
+  {
+   "coin": "BAGSPAY",
+   "condition": "$0.0008611460464427246; trend fail (EMA20/50 or swing lows); not at EMA20 (-13.68%); liq/mc 0.15 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now -13.7%) + green 5m"
+  },
+  {
+   "coin": "HELL",
+   "condition": "$0.0020610560328577134; 24h vol $18,307 < 1x liq; 1h vol $2,124 < 5% liq; not at EMA20 (8.28%); sellers>=buyers 15m; liq/mc 0.06 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now +8.3%) + green 5m"
+  },
+  {
+   "coin": "QI",
+   "condition": "$0.0006957135009649958; trend fail (EMA20/50 or swing lows); not at EMA20 (6.31%); sell vol not faded; sellers>=buyers 15m; liq/mc 0.15 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now +6.3%) + green 5m"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-16T00:06:43-07:00",
-  "fomo scan": "2026-10-14T18:17:36-07:00"
+  "Fomo Auto trade watch": "2026-10-16T09:05:10-07:00",
+  "fomo scan": "2026-10-14T18:17:36-07:00",
+  "Fomo Auto paper scan 3x daily": "2026-10-16T09:05:10-07:00"
  },
  "progress_pct": 56.0,
  "paper_trades": 9,
- "signals_logged": 2972,
+ "signals_logged": 3048,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 138
+  "Fomo Auto": 139
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 4,
