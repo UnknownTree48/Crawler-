@@ -1,148 +1,119 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-15T17:59:52-07:00",
- "coins_seen": 0,
+ "last_scan_time": "2026-10-15T18:39:53-07:00",
+ "coins_seen": 60,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "type": "risk_pause_hold",
-  "time": "2026-10-15T17:59:52-07:00",
-  "reason": "5:59pm trade watch: core entries held under the -25% stop-and-review / 3-loss 24h pause (tripped 6:38p Oct 14, review pending with ; ~0.6h left until 6:38 PM PT). No scan, no paper entry, 0 open positions. Early-runner watcher running (last GMGN poll 5:53pm, next ~10m)."
+  "type": "none",
+  "time": "2026-10-15T18:39:53-07:00",
+  "reason": "6:14pm trade watch (finished ~6:39pm): core resumed under v4; scanned 60 Solana coins via GMGN trending/trenches + DexScreener boosts (discovered 135, eval_in 60), 0 passed, no paper entry. Halt/pause: cleared (losses today=0, 24h=0); core_entries resumed_under_v4 since 18:00; risk_flag historical only. Waits: BAGSPAY $0.001062 pb 27.8% EMA20 -4.9%; BUBBLE $0.001193 pb 32.2% EMA20 +0.1%; HOTBOT $0.004468 pb 20.3% EMA20 +3.4%; pill $0.001366 pb 17.8% EMA20 -0.1%. Avoids: COCKROACH (trend fail (EMA20/50 or swing lows)); OWL (trend fail (EMA20/50 or swing lows)). Early-runner v4_gmgn alive (open: FILLED $0.62 opened 2026-10-15T18:06:41). Paper equity $56.0; real cash $87.94 untouched; size_multiplier 0.5."
  },
- "updated": "2026-10-15T17:59:52-07:00",
+ "updated": "2026-10-15T18:39:53-07:00",
  "open_positions": [],
  "watchlist": [
   {
-   "coin": "DIKSHIT",
-   "condition": "$8.409e-05; pb 0.4%, EMA20 +0.0%, EMA20<50",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "coin": "BAGSPAY",
+   "condition": "$0.001062; trend fail (EMA20/50 or swing lows); liq/mc 0.14 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "PONS",
-   "condition": "$0.3142; pb 11.0%, EMA20 -5.4%, EMA20>50, sells not faded, sellers>=buyers",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "coin": "BUBBLE",
+   "condition": "$0.001193; trend fail (EMA20/50 or swing lows); no 5m trigger; liq/mc 0.09 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "ROAD",
-   "condition": "$0.0002102; pb 0.0%, EMA20 +0.0%, EMA20<50",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "coin": "HOTBOT",
+   "condition": "$0.004468; sell vol not faded; sellers>=buyers 15m; liq/mc 0.06 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "VRAX",
-   "condition": "$0.006537; pb 36.3%, EMA20 +7.1%, EMA20>50",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "coin": "pill",
+   "condition": "$0.001366; 24h vol $103,863 < 1x liq; 1h vol $439 < 5% liq; liq/mc 0.12 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "BIBI",
-   "condition": "$0.001479; pb 36.2%, EMA20 +15.4%, EMA20>50, sells not faded, sellers>=buyers",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "coin": "Agency",
+   "condition": "$0.001539; trend fail (EMA20/50 or swing lows); sell vol not faded; no 5m trigger; liq/mc 0.13 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "\u54a9\u90fd\u6709",
-   "condition": "$0.00316; pb 3.4%, EMA20 +15.9%, EMA20<50, need green 5m",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "coin": "JEANPHIL",
+   "condition": "$0.007634; trend fail (EMA20/50 or swing lows); sell vol not faded; sellers>=buyers 15m; liq/mc 0.06 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "CLAUS",
-   "condition": "$0.007664; pb 5.4%, EMA20 +17.3%, EMA20<50, need green 5m",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m",
-   "link": "https://fomo.family/tokens/ethereum/0x1b54e762aa34cf6e28e9c082f2848e28e45da6b8"
+   "coin": "SWOLF",
+   "condition": "$0.0007166; trend fail (EMA20/50 or swing lows); sellers>=buyers 15m; no 5m trigger; liq/mc 0.13 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "WangChai",
-   "condition": "$0.0123; pb 44.2%, EMA20 -16.5%, EMA20<50",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "coin": "LARPCHECK",
+   "condition": "$0.0004048; liq $60,029 below min; not at EMA20 (8.38%); no 5m trigger; liq/mc 0.16 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now +8.4%) + green 5m"
   },
   {
-   "coin": "\u5c0f\u738b\u5b50",
-   "condition": "$0.0001617; pb 45.3%, EMA20 +17.9%, EMA20>50, need green 5m",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "coin": "swordcat",
+   "condition": "$0.00264; 24h vol $232,872 < 1x liq; 1h vol $4,022 < 5% liq; trend fail (EMA20/50 or swing lows); sell vol not faded; liq/mc 0.10 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "KLO",
-   "condition": "$0.0003066; pb 45.5%, EMA20 +18.1%, EMA20<50, sellers>=buyers",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m",
-   "link": "https://fomo.family/tokens/robinhood/0x652720b02272c37d9328f08ee8343554d1caa8e7"
+   "coin": "COCKROACH",
+   "condition": "$0.0007014; trend fail (EMA20/50 or swing lows); pullback 7.9% outside 8-35; liq/mc 0.15 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "SEND",
-   "condition": "$0.00269; pb 5.1%, EMA20 +35.6%, EMA20>50, sellers>=buyers",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m",
-   "link": "https://fomo.family/tokens/ethereum/0x47accd13264d8f954105256faac8376ce6a55999"
+   "coin": "OWL",
+   "condition": "$0.000628; trend fail (EMA20/50 or swing lows); pullback 1.8% outside 8-35; liq/mc 0.14 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "MEMEOS",
-   "condition": "$0.0003148; pb 28.2%, EMA20 +115.7%, EMA20>50",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m",
-   "link": "https://fomo.family/tokens/solana/5q5pEZZwhkuazS4rGa66LcNotdsnUE9KcJ7xQmXSpump"
+   "coin": "SAPLING",
+   "condition": "$0.002198; 24h vol $164,610 < 1x liq; 1h vol $846 < 5% liq; trend fail (EMA20/50 or swing lows); not at EMA20 (-8.83%); liq/mc 0.14 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now -8.8%) + green 5m"
   },
   {
-   "coin": "PRIORS",
-   "condition": "$0.008222; ta error HTTPError",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "coin": "biketyson",
+   "condition": "$0.0007384; 24h vol $75,634 < 1x liq; 1h vol $1,827 < 5% liq; trend fail (EMA20/50 or swing lows); no 5m trigger; liq/mc 0.17 < 0.25",
+   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m + v4 gates"
   },
   {
-   "coin": "SI (Space Inu)",
-   "condition": "$0.0001214; 1h vol $0 < 5% liq; ta error HTTPError",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "coin": "TANG",
+   "condition": "$0.0004819; liq $74,823 below min; not at EMA20 (-7.9%); sell vol not faded; sellers>=buyers 15m; liq/mc 0.16 < 0.25",
+   "trigger": "wait pullback toward EMA20 (now -7.9%) + green 5m"
   },
   {
-   "coin": "VEIL",
-   "condition": "$0.0002794; 1h vol $0 < 5% liq; ta error HTTPError",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
-  },
-  {
-   "coin": "TORCH",
-   "condition": "$0.002249; 24h vol $344,144 < 1x liq; 1h vol $4,930 < 5% liq; trend fail (EMA20/50 or swing lows); not at EMA20 (-6.35%); no 5m trigger",
-   "trigger": "wait pullback toward EMA20 (now -6.3%) + green 5m"
-  },
-  {
-   "coin": "HOOKR",
-   "condition": "$0.02439; 1h vol $12,118 < 5% liq; ta error HTTPError",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
-  },
-  {
-   "coin": "IGNITION",
-   "condition": "$0.001084; ta error HTTPError",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
-  },
-  {
-   "coin": "\u53d1\u8d22\u732b",
-   "condition": "$0.002172; 24h vol $78,164 < 1x liq; 1h vol $1,651 < 5% liq; trend fail (EMA20/50 or swing lows); pullback 45.8% outside 8-35; not at EMA20 (-19.65%); sellers>=buyers 15m",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
-  },
-  {
-   "coin": "APU",
-   "condition": "$3.667e-06; liq $3,661 below min; 1h vol $4 < 5% liq; ta error HTTPError",
-   "trigger": "pullback 8-35% within 5% of EMA20 + uptrend + green 5m"
+   "coin": "CLAUDIA",
+   "condition": "$0.004917; 1h vol $12,174 < 5% liq; trend fail (EMA20/50 or swing lows); not at EMA20 (7.49%); sell vol not faded; no 5m trigger",
+   "trigger": "wait pullback toward EMA20 (now +7.5%) + green 5m"
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-15T17:59:52-07:00",
+  "Fomo Auto trade watch": "2026-10-15T18:39:53-07:00",
   "fomo scan": "2026-10-14T18:17:36-07:00"
  },
  "progress_pct": 56.0,
- "paper_trades": 8,
- "signals_logged": 1745,
+ "paper_trades": 9,
+ "signals_logged": 2297,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 120
+  "Fomo Auto": 121
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 4,
  "cooldown_until": "2026-10-14T19:31:41-07:00",
  "daily_loss_stats": {
-  "date": "2026-10-14",
-  "losses": 4,
-  "would_have_paused": true,
-  "note": "stats only; paper_daily_stop=false (see config.json); 3 early_runner_v1 -25% stops"
+  "date": "2026-10-15",
+  "losses": 0,
+  "losses_24h": 0,
+  "note": "computed from paper_trades.jsonl via paper_rules.losses(); paper_daily_stop=true"
  },
  "coin_cooldowns": {
   "EAAhhijvMUXqeusPtoT8jhJK1EkBuHmbqYSyQKqkpump": "2026-10-14T14:57:41-07:00",
   "DXKmNUXpHkHKiqRv2pP8LfYLNFCcS2xRoJWqtZwKpump": "2026-10-14T17:43:51-07:00"
  },
  "paper_daily_stop": true,
- "daily_losses": 4,
+ "daily_losses": 0,
  "last_early_exit": {
   "symbol": "RAVE",
   "ts": "2026-10-14T18:31:41-07:00",
@@ -163,5 +134,13 @@
   "start": "2026-10-15",
   "due": "2026-10-22",
   "note": "Report 1 week of v4 paper results (paper_trades.jsonl rules early_runner_v4_gmgn + core paper_v4) to CEO before anything goes live."
+ },
+ "notes": {
+  "fomo scan": "2026-10-15T18:03:52-07:00: 5:55 PM fomo scan skipped; v4 notes say  dropped fomo (API ban). Awaiting decision to retire or re-source this routine."
+ },
+ "early_runner_open": {
+  "symbol": "FILLED",
+  "opened": "2026-10-15T18:06:41-07:00",
+  "rules": "early_runner_v4_gmgn_cli"
  }
 }
