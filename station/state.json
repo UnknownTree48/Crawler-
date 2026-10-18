@@ -1,15 +1,15 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-17T08:47:33-07:00",
+ "last_scan_time": "2026-10-18T08:52:38-07:00",
  "coins_seen": 0,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "daily_housekeep",
-  "time": "2026-10-17T08:47:33-07:00",
+  "time": "2026-10-18T08:51:52-07:00",
   "reason": "pullback retired; supervisor+grad_v1 health only"
  },
- "updated": "2026-10-17T08:47:33-07:00",
+ "updated": "2026-10-18T08:52:38-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -22,28 +22,28 @@
   "Fomo Auto paper scan 3x daily": "2026-10-16T14:47:21-07:00",
   "Fomo Auto paper scan every 20 min": "2026-10-16T14:47:21-07:00"
  },
- "progress_pct": 55.9,
+ "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 141
+  "Fomo Auto": 142
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
- "paper_closed": 5,
+ "paper_closed": 11,
  "cooldown_until": "2026-10-14T19:31:41-07:00",
  "daily_loss_stats": {
-  "date": "2026-10-16",
-  "losses": 2,
-  "losses_24h": 2,
-  "note": "computed from paper_trades.jsonl; paper_daily_stop=false (practice override 2026-10-16; must re-enable before live)"
+  "date": "2026-10-18",
+  "losses": 3,
+  "losses_24h": 3,
+  "note": "computed from paper_trades.jsonl; paper_daily_stop=false + paper_halt_enabled=false (practice; must re-enable both before live)"
  },
  "coin_cooldowns": {
   "EAAhhijvMUXqeusPtoT8jhJK1EkBuHmbqYSyQKqkpump": "2026-10-14T14:57:41-07:00",
   "DXKmNUXpHkHKiqRv2pP8LfYLNFCcS2xRoJWqtZwKpump": "2026-10-14T17:43:51-07:00"
  },
  "paper_daily_stop": false,
- "daily_losses": 2,
+ "daily_losses": 3,
  "last_early_exit": {
   "symbol": "RAVE",
   "ts": "2026-10-14T18:31:41-07:00",
@@ -70,8 +70,19 @@
  },
  "early_runner_open": null,
  "last_scan_mode": "daily_housekeep_no_pullback",
- "paper_halt": {
-  "ts": "2026-10-17T08:21:40-07:00",
-  "why": "3 paper losses in 24h - halt pending review"
+ "paper_halt_enabled": false,
+ "paper_halt_cleared": {
+  "ts": "2026-10-17T08:50:19-07:00",
+  "cleared": {
+   "ts": "2026-10-17T08:21:40-07:00",
+   "why": "3 paper losses in 24h - halt pending review"
+  },
+  "note": "Cleared + paper_halt_enabled=false (practice). Re-enable before live. Re-entry: 24h after stop / 2 stop-outs in 7d blocks coin."
+ },
+ "launch_listener_health": {
+  "ts": "2026-10-18T08:52:38-07:00",
+  "process_alive": true,
+  "receiving": false,
+  "note": "Helius WS usage cap exceeded + HTTP 429 / SSL errors since ~08:05 PT; last graduation ~08:04 PT; process alive but reconnect failing"
  }
 }
