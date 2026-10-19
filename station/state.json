@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-18T21:23:56-07:00",
-  "reason": "health check: supervisor, early_runner, launch_listener alive; no new paper entry/exit since 12:42 PM; 1 grad_v1 paper position open"
+  "time": "2026-10-18T21:42:29-07:00",
+  "reason": "health check: supervisor, early_runner (grad_v1/early_runner/smart_v1/rh_v1, 5 paper slots each), launch_listener alive; no new paper entry/exit since 12:42 PM; 1 grad_v1 paper position open (MUCRON)"
  },
- "updated": "2026-10-18T21:23:56-07:00",
+ "updated": "2026-10-18T21:42:29-07:00",
  "open_positions": [
   {
    "rules": "grad_v1",
@@ -27,7 +27,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-18T21:23:56-07:00",
+  "Fomo Auto trade watch": "2026-10-18T21:42:29-07:00",
   "fomo scan": "2026-10-14T18:17:36-07:00",
   "Fomo Auto paper scan 3x daily": "2026-10-16T14:47:21-07:00",
   "Fomo Auto paper scan every 20 min": "2026-10-16T14:47:21-07:00"
@@ -37,7 +37,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 143
+  "Fomo Auto": 144
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 11,
@@ -90,9 +90,9 @@
   "note": "Cleared + paper_halt_enabled=false (practice). Re-enable before live. Re-entry: 24h after stop / 2 stop-outs in 7d blocks coin."
  },
  "launch_listener_health": {
-  "ts": "2026-10-18T21:23:56-07:00",
+  "ts": "2026-10-18T21:42:29-07:00",
   "process_alive": true,
   "receiving": true,
-  "note": "graduation events flowing (last ~21:22 PT) via fallback source"
+  "note": "graduation events flowing (last ~21:40 PT)"
  }
 }
