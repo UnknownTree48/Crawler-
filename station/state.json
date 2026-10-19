@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T16:26:00-07:00",
+  "ts": "2026-10-19T16:41:00-07:00",
   "action": "trade_watch",
-  "reason": "trade watch 4:24 PM: smart_v1 NTS1 opened 4:12 PM $100 at $0.00009 (liq $25.5K, mc ~$89K, 4 human smart buyers) and stopped out 4:18 PM: mark $0.000076 hit -15%, Jupiter exit fill $0.0000641 (-15.7% slippage) so -$28.78 (-28.8%). Open: NPC $0.000934 (-7.9%, stop -15%), CATE $0.06314 (-0.2%), saluteface $0.00478 (+37%). Supervisor 12204, early_runner 12210, launch_listener 12216 alive. 3 paper losses today; halt/daily stop disabled for practice."
+  "reason": "trade watch 4:39 PM: new smart_v1 entry COLLECTOOOR 4:31 PM $100 at $0.000991 (liq $106K, mc ~$958K, 8 human + 9 bot smart buyers, 2.2% impact); now $0.000893 (-9.9%, stop -15%). Open: NPC $0.000946 (-6.8%), CATE $0.06297 (-0.5%), saluteface $0.00489 (+40%). Supervisor 12204, early_runner 12210, launch_listener 12216 alive. 3 paper losses today; halt/daily stop disabled for practice."
  },
- "updated": "2026-10-19T16:26:00-07:00",
+ "updated": "2026-10-19T16:41:00-07:00",
  "open_positions": [
   {
    "rules": "rh_v1",
@@ -51,6 +51,20 @@
    "half_taken": false,
    "stop_pct": 15.0,
    "fill_source": "jupiter_quote"
+  },
+  {
+   "rules": "smart_v1",
+   "symbol": "COLLECTOOOR",
+   "address": "ESnW5ZbLmoEAg2QEMxnMsY9R3aS8Kw58HJacYURmpump",
+   "chain": "solana",
+   "entry": 0.0009912350722435302,
+   "size": 100.0,
+   "opened": "2026-10-19T16:31:11-07:00",
+   "paper": true,
+   "remaining_frac": 1.0,
+   "half_taken": false,
+   "stop_pct": 15.0,
+   "fill_source": "jupiter_quote"
   }
  ],
  "watchlist": [
@@ -58,13 +72,13 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T16:26:00-07:00",
+ "heartbeat": "2026-10-19T16:41:00-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 188
+  "Fomo Auto": 189
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 14,
@@ -117,7 +131,7 @@
   "note": "Cleared + paper_halt_enabled=false (practice). Re-enable before live. Re-entry: 24h after stop / 2 stop-outs in 7d blocks coin."
  },
  "launch_listener_health": {
-  "ts": "2026-10-19T16:26:00-07:00",
+  "ts": "2026-10-19T16:41:00-07:00",
   "process_alive": true,
   "receiving": true,
   "note": "pid 12216 alive (public_mainnet + pumpportal shadow)"
