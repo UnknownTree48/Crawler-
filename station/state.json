@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-19T09:47:01-07:00",
-  "reason": "trade watch: supervisor, early_runner, launch_listener alive (listener receiving pump.fun grads on public_mainnet fallback). No new paper entries/exits since 9:36 AM; brief DexScreener read timeouts, runner kept going. Open: grad_v1 MUCRON half, rh_v1 saluteface, smart_v1 UHI. No new risk pause; paper_halt_enabled false (practice)."
+  "time": "2026-10-19T10:03:04-07:00",
+  "reason": "trade watch: supervisor, early_runner, launch_listener alive (listener receiving pump.fun grads on public_mainnet fallback, brief reconnect 10:02 AM). No new paper entries/exits since 9:06 AM; brief GeckoTerminal read timeouts, runner kept going. Open: grad_v1 MUCRON half, rh_v1 saluteface, smart_v1 UHI. No new risk pause; paper_halt_enabled false (practice)."
  },
- "updated": "2026-10-19T09:47:01-07:00",
+ "updated": "2026-10-19T10:03:04-07:00",
  "open_positions": [
   {
    "rules": "grad_v1",
@@ -56,7 +56,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-19T09:47:01-07:00",
+  "Fomo Auto trade watch": "2026-10-19T10:03:04-07:00",
   "fomo scan": "2026-10-14T18:17:36-07:00",
   "Fomo Auto paper scan 3x daily": "2026-10-16T14:47:21-07:00",
   "Fomo Auto paper scan every 20 min": "2026-10-16T14:47:21-07:00"
@@ -66,7 +66,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 161
+  "Fomo Auto": 162
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 11,
@@ -119,9 +119,9 @@
   "note": "Cleared + paper_halt_enabled=false (practice). Re-enable before live. Re-entry: 24h after stop / 2 stop-outs in 7d blocks coin."
  },
  "launch_listener_health": {
-  "ts": "2026-10-19T09:06:20-07:00",
+  "ts": "2026-10-19T10:03:04-07:00",
   "process_alive": true,
   "receiving": true,
-  "note": "graduations flowing (last 08:58 PT); reconnected 09:05 on public_mainnet; Helius WS still 429"
+  "note": "graduations flowing (last 09:54 PT); reconnected 10:02 on public_mainnet; Helius WS still 429"
  }
 }
