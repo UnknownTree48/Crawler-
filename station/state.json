@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T10:28:39-07:00",
-  "action": "paper_exit",
-  "reason": "trade watch: smart_v1 UHI hit -15% stop at 10:22 AM PT (paper -$0.10). Supervisor, early_runner, launch_listener alive (early_runner relaunched 10:22-10:26 AM with code updates, no crash traces). Open: grad_v1 MUCRON half, rh_v1 saluteface. No new risk pause; paper_halt_enabled false (practice)."
+  "ts": "2026-10-19T10:49:04-07:00",
+  "action": "trade_watch",
+  "reason": "trade watch: no new paper entries/exits since 10:22 AM UHI stop. Supervisor, early_runner, launch_listener alive. Fixed launch_listener stuck on Alchemy WS (no logsSubscribe on free tier, ~10:30-10:48 AM gap, no grads received); now skips unsupported sources for 24h and fell back to public_mainnet, receiving grads again. Open: grad_v1 MUCRON half, rh_v1 saluteface. No risk pause; paper_halt_enabled false (practice)."
  },
- "updated": "2026-10-19T10:28:39-07:00",
+ "updated": "2026-10-19T10:49:04-07:00",
  "open_positions": [
   {
    "rules": "grad_v1",
@@ -44,7 +44,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-19T10:28:39-07:00",
+  "Fomo Auto trade watch": "2026-10-19T10:49:04-07:00",
   "fomo scan": "2026-10-14T18:17:36-07:00",
   "Fomo Auto paper scan 3x daily": "2026-10-16T14:47:21-07:00",
   "Fomo Auto paper scan every 20 min": "2026-10-16T14:47:21-07:00"
@@ -54,7 +54,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 164
+  "Fomo Auto": 165
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 12,
