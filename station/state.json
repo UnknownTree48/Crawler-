@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-19T08:33:57-07:00",
-  "reason": "no new paper entries or exits since MUCRON 2x take-half at 11:02 PM 10/18; MUCRON other half still open (DexScreener $0.0437, about 2.7x entry, new high; 25% trail ~$0.0328; 24h time stop ~12:42 PM). early_runner/smart_v1/rh_v1 0 open. supervisor, early_runner, launch_listener alive; launch listener on public_mainnet (reconnected 08:30, graduation 08:32); Helius WS still 429. No new risk pause."
+  "time": "2026-10-19T09:06:20-07:00",
+  "reason": "new paper entry: rh_v1 bought saluteface (Robinhood chain) $0.62 at $0.003491 at 9:05 AM (estimated fill, no quote source; 15% stop ~$0.002967, 25% trail, 2x take-half, 24h time stop). MUCRON grad_v1 half still open (DexScreener $0.0443, about 2.7x entry; high $0.0445; 25% trail ~$0.0334; 24h time stop ~12:42 PM). supervisor, early_runner, launch_listener alive; launch listener reconnected 09:05 on public_mainnet, graduations flowing. No new risk pause."
  },
- "updated": "2026-10-19T08:33:57-07:00",
+ "updated": "2026-10-19T09:06:20-07:00",
  "open_positions": [
   {
    "rules": "grad_v1",
@@ -23,6 +23,19 @@
    "half_taken": true,
    "half_sold_price": 0.03253091735007532,
    "half_sold": "2026-10-18T23:02:43-07:00"
+  },
+  {
+   "rules": "rh_v1",
+   "symbol": "saluteface",
+   "address": "0x8f27ff6f7f41c053bd468a2998675b16cb9e4109",
+   "chain": "robinhood",
+   "entry": 0.0034909279065368794,
+   "size": 0.62,
+   "opened": "2026-10-19T09:05:53-07:00",
+   "paper": true,
+   "remaining_frac": 1.0,
+   "half_taken": false,
+   "estimated_fill": true
   }
  ],
  "watchlist": [
@@ -31,17 +44,17 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-19T08:33:57-07:00",
+  "Fomo Auto trade watch": "2026-10-19T09:06:20-07:00",
   "fomo scan": "2026-10-14T18:17:36-07:00",
   "Fomo Auto paper scan 3x daily": "2026-10-16T14:47:21-07:00",
   "Fomo Auto paper scan every 20 min": "2026-10-16T14:47:21-07:00"
  },
  "progress_pct": 56.1,
- "paper_trades": 11,
+ "paper_trades": 12,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 158
+  "Fomo Auto": 159
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 11,
@@ -94,9 +107,9 @@
   "note": "Cleared + paper_halt_enabled=false (practice). Re-enable before live. Re-entry: 24h after stop / 2 stop-outs in 7d blocks coin."
  },
  "launch_listener_health": {
-  "ts": "2026-10-19T08:33:57-07:00",
+  "ts": "2026-10-19T09:06:20-07:00",
   "process_alive": true,
   "receiving": true,
-  "note": "events flowing (last graduation 08:32 PT) on public_mainnet; reconnected 08:30; Helius WS still 429"
+  "note": "graduations flowing (last 08:58 PT); reconnected 09:05 on public_mainnet; Helius WS still 429"
  }
 }
