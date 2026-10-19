@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T16:13:00-07:00",
+  "ts": "2026-10-19T16:26:00-07:00",
   "action": "trade_watch",
-  "reason": "trade watch 4:10 PM: new paper entry momo_v1 CATE $100 at $0.06326 (3:56 PM; liq $2.87M, mc ~$61M, RugCheck score 1, LP 99.99% locked, Jupiter organic 85). Now ~$0.06348 (+0.3%). Open: NPC ~$0.000928 (-8.5% vs $0.001014, stop -15%), saluteface ~$0.00511 (+46%). No exits. Desk restarted ~4:09 PM after rule change (supervisor 12204, early_runner 12210, launch_listener 12216), all alive; listener on public_mainnet + pumpportal shadow, receiving grads (last 16:10). paper_daily_stop/paper_halt_enabled false (practice), 2 losses today."
+  "reason": "trade watch 4:24 PM: smart_v1 NTS1 opened 4:12 PM $100 at $0.00009 (liq $25.5K, mc ~$89K, 4 human smart buyers) and stopped out 4:18 PM: mark $0.000076 hit -15%, Jupiter exit fill $0.0000641 (-15.7% slippage) so -$28.78 (-28.8%). Open: NPC $0.000934 (-7.9%, stop -15%), CATE $0.06314 (-0.2%), saluteface $0.00478 (+37%). Supervisor 12204, early_runner 12210, launch_listener 12216 alive. 3 paper losses today; halt/daily stop disabled for practice."
  },
- "updated": "2026-10-19T16:13:00-07:00",
+ "updated": "2026-10-19T16:26:00-07:00",
  "open_positions": [
   {
    "rules": "rh_v1",
@@ -58,29 +58,29 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T16:13:00-07:00",
+ "heartbeat": "2026-10-19T16:26:00-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 187
+  "Fomo Auto": 188
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
- "paper_closed": 13,
+ "paper_closed": 14,
  "cooldown_until": "2026-10-14T19:31:41-07:00",
  "daily_loss_stats": {
   "date": "2026-10-19",
-  "losses": 2,
-  "losses_24h": 2,
-  "note": "computed from paper_trades.jsonl (UHI smart_v1 -15% stop 10:22 AM; MUCRON grad_v1 remaining half rugged -100% in 5m, trailing stop filled 11:15 AM, trade total -$0.0004 after 2x half). paper_daily_stop=false + paper_halt_enabled=false (practice; must re-enable both before live)"
+  "losses": 3,
+  "losses_24h": 3,
+  "note": "computed from paper_trades.jsonl (UHI smart_v1 -15% stop 10:22 AM; MUCRON grad_v1 trailing stop 11:15 AM ~-$0.0004 after 2x half; NTS1 smart_v1 -15% stop 4:18 PM filled ~-28.8% after -15.7% Jupiter exit slippage, -$28.78). 3 losses/24h halt line reached but paper_halt_enabled=false + paper_daily_stop=false (practice); must re-enable both before live"
  },
  "coin_cooldowns": {
   "EAAhhijvMUXqeusPtoT8jhJK1EkBuHmbqYSyQKqkpump": "2026-10-14T14:57:41-07:00",
   "DXKmNUXpHkHKiqRv2pP8LfYLNFCcS2xRoJWqtZwKpump": "2026-10-14T17:43:51-07:00"
  },
  "paper_daily_stop": false,
- "daily_losses": 2,
+ "daily_losses": 3,
  "last_early_exit": {
   "symbol": "RAVE",
   "ts": "2026-10-14T18:31:41-07:00",
@@ -117,10 +117,10 @@
   "note": "Cleared + paper_halt_enabled=false (practice). Re-enable before live. Re-entry: 24h after stop / 2 stop-outs in 7d blocks coin."
  },
  "launch_listener_health": {
-  "ts": "2026-10-19T16:13:00-07:00",
+  "ts": "2026-10-19T16:26:00-07:00",
   "process_alive": true,
   "receiving": true,
-  "note": "pid 12216 receiving via public_mainnet + pumpportal shadow; last grad 16:10"
+  "note": "pid 12216 alive (public_mainnet + pumpportal shadow)"
  },
  "egress_outage": {
   "first_seen": "2026-10-19T15:06:00-07:00",
