@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T14:55:09-07:00",
+  "ts": "2026-10-19T15:45:00-07:00",
   "action": "trade_watch",
-  "reason": "trade watch 2:55 PM: no new paper entries or exits since 2:41 PM. Open: momo_v1 NPC (entry $0.001014, now ~$0.001027, +1%, liq ~$90K) and rh_v1 saluteface. Supervisor 4164443, early_runner 4164453, launch_listener 4164459 alive; listener receiving (last event 14:54, public_mainnet + pumpportal shadow, 64 grads since 13:25). No new risk pause (paper_daily_stop false, paper_halt_enabled false). Real cash untouched."
+  "reason": "trade watch 3:43 PM: box egress back (DexScreener/GeckoTerminal/Solana RPC 200). No new paper entries or exits since 3:28 PM. Open: momo_v1 NPC ~$0.001024 (+1% vs $0.001014 entry, liq $89.6K) and rh_v1 saluteface ~$0.00457 (+31%). Supervisor 25701, early_runner 36254 (restarted 3:41 PM during tuner run), launch_listener 25719 alive and receiving (pumpportal, last event 3:43 PM). daily losses 2; paper_daily_stop/paper_halt off (practice). Real cash untouched."
  },
- "updated": "2026-10-19T14:55:09-07:00",
+ "updated": "2026-10-19T15:45:00-07:00",
  "open_positions": [
   {
    "rules": "rh_v1",
@@ -45,7 +45,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-19T14:55:09-07:00",
+  "Fomo Auto trade watch": "2026-10-19T15:45:00-07:00",
   "fomo scan": "2026-10-14T18:17:36-07:00",
   "Fomo Auto paper scan 3x daily": "2026-10-16T14:47:21-07:00",
   "Fomo Auto paper scan every 20 min": "2026-10-16T14:47:21-07:00"
@@ -55,7 +55,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 182
+  "Fomo Auto": 185
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 13,
@@ -108,9 +108,17 @@
   "note": "Cleared + paper_halt_enabled=false (practice). Re-enable before live. Re-entry: 24h after stop / 2 stop-outs in 7d blocks coin."
  },
  "launch_listener_health": {
-  "ts": "2026-10-19T14:55:09-07:00",
+  "ts": "2026-10-19T15:45:00-07:00",
   "process_alive": true,
   "receiving": true,
-  "note": "pid 4164459; public_mainnet reconnects (40 since 13:25) + pumpportal shadow; last event 14:54 PT"
+  "note": "pid 25719 receiving via pumpportal; last event 15:43"
+ },
+ "egress_outage": {
+  "first_seen": "2026-10-19T15:06:00-07:00",
+  "last_checked": "2026-10-19T15:45:00-07:00",
+  "status": "recovered",
+  "note": "box egress failing (TLS EOF via egress proxy; box-doctor FAIL egress). DexScreener/GMGN/RPC unreachable, so NPC/saluteface marks and stops can't update. Processes alive and will resume on their own. If still down on a later run (>~20 min), escalate to parent: user may need Update Bot's Computer.",
+  "escalated": "2026-10-19T15:28:00-07:00",
+  "recovered": "2026-10-19T15:43:00-07:00"
  }
 }
