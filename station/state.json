@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T12:17:25-07:00",
+  "ts": "2026-10-19T12:39:25-07:00",
   "action": "trade_watch",
-  "reason": "trade watch: no new paper entries or exits since 11:15 AM MUCRON exit. Supervisor, early_runner, launch_listener alive; listener got grads through 12:12 and reconnected public_mainnet 12:16 after a 120s quiet gap. Open: rh_v1 saluteface ~$0.00495 vs $0.00349 entry (~+42%, liq ~$215K). No new risk pause (practice gates off)."
+  "reason": "trade watch: no new paper entries or exits since 11:15 AM MUCRON exit. Supervisor 4129972, early_runner 4129982 alive; launch_listener relaunched 12:38 PT by strategy tuner (pid 4136413), Helius/Shyft WS 429, Alchemy no logsSubscribe, on public_mainnet + pumpportal shadow and receiving grads (12:38). Open: rh_v1 saluteface ~$0.00537 vs $0.00349 entry (~+54%, liq ~$225K). No new risk pause (practice gates off)."
  },
- "updated": "2026-10-19T12:17:25-07:00",
+ "updated": "2026-10-19T12:39:25-07:00",
  "open_positions": [
   {
    "rules": "rh_v1",
@@ -31,7 +31,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-19T12:17:25-07:00",
+  "Fomo Auto trade watch": "2026-10-19T12:39:25-07:00",
   "fomo scan": "2026-10-14T18:17:36-07:00",
   "Fomo Auto paper scan 3x daily": "2026-10-16T14:47:21-07:00",
   "Fomo Auto paper scan every 20 min": "2026-10-16T14:47:21-07:00"
@@ -41,7 +41,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 171
+  "Fomo Auto": 173
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 13,
@@ -94,9 +94,9 @@
   "note": "Cleared + paper_halt_enabled=false (practice). Re-enable before live. Re-entry: 24h after stop / 2 stop-outs in 7d blocks coin."
  },
  "launch_listener_health": {
-  "ts": "2026-10-19T12:17:25-07:00",
+  "ts": "2026-10-19T12:39:25-07:00",
   "process_alive": true,
   "receiving": true,
-  "note": "process alive (pid 4089472); grads through 12:12 PT; reconnected public_mainnet 12:16 PT after quiet gap"
+  "note": "pid 4136413 (relaunched 12:38 PT); public_mainnet fallback + pumpportal shadow; grads at 12:38 PT"
  }
 }
