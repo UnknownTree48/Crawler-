@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-18T23:26:30-07:00",
-  "reason": "no new paper entries or exits since MUCRON 2x take-half at 11:02 PM; MUCRON other half still open with 25% trail. supervisor, early_runner, launch_listener alive (launch listener on public_mainnet fallback after Helius 429)."
+  "time": "2026-10-18T23:40:14-07:00",
+  "reason": "no new paper entries or exits since MUCRON 2x take-half at 11:02 PM; MUCRON other half still open with 25% trail. supervisor, early_runner, launch_listener alive (launch listener reconnected on public_mainnet 11:39 PM, grads flowing)."
  },
- "updated": "2026-10-18T23:26:30-07:00",
+ "updated": "2026-10-18T23:40:14-07:00",
  "open_positions": [
   {
    "rules": "grad_v1",
@@ -31,7 +31,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-18T23:26:30-07:00",
+  "Fomo Auto trade watch": "2026-10-18T23:40:14-07:00",
   "fomo scan": "2026-10-14T18:17:36-07:00",
   "Fomo Auto paper scan 3x daily": "2026-10-16T14:47:21-07:00",
   "Fomo Auto paper scan every 20 min": "2026-10-16T14:47:21-07:00"
@@ -41,7 +41,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 151
+  "Fomo Auto": 152
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 11,
@@ -94,9 +94,9 @@
   "note": "Cleared + paper_halt_enabled=false (practice). Re-enable before live. Re-entry: 24h after stop / 2 stop-outs in 7d blocks coin."
  },
  "launch_listener_health": {
-  "ts": "2026-10-18T23:09:30-07:00",
+  "ts": "2026-10-18T23:40:14-07:00",
   "process_alive": true,
   "receiving": true,
-  "note": "events flowing (last grad 23:04 PT, public_mainnet)"
+  "note": "events flowing (last grad 23:39 PT, public_mainnet)"
  }
 }
