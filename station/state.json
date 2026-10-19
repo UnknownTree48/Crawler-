@@ -49,7 +49,7 @@
  "daily_loss_stats": {
   "date": "2026-10-19",
   "losses": 0,
-  "losses_24h": 0,
+  "losses_24h": 2,
   "note": "computed from paper_trades.jsonl; paper_daily_stop=false + paper_halt_enabled=false (practice; must re-enable both before live)"
  },
  "coin_cooldowns": {
