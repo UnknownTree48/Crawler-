@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T14:08:39-07:00",
+  "ts": "2026-10-19T14:29:13-07:00",
   "action": "trade_watch",
-  "reason": "trade watch: no new paper entries or exits since 11:15 AM MUCRON exit; rh_v1 saluteface still open. Supervisor 4164443, early_runner 4164453, launch_listener 4164459 alive; listener on public_mainnet + pumpportal shadow (brief shadow reconnect 14:08), grads through 14:08 PT. Strategies scanning, recent signals skipped on gates. No new risk pause (paper_daily_stop false, paper_halt_enabled false). Real cash untouched."
+  "reason": "trade watch: new paper entry momo_v1 NPC $100 at $0.001014 (Jupiter quote fill, 0.73% impact, 15% stop) at 2:28 PM; mc ~$989K, liq ~$89K, LP 100% locked, snipers fully exited. rh_v1 saluteface still open. Supervisor 4164443, early_runner 4164453, launch_listener 4164459 alive; grads through 14:28 PT on public_mainnet + pumpportal shadow. No new risk pause (paper_daily_stop false, paper_halt_enabled false). Real cash untouched."
  },
- "updated": "2026-10-19T14:08:39-07:00",
+ "updated": "2026-10-19T14:29:13-07:00",
  "open_positions": [
   {
    "rules": "rh_v1",
@@ -23,6 +23,20 @@
    "remaining_frac": 1.0,
    "half_taken": false,
    "estimated_fill": true
+  },
+  {
+   "rules": "momo_v1",
+   "symbol": "NPC",
+   "address": "FrEL1gFK7LPKaeQvzNWzeXuzYAUfNsdrLLwNZbjGDUi2",
+   "chain": "solana",
+   "entry": 0.0010142494542474954,
+   "size": 100.0,
+   "opened": "2026-10-19T14:28:20-07:00",
+   "paper": true,
+   "remaining_frac": 1.0,
+   "half_taken": false,
+   "stop_pct": 15.0,
+   "fill_source": "jupiter_quote"
   }
  ],
  "watchlist": [
@@ -31,7 +45,7 @@
   }
  ],
  "heartbeat": {
-  "Fomo Auto trade watch": "2026-10-19T14:08:39-07:00",
+  "Fomo Auto trade watch": "2026-10-19T14:29:13-07:00",
   "fomo scan": "2026-10-14T18:17:36-07:00",
   "Fomo Auto paper scan 3x daily": "2026-10-16T14:47:21-07:00",
   "Fomo Auto paper scan every 20 min": "2026-10-16T14:47:21-07:00"
@@ -41,7 +55,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 179
+  "Fomo Auto": 180
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 13,
@@ -94,9 +108,9 @@
   "note": "Cleared + paper_halt_enabled=false (practice). Re-enable before live. Re-entry: 24h after stop / 2 stop-outs in 7d blocks coin."
  },
  "launch_listener_health": {
-  "ts": "2026-10-19T14:08:39-07:00",
+  "ts": "2026-10-19T14:29:13-07:00",
   "process_alive": true,
   "receiving": true,
-  "note": "pid 4164459; public_mainnet + pumpportal shadow; events through 14:08 PT"
+  "note": "pid 4164459; public_mainnet + pumpportal shadow; events through 14:28 PT"
  }
 }
