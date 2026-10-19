@@ -1,15 +1,15 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-18T08:52:38-07:00",
+ "last_scan_time": "2026-10-19T09:07:11-07:00",
  "coins_seen": 0,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "type": "trade_watch",
-  "time": "2026-10-19T09:06:20-07:00",
-  "reason": "new paper entry: rh_v1 bought saluteface (Robinhood chain) $0.62 at $0.003491 at 9:05 AM (estimated fill, no quote source; 15% stop ~$0.002967, 25% trail, 2x take-half, 24h time stop). MUCRON grad_v1 half still open (DexScreener $0.0443, about 2.7x entry; high $0.0445; 25% trail ~$0.0334; 24h time stop ~12:42 PM). supervisor, early_runner, launch_listener alive; launch listener reconnected 09:05 on public_mainnet, graduations flowing. No new risk pause."
+  "type": "daily_housekeep",
+  "time": "2026-10-19T09:08:00-07:00",
+  "reason": "daily paper housekeeping: supervisor, early_runner, launch_listener alive; listener receiving pump.fun grads on public_mainnet fallback (Helius WS 429). Last 24h: grad_v1 Doomsday -$0.61 (rug), MACRONTARD -$0.20, MUCRON half taken at 2x (half still open); new opens rh_v1 saluteface 9:05 AM, smart_v1 UHI 9:06 AM. paper_halt_enabled false (practice)."
  },
- "updated": "2026-10-19T09:06:20-07:00",
+ "updated": "2026-10-19T09:08:00-07:00",
  "open_positions": [
   {
    "rules": "grad_v1",
@@ -40,7 +40,7 @@
  ],
  "watchlist": [
   {
-   "note": "regular pullback retired 2026-10-16; active=grad_v1+early_runner"
+   "note": "regular pullback retired 2026-10-16; active=grad_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
  "heartbeat": {
