@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T18:42:57-07:00",
+  "ts": "2026-10-19T19:03:00-07:00",
   "action": "paper_watch",
-  "reason": "trade watch: no new paper entries or exits since RARI stop at 6:12 PM; open momo_v1: NPC -6%, CATE -8%, Mimi +9%, LUKE +13%"
+  "reason": "trade watch: new momo_v1 paper entry FTR at 6:44 PM ($100 at $0.00083845, liq $116K, now +7%); open momo_v1: NPC -5%, CATE -7%, Mimi -2%, LUKE +6%, FTR +7%"
  },
- "updated": "2026-10-19T18:42:57-07:00",
+ "updated": "2026-10-19T19:03:00-07:00",
  "open_positions": [
   {
    "rules": "momo_v1",
@@ -58,6 +58,18 @@
    "paper": true,
    "remaining_frac": 1.0,
    "stop_pct": 15.0
+  },
+  {
+   "rules": "momo_v1",
+   "symbol": "FTR",
+   "address": "DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump",
+   "chain": "solana",
+   "entry": 0.0008384452596685276,
+   "size": 100.0,
+   "opened": "2026-10-19T18:44:15-07:00",
+   "paper": true,
+   "remaining_frac": 1.0,
+   "stop_pct": 15.0
   }
  ],
  "watchlist": [
@@ -65,13 +77,13 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T18:42:57-07:00",
+ "heartbeat": "2026-10-19T19:03:00-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 197
+  "Fomo Auto": 198
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 14,
