@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T16:41:00-07:00",
+  "ts": "2026-10-19T17:03:49-07:00",
   "action": "trade_watch",
-  "reason": "trade watch 4:39 PM: new smart_v1 entry COLLECTOOOR 4:31 PM $100 at $0.000991 (liq $106K, mc ~$958K, 8 human + 9 bot smart buyers, 2.2% impact); now $0.000893 (-9.9%, stop -15%). Open: NPC $0.000946 (-6.8%), CATE $0.06297 (-0.5%), saluteface $0.00489 (+40%). Supervisor 12204, early_runner 12210, launch_listener 12216 alive. 3 paper losses today; halt/daily stop disabled for practice."
+  "reason": "trade watch 5:02 PM: momo_v1 COMPUTE stopped 5:03 PM, bought 4:45 PM $100 at $0.000227, sold $0.000138 (-39%, -$39.04; price gapped -38% in 1h through the -15% stop, liq now ~$35K, entered before the 4:49 PM stress-exit check). COLLECTOOOR smart_v1 stopped 4:46 PM -17.6%. Open: NPC -10.7%, CATE -2.4%, Mimi +1.0% (momo_v1, liq ~$19K), saluteface +39.9% (rh_v1). 5 paper losses today; paper_daily_stop and paper_halt off for practice."
  },
- "updated": "2026-10-19T16:41:00-07:00",
+ "updated": "2026-10-19T17:03:49-07:00",
  "open_positions": [
   {
    "rules": "rh_v1",
@@ -21,8 +21,7 @@
    "opened": "2026-10-19T09:05:53-07:00",
    "paper": true,
    "remaining_frac": 1.0,
-   "half_taken": false,
-   "estimated_fill": true
+   "stop_pct": 15.0
   },
   {
    "rules": "momo_v1",
@@ -34,9 +33,7 @@
    "opened": "2026-10-19T14:28:20-07:00",
    "paper": true,
    "remaining_frac": 1.0,
-   "half_taken": false,
-   "stop_pct": 15.0,
-   "fill_source": "jupiter_quote"
+   "stop_pct": 15.0
   },
   {
    "rules": "momo_v1",
@@ -48,23 +45,19 @@
    "opened": "2026-10-19T15:56:56-07:00",
    "paper": true,
    "remaining_frac": 1.0,
-   "half_taken": false,
-   "stop_pct": 15.0,
-   "fill_source": "jupiter_quote"
+   "stop_pct": 15.0
   },
   {
-   "rules": "smart_v1",
-   "symbol": "COLLECTOOOR",
-   "address": "ESnW5ZbLmoEAg2QEMxnMsY9R3aS8Kw58HJacYURmpump",
+   "rules": "momo_v1",
+   "symbol": "Mimi",
+   "address": "8CYyivwMZPg6Edaofxo3eHiveZkDrU6TtUDwtMjTpump",
    "chain": "solana",
-   "entry": 0.0009912350722435302,
+   "entry": 4.433202296874209e-05,
    "size": 100.0,
-   "opened": "2026-10-19T16:31:11-07:00",
+   "opened": "2026-10-19T16:42:36-07:00",
    "paper": true,
    "remaining_frac": 1.0,
-   "half_taken": false,
-   "stop_pct": 15.0,
-   "fill_source": "jupiter_quote"
+   "stop_pct": 15.0
   }
  ],
  "watchlist": [
@@ -72,29 +65,29 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T16:41:00-07:00",
+ "heartbeat": "2026-10-19T17:03:49-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 189
+  "Fomo Auto": 190
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 14,
  "cooldown_until": "2026-10-14T19:31:41-07:00",
  "daily_loss_stats": {
   "date": "2026-10-19",
-  "losses": 3,
-  "losses_24h": 3,
-  "note": "computed from paper_trades.jsonl (UHI smart_v1 -15% stop 10:22 AM; MUCRON grad_v1 trailing stop 11:15 AM ~-$0.0004 after 2x half; NTS1 smart_v1 -15% stop 4:18 PM filled ~-28.8% after -15.7% Jupiter exit slippage, -$28.78). 3 losses/24h halt line reached but paper_halt_enabled=false + paper_daily_stop=false (practice); must re-enable both before live"
+  "losses": 5,
+  "losses_24h": 5,
+  "note": "computed from paper_trades.jsonl: UHI, MUCRON, NTS1, COLLECTOOOR (4:46 PM), COMPUTE (5:03 PM -39% gap). Practice mode, halt disabled."
  },
  "coin_cooldowns": {
   "EAAhhijvMUXqeusPtoT8jhJK1EkBuHmbqYSyQKqkpump": "2026-10-14T14:57:41-07:00",
   "DXKmNUXpHkHKiqRv2pP8LfYLNFCcS2xRoJWqtZwKpump": "2026-10-14T17:43:51-07:00"
  },
  "paper_daily_stop": false,
- "daily_losses": 3,
+ "daily_losses": 5,
  "last_early_exit": {
   "symbol": "RAVE",
   "ts": "2026-10-14T18:31:41-07:00",
