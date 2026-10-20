@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T19:03:00-07:00",
+  "ts": "2026-10-19T19:12:00-07:00",
   "action": "paper_watch",
-  "reason": "trade watch: new momo_v1 paper entry FTR at 6:44 PM ($100 at $0.00083845, liq $116K, now +7%); open momo_v1: NPC -5%, CATE -7%, Mimi -2%, LUKE +6%, FTR +7%"
+  "reason": "trade watch: momo_v1 paper Mimi stopped at -15% at 7:08 PM (-$20.28 on $100); open momo_v1: NPC -5%, CATE -7%, LUKE +5%, FTR +1%"
  },
- "updated": "2026-10-19T19:03:00-07:00",
+ "updated": "2026-10-19T19:12:00-07:00",
  "open_positions": [
   {
    "rules": "momo_v1",
@@ -31,18 +31,6 @@
    "entry": 0.06326313235865313,
    "size": 100.0,
    "opened": "2026-10-19T15:56:56-07:00",
-   "paper": true,
-   "remaining_frac": 1.0,
-   "stop_pct": 15.0
-  },
-  {
-   "rules": "momo_v1",
-   "symbol": "Mimi",
-   "address": "8CYyivwMZPg6Edaofxo3eHiveZkDrU6TtUDwtMjTpump",
-   "chain": "solana",
-   "entry": 4.433202296874209e-05,
-   "size": 100.0,
-   "opened": "2026-10-19T16:42:36-07:00",
    "paper": true,
    "remaining_frac": 1.0,
    "stop_pct": 15.0
@@ -77,29 +65,29 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T19:03:00-07:00",
+ "heartbeat": "2026-10-19T19:12:00-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 198
+  "Fomo Auto": 199
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 14,
  "cooldown_until": "2026-10-14T19:31:41-07:00",
  "daily_loss_stats": {
   "date": "2026-10-19",
-  "losses": 6,
-  "losses_24h": 6,
-  "note": "computed from paper_trades.jsonl: UHI, MUCRON, NTS1, COLLECTOOOR (4:46 PM), COMPUTE (5:03 PM -39% gap), saluteface (5:19 PM rh_v1 stop). Practice mode, halt disabled."
+  "losses": 8,
+  "losses_24h": 8,
+  "note": "computed from paper_trades.jsonl: UHI, MUCRON, NTS1, COLLECTOOOR, COMPUTE, saluteface, RARI (6:12 PM), Mimi (7:08 PM momo_v1 -15% stop, -$20.28). Practice mode, halt disabled."
  },
  "coin_cooldowns": {
   "EAAhhijvMUXqeusPtoT8jhJK1EkBuHmbqYSyQKqkpump": "2026-10-14T14:57:41-07:00",
   "DXKmNUXpHkHKiqRv2pP8LfYLNFCcS2xRoJWqtZwKpump": "2026-10-14T17:43:51-07:00"
  },
  "paper_daily_stop": false,
- "daily_losses": 7,
+ "daily_losses": 8,
  "last_early_exit": {
   "symbol": "RAVE",
   "ts": "2026-10-14T18:31:41-07:00",
