@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-20T08:01:00-07:00",
-  "reason": "No new paper entries/exits since MISTAKE 7:22 AM. Open momo_v1 (disabled, managing only): NPC +2%, CATE -3%, MISTAKE +8%. Processes alive."
+  "time": "2026-10-20T08:13:00-07:00",
+  "reason": "No new paper entries/exits since MISTAKE 7:22 AM. Open momo_v1 (disabled, managing only): NPC +2%, CATE -4%, MISTAKE +15%. Processes alive."
  },
- "updated": "2026-10-20T08:01:00-07:00",
+ "updated": "2026-10-20T08:13:00-07:00",
  "open_positions": [
   {
    "address": "FrEL1gFK7LPKaeQvzNWzeXuzYAUfNsdrLLwNZbjGDUi2",
@@ -89,7 +89,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 214
+  "Fomo Auto": 215
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 16,
