@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T17:47:00-07:00",
+  "ts": "2026-10-19T18:01:00-07:00",
   "action": "trade_watch",
-  "reason": "trade watch 5:44 PM: new momo_v1 paper entry RARI at 5:25 PM ($100 at $0.00037617, liq $69K, mc $370K, 1h +22%, RugCheck clean, LP 100% locked); now -3%. Open momo_v1: NPC -4%, CATE -3%, Mimi -3%, RARI -3%. No exits since 5:19 PM. Supervisor, early_runner, launch_listener alive. 6 paper losses today; daily stop and halt off for practice."
+  "reason": "trade watch 5:59 PM: no new paper entries or exits since RARI at 5:25 PM. Open momo_v1 (mid marks): NPC -5%, CATE -5%, Mimi 0%, RARI -7%. Supervisor, early_runner, launch_listener alive. 6 paper losses today; daily stop and halt off for practice."
  },
- "updated": "2026-10-19T17:47:00-07:00",
+ "updated": "2026-10-19T18:01:00-07:00",
  "open_positions": [
   {
    "rules": "momo_v1",
@@ -65,13 +65,13 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T17:47:00-07:00",
+ "heartbeat": "2026-10-19T18:01:00-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 193
+  "Fomo Auto": 194
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 14,
