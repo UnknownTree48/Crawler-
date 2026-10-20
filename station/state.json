@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-19T23:54:42-07:00",
-  "reason": "no new paper entries or exits since LUKE stopped at 23:41; open momo_v1 NPC -9%, CATE -1%, FTR +3%; processes alive"
+  "time": "2026-10-20T07:19:00-07:00",
+  "reason": "FTR momo_v1 stopped 05:17 (-$22.97); early_runner main loop stalled after 05:30, restarted 07:16 (pid 186354); open momo_v1 NPC +3%, CATE -3%"
  },
- "updated": "2026-10-19T23:54:42-07:00",
+ "updated": "2026-10-20T07:19:00-07:00",
  "open_positions": [
   {
    "rules": "momo_v1",
@@ -34,18 +34,6 @@
    "paper": true,
    "remaining_frac": 1.0,
    "stop_pct": 15.0
-  },
-  {
-   "rules": "momo_v1",
-   "symbol": "FTR",
-   "address": "DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump",
-   "chain": "solana",
-   "entry": 0.0008384452596685276,
-   "size": 100.0,
-   "opened": "2026-10-19T18:44:15-07:00",
-   "paper": true,
-   "remaining_frac": 1.0,
-   "stop_pct": 15.0
   }
  ],
  "watchlist": [
@@ -53,29 +41,29 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T23:54:42-07:00",
+ "heartbeat": "2026-10-20T07:19:00-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 210
+  "Fomo Auto": 211
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
- "paper_closed": 15,
+ "paper_closed": 16,
  "cooldown_until": "2026-10-14T19:31:41-07:00",
  "daily_loss_stats": {
-  "date": "2026-10-19",
-  "losses": 10,
+  "date": "2026-10-20",
+  "losses": 1,
   "losses_24h": 10,
-  "note": "computed from paper_trades.jsonl: UHI, MUCRON, NTS1, COLLECTOOOR, COMPUTE, saluteface, RARI (6:12 PM), Mimi (7:08 PM momo_v1 -15% stop, -$20.28). Practice mode, halt disabled.; TANG (10:43 PM momo_v1 -15% stop, -$20.08). Practice mode, halt disabled.; LUKE (11:41 PM momo_v1 -15% stop, -$15.64). Practice mode, halt disabled."
+  "note": "computed from paper_trades.jsonl: FTR (5:17 AM momo_v1 -15% stop gapped to about -23%, -$22.97 on $100). 24h window also holds UHI, NTS1, COLLECTOOOR, COMPUTE, saluteface, RARI, Mimi, TANG, LUKE. Practice mode, halt disabled."
  },
  "coin_cooldowns": {
   "EAAhhijvMUXqeusPtoT8jhJK1EkBuHmbqYSyQKqkpump": "2026-10-14T14:57:41-07:00",
   "DXKmNUXpHkHKiqRv2pP8LfYLNFCcS2xRoJWqtZwKpump": "2026-10-14T17:43:51-07:00"
  },
  "paper_daily_stop": false,
- "daily_losses": 10,
+ "daily_losses": 1,
  "last_early_exit": {
   "symbol": "RAVE",
   "ts": "2026-10-14T18:31:41-07:00",
@@ -124,5 +112,9 @@
   "note": "box egress failing (TLS EOF via egress proxy; box-doctor FAIL egress). DexScreener/GMGN/RPC unreachable, so NPC/saluteface marks and stops can't update. Processes alive and will resume on their own. If still down on a later run (>~20 min), escalate to parent: user may need Update Bot's Computer.",
   "escalated": "2026-10-19T15:28:00-07:00",
   "recovered": "2026-10-19T15:43:00-07:00"
+ },
+ "runner_stall": {
+  "ts": "2026-10-20T07:19:00-07:00",
+  "note": "early_runner pid 159073 alive but no log/strategy signals after 05:30; killed and relaunched as 186354 at 07:16. Supervisor only restarts dead processes, not hung ones."
  }
 }
