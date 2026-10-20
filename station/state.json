@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-19T23:41:49-07:00",
-  "reason": "momo_v1 paper LUKE stopped -15% at 23:41 (-$15.64 on $100), 10th paper loss today; no new entries; open momo_v1 NPC -9%, CATE -1%, FTR +5%; processes alive"
+  "time": "2026-10-19T23:54:42-07:00",
+  "reason": "no new paper entries or exits since LUKE stopped at 23:41; open momo_v1 NPC -9%, CATE -1%, FTR +3%; processes alive"
  },
- "updated": "2026-10-19T23:41:49-07:00",
+ "updated": "2026-10-19T23:54:42-07:00",
  "open_positions": [
   {
    "rules": "momo_v1",
@@ -53,13 +53,13 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T23:41:49-07:00",
+ "heartbeat": "2026-10-19T23:54:42-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 209
+  "Fomo Auto": 210
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 15,
