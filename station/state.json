@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-19T19:43:45-07:00",
-  "reason": "no new paper entries/exits since Mimi stop 19:08; open momo_v1 NPC -5%, CATE -7%, LUKE +20%, FTR -5%; processes alive"
+  "time": "2026-10-19T19:58:10-07:00",
+  "reason": "new momo_v1 paper entry TANG 19:43:46 ($100 @ $0.0010272, liq $108K, now -4%); open NPC -5%, CATE -7%, LUKE +20%, FTR -3%, TANG -4%; processes alive"
  },
- "updated": "2026-10-19T19:43:45-07:00",
+ "updated": "2026-10-19T19:58:10-07:00",
  "open_positions": [
   {
    "rules": "momo_v1",
@@ -58,6 +58,18 @@
    "paper": true,
    "remaining_frac": 1.0,
    "stop_pct": 15.0
+  },
+  {
+   "rules": "momo_v1",
+   "symbol": "TANG",
+   "address": "GKboyzRdB93iEpfr6Gjs8A2wXe7Tp4kVD5WwkNfepump",
+   "chain": "solana",
+   "entry": 0.001027213421207322,
+   "size": 100.0,
+   "opened": "2026-10-19T19:43:46-07:00",
+   "paper": true,
+   "remaining_frac": 1.0,
+   "stop_pct": 15.0
   }
  ],
  "watchlist": [
@@ -65,13 +77,13 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T19:43:45-07:00",
+ "heartbeat": "2026-10-19T19:58:10-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 201
+  "Fomo Auto": 202
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 14,
