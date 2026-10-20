@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-19T19:31:00-07:00",
-  "reason": "no new paper entries/exits since Mimi stop 19:08; open momo_v1 NPC -5%, CATE -6%, LUKE +14%, FTR +1%; processes alive"
+  "time": "2026-10-19T19:43:45-07:00",
+  "reason": "no new paper entries/exits since Mimi stop 19:08; open momo_v1 NPC -5%, CATE -7%, LUKE +20%, FTR -5%; processes alive"
  },
- "updated": "2026-10-19T19:31:00-07:00",
+ "updated": "2026-10-19T19:43:45-07:00",
  "open_positions": [
   {
    "rules": "momo_v1",
@@ -65,13 +65,13 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T19:31:00-07:00",
+ "heartbeat": "2026-10-19T19:43:45-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 200
+  "Fomo Auto": 201
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 14,
