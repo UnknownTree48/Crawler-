@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T17:03:49-07:00",
+  "ts": "2026-10-19T17:10:23-07:00",
   "action": "trade_watch",
-  "reason": "trade watch 5:02 PM: momo_v1 COMPUTE stopped 5:03 PM, bought 4:45 PM $100 at $0.000227, sold $0.000138 (-39%, -$39.04; price gapped -38% in 1h through the -15% stop, liq now ~$35K, entered before the 4:49 PM stress-exit check). COLLECTOOOR smart_v1 stopped 4:46 PM -17.6%. Open: NPC -10.7%, CATE -2.4%, Mimi +1.0% (momo_v1, liq ~$19K), saluteface +39.9% (rh_v1). 5 paper losses today; paper_daily_stop and paper_halt off for practice."
+  "reason": "trade watch 5:09 PM: no new paper entries or exits since COMPUTE stop at 5:03 PM. Open: saluteface +39% (rh_v1), NPC -11%, CATE -3%, Mimi -8% (momo_v1). Supervisor, early_runner, launch_listener alive and receiving grads. 5 paper losses today; daily stop and halt off for practice."
  },
- "updated": "2026-10-19T17:03:49-07:00",
+ "updated": "2026-10-19T17:10:23-07:00",
  "open_positions": [
   {
    "rules": "rh_v1",
@@ -65,13 +65,13 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T17:03:49-07:00",
+ "heartbeat": "2026-10-19T17:10:23-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 190
+  "Fomo Auto": 191
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 14,
