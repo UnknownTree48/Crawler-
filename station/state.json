@@ -5,24 +5,12 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-19T17:10:23-07:00",
+  "ts": "2026-10-19T17:27:00-07:00",
   "action": "trade_watch",
-  "reason": "trade watch 5:09 PM: no new paper entries or exits since COMPUTE stop at 5:03 PM. Open: saluteface +39% (rh_v1), NPC -11%, CATE -3%, Mimi -8% (momo_v1). Supervisor, early_runner, launch_listener alive and receiving grads. 5 paper losses today; daily stop and halt off for practice."
+  "reason": "trade watch 5:24 PM: rh_v1 saluteface hit -15% stop at 5:19 PM (exit $0.0029066, -$0.10 on $0.62; coin dumped ~-50% in 5 min, now ~$0.00158). No new entries. Open momo_v1: NPC -11%, CATE -3%, Mimi -1%. Supervisor, early_runner, launch_listener alive. 6 paper losses today; daily stop and halt off for practice."
  },
- "updated": "2026-10-19T17:10:23-07:00",
+ "updated": "2026-10-19T17:27:00-07:00",
  "open_positions": [
-  {
-   "rules": "rh_v1",
-   "symbol": "saluteface",
-   "address": "0x8f27ff6f7f41c053bd468a2998675b16cb9e4109",
-   "chain": "robinhood",
-   "entry": 0.0034909279065368794,
-   "size": 0.62,
-   "opened": "2026-10-19T09:05:53-07:00",
-   "paper": true,
-   "remaining_frac": 1.0,
-   "stop_pct": 15.0
-  },
   {
    "rules": "momo_v1",
    "symbol": "NPC",
@@ -65,29 +53,29 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T17:10:23-07:00",
+ "heartbeat": "2026-10-19T17:27:00-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 191
+  "Fomo Auto": 192
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 14,
  "cooldown_until": "2026-10-14T19:31:41-07:00",
  "daily_loss_stats": {
   "date": "2026-10-19",
-  "losses": 5,
-  "losses_24h": 5,
-  "note": "computed from paper_trades.jsonl: UHI, MUCRON, NTS1, COLLECTOOOR (4:46 PM), COMPUTE (5:03 PM -39% gap). Practice mode, halt disabled."
+  "losses": 6,
+  "losses_24h": 6,
+  "note": "computed from paper_trades.jsonl: UHI, MUCRON, NTS1, COLLECTOOOR (4:46 PM), COMPUTE (5:03 PM -39% gap), saluteface (5:19 PM rh_v1 stop). Practice mode, halt disabled."
  },
  "coin_cooldowns": {
   "EAAhhijvMUXqeusPtoT8jhJK1EkBuHmbqYSyQKqkpump": "2026-10-14T14:57:41-07:00",
   "DXKmNUXpHkHKiqRv2pP8LfYLNFCcS2xRoJWqtZwKpump": "2026-10-14T17:43:51-07:00"
  },
  "paper_daily_stop": false,
- "daily_losses": 5,
+ "daily_losses": 6,
  "last_early_exit": {
   "symbol": "RAVE",
   "ts": "2026-10-14T18:31:41-07:00",
