@@ -1,15 +1,15 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-19T09:07:11-07:00",
+ "last_scan_time": "2026-10-20T08:51:17-07:00",
  "coins_seen": 0,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "type": "trade_watch",
-  "time": "2026-10-20T08:42:30-07:00",
-  "reason": "No new paper entries/exits since MISTAKE 7:22 AM. Open momo_v1 (disabled, managing only): NPC +1%, CATE -6%, MISTAKE +22%. Processes alive."
+  "type": "daily_housekeep",
+  "time": "2026-10-20T08:51:17-07:00",
+  "reason": "pullback retired; supervisor+grad_v1 health only"
  },
- "updated": "2026-10-20T08:42:30-07:00",
+ "updated": "2026-10-20T08:51:17-07:00",
  "open_positions": [
   {
    "address": "FrEL1gFK7LPKaeQvzNWzeXuzYAUfNsdrLLwNZbjGDUi2",
@@ -80,7 +80,7 @@
  ],
  "watchlist": [
   {
-   "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
+   "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
  "heartbeat": "2026-10-20T08:01:00-07:00",
@@ -89,7 +89,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 217
+  "Fomo Auto": 218
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 16,
@@ -131,7 +131,7 @@
   "fomo scan": "2026-10-15T18:03:52-07:00: 5:55 PM fomo scan skipped; v4 notes say  dropped fomo (API ban). Awaiting decision to retire or re-source this routine."
  },
  "early_runner_open": null,
- "last_scan_mode": "trade_watch",
+ "last_scan_mode": "daily_housekeep_no_pullback",
  "paper_halt_enabled": false,
  "paper_halt_cleared": {
   "ts": "2026-10-17T08:50:19-07:00",
