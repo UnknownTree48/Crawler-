@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-20T08:55:30-07:00",
-  "reason": "no new paper entries/exits; open momo_v1 NPC +2%, CATE -6%, MISTAKE +23%; processes alive"
+  "time": "2026-10-20T09:13:00-07:00",
+  "reason": "no new paper entries/exits; open momo_v1 NPC +40%, CATE -4%, MISTAKE +19%; processes alive (243153/243161/243167)"
  },
- "updated": "2026-10-20T08:55:30-07:00",
+ "updated": "2026-10-20T09:13:00-07:00",
  "open_positions": [
   {
    "address": "FrEL1gFK7LPKaeQvzNWzeXuzYAUfNsdrLLwNZbjGDUi2",
