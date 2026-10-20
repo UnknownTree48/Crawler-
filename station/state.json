@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-19T23:29:15-07:00",
-  "reason": "no new paper entries or exits since TANG stop at 22:43; open momo_v1 NPC -9%, CATE 0%, LUKE -11%, FTR +3%; processes alive"
+  "time": "2026-10-19T23:41:49-07:00",
+  "reason": "momo_v1 paper LUKE stopped -15% at 23:41 (-$15.64 on $100), 10th paper loss today; no new entries; open momo_v1 NPC -9%, CATE -1%, FTR +5%; processes alive"
  },
- "updated": "2026-10-19T23:29:15-07:00",
+ "updated": "2026-10-19T23:41:49-07:00",
  "open_positions": [
   {
    "rules": "momo_v1",
@@ -37,18 +37,6 @@
   },
   {
    "rules": "momo_v1",
-   "symbol": "LUKE",
-   "address": "Ez7eEs53hQiXgCGmcbhdX5i1jgg2gC3F6MoeosuVpump",
-   "chain": "solana",
-   "entry": 0.0007487380203217269,
-   "size": 100.0,
-   "opened": "2026-10-19T18:01:11-07:00",
-   "paper": true,
-   "remaining_frac": 1.0,
-   "stop_pct": 15.0
-  },
-  {
-   "rules": "momo_v1",
    "symbol": "FTR",
    "address": "DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump",
    "chain": "solana",
@@ -65,29 +53,29 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-19T23:29:15-07:00",
+ "heartbeat": "2026-10-19T23:41:49-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 208
+  "Fomo Auto": 209
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 15,
  "cooldown_until": "2026-10-14T19:31:41-07:00",
  "daily_loss_stats": {
   "date": "2026-10-19",
-  "losses": 9,
-  "losses_24h": 9,
-  "note": "computed from paper_trades.jsonl: UHI, MUCRON, NTS1, COLLECTOOOR, COMPUTE, saluteface, RARI (6:12 PM), Mimi (7:08 PM momo_v1 -15% stop, -$20.28). Practice mode, halt disabled.; TANG (10:43 PM momo_v1 -15% stop, -$20.08). Practice mode, halt disabled."
+  "losses": 10,
+  "losses_24h": 10,
+  "note": "computed from paper_trades.jsonl: UHI, MUCRON, NTS1, COLLECTOOOR, COMPUTE, saluteface, RARI (6:12 PM), Mimi (7:08 PM momo_v1 -15% stop, -$20.28). Practice mode, halt disabled.; TANG (10:43 PM momo_v1 -15% stop, -$20.08). Practice mode, halt disabled.; LUKE (11:41 PM momo_v1 -15% stop, -$15.64). Practice mode, halt disabled."
  },
  "coin_cooldowns": {
   "EAAhhijvMUXqeusPtoT8jhJK1EkBuHmbqYSyQKqkpump": "2026-10-14T14:57:41-07:00",
   "DXKmNUXpHkHKiqRv2pP8LfYLNFCcS2xRoJWqtZwKpump": "2026-10-14T17:43:51-07:00"
  },
  "paper_daily_stop": false,
- "daily_losses": 9,
+ "daily_losses": 10,
  "last_early_exit": {
   "symbol": "RAVE",
   "ts": "2026-10-14T18:31:41-07:00",
