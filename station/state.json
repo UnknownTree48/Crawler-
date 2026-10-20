@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-20T07:28:00-07:00",
-  "reason": "new momo_v1 paper entry MISTAKE 07:22 ($100 @ $0.00229, liq $177K, now -3%); open NPC +4%, CATE -3%; early_runner logging normally (supervisor restarted all 3 at 07:23)"
+  "time": "2026-10-20T07:48:00-07:00",
+  "reason": "no new paper entries or exits since MISTAKE 07:22; open momo_v1 (strategy disabled, managing only): NPC +2%, CATE -3%, MISTAKE +7%; supervisor/early_runner/launch_listener alive and logging"
  },
- "updated": "2026-10-20T07:28:00-07:00",
+ "updated": "2026-10-20T07:48:00-07:00",
  "open_positions": [
   {
    "address": "FrEL1gFK7LPKaeQvzNWzeXuzYAUfNsdrLLwNZbjGDUi2",
@@ -83,13 +83,13 @@
    "note": "regular pullback retired 2026-10-16; early_runner + grad30_v1 scrapped 2026-10-19; active=grad_v1+smart_v1+rh_v1+momo_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-20T07:28:00-07:00",
+ "heartbeat": "2026-10-20T07:48:00-07:00",
  "progress_pct": 56.1,
  "paper_trades": 11,
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 212
+  "Fomo Auto": 213
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 16,
