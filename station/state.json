@@ -6,78 +6,11 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-20T09:13:00-07:00",
-  "reason": "no new paper entries/exits; open momo_v1 NPC +40%, CATE -4%, MISTAKE +19%; processes alive (243153/243161/243167)"
+  "time": "2026-10-22T15:59:00-07:00",
+  "reason": "no new paper entries/exits since ALPENGLOW -15% stop 2026-10-21 10:14; no open paper positions; desk alive (243153/243161/243167)"
  },
- "updated": "2026-10-20T09:13:00-07:00",
- "open_positions": [
-  {
-   "address": "FrEL1gFK7LPKaeQvzNWzeXuzYAUfNsdrLLwNZbjGDUi2",
-   "symbol": "NPC",
-   "chain": "solana",
-   "pool": "2ry8SdUYSfAe2VMvbTz5YEcxRdkJ1dQ6o6Vo9eZm1SWB",
-   "entry": 0.0010142494542474954,
-   "qty": 98595.073951,
-   "rem": 1.0,
-   "high": 0.0010142494542474954,
-   "half_taken": false,
-   "opened": "2026-10-19T14:28:20-07:00",
-   "opened_t": 1792445300.049112,
-   "realized": 0.0,
-   "liq": 88844.7,
-   "rule": {
-    "stop": 0.15,
-    "trail": 0.2,
-    "tstop_h": 24,
-    "take_half_at": 3.0
-   },
-   "estimated_fill": false
-  },
-  {
-   "address": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
-   "symbol": "CATE",
-   "chain": "solana",
-   "pool": "HMzvsEEmtzHhvZNw9uwbaG85HCTmFnkbhzUx16cy7ca3",
-   "entry": 0.06326313235865313,
-   "qty": 1580.699472,
-   "rem": 1.0,
-   "high": 0.06326313235865313,
-   "half_taken": false,
-   "opened": "2026-10-19T15:56:56-07:00",
-   "opened_t": 1792450616.9020436,
-   "realized": 0.0,
-   "liq": 2865758.54,
-   "rule": {
-    "stop": 0.15,
-    "trail": 0.2,
-    "tstop_h": 24,
-    "take_half_at": 3.0
-   },
-   "estimated_fill": false
-  },
-  {
-   "address": "HKZDfZnkHZxd9agRDNPyDv4iT6LmAurJnpRtj9wpump",
-   "symbol": "MISTAKE",
-   "chain": "solana",
-   "pool": "867dKvaCcyRrUDP66bqNXbujXfjaxsNB9wTpc4CmBdAD",
-   "entry": 0.0022903134479457187,
-   "qty": 43662.14591,
-   "rem": 1.0,
-   "high": 0.0022903134479457187,
-   "half_taken": false,
-   "opened": "2026-10-20T07:22:40-07:00",
-   "opened_t": 1792506160.4758997,
-   "realized": 0.0,
-   "liq": 176632.06,
-   "rule": {
-    "stop": 0.15,
-    "trail": 0.2,
-    "tstop_h": 24,
-    "take_half_at": 3.0
-   },
-   "estimated_fill": false
-  }
- ],
+ "updated": "2026-10-22T15:59:00-07:00",
+ "open_positions": [],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
@@ -89,7 +22,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 220
+  "Fomo Auto": 221
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 16,
