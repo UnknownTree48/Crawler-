@@ -9,7 +9,7 @@
   "time": "2026-10-22T20:58-07:00",
   "reason": "no new paper entries/exits; PHP open +4.7%"
  },
- "updated": "2026-10-22T20:58-07:00",
+ "updated": "2026-10-22T22:58-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -22,7 +22,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 249
+  "Fomo Auto": 250
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 16,
