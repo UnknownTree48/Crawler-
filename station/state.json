@@ -5,11 +5,11 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "type": "daily_housekeep",
-  "time": "2026-10-23T08:54:30-07:00",
-  "reason": "pullback retired; supervisor+grad_v1 health only"
+  "ts": "2026-10-23T15:31:00-07:00",
+  "action": "watch",
+  "reason": "trade watch: no paper entries/exits, no open positions; v5 desk alive with keys"
  },
- "updated": "2026-10-23T08:54:30-07:00",
+ "updated": "2026-10-23T15:30:27-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -22,7 +22,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 288
+  "Fomo Auto": 289
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 16,
