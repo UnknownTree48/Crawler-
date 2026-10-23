@@ -6,10 +6,10 @@
  "passed": [],
  "last_action": {
   "type": "trade_watch",
-  "time": "2026-10-22T20:26-07:00",
-  "reason": "no new paper entries/exits; PHP open +4.1%"
+  "time": "2026-10-22T20:41-07:00",
+  "reason": "no new paper entries/exits; PHP open +3.9%"
  },
- "updated": "2026-10-22T19:58-07:00",
+ "updated": "2026-10-22T20:41-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -22,7 +22,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 240
+  "Fomo Auto": 241
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 16,
