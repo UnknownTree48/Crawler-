@@ -98,6 +98,5 @@
    "time": "2026-10-23T08:56-07:00",
    "reason": "24h: 2 buys/2 sells (SUKI -22.78, PHP -18.62, both -15% stops, pre-v5 rules), net -$41.40; 0 v5 trades since freeze; 0 open; desk+listener healthy"
   }
- },
- "last_trade_watch": "2026-10-24T11:26-07:00"
+ }
 }
