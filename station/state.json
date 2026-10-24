@@ -22,7 +22,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 303
+  "Fomo Auto": 302
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 16,
@@ -98,5 +98,7 @@
    "time": "2026-10-23T08:56-07:00",
    "reason": "24h: 2 buys/2 sells (SUKI -22.78, PHP -18.62, both -15% stops, pre-v5 rules), net -$41.40; 0 v5 trades since freeze; 0 open; desk+listener healthy"
   }
- }
+ },
+ "trade_watch_runs": 1,
+ "trade_watch_last": "2026-10-24T12:39:44-07:00"
 }
