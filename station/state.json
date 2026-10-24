@@ -5,25 +5,12 @@
  "coins_passed": 0,
  "passed": [],
  "last_action": {
-  "ts": "2026-10-23T19:04-07:00",
+  "ts": "2026-10-23T19:10-07:00",
   "action": "watch",
-  "reason": "first v5 paper entry: smart_v1 bought fone 18:49 at $0.001874 ($100 paper, -15% stop); mark $0.001823 (~-2.7%). Desk now on GCP VM, service active."
+  "reason": "trade watch: fone open ~-4.2%, no new entries/exits; VM desk UP"
  },
- "updated": "2026-10-23T19:04-07:00",
- "open_positions": [
-  {
-   "symbol": "fone",
-   "address": "CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump",
-   "rules": "smart_v1",
-   "rules_version": "v5",
-   "entry_ts": "2026-10-23T18:49:47-07:00",
-   "entry_price": 0.0018739441958627585,
-   "stop_pct": 15.0,
-   "last_mark": 0.001823,
-   "mark_ts": "2026-10-23T19:04-07:00",
-   "where": "GCP VM desk"
-  }
- ],
+ "updated": "2026-10-23T19:10-07:00",
+ "open_positions": [],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
@@ -111,6 +98,5 @@
    "time": "2026-10-23T08:56-07:00",
    "reason": "24h: 2 buys/2 sells (SUKI -22.78, PHP -18.62, both -15% stops, pre-v5 rules), net -$41.40; 0 v5 trades since freeze; 0 open; desk+listener healthy"
   }
- },
- "desk_location": "gcp_vm fomo-desk (DESK_ON_VM)"
+ }
 }
