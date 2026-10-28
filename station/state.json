@@ -1,15 +1,15 @@
 {
  "status": "paper",
- "last_scan_time": "2026-10-27T08:55:11-07:00",
+ "last_scan_time": "2026-10-28T08:55:10-07:00",
  "coins_seen": 0,
  "coins_passed": 0,
  "passed": [],
  "last_action": {
   "type": "daily_housekeep",
-  "time": "2026-10-27T08:55:11-07:00",
+  "time": "2026-10-28T08:55:10-07:00",
   "reason": "pullback retired; supervisor+grad_v1 health only"
  },
- "updated": "2026-10-27T08:55:11-07:00",
+ "updated": "2026-10-28T08:55:10-07:00",
  "open_positions": [],
  "watchlist": [
   {
@@ -22,7 +22,7 @@
  "signals_logged": 3197,
  "ui_open_positions": [],
  "runs": {
-  "Fomo Auto": 302
+  "Fomo Auto": 303
  },
  "checkpoint_oct14_sent": "2026-10-14T10:28:58-07:00",
  "paper_closed": 16,
