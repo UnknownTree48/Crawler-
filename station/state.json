@@ -9,7 +9,7 @@
   "time": "2026-10-30T13:28:45-07:00",
   "reason": "CLAUDIA: 1.3x take half"
  },
- "updated": "2026-10-31T09:57:18-07:00",
+ "updated": "2026-10-31T11:03:14-07:00",
  "open_positions": [
   "smart_v1 CLAUDIA"
  ],
@@ -18,7 +18,7 @@
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-31T09:56:54-07:00",
+ "heartbeat": "2026-10-31T11:02:59-07:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -159,6 +159,6 @@
    "reason": "1.3x take half"
   }
  ],
- "desk_heartbeat": "2026-10-31T09:56:54-07:00",
+ "desk_heartbeat": "2026-10-31T11:02:59-07:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
