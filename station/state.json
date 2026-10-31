@@ -9,7 +9,7 @@
   "time": "2026-10-31T11:33:51-07:00",
   "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-10-31T15:02:48-07:00",
+ "updated": "2026-10-31T15:59:01-07:00",
  "open_positions": [
   "smart_v1_shadow AAPLx",
   "smart_v1_shadow HYPE",
@@ -21,16 +21,23 @@
   "smart_v1_shadow CHICKLE",
   "smart_v1_shadow MeiMei",
   "smart_v1_shadow MSFTx",
-  "smart_v1_shadow 1993",
   "smart_v1_shadow CYPH",
-  "smart_v1_shadow XMR"
+  "smart_v1_shadow XMR",
+  "smart_v1_shadow NIO",
+  "smart_v1_shadow Pikmin",
+  "smart_v1_shadow DJT",
+  "smart_v1_shadow Pepper",
+  "smart_v1_shadow HACKTOBER",
+  "smart_v1_shadow RDDT",
+  "smart_v1_shadow MIRE",
+  "smart_v1_shadow timmy"
  ],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-31T15:02:30-07:00",
+ "heartbeat": "2026-10-31T15:58:40-07:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -226,17 +233,6 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "1993",
-   "mint": "reject:7Ypg1rKLu8q32E1AQEDjaPCg8dfGeCSsMkFnK98zcash",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "CYPH",
    "mint": "reject:CYPHuMmCL1GxJWa2tsPhLKykC7GrHJTCHwbXD4g5uawK",
    "opened": null,
@@ -254,6 +250,94 @@
    "entry_price": 0,
    "half_sold": false,
    "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "NIO",
+   "mint": "reject:7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "Pikmin",
+   "mint": "reject:2MXhpKgHBREgYYj3bSdorqbuJjkPAve1LTNHtk8Lpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 0.5,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "DJT",
+   "mint": "reject:DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "Pepper",
+   "mint": "reject:9g4Pib6AM3oVdP9YA7ZcssAXAuhoUzkjR8w27doYpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "HACKTOBER",
+   "mint": "reject:8qnLLfJQqxnkBWNXjxkSfLu7wVPjFxr75qDRwdpQ9r6q",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "RDDT",
+   "mint": "reject:RDDTGbhHwVXfyCvQMXzzowKjf5qrYBZAnehoXW83ooh",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "MIRE",
+   "mint": "reject:8ex2Y3WUd8k8vpaSC7qLrMWz1e2eWopLDmyoXJkDqSeQ",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "timmy",
+   "mint": "reject:TiMSdJrkVwUpeEWJpuqRvHt4wVS7uH77LbNPGGVJXNw",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 0.5,
    "peak_vs_entry_pct": null,
    "rules_version": null
   }
@@ -303,6 +387,6 @@
    "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-10-31T15:02:30-07:00",
+ "desk_heartbeat": "2026-10-31T15:58:40-07:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
