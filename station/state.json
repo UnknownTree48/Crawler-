@@ -6,19 +6,17 @@
  "passed": [],
  "last_action": {
   "type": "smart_v1 sell",
-  "time": "2026-10-30T13:28:45-07:00",
-  "reason": "CLAUDIA: 1.3x take half"
+  "time": "2026-10-31T11:33:51-07:00",
+  "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-10-31T11:03:14-07:00",
- "open_positions": [
-  "smart_v1 CLAUDIA"
- ],
+ "updated": "2026-10-31T11:56:44-07:00",
+ "open_positions": [],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-31T11:02:59-07:00",
+ "heartbeat": "2026-10-31T11:56:24-07:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -101,28 +99,9 @@
    "reason": "24h: 2 buys/2 sells (SUKI -22.78, PHP -18.62, both -15% stops, pre-v5 rules), net -$41.40; 0 v5 trades since freeze; 0 open; desk+listener healthy"
   }
  },
- "open_positions_detail": [
-  {
-   "strategy": "smart_v1",
-   "symbol": "CLAUDIA",
-   "mint": "2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM",
-   "opened": "2026-10-30T07:07:52-07:00",
-   "entry_price": 0.0019764473516741495,
-   "half_sold": true,
-   "remaining_frac": 0.5,
-   "peak_vs_entry_pct": 33.0,
-   "rules_version": "v5.1"
-  }
- ],
- "paper_exits_logged": 42,
+ "open_positions_detail": [],
+ "paper_exits_logged": 43,
  "recent_trades": [
-  {
-   "time": "2026-10-28T20:36:50-07:00",
-   "strategy": "smart_v1",
-   "action": "sell",
-   "symbol": "OPUS",
-   "reason": "1.3x take half"
-  },
   {
    "time": "2026-10-28T20:36:59-07:00",
    "strategy": "smart_v1",
@@ -157,8 +136,15 @@
    "action": "sell",
    "symbol": "CLAUDIA",
    "reason": "1.3x take half"
+  },
+  {
+   "time": "2026-10-31T11:33:51-07:00",
+   "strategy": "smart_v1",
+   "action": "sell",
+   "symbol": "CLAUDIA",
+   "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-10-31T11:02:59-07:00",
+ "desk_heartbeat": "2026-10-31T11:56:24-07:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
