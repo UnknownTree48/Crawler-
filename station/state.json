@@ -9,20 +9,24 @@
   "time": "2026-10-31T11:33:51-07:00",
   "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-10-31T12:55:51-07:00",
+ "updated": "2026-10-31T13:59:55-07:00",
  "open_positions": [
   "smart_v1_shadow AAPLx",
-  "smart_v1_shadow BTC",
   "smart_v1_shadow HYPE",
-  "smart_v1_shadow NIGGER",
-  "smart_v1_shadow Marvin"
+  "smart_v1_shadow SPCX",
+  "smart_v1_shadow SAINDRA",
+  "smart_v1_shadow DARTHLON",
+  "smart_v1_shadow xSOL",
+  "smart_v1_shadow DOUGHBRIKS",
+  "smart_v1_shadow ANSEM",
+  "smart_v1_shadow LEVR"
  ],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-31T12:55:27-07:00",
+ "heartbeat": "2026-10-31T13:59:36-07:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -119,17 +123,6 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "BTC",
-   "mint": "reject:C5xph2yL6gMdxmuLGxJBkGpmuDFfyi5fqkBNhvL6pump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "HYPE",
    "mint": "reject:98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g",
    "opened": null,
@@ -141,8 +134,8 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "NIGGER",
-   "mint": "reject:C9bXCNx3xUjwY3xSz7wmAXM8CcXKGjjsTTgG36EVFG2v",
+   "symbol": "SPCX",
+   "mint": "reject:SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -152,8 +145,63 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "Marvin",
-   "mint": "reject:FmuciqKXRRnKqhi7BNin5mYH6fm3oTrfVB5A5Fyrpump",
+   "symbol": "SAINDRA",
+   "mint": "reject:A2yA6AFtfKkfVkfsnGpvsKoUV5kQPpMYboZsBPvmkA9T",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "DARTHLON",
+   "mint": "reject:CcaZZiDgx1CgwupbZbL2kXACqmDipCELQ8EsEsgbpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "xSOL",
+   "mint": "reject:4sWNB8zGWHkh6UnmwiEtzNxL4XrN7uK9tosbESbJFfVs",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "DOUGHBRIKS",
+   "mint": "reject:D7Q2ApyCUfAm9Vay3wC2g1tDBtrKdomYCLdiSPaNpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 0.5,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "ANSEM",
+   "mint": "reject:CvRJ8MrnB1AwjrgX25uyeLJiXNSugTo2ZHh8UXDTpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 0.5,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "LEVR",
+   "mint": "reject:txGEsvd357yRyT2rXbhXFpxyoaHgcg5VMiA6QNgpump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -207,6 +255,6 @@
    "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-10-31T12:55:27-07:00",
+ "desk_heartbeat": "2026-10-31T13:59:36-07:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
