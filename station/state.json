@@ -9,7 +9,7 @@
   "time": "2026-10-31T11:33:51-07:00",
   "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-10-31T21:55:30-07:00",
+ "updated": "2026-10-31T22:58:56-07:00",
  "open_positions": [
   "smart_v1_shadow AAPLx",
   "smart_v1_shadow HYPE",
@@ -31,7 +31,6 @@
   "smart_v1_shadow ZEC",
   "smart_v1_shadow STOOL",
   "smart_v1_shadow Rocketman",
-  "smart_v1_shadow \uc288\ubc14\uc624",
   "smart_v1_shadow Ponzi",
   "smart_v1_shadow NVDAx",
   "smart_v1_shadow ZEC",
@@ -41,23 +40,22 @@
   "smart_v1_shadow HIMS",
   "smart_v1_shadow QUANTUM",
   "smart_v1_shadow BLUE",
-  "smart_v1_shadow CRIME",
   "smart_v1_shadow Alon",
   "smart_v1_shadow 19",
   "smart_v1_shadow DIVIDEND",
   "smart_v1_shadow DOOM",
-  "smart_v1_shadow BRB",
   "smart_v1_shadow RINA",
   "smart_v1_shadow AUC",
   "smart_v1_shadow VEIL",
-  "smart_v1_shadow BREACHLING"
+  "smart_v1_shadow GOOGLx",
+  "smart_v1_shadow makemoney"
  ],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-31T21:55:16-07:00",
+ "heartbeat": "2026-10-31T22:58:41-07:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -363,17 +361,6 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "\uc288\ubc14\uc624",
-   "mint": "reject:Bz5N9wrcxDw2YTf8tQkG8PJzdbUW89ZNWLWbdqA2pump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "Ponzi",
    "mint": "reject:PonziBtgwfemdft5ch9Rj9pKcSPSx5cJbgPiGJNAxz7",
    "opened": null,
@@ -473,17 +460,6 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "CRIME",
-   "mint": "reject:BN4Z5NtntHhu6p3atEqkeAVi8Bn9Ri2QTv8FD7iupump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "Alon",
    "mint": "reject:DinCp6soCWEUFwBKxUHKogArQPEpHtC12r2yP55Rpump",
    "opened": null,
@@ -528,17 +504,6 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "BRB",
-   "mint": "reject:BRBxbQjafbMc1p24AUxLQpMmmuekKiQKi8PyNquLnbrb",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 0.5,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "RINA",
    "mint": "reject:ABSZ6rwFCcWSTB4QiGfDqNBEgeyUswQWZm5Vt5rVpump",
    "opened": null,
@@ -572,8 +537,19 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "BREACHLING",
-   "mint": "reject:A5rynoDeSCfK6JBsjJwJwTNvc16LdDiQdACQHNXAYesb",
+   "symbol": "GOOGLx",
+   "mint": "reject:XsCPL9dNWBMvFtTmwcCA5v3xWPSMEBCszbQdiLLq6aN",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "makemoney",
+   "mint": "reject:6pF5Lt3jjyfV9uF4WqWvGJmPVHChQn5QACAjSLzSpump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -627,6 +603,6 @@
    "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-10-31T21:55:16-07:00",
+ "desk_heartbeat": "2026-10-31T22:58:41-07:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
