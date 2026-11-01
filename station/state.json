@@ -9,12 +9,8 @@
   "time": "2026-10-31T11:33:51-07:00",
   "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-11-01T13:55:30-08:00",
+ "updated": "2026-11-01T14:58:18-08:00",
  "open_positions": [
-  "smart_v1_shadow DJT",
-  "smart_v1_shadow Pepper",
-  "smart_v1_shadow HACKTOBER",
-  "smart_v1_shadow RDDT",
   "smart_v1_shadow WBNB",
   "smart_v1_shadow ZEC",
   "smart_v1_shadow STOOL",
@@ -38,7 +34,6 @@
   "smart_v1_shadow GINNAN",
   "smart_v1_shadow Agency",
   "smart_v1_shadow BABA",
-  "smart_v1_shadow TBB",
   "smart_v1_shadow Ranter",
   "smart_v1_shadow Dacity",
   "smart_v1_shadow gooncat",
@@ -88,17 +83,21 @@
   "smart_v1_shadow Realizing",
   "smart_v1_shadow VEILCAT",
   "smart_v1_shadow PCAT",
-  "smart_v1_shadow MarsCoin",
-  "smart_v1_shadow BOTTOM",
-  "smart_v1_shadow PEAKY",
-  "smart_v1_shadow PAGO"
+  "smart_v1_shadow CARDS",
+  "smart_v1_shadow ANSEM",
+  "smart_v1_shadow paws",
+  "smart_v1_shadow HI",
+  "smart_v1_shadow Joe ",
+  "smart_v1_shadow Joe",
+  "smart_v1_shadow RIPJOE",
+  "smart_v1_shadow RIPJOE"
  ],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-11-01T13:54:58-08:00",
+ "heartbeat": "2026-11-01T14:57:58-08:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -182,50 +181,6 @@
   }
  },
  "open_positions_detail": [
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "DJT",
-   "mint": "reject:DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "Pepper",
-   "mint": "reject:9g4Pib6AM3oVdP9YA7ZcssAXAuhoUzkjR8w27doYpump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "HACKTOBER",
-   "mint": "reject:8qnLLfJQqxnkBWNXjxkSfLu7wVPjFxr75qDRwdpQ9r6q",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "RDDT",
-   "mint": "reject:RDDTGbhHwVXfyCvQMXzzowKjf5qrYBZAnehoXW83ooh",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
   {
    "strategy": "smart_v1_shadow",
    "symbol": "WBNB",
@@ -472,17 +427,6 @@
    "strategy": "smart_v1_shadow",
    "symbol": "BABA",
    "mint": "reject:BABANGA4JE7Kkam4nTrALAwAVgsNJUuFJnnkF7S16BZp",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "TBB",
-   "mint": "reject:42cXQvAAr7hcPBPWAS4ocVtDyeJ4Fa6gRR2uG4gppump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -1025,25 +969,14 @@
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "MarsCoin",
-   "mint": "reject:Co9vpejVTMgimYxCEtwXYjLmHXuuFUHDJ6Nf9RpDpump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
    "remaining_frac": 0.5,
    "peak_vs_entry_pct": null,
    "rules_version": null
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "BOTTOM",
-   "mint": "reject:CTNoiFSpLC1wx8pbtsKBTKAdRtU5V4xB6cwq4nSR6XDz",
+   "symbol": "CARDS",
+   "mint": "reject:CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -1053,8 +986,8 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "PEAKY",
-   "mint": "reject:2EQxezWgXPRU6V3UD7DKr5m12mxqeFGPWNRx9wbqy9fC",
+   "symbol": "ANSEM",
+   "mint": "reject:CvRJ8MrnB1AwjrgX25uyeLJiXNSugTo2ZHh8UXDTpump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -1064,8 +997,63 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "PAGO",
-   "mint": "reject:6CVd9hqv9sBHAEiCVXNyiNrG3CzxXbMDGJ9MA6Mgpump",
+   "symbol": "paws",
+   "mint": "reject:Fp4JkqEcKYKBKhb9iMu9NSDeo71HWgq2q9QtXaaKpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "HI",
+   "mint": "reject:38k7vBWL9MbnN1MvT2zBpSAj8pN6FsekHmMxLcRWpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "Joe ",
+   "mint": "reject:73V8b3dp7sdLbDbPxr7QU6is8HLrA9PCrkjGhpTnpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "Joe",
+   "mint": "reject:EwUhGrsW9dW9rJ2WMogXebfjocnUtKBeK1pZvamYpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "RIPJOE",
+   "mint": "reject:85mHZCUfCibXUWvrtS2w8h5zTntpmkaBR3f5FwfMpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "RIPJOE",
+   "mint": "reject:4S1hcr3EKbGZXE1Qe4gV7oJzjUieRkYrCkZF3Eihpump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -1119,6 +1107,6 @@
    "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-11-01T13:54:58-08:00",
+ "desk_heartbeat": "2026-11-01T14:57:58-08:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
