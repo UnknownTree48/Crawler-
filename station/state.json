@@ -9,7 +9,7 @@
   "time": "2026-10-31T11:33:51-07:00",
   "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-10-31T18:56:44-07:00",
+ "updated": "2026-10-31T19:58:35-07:00",
  "open_positions": [
   "smart_v1_shadow AAPLx",
   "smart_v1_shadow HYPE",
@@ -37,17 +37,17 @@
   "smart_v1_shadow ZEC",
   "smart_v1_shadow DOGE",
   "smart_v1_shadow PENGU",
-  "smart_v1_shadow MONEKO",
   "smart_v1_shadow SC",
-  "smart_v1_shadow BLUE",
-  "smart_v1_shadow HIMS"
+  "smart_v1_shadow HIMS",
+  "smart_v1_shadow QUANTUM",
+  "smart_v1_shadow BLUE"
  ],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-10-31T18:56:26-07:00",
+ "heartbeat": "2026-10-31T19:58:16-07:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -419,17 +419,6 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "MONEKO",
-   "mint": "reject:49t765AnJMQAzSUutr9T7rC4QAtGxbqiL374qxsHpump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "SC",
    "mint": "reject:4hqDzrKcbQhQ74sokT7wTMyY1rAeiVrsdZkDDmRZrbTu",
    "opened": null,
@@ -441,19 +430,30 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "BLUE",
-   "mint": "reject:CPoGSmcjprCvzA2MFYLJMpQkGjmgVzKg4RVwMdrzpump",
+   "symbol": "HIMS",
+   "mint": "reject:HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
-   "remaining_frac": 0.5,
+   "remaining_frac": 1.0,
    "peak_vs_entry_pct": null,
    "rules_version": null
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "HIMS",
-   "mint": "reject:HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx",
+   "symbol": "QUANTUM",
+   "mint": "reject:abXs3qeKMo1ck4bZ3hf84Ei4WzgX1wDnP7Y4nivpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "BLUE",
+   "mint": "reject:5E3JBbeZjB6EzKANNt5q4fzduzVDQdY2cT1MC7D5pump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -507,6 +507,6 @@
    "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-10-31T18:56:26-07:00",
+ "desk_heartbeat": "2026-10-31T19:58:16-07:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
