@@ -9,7 +9,7 @@
   "time": "2026-10-31T11:33:51-07:00",
   "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-11-01T10:02:37-08:00",
+ "updated": "2026-11-01T10:55:19-08:00",
  "open_positions": [
   "smart_v1_shadow AAPLx",
   "smart_v1_shadow HYPE",
@@ -81,14 +81,23 @@
   "smart_v1_shadow AVA",
   "smart_v1_shadow OPENAI",
   "smart_v1_shadow Kimchi",
-  "smart_v1_shadow PUMPHUB"
+  "smart_v1_shadow CHOO",
+  "smart_v1_shadow TST",
+  "smart_v1_shadow SQQQ",
+  "smart_v1_shadow BITCAT",
+  "smart_v1_shadow TripleT",
+  "smart_v1_shadow ELON",
+  "smart_v1_shadow TSLAx",
+  "smart_v1_shadow nut",
+  "smart_v1_shadow VIPER",
+  "smart_v1_shadow FLOAT"
  ],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-11-01T10:02:18-08:00",
+ "heartbeat": "2026-11-01T10:55:03-08:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -944,8 +953,107 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "PUMPHUB",
-   "mint": "reject:EWHAkjs9XXYEBD4APXSvdBK3WRZZKEqRk6hy4Ktrpump",
+   "symbol": "CHOO",
+   "mint": "reject:EJAxERvKU4kEVXn3NarjvRtgaMaJyP9ZuMeKA7JJpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 0.5,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "TST",
+   "mint": "reject:FMkacjhZESLJUPoGKpJBV8bP1UYej33iaAazQTXtAnRK",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "SQQQ",
+   "mint": "reject:SQQQAa3gUxgnqcEsdjPA4RQNQBgB97TnG2hJhk2WaGE",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "BITCAT",
+   "mint": "reject:DQTmLdVVKWqXhz5yXXMAj8rWJcvVAmbpnyBrcRqGxytP",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "TripleT",
+   "mint": "reject:J8PSdNP3QewKq2Z1JJJFDMaqF7KcaiJhR7gbr5KZpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "ELON",
+   "mint": "reject:8vVzFr5tyZoHhAEFUVMfWxKCEixPbWP2bbKBnhesR1ZZ",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "TSLAx",
+   "mint": "reject:XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "nut",
+   "mint": "reject:DGvwrm6BUZMPnegAXMDTb52WjVZPTe21aAqkYv9Hpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "VIPER",
+   "mint": "reject:2siF8D7MYZeZydYhjkr3TPEiF6kZjVk1qywk2Q92v2P9",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "FLOAT",
+   "mint": "reject:Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -999,6 +1107,6 @@
    "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-11-01T10:02:18-08:00",
+ "desk_heartbeat": "2026-11-01T10:55:03-08:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
