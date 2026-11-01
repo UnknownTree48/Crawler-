@@ -9,7 +9,7 @@
   "time": "2026-10-31T11:33:51-07:00",
   "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-11-01T06:56:14-08:00",
+ "updated": "2026-11-01T08:02:00-08:00",
  "open_positions": [
   "smart_v1_shadow AAPLx",
   "smart_v1_shadow HYPE",
@@ -55,7 +55,6 @@
   "smart_v1_shadow BABA",
   "smart_v1_shadow TBB",
   "smart_v1_shadow Ranter",
-  "smart_v1_shadow Dix",
   "smart_v1_shadow Dacity",
   "smart_v1_shadow gooncat",
   "smart_v1_shadow MUSK4",
@@ -66,14 +65,17 @@
   "smart_v1_shadow GTA6",
   "smart_v1_shadow TON",
   "smart_v1_shadow GROKLET",
-  "smart_v1_shadow ICE"
+  "smart_v1_shadow ICE",
+  "smart_v1_shadow VETO",
+  "smart_v1_shadow ORE",
+  "smart_v1_shadow Ribon"
  ],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-11-01T06:55:52-08:00",
+ "heartbeat": "2026-11-01T08:01:37-08:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -643,17 +645,6 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "Dix",
-   "mint": "reject:6pzCYrGd9qAgVa4mfoTb69J1Tmbz82q7XKp8VK9qpump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 0.5,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "Dacity",
    "mint": "reject:nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump",
    "opened": null,
@@ -772,6 +763,39 @@
    "remaining_frac": 1.0,
    "peak_vs_entry_pct": null,
    "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "VETO",
+   "mint": "reject:4xWRsdRkre5ibf3ZyS2eje6sUY8wGnmtSHx7gkGtpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 0.5,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "ORE",
+   "mint": "reject:oreoU2P8bN6jkk3jbaiVxYnG1dCXcYxwhwyK9jSybcp",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "Ribon",
+   "mint": "reject:HgbDYDvtRU7hVv22FvGq1Rzv3nJmZHVsV76mXr8rpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
   }
  ],
  "paper_exits_logged": 43,
@@ -819,6 +843,6 @@
    "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-11-01T06:55:52-08:00",
+ "desk_heartbeat": "2026-11-01T08:01:37-08:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
