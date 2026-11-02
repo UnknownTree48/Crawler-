@@ -9,13 +9,8 @@
   "time": "2026-10-31T11:33:51-07:00",
   "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-11-01T16:58:58-08:00",
+ "updated": "2026-11-01T18:00:46-08:00",
  "open_positions": [
-  "smart_v1_shadow ZEC",
-  "smart_v1_shadow DOGE",
-  "smart_v1_shadow PENGU",
-  "smart_v1_shadow SC",
-  "smart_v1_shadow HIMS",
   "smart_v1_shadow QUANTUM",
   "smart_v1_shadow BLUE",
   "smart_v1_shadow 19",
@@ -39,7 +34,6 @@
   "smart_v1_shadow TON",
   "smart_v1_shadow GROKLET",
   "smart_v1_shadow ICE",
-  "smart_v1_shadow ORE",
   "smart_v1_shadow USELESS",
   "smart_v1_shadow MCDx",
   "smart_v1_shadow EWY",
@@ -73,24 +67,28 @@
   "smart_v1_shadow ObiWan",
   "smart_v1_shadow uni",
   "smart_v1_shadow UNI",
-  "smart_v1_shadow Realizing",
   "smart_v1_shadow VEILCAT",
   "smart_v1_shadow CARDS",
-  "smart_v1_shadow paws",
   "smart_v1_shadow HI",
   "smart_v1_shadow NNN",
   "smart_v1_shadow SPYx",
   "smart_v1_shadow monke",
   "smart_v1_shadow PEAK",
   "smart_v1_shadow Jarvis",
-  "smart_v1_shadow AMC"
+  "smart_v1_shadow AMC",
+  "smart_v1_shadow xBTC",
+  "smart_v1_shadow JEFF",
+  "smart_v1_shadow DATBOI",
+  "smart_v1_shadow RETARDIO",
+  "smart_v1_shadow BABYPUMP",
+  "smart_v1_shadow PARKJINHYOK"
  ],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-11-01T16:58:39-08:00",
+ "heartbeat": "2026-11-01T18:00:29-08:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -174,61 +172,6 @@
   }
  },
  "open_positions_detail": [
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "ZEC",
-   "mint": "reject:A7bdiYdS5GjqGFtxf17ppRHtDKPkkRqbKtR27dxvQXaS",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "DOGE",
-   "mint": "reject:DoGEV7LASBkQbibMc5k5vKnTZoMg423GpJ5QtJEGfm7R",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "PENGU",
-   "mint": "reject:2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "SC",
-   "mint": "reject:4hqDzrKcbQhQ74sokT7wTMyY1rAeiVrsdZkDDmRZrbTu",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "HIMS",
-   "mint": "reject:HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
   {
    "strategy": "smart_v1_shadow",
    "symbol": "QUANTUM",
@@ -475,17 +418,6 @@
    "strategy": "smart_v1_shadow",
    "symbol": "ICE",
    "mint": "reject:CEQnejxG1FPzMS6UiLbcxNiMKrZM3x6GTZucpJoSeByy",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "ORE",
-   "mint": "reject:oreoU2P8bN6jkk3jbaiVxYnG1dCXcYxwhwyK9jSybcp",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -858,17 +790,6 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "Realizing",
-   "mint": "reject:7Jv2f1SgqvsdXRUiFzMTkRDyEtcMF3AggM6EeEaGpump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "VEILCAT",
    "mint": "reject:7pkb8S6CC9kMNKKY1LGNAdzzKn1Sp4P7tu3FqcKNBD7p",
    "opened": null,
@@ -882,17 +803,6 @@
    "strategy": "smart_v1_shadow",
    "symbol": "CARDS",
    "mint": "reject:CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "paws",
-   "mint": "reject:Fp4JkqEcKYKBKhb9iMu9NSDeo71HWgq2q9QtXaaKpump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -951,7 +861,7 @@
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
-   "remaining_frac": 1.0,
+   "remaining_frac": 0.5,
    "peak_vs_entry_pct": null,
    "rules_version": null
   },
@@ -970,6 +880,72 @@
    "strategy": "smart_v1_shadow",
    "symbol": "AMC",
    "mint": "reject:AMC1qwR9KhiyrQBRPrxnfo4JfMeMZqEBvt5tgTytNNoc",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "xBTC",
+   "mint": "reject:2zCo6bUowJMvr89ajxuWsPadAqJ2F9akCkxumNsSdgsL",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "JEFF",
+   "mint": "reject:7mqShEtY6EYGsb8w2kitVWny6TiE2pNQzMyWNzeef8v1",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "DATBOI",
+   "mint": "reject:8yUqLgtR9Ef1p7fEB2JN33tXVafD4tg4L9rfKK62Cguo",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "RETARDIO",
+   "mint": "reject:CSRRgTwf9o5KLgguS2M16aEAhV5PUUzfshrAAQ8opump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "BABYPUMP",
+   "mint": "reject:6w12CQQFkw2fRWhRxHuKULVE6QEuMzjyrcASq6NQpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 0.5,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "PARKJINHYOK",
+   "mint": "reject:2Re9GjibQ1kqPVKUYhq3HcyYYwcPgWxHLmDQF5sbpump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -1023,6 +999,6 @@
    "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-11-01T16:58:39-08:00",
+ "desk_heartbeat": "2026-11-01T18:00:29-08:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
