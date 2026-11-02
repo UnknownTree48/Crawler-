@@ -9,7 +9,7 @@
   "time": "2026-10-31T11:33:51-07:00",
   "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-11-01T19:03:46-08:00",
+ "updated": "2026-11-01T19:58:26-08:00",
  "open_positions": [
   "smart_v1_shadow 19",
   "smart_v1_shadow DIVIDEND",
@@ -76,20 +76,24 @@
   "smart_v1_shadow AMC",
   "smart_v1_shadow xBTC",
   "smart_v1_shadow JEFF",
-  "smart_v1_shadow DATBOI",
   "smart_v1_shadow RETARDIO",
-  "smart_v1_shadow ZAZU",
   "smart_v1_shadow WILDWOOD",
   "smart_v1_shadow GTAFY",
   "smart_v1_shadow KIM",
-  "smart_v1_shadow GGPT"
+  "smart_v1_shadow TRUMP",
+  "smart_v1_shadow TRUMP2",
+  "smart_v1_shadow Pilly",
+  "smart_v1_shadow PUMPATAR",
+  "smart_v1_shadow NIO",
+  "smart_v1_shadow PEPE",
+  "smart_v1_shadow PEACE"
  ],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-11-01T19:03:19-08:00",
+ "heartbeat": "2026-11-01T19:58:04-08:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -890,34 +894,12 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "DATBOI",
-   "mint": "reject:8yUqLgtR9Ef1p7fEB2JN33tXVafD4tg4L9rfKK62Cguo",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "RETARDIO",
    "mint": "reject:CSRRgTwf9o5KLgguS2M16aEAhV5PUUzfshrAAQ8opump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
    "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "ZAZU",
-   "mint": "reject:5tFfn9BAmQFkH7h4TGQtwf9KxwwhPZEypxYbT58djVrp",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 0.5,
    "peak_vs_entry_pct": null,
    "rules_version": null
   },
@@ -956,12 +938,78 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "GGPT",
-   "mint": "reject:46N9yr6Nv2ZhVyBuLywTqQV9A4tztAWxieXhxtbNswrm",
+   "symbol": "TRUMP",
+   "mint": "reject:6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
-   "remaining_frac": 0.5,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "TRUMP2",
+   "mint": "reject:HLch92Qv7ccp4ANGKpJE3VsZBeNRxAQuGdCJEuSapump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "Pilly",
+   "mint": "reject:2CvGN3ynUisRVdgeycFS6GrZZtyjxwtTPr9U1XPhpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "PUMPATAR",
+   "mint": "reject:HbXn9Lcug7KrXxLr6TrKFe1pymCmqbVb3kbP9N1Kpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "NIO",
+   "mint": "reject:7SL2VnfYsChvog5oQY9Nmtqu1wceaMiQzWoqoLQpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "PEPE",
+   "mint": "reject:PEPEqnuuCDbBC89p1u9vpnP1KQ2oj1xTcQBsjt9X55m",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "PEACE",
+   "mint": "reject:BngAfLZxaWN2QvpFhRbUHydYGr8zA7YTSA178G8Epump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
    "peak_vs_entry_pct": null,
    "rules_version": null
   }
@@ -1011,6 +1059,6 @@
    "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-11-01T19:03:19-08:00",
+ "desk_heartbeat": "2026-11-01T19:58:04-08:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
