@@ -9,9 +9,8 @@
   "time": "2026-10-31T11:33:51-07:00",
   "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-11-01T16:02:14-08:00",
+ "updated": "2026-11-01T16:58:58-08:00",
  "open_positions": [
-  "smart_v1_shadow NVDAx",
   "smart_v1_shadow ZEC",
   "smart_v1_shadow DOGE",
   "smart_v1_shadow PENGU",
@@ -25,7 +24,6 @@
   "smart_v1_shadow AUC",
   "smart_v1_shadow GOOGLx",
   "smart_v1_shadow VVV",
-  "smart_v1_shadow BALL",
   "smart_v1_shadow NKE",
   "smart_v1_shadow GINNAN",
   "smart_v1_shadow Agency",
@@ -63,7 +61,6 @@
   "smart_v1_shadow TripleT",
   "smart_v1_shadow ELON",
   "smart_v1_shadow TSLAx",
-  "smart_v1_shadow FLOAT",
   "smart_v1_shadow Revenge",
   "smart_v1_shadow ANTHROPIC",
   "smart_v1_shadow BONFIRE",
@@ -79,23 +76,21 @@
   "smart_v1_shadow Realizing",
   "smart_v1_shadow VEILCAT",
   "smart_v1_shadow CARDS",
-  "smart_v1_shadow ANSEM",
   "smart_v1_shadow paws",
   "smart_v1_shadow HI",
-  "smart_v1_shadow Mbappe",
   "smart_v1_shadow NNN",
-  "smart_v1_shadow ALON",
   "smart_v1_shadow SPYx",
-  "smart_v1_shadow MIP",
   "smart_v1_shadow monke",
-  "smart_v1_shadow JARVIS"
+  "smart_v1_shadow PEAK",
+  "smart_v1_shadow Jarvis",
+  "smart_v1_shadow AMC"
  ],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-11-01T16:01:54-08:00",
+ "heartbeat": "2026-11-01T16:58:39-08:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -179,17 +174,6 @@
   }
  },
  "open_positions_detail": [
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "NVDAx",
-   "mint": "reject:Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
   {
    "strategy": "smart_v1_shadow",
    "symbol": "ZEC",
@@ -326,17 +310,6 @@
    "strategy": "smart_v1_shadow",
    "symbol": "VVV",
    "mint": "reject:VVV4UdRywr7SLafPHzqXwRCw7myXkmgCtitXUvj8g8c",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "BALL",
-   "mint": "reject:3knRzPtq4d6wDRhnmkMg2YH3W1vT5fh2a8csp4popump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -753,17 +726,6 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "FLOAT",
-   "mint": "reject:Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 0.5,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "Revenge",
    "mint": "reject:HBKmnamsDdyjpYEPpuWt6y7PheNvhUAnmFCYQr8epump",
    "opened": null,
@@ -929,17 +891,6 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "ANSEM",
-   "mint": "reject:CvRJ8MrnB1AwjrgX25uyeLJiXNSugTo2ZHh8UXDTpump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "paws",
    "mint": "reject:Fp4JkqEcKYKBKhb9iMu9NSDeo71HWgq2q9QtXaaKpump",
    "opened": null,
@@ -962,30 +913,8 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "Mbappe",
-   "mint": "reject:8oFDutbGKCv7W1uspTceiuBqsCxY88EYDGxpqtCvpump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "NNN",
    "mint": "reject:2DHtHTYWiUmxBHcdVJbSfRft6mkWeXDKLjze2RexQmns",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "ALON",
-   "mint": "reject:4PAFQbF5QnNaPsTydrqhTJU9BfDAcRT7kRZUxvgMpump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -1006,17 +935,6 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "MIP",
-   "mint": "reject:BKPnak3A5KKSKnDdYQBHn2zt1BgfkPDgX8ze8og2pump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
    "symbol": "monke",
    "mint": "reject:8PETJeAFReCkJ4LL1vZS2PP3FbrPg5MktqNZg4G9pump",
    "opened": null,
@@ -1028,12 +946,34 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "JARVIS",
-   "mint": "reject:2ziCqvVSugZ48wmK6PrHKUijtN77QHHi7E44q52Xpump",
+   "symbol": "PEAK",
+   "mint": "reject:APLPiTjBWzwfZ5U1TBeqLF9XJ7dV7XKGe7j4BZhkDray",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
-   "remaining_frac": 0.5,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "Jarvis",
+   "mint": "reject:7pyUhkZZwXLa1d7FS7dCoZyhvQDBNodgsXk6iMahpump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "AMC",
+   "mint": "reject:AMC1qwR9KhiyrQBRPrxnfo4JfMeMZqEBvt5tgTytNNoc",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
    "peak_vs_entry_pct": null,
    "rules_version": null
   }
@@ -1083,6 +1023,6 @@
    "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-11-01T16:01:54-08:00",
+ "desk_heartbeat": "2026-11-01T16:58:39-08:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
