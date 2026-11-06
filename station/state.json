@@ -9,13 +9,12 @@
   "time": "2026-10-31T11:33:51-07:00",
   "reason": "CLAUDIA: 24h time stop (below entry)"
  },
- "updated": "2026-11-05T17:03:29-08:00",
+ "updated": "2026-11-05T17:57:38-08:00",
  "open_positions": [
   "smart_v1_shadow NINE1NINE",
   "smart_v1_shadow DEMS",
   "smart_v1_shadow PAWLITINU",
   "smart_v1_shadow GTA7",
-  "smart_v1_shadow POSITIONS",
   "smart_v1_shadow DUOL",
   "smart_v1_shadow Kidney",
   "smart_v1_shadow FCAT",
@@ -72,15 +71,17 @@
   "smart_v1_shadow swordcat",
   "smart_v1_shadow EWY",
   "smart_v1_shadow STINKS",
-  "smart_v1_shadow FEAR",
-  "smart_v1_shadow xBTC"
+  "smart_v1_shadow xBTC",
+  "smart_v1_shadow MooHan",
+  "smart_v1_shadow GATO",
+  "smart_v1_shadow IcarusFang"
  ],
  "watchlist": [
   {
    "note": "regular pullback retired 2026-10-16; active=grad_v1+grad30_v1+early_runner+smart_v1+rh_v1 (paper)"
   }
  ],
- "heartbeat": "2026-11-05T17:02:57-08:00",
+ "heartbeat": "2026-11-05T17:56:09-08:00",
  "progress_pct": 56.1,
  "paper_trades": 39,
  "signals_logged": 3197,
@@ -201,17 +202,6 @@
    "strategy": "smart_v1_shadow",
    "symbol": "GTA7",
    "mint": "reject:7TpHN3dMcvXXDwcjFkyrGMyaP81QTtbnFBeBgqtzpump",
-   "opened": null,
-   "entry_price": 0,
-   "half_sold": false,
-   "remaining_frac": 1.0,
-   "peak_vs_entry_pct": null,
-   "rules_version": null
-  },
-  {
-   "strategy": "smart_v1_shadow",
-   "symbol": "POSITIONS",
-   "mint": "reject:7BC22ppHGeCdhpxNVyJMxV51y1qzkAcEd8YXtzX8pump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -837,8 +827,8 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "FEAR",
-   "mint": "reject:CHtXwJ3qa2ozS9vQkxhR3MmNwkoUqkh3icGXgZPepump",
+   "symbol": "xBTC",
+   "mint": "reject:2zCo6bUowJMvr89ajxuWsPadAqJ2F9akCkxumNsSdgsL",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -848,8 +838,30 @@
   },
   {
    "strategy": "smart_v1_shadow",
-   "symbol": "xBTC",
-   "mint": "reject:2zCo6bUowJMvr89ajxuWsPadAqJ2F9akCkxumNsSdgsL",
+   "symbol": "MooHan",
+   "mint": "reject:B3NRP7mFgrKYmYh7RnvWKmD5LmdoMQoruSK5Mjp4pump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "GATO",
+   "mint": "entry:HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
+   "opened": null,
+   "entry_price": 0,
+   "half_sold": false,
+   "remaining_frac": 1.0,
+   "peak_vs_entry_pct": null,
+   "rules_version": null
+  },
+  {
+   "strategy": "smart_v1_shadow",
+   "symbol": "IcarusFang",
+   "mint": "reject:7bQwiuo22N8s4BVBPWqQNPuzcUqMvsiSAKbPWYDtpump",
    "opened": null,
    "entry_price": 0,
    "half_sold": false,
@@ -903,6 +915,6 @@
    "reason": "24h time stop (below entry)"
   }
  ],
- "desk_heartbeat": "2026-11-05T17:02:57-08:00",
+ "desk_heartbeat": "2026-11-05T17:56:09-08:00",
  "source_note": "live overlay: tmp/*_state.json + paper_trades.jsonl + VM heartbeat (2026-10-31)"
 }
